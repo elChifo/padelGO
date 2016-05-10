@@ -4,28 +4,31 @@ class Login extends Controller
 {
     public function index()    
     {
-        $this->view->addData(['titulo' => 'Padel GO!']);    
+        $this->view->addData(['titulo' => 'Login']);    
 
         echo $this->view->render('login/index');
     }
 
     public function logueado()
     {
-        $this->view->addData(['titulo' => 'Padel GO!']);
+        $this->view->addData(['titulo' => 'Logueado']);
        
         if(LoginModel::logueado($_POST)) {
 
-            $privado = LoginModel::logueado($_POST);
+            $email = LoginModel::logueado($_POST);
+            $usuarios = UsuariosModel::getUsuario();
 
-            if($privado == 'admin@admin.com') {
+            if($email == 'admin@admin.com') {
 
                     echo $this->view->render('login/privado', [
-                        'privado' => $privado
+                        'email' => $email,
+                        'usuarios' => $usuarios
                     ]);
             }    
             else {                    
                     echo $this->view->render('login/logueado', [
-                        'privado' => $privado
+                        'email' => $email,
+                        'usuarios' => $usuarios
                     ]);
             }
         } 

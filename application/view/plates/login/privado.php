@@ -8,7 +8,9 @@
     	<?= Session::get('nombre') ?> <?= Session::get('apellidos') ?>
     </p>
 	<p>
-    <a href="/clubs/insertar"><h3>Registrar Un Club</h3></a>
+    <a href="/clubs/insertar"><h3>Registrar Un Club</h3></a>    
+    <a href="/usuarios/administrar"><h3>Administrar Usuarios</h3></a>
+
 
     <!-- <a href="/actividades/insertar"><h3>Registrar Una Actividad</h3></a>
 	</p> -->

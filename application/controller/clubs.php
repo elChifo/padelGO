@@ -4,7 +4,7 @@ class Clubs extends Controller
 {
    	public function index()
     {
-        $this->view->addData(['titulo' => 'Padel GO!']);
+        $this->view->addData(['titulo' => 'Clubs']);
 
         $clubs = ClubsModel::getClub();
 
@@ -15,7 +15,7 @@ class Clubs extends Controller
 
     public function insertar()
     {            
-        $this->view->addData(['titulo' => 'Padel GO!']);
+        $this->view->addData(['titulo' => 'Insertar Club']);
 
         $clubs = ClubsModel::getClub();
 
@@ -96,18 +96,5 @@ class Clubs extends Controller
             }
         }
     }
-
-
-    public function privado()
-    {
-        $this->view->addData(['titulo' => 'Actividades Extraescolares']);
-
-        $centros = CentrosModel::getCentro();
-
-        echo $this->view->render("centros/privado", [
-                'centros' => $centros
-        ]);     
-    }
-
 
 }

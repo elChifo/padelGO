@@ -4,66 +4,91 @@ class Registro extends Controller
 {
     public function index()
     {            
-        $this->view->addData(['titulo' => 'Padel GO!']);
+        $this->view->addData(['titulo' => 'Registro']);
 
         $categorias = RegistroModel::getCategoria();
 
         if (!$_POST) {
+
             echo $this->view->render('registro/index', [
-            'categorias' => $categorias]);
+                     'categorias' => $categorias]);
         } 
         else {
 
-            if(!isset($_POST["nombre"])) {
-                $_POST["nombre"] = "";
-            }
-            if(!isset($_POST["apellidos"])) {
-                $_POST["apellidos"] = "";
-            }
-            if(!isset($_POST["sexo"])) {
-                $_POST["sexo"] = "";
-            }
-            if(!isset($_POST["fechaNac"])) {
-                $_POST["fechaNac"] = "";
-            }
-            if(!isset($_POST["direccion"])) {
-                $_POST["direccion"] = "";
-            }
-            if(!isset($_POST["telefono"])) {
-                $_POST["telefono"] = "";
-            }
-            if(!isset($_POST["email"])) {
-                $_POST["email"] = "";
-            }
-            if(!isset($_POST["clave"])) {
-                $_POST["clave"] = "";
-            }
-
             $datos = array(
-                'nombre' => $_POST["nombre"],
-                'apellidos' => $_POST["apellidos"],
-                'sexo' => $_POST["sexo"],
-                'fechaNac' => $_POST["fechaNac"],
-                'direccion' => $_POST["direccion"],
-                'telefono' => $_POST["telefono"],
-                'email' => $_POST["email"],
-                'clave' => $_POST["clave"],                
-                'idCategoria' => $_POST["idCategoria"]
+                 'nombre'      => $_POST["nombre"],
+                 'apellidos'   => $_POST["apellidos"],
+                 'sexo'        => $_POST["sexo"],
+                 'fechaNac'    => $_POST["fechaNac"],
+                 'direccion'   => $_POST["direccion"],
+                 'telefono'    => $_POST["telefono"],            
+                 'idCategoria' => $_POST["idCategoria"]
             );
 
-            if(RegistroModel::insertar($datos)) {
-                echo $this->view->render('registro/registrado');
-            } 
-            else {
+            if (RegistroModel::repetido($_POST["email"])) {
+
+                Session::add('feedback_negative', "El Email ya está registrado");
+
                 echo $this->view->render('registro/index', [
-                        'errores' => array('Error al insertar'),
-                        'datos' => $datos,
-                        'categorias' => $categorias
-                        ]);
+                         'datos'      => $datos,
+                         'categorias' => $categorias
+                         ]);
             }
+            else {
+
+                $registro = array(
+                    'nombre'      => $_POST["nombre"],
+                    'apellidos'   => $_POST["apellidos"],
+                    'sexo'        => $_POST["sexo"],
+                    'fechaNac'    => $_POST["fechaNac"],
+                    'direccion'   => $_POST["direccion"],
+                    'telefono'    => $_POST["telefono"],
+                    'email'       => $_POST["email"],
+                    'clave'       => $_POST["clave"],                
+                    'idCategoria' => $_POST["idCategoria"]
+                );
+
+                if(RegistroModel::insertar($registro)) {
+
+                    echo $this->view->render('registro/registrado');
+                } 
+                else {
+
+                    Session::add('feedback_negative', "El Registro NO ha sido posible... Inténtelo de nuevo");
+
+                    echo $this->view->render('registro/index', [
+                            'datos'      => $datos,
+                            'categorias' => $categorias
+                            ]);
+                }
+            }            
         }
     }
-           
+}
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 
     public function editar($id = 0)
@@ -128,4 +153,3 @@ class Registro extends Controller
 
 
     
-}

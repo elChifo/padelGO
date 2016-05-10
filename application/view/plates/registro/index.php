@@ -10,7 +10,11 @@
             <legend>
                 <h2> Datos del Usuario </h2> 
             </legend>  
-
+            
+            <input type="hidden" name="idUsuario" 
+                    value="<?= (isset($datos['idUsuario'])) ? $datos['idUsuario'] : "" ?>"> 
+            </input>
+            
             <p>
             <label for="nombre">Nombre </label>
             <input type="text" name="nombre" 
@@ -36,7 +40,7 @@
             
             <p>
             <label for="fechaNac">Fecha de Nacimiento</label>
-            <input type="text" name="fechaNac" 
+            <input type="date" name="fechaNac" 
                     value="<?= (isset($datos['fechaNac'])) ? $datos['fechaNac'] : "" ?>"
                     placeholder="Introduzca la Fecha de Nacimiento (año-mes-dia)">
             </p>

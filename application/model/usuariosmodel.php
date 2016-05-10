@@ -99,4 +99,10 @@ class UsuariosModel
         $query->execute($params);
     }
     
+    public static function editar($idUsuario)
+    {
+        $conn = Database::getInstance()->getDatabase();
+
+    }
+
 }

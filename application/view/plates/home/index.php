@@ -12,12 +12,8 @@
 </div>
 
 <div class="container">	
-	<h3> GUIA DE USO </h3>
-    <p>
-    	"Para utilizar esta aplicación, tendrá que registrar un alumno en la base de datos, y posteriormente
-    	tendrá que registrarse indicando el Alumno asignado.
-
-    	Para acceder a sus datos puede autenticarse en la seccion LOGIN.
+	<h3> QUIÉNES SOMOS </h3>    
+    <p> El equipo de 'PADEL GO!' esta integrado por un grupo humano con amplia experiencia en todos los  ámbitos referentes al mundo del pádel. 
     </p>
 </div>
 

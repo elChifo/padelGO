@@ -81,5 +81,27 @@ class RegistroModel
             }
             return false;
         }
-    }    
+    } 
+
+    public static function repetido($email)
+    {
+        $conn = Database::getInstance()->getDatabase();
+        $ssql = "SELECT * FROM Usuarios WHERE email=:email";
+        $query = $conn->prepare($ssql);
+        $parameters = [':email' => $email];
+        $query->execute($parameters);
+
+        $cuenta = $query->rowCount();
+
+        if($cuenta == 1) {
+
+            return true;
+        } 
+        else { 
+
+            return false;
+        }
+    }
+
+
 }

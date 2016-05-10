@@ -4,20 +4,23 @@ class Home extends Controller
 {
     public function index()
     {
-        $this->view->addData(['titulo' => 'Actividades Extraescolares',
+        $this->view->addData(['titulo' => 'Inicio',
 
-        				'presentacion' => "'ACTIVA TU MUNDO' es una empresa dedicada a la educación no formal y 
-        				 la intervención social, especialmente en el ocio y tiempo libre. A través de nuestras 
-        				 actividades y proyectos pretendemos optimizar el proceso socializador y educativo de niños, 
-        				 niñas y jóvenes.",
+        				'presentacion' => "'PADEL GO!' es una web que te permite acceder a una innovadora red social de jugadores de padel, desde tu móvil, y de una forma sencilla e intuitiva, Podrás:
 
-        				'objetivos' => "'ACTIVA TU MUNDO' plantea las Actividades Extraescolares para que el alumno
-        				 aprenda y refuerce valores fundamentales como la solidaridad, el cooperativismo, 
-        				 la tolerancia, la autoestima, la higiene personal, etc.",
+                                <ul> 
+                                    <li>Crear y apuntarte a Partidos</li>
+                                    <li>Restringir acceso a los partidos por nivel</li>
+                                    <li>Votar nivel de otros jugadores</li>
+                                    <li>Gestionar agenda de jugadores</li>
+                                    <li>Dar de alta clubs y acceder a su información</li>
+                                    <li>Cambiar tu ubicación en cualquier momento</li>
+                                    <li>y mucho más por llegar....</li>
+                                </ul>",
 
-        				'desarrollo' => 'Todas las actividades expuestas, se realizarán siempre en las instalaciones
-        				 pertenecientes al centro docente donde estudien los alumnos. La actividad elegida será 
-        				 desarrollada dos días a la semana, con una duración de una hora diaria'
+        				'objetivos' => "A todos nos gusta progresar en la práctica de nuestro deporte, y si tenemos un buen profesor, mejor que mejor.",
+
+        				'desarrollo' => "'PADEL GO!' ofrece infinitas posibilidades: podemos tomárnoslo con calma y simplemente buscar un poco de ejercicio físico durante la semana, o bien mucho más en serio y querer competir a tope."
         ]);
 
         echo $this->view->render("home/index"); 

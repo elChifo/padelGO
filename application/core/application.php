@@ -62,7 +62,7 @@ class Application
             header('HTTP/1.0 404 Not Found');
             require APP . 'controller/error.php';
 
-            $cont_error = new Error("Esta es una página de error, que se mostrará cuando el (controlador / método) no exista.");
+            $cont_error = new Error("Página No Encontrada.");
             $cont_error->index();
         }
     }

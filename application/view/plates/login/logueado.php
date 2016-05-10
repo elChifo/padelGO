@@ -2,8 +2,10 @@
 
 <div class="container">
     
-    <h2>Login Correcto</h2>
-    <p>Bienvenid@ al sistema, <?= Session::get('nombre') ?> <?= Session::get('apellidos') ?>
+    <h2>LOGIN CORRECTO</h2>
+    <p>
+    	Bienvenid@ al sistema, 
+    	<?= Session::get('nombre') ?> <?= Session::get('apellidos') ?>
     </p>
 	</br>		
 
@@ -11,9 +13,7 @@
 
 			<?php if($value->idUsuario == Session::get('idUsuario')): ?>
 
-					<h3> SUS DATOS: <?php Login::espacio(46); ?>
-
-					</h3> 
+					<h3> SUS DATOS:	</h3> 
 						<ul>
 							<li>NOMBRE:  <?php echo $value->nombre; ?> </li>
 							<li>APELLIDOS:  <?php echo $value->apellidos; ?> </li>
@@ -22,7 +22,7 @@
 							<li>DIRECCIÓN:  <?php echo $value->direccion; ?> </li>
 							<li>TELÉFONO:  <?php echo $value->telefono; ?> </li>
 							<li>EMAIL:  <?php echo $value->email; ?> </li>	
-							<li>CATEGORÍA:  <?php echo $value->idCategoria . "ª Categoría"; ?> </li>		
+							<li>CATEGORÍA:  <?php echo $value->idCategoria . "ª Categoría"; ?> </li>	
 						</ul>	
 			
 			<?php endif ?>	
