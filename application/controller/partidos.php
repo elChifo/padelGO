@@ -1,59 +1,67 @@
 <?php
 
-class Actividades extends Controller
+class Partidos extends Controller
 {
    	public function index()
    	{
-        $this->view->addData(['titulo' => 'Actividades Extraescolares']);
+        $this->view->addData(['titulo' => 'Partidos']);
 
-        $actividades = ActividadesModel::getActividad();
-		$centros = ActividadesModel::getCentro();
+        $partidos = PartidosModel::getPartido();
+        $categorias = PartidosModel::getCategoria();
+        $usuarios = PartidosModel::getUsuario();
+        $clubs = PartidosModel::getClub();
       
-        echo $this->view->render("actividades/index", [
-        		'actividades' => $actividades,
-                'centros'     => $centros
+
+        echo $this->view->render("partidos/index", [
+                'partidos' => $partidos,
+                'categorias' => $categorias,
+                'usuarios' => $usuarios,
+                'clubs' => $clubs
         ]);
     }
 
     public function insertar()
     {                   
-        $this->view->addData(['titulo' => 'Actividades Extraescolares']);
+        $this->view->addData(['titulo' => 'Nuevo Partido']);
 
-        $centros = ActividadesModel::getCentro();
+        $partidos = PartidosModel::getPartido();
+        $categorias = PartidosModel::getCategoria();
+        $usuarios = PartidosModel::getUsuario();
+        $clubs = PartidosModel::getClub();
 
         if(!$_POST) {
-            echo $this->view->render('actividades/insertar', [
-                    'centros' => $centros
+
+            echo $this->view->render('partidos/insertar', [
+                'partidos' => $partidos,
+                'categorias' => $categorias,
+                'usuarios' => $usuarios,
+                'clubs' => $clubs
             ]);            
         } 
-        else {
+        else {            
 
-            if(!isset($_POST["nombreActividad"])) {
-                $_POST["nombreActividad"] = "";
-            }
-            if(!isset($_POST["monitor"])) {
-                $_POST["monitor"] = "";
-            }
-            if(!isset($_POST["descripcion"])) {
-                $_POST["descripcion"] = "";
-            }
-         
-            $datos = array(
-                'nombreActividad' => $_POST["nombreActividad"],
-                'monitor' => $_POST["monitor"],
-                'descripcion' => $_POST["descripcion"],
-                'idCentro' => $_POST["idCentro"]
+            $datos = array(                              
+                'tipoPartido' => $_POST["tipoPartido"],
+                'fechaPartido' => $_POST["fechaPartido"],
+                'horaPartido' => $_POST["horaPartido"],
+                'jugador1' => $_POST["jugador1"],
+                'jugador2' => $_POST["jugador2"],
+                'jugador3' => $_POST["jugador3"],
+                'jugador4' => $_POST["jugador4"],
+                'idCategoria' => $_POST["idCategoria"],
+                'idUsuario' => $_POST["idUsuario"],
+                'idClub' => $_POST["idClub"],
             );
 
-            if(ActividadesModel::insertar($datos)) {
-                echo $this->view->render('login/privado');
-            } 
-            else {
-                echo $this->view->render('actividades/insertar',array(
-                        'errores' => array('Error al insertar'),
-                        'datos' => $_POST
-                ));
-            }
+            PartidosModel::insertar($datos);
+
+            echo $this->view->render('partidos/index', [
+                'partidos' => $partidos,
+                'categorias' => $categorias,
+                'usuarios' => $usuarios,
+                'clubs' => $clubs
+            ]);
+             
         }
     }
 

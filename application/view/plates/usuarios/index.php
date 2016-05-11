@@ -2,8 +2,10 @@
 
 <div class="container">
    
-    <a href="registro/index"><h2>Registrar Un Usuario</h2></a><br>
-
+    <div class="nuevoUsuario">
+        <a href="registro/index"><h2>Registrar Un Usuario</h2></a><br>
+    </div>
+    
     <?php if(count($usuarios) == 0): ?>
 
         <p>No se encuentran Usuarios en la Base de Datos</p>

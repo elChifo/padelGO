@@ -40,7 +40,7 @@
             <label for="fechaNac">Fecha de Nacimiento</label>
             <input type="text" name="fechaNac" 
                     value="<?= (isset($usuarios->fechaNac)) ? $usuarios->fechaNac : "" ?>"
-                    placeholder="Introduzca la Fecha de Nacimiento (año-mes-dia)">
+                    placeholder="Introduzca la Fecha de Nacimiento (AAAA-mm-dd)">
             </p>
 
             <p>

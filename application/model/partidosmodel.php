@@ -1,34 +1,52 @@
 <?php
 
-class ActividadesModel
+class PartidosModel
 {    
-    public static function getActividad()
+    public static function getPartido()
     {
         $conn = Database::getInstance()->getDatabase();
-        $ssql = "SELECT * FROM Actividades ORDER BY nombreActividad ASC";
+        $ssql = "SELECT * FROM Partidos ORDER BY fechaPartido DESC";
         $query = $conn->prepare($ssql);
         $query->execute();
         return $query->fetchAll();
     }
 
-    public static function getIdActividad($id) {
+    public static function getIdPartido($id) 
+    {
         $conn = Database::getInstance()->getDatabase();
         $id = (int) $id;
         if($id == 0){
             return false;
         }
-        $ssql = "SELECT * FROM Actividades WHERE idActividad = :id";
+        $ssql = "SELECT * FROM Partidos WHERE idPartido = :id";
         $query = $conn->prepare($ssql);
         $query->bindValue(":id", $id, PDO::PARAM_INT);
         $query->execute();
         return $query->fetch();
-
     }
 
-    public static function getCentro()
+    public static function getCategoria()
     {
         $conn = Database::getInstance()->getDatabase();
-        $ssql = "SELECT * FROM Centros";
+        $ssql = "SELECT * FROM Categorias";
+        $query = $conn->prepare($ssql);
+        $query->execute();
+        return $query->fetchAll();
+    } 
+
+    public static function getUsuario()
+    {
+        $conn = Database::getInstance()->getDatabase();
+        $ssql = "SELECT * FROM Usuarios";
+        $query = $conn->prepare($ssql);
+        $query->execute();
+        return $query->fetchAll();
+    } 
+
+    public static function getClub()
+    {
+        $conn = Database::getInstance()->getDatabase();
+        $ssql = "SELECT * FROM Clubs";
         $query = $conn->prepare($ssql);
         $query->execute();
         return $query->fetchAll();
@@ -40,36 +58,54 @@ class ActividadesModel
 
         $errores_validacion = false;
 
-        if(empty($datos['nombreActividad'])) {
-            Session::add('feedback_negative', "No he recibido el Nombre de la Actividad");
+        if(empty($datos['tipoPartido'])) {
+            Session::add('feedback_negative', "No he recibido el Tipo de Partido.");
             $errores_validacion = true;
         }
-        if(empty($datos['monitor'])) {
-            Session::add('feedback_negative', "No he recibido el Nombre del Monitor");
+        if(empty($datos['fechaPartido'])) {
+            Session::add('feedback_negative', "No he recibido la Fecha del Partido.");
             $errores_validacion = true;
         }
-        if(empty($datos['descripcion'])) {
-            Session::add('feedback_negative', "No he recibido la Descripción");
+        if(empty($datos['horaPartido'])) {
+            Session::add('feedback_negative', "No he recibido la Hora del Partido.");
             $errores_validacion = true;
         }
-        if(empty($datos['idCentro'])) {
-            Session::add('feedback_negative', "No he recibido el Centro");
+        if (empty($datos['jugador1'])) {            
+            Session::add('feedback_negative', "No he recibido ningun Jugador.");
             $errores_validacion = true;
         }
+        if(empty($datos['idCategoria'])) {
+            Session::add('feedback_negative', "No he recibido la Categoría.");
+            $errores_validacion = true;
+        }
+        if(empty($datos['idUsuario'])) {
+            Session::add('feedback_negative', "No he recibido el Usuario.");
+            $errores_validacion = true;
+        }
+        if(empty($datos['idClub'])) {
+            Session::add('feedback_negative', "No he recibido el Club.");
+            $errores_validacion = true;
+        }              
 
         if($errores_validacion) {
             return false;
         }
         else {
             $params = array(
-                'nombreActividad' => $_POST["nombreActividad"],
-                'monitor' => $_POST["monitor"],
-                'descripcion' => $_POST["descripcion"],
-                'idCentro' => $_POST["idCentro"]
+                'tipoPartido' => $_POST["tipoPartido"],
+                'fechaPartido' => $_POST["fechaPartido"],
+                'horaPartido' => $_POST["horaPartido"],
+                'jugador1' => $_POST["jugador1"],
+                'jugador2' => $_POST["jugador2"],
+                'jugador3' => $_POST["jugador3"],
+                'jugador4' => $_POST["jugador4"],
+                'idCategoria' => $_POST["idCategoria"],
+                'idUsuario' => $_POST["idUsuario"],
+                'idClub' => $_POST["idClub"]
             );
 
-            $ssql = "INSERT INTO Actividades (nombreActividad, monitor, descripcion, idCentro)
-                    VALUES (:nombreActividad, :monitor, :descripcion, :idCentro)";
+            $ssql = "INSERT INTO Partidos (tipoPartido, fechaPartido, horaPartido, jugador1, jugador2, jugador3, jugador4, idCategoria, idUsuario, idClub)
+                    VALUES (:tipoPartido, :fechaPartido, :horaPartido, :jugador1, :jugador2, :jugador3, :jugador4, :idCategoria, :idUsuario, :idClub)";
 
             $query = $conn->prepare($ssql);
             $query->execute($params);
