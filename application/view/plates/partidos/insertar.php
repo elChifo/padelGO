@@ -82,19 +82,8 @@
             </div>
 
             <div>
-                <label for="idUsuario">Usuarios</label> 
-                
-                <select name="idUsuario">
-                            
-                        <?php foreach($usuarios as $usuario): ?>
+                <input type="hidden" name="idUsuario" value="<?= $idUsuario ?>">
 
-                            <option value="<?php echo $usuario->idUsuario; ?>">
-                                    <?php echo $usuario->nombre; ?>
-                                    <?php echo $usuario->apellidos; ?>
-                            </option>
-
-                        <?php endforeach ?>
-                </select>
             </div>
 
             <div>

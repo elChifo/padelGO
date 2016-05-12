@@ -10,13 +10,18 @@ class Partidos extends Controller
         $categorias = PartidosModel::getCategoria();
         $usuarios = PartidosModel::getUsuario();
         $clubs = PartidosModel::getClub();
+
+        $idUsuario = Session::get('idUsuario');
+        $usuarioPartido = Session::set('usuarioPartido', $idUsuario);
       
 
         echo $this->view->render("partidos/index", [
                 'partidos' => $partidos,
                 'categorias' => $categorias,
                 'usuarios' => $usuarios,
-                'clubs' => $clubs
+                'clubs' => $clubs, 
+                'idUsuario' => $idUsuario,
+                'usuarioPartido' => $usuarioPartido
         ]);
     }
 
@@ -29,13 +34,18 @@ class Partidos extends Controller
         $usuarios = PartidosModel::getUsuario();
         $clubs = PartidosModel::getClub();
 
+        $idUsuario = Session::get('idUsuario');
+        $usuarioPartido = Session::set('usuarioPartido', $idUsuario);
+
         if(!$_POST) {
 
             echo $this->view->render('partidos/insertar', [
                 'partidos' => $partidos,
                 'categorias' => $categorias,
                 'usuarios' => $usuarios,
-                'clubs' => $clubs
+                'clubs' => $clubs, 
+                'idUsuario' => $idUsuario,
+                'usuarioPartido' => $usuarioPartido
             ]);            
         } 
         else {            
@@ -49,7 +59,7 @@ class Partidos extends Controller
                 'jugador3' => $_POST["jugador3"],
                 'jugador4' => $_POST["jugador4"],
                 'idCategoria' => $_POST["idCategoria"],
-                'idUsuario' => $_POST["idUsuario"],
+                'idUsuario' => Session::get('idUsuario'),
                 'idClub' => $_POST["idClub"],
             );
 
@@ -59,7 +69,9 @@ class Partidos extends Controller
                 'partidos' => $partidos,
                 'categorias' => $categorias,
                 'usuarios' => $usuarios,
-                'clubs' => $clubs
+                'clubs' => $clubs, 
+                'idUsuario' => $idUsuario,
+                'usuarioPartido' => $usuarioPartido
             ]);
              
         }

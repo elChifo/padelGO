@@ -41,6 +41,20 @@ class PartidosModel
         $query = $conn->prepare($ssql);
         $query->execute();
         return $query->fetchAll();
+    }
+
+    public static function getIdUsuario($id) 
+    {
+        $conn = Database::getInstance()->getDatabase();
+        $id = (int) $id;
+        if($id == 0){
+            return false;
+        }
+        $ssql = "SELECT * FROM Usuarios WHERE idUsuario = :id";
+        $query = $conn->prepare($ssql);
+        $query->bindValue(":id", $id, PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetch();
     } 
 
     public static function getClub()
