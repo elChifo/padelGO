@@ -15,9 +15,12 @@
     </script>
 
     <!-- our JavaScript -->
-    <script src="<?php echo URL; ?>js/application.js"></script>
+    <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar.js"></script>
+    <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-es.js"></script>
+    <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-setup.js"></script>
     <!-- CSS -->
-    <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/jcalendar/theme.css">
 </head>
 <body>
     <!-- logo -->
