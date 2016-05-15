@@ -25,7 +25,7 @@ class Registro extends Controller
                  'idCategoria' => $_POST["idCategoria"]
             );
 
-            if (RegistroModel::repetido($_POST["email"])) {
+            if (RegistroModel::existeEmail($_POST["email"])) {
 
                 Session::add('feedback_negative', "El Email ya está registrado");
 

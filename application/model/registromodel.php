@@ -83,7 +83,7 @@ class RegistroModel
         }
     } 
 
-    public static function repetido($email)
+    public static function existeEmail($email)
     {
         $conn = Database::getInstance()->getDatabase();
         $ssql = "SELECT * FROM Usuarios WHERE email=:email";
