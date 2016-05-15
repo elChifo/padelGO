@@ -1,9 +1,9 @@
-<?php $this->layout('layout-dos') ?>
+<?php $this->layout('layout') ?>
 
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
    
-    <h2>NUEVO PARTIDO</h2>
+    <h2>NUEVO PARTIDO</h2> 
 
     <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
 
@@ -24,18 +24,85 @@
                 </select>
             </div>
 
+            <script type="text/javascript">
+                try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
+            </script>
+            
+            <br>
             <div>
-                <label for="fechaPartido">Fecha del Partido</label>
-                <input type="date" name="fechaPartido" 
-                    value="<?= (isset($datos['fechaPartido'])) ? $datos['fechaPartido'] : "" ?>"
-                    placeholder="Introduzca la Fecha del Partido (AAAA-mm-dd)">
+                <label for="fechaPartido"><!--Fecha del Partido--></label>
+                <input type="hidden" name="fechaPartido" id="fecha" />
+                    <span style="background-color: #ffc; cursor:default; padding:.3em; border:thin solid #ff0; text-decoration:underline; color: blue;" 
+                            onmouseover="this.style.cursor = 'pointer'; this.style.cursor = 'hand'; 
+                                this.style.backgroundColor = '#ff8'; this.style.textDecoration='none';"
+                            onmouseout="this.style.backgroundColor = '#ffc'; this.style.textDecoration = 'underline';" id="fecha_usuario"> 
+                            Pinchar aqui para Seleccionar la fecha 
+                    </span>                    
+                <p id="error_fecha"></p>
             </div>
+            <br>
+
+            <script type="text/javascript">
+                Calendar.setup({
+                inputField: "fecha",
+                ifFormat:   "%d/%m/%Y",
+                weekNumbers: false,
+                displayArea: "fecha_usuario",
+                daFormat:    "%A, %d de %B de %Y"
+                });
+            </script>
 
             <div>
                 <label for="horaPartido">Hora del Partido</label>
-                <input type="text" name="horaPartido" 
+
+                <!-- 
+                    <input type="text" name="horaPartido" 
                     value="<?= (isset($datos['horaPartido'])) ? $datos['horaPartido'] : "" ?>"
-                    placeholder="Introduzca la Hora del Partido (HH:mm:ss)">
+                    placeholder="Introduzca la Hora del Partido (hh:mm)"> 
+                -->
+                  
+                <!--  
+                    <input type="radio" name="horario" value="mañana" /> Mañana <br>
+                    <input type="radio" name="horario" value="tarde" /> Tarde <br>   
+                    <input type="radio" name="horario" value="noche" /> Noche <br> 
+                -->
+
+                        <select name="horaPartido" >
+                            <option value="7:00">7:00</option>
+                            <option value="7:30">7:30</option>
+                            <option value="8:00">8:00</option>
+                            <option value="8:30">8:30</option>
+                            <option value="9:00">9:00</option>
+                            <option value="9:30">9:30</option>
+                            <option value="10:00">10:00</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="12:00">12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00">18:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:00">20:00</option>
+                            <option value="20:30">20:30</option>
+                            <option value="21:00">21:00</option>
+                            <option value="21:30">21:30</option>
+                            <option value="22:00">22:00</option>
+                            <option value="22:30">22:30</option>
+                            <option value="23:00">23:00</option>
+                            <option value="23:30">23:30</option>
+                        </select> 
             </div>
 
             <div>

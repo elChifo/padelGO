@@ -63,17 +63,29 @@ class Partidos extends Controller
                 'idClub' => $_POST["idClub"],
             );
 
-            PartidosModel::insertar($datos);
+            if (!PartidosModel::insertar($datos)) {
 
-            echo $this->view->render('partidos/index', [
-                'partidos' => $partidos,
-                'categorias' => $categorias,
-                'usuarios' => $usuarios,
-                'clubs' => $clubs, 
-                'idUsuario' => $idUsuario,
-                'usuarioPartido' => $usuarioPartido
-            ]);
-             
+                echo $this->view->render('partidos/index', [
+                    'partidos' => $partidos,
+                    'categorias' => $categorias,
+                    'usuarios' => $usuarios,
+                    'clubs' => $clubs, 
+                    'idUsuario' => $idUsuario,
+                    'usuarioPartido' => $usuarioPartido
+                ]); 
+            } 
+            else {
+
+                echo $this->view->render('partidos/index', [
+                    'partidos' => $partidos,
+                    'categorias' => $categorias,
+                    'usuarios' => $usuarios,
+                    'clubs' => $clubs, 
+                    'idUsuario' => $idUsuario,
+                    'usuarioPartido' => $usuarioPartido
+                ]);
+            }
+            
         }
     }
 

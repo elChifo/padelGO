@@ -42,7 +42,6 @@
                 try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
             </script>
 
-
             <div>
             <label for="fechaNac"><br><!--Fecha Nacimiento--></label>
                 <input type="hidden" name="fechaNac" id="fecha" />
@@ -54,7 +53,6 @@
                     </span>                    
                 <p id="error_fecha"></p>
             </div>
-
 
             <script type="text/javascript">
                 Calendar.setup({

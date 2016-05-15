@@ -1,4 +1,4 @@
-<?php $this->layout('layout-tres') ?>
+<?php $this->layout('layout') ?>
 
 <div class="container">
 

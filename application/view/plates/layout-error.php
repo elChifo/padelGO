@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>404 ERROR</title>
 </head>
 <body>
     <h1>HTTP Error 404</h1>

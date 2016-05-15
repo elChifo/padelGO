@@ -1,4 +1,4 @@
-<?php $this->layout('layout-dos') ?>
+<?php $this->layout('layout') ?>
 
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
