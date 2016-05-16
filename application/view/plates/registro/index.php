@@ -69,19 +69,19 @@
             <label for="direccion">Dirección</label>
             <input type="text" name="direccion" 
                     value="<?= (isset($datos['direccion'])) ? $datos['direccion'] : "" ?>"
-                    placeholder="Introduzca la Dirección">
+                    placeholder="Introduzca una Dirección">
             </div>
 
             <div>
             <label for="telefono">Teléfono</label>
-            <input type="text" name="telefono" 
+            <input type="tel" name="telefono" 
                     value="<?= (isset($datos['telefono'])) ? $datos['telefono'] : "" ?>"
                     placeholder="Introduzca el Teléfono">
             </div>
             
             <div>
             <label for="email">Email</label>
-            <input type="text" name="email" 
+            <input type="email" name="email" 
                     value="<?= (isset($datos['email'])) ? $datos['email'] : "" ?>"
                     placeholder="Introduzca el Email">
             </div>

@@ -2,9 +2,9 @@
 
 <div class="container">    
 
-    <h2>Gracias por Registrarse!!!</h2> 
+    <h2>Bienvenido a PadelGo! Gracias por registrarte.</h2> 
 	<p>
-    <a href="/"><h2>Volver</h2></a>
+    <a href="<?php echo URL; ?>">Empezar</a>
 	</p>
 
 </div>
