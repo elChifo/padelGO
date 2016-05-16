@@ -12,11 +12,11 @@
             </legend>             
             
             <section>
-                <label>EMAIL:</label>
-                <input type="text" name="email">
+                <label>Email:</label>
+                <input type="text" name="email" required="required">
                 
-                <label>CLAVE:</label>
-                <input type="password" name="clave">            
+                <label>Password:</label>
+                <input type="password" name="clave" required="required">            
                 
                 <label>&nbsp;</label>
                 <input type="submit" value="Acceder"> 
