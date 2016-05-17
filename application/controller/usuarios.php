@@ -45,6 +45,8 @@ class Usuarios extends Controller
 
         $categorias = UsuariosModel::getCategoria();
 
+        $usuario = UsuariosModel::getIdUsuario($idUsuario);
+
         if(!$_POST) {
 
             $usuario = UsuariosModel::getIdUsuario($idUsuario);
