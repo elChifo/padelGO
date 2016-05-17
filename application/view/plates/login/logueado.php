@@ -7,32 +7,24 @@
     	Bienvenid@ al sistema, 
     	<?= Session::get('nombre') ?> <?= Session::get('apellidos') ?>
     </p>
-	</br>		
+	</br>					
 
-		<?php foreach($usuarios as $value): ?>			
-
-			<?php if($value->idUsuario == Session::get('idUsuario')): ?>
-
-					<h3> SUS DATOS:	</h3> 
-						<ul>
-							<li>NOMBRE:  <?php echo $value->nombre; ?> </li>
-							<li>APELLIDOS:  <?php echo $value->apellidos; ?> </li>
-							<li>SEXO:  <?php echo $value->sexo; ?> </li>
-							<li>FECHA NACIMIENTO:  <?php echo $value->fechaNac; ?> </li>
-							<li>DIRECCIÓN:  <?php echo $value->direccion; ?> </li>
-							<li>TELÉFONO:  <?php echo $value->telefono; ?> </li>
-							<li>EMAIL:  <?php echo $value->email; ?> </li>	
-							<li>CATEGORÍA:  <?php echo $value->idCategoria . "ª Categoría"; ?> </li>	
-						</ul>	
+		<h3> SUS DATOS:	</h3> 
+			<ul>
+				<li>NOMBRE:  <?php echo $usuario->nombre; ?> </li>
+				<li>APELLIDOS:  <?php echo $usuario->apellidos; ?> </li>
+				<li>SEXO:  <?php echo $usuario->sexo; ?> </li>
+				<li>FECHA NACIMIENTO:  <?php echo $usuario->fechaNac; ?> </li>
+				<li>DIRECCIÓN:  <?php echo $usuario->direccion; ?> </li>
+				<li>TELÉFONO:  <?php echo $usuario->telefono; ?> </li>
+				<li>EMAIL:  <?php echo $usuario->email; ?> </li>	
+				<li>CATEGORÍA:  <?php echo $usuario->idCategoria . "ª Categoría"; ?> </li>	
+			</ul>	
 			
-			<?php endif ?>	
-
-		<?php endforeach ?>
-
 	<p>
-    <a href="../usuarios/editar"><h3>Editar los datos de Usuario</h3></a>
-
-    <a href="../usuarios/borrar"><h3>Borrar los datos de Usuario</h3></a>
+    <a href="../usuarios/editar">
+    	<h3>Editar los datos de Usuario</h3>
+    </a>
 	</p>
 
 

@@ -31,9 +31,9 @@
                 </li>
        		
         			<p>
-    					<!-- <a href="../usuarios/editar?idUsuario=<?php echo $value->idUsuario; ?>">
+    					<a href="../usuarios/editar">
     						<h3>Editar los datos de Usuario</h3>
-    					</a> --> 
+    					</a> 
 
     			   		<a href="../usuarios/borrar?idUsuario=<?php echo $value->idUsuario; ?>">
     			   			<h3>Borrar los datos de Usuario</h3>

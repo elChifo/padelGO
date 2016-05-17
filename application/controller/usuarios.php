@@ -37,13 +37,15 @@ class Usuarios extends Controller
         ]);
     }
 
-    public function editarr() 
+    public function editar() 
     {        
         $this->view->addData(['titulo' => 'Editar Usuarios']);
 
-        $idUsuario = $_GET['idUsuario']; 
+        $idUsuario = Session::get('idUsuario'); 
 
         $categorias = UsuariosModel::getCategoria();
+
+        $usuarios = UsuariosModel::getUsuario();
 
         $usuario = UsuariosModel::getIdUsuario($idUsuario);
 
@@ -60,64 +62,39 @@ class Usuarios extends Controller
         }
         else {
 
-            $usuarioNuevo = UsuariosModel::getIdUsuario($_POST('idUsuario'));
+            $usuarioNuevo = $_POST;
 
-            if ($usuarioNuevo['email'] == $_POST['email']) {
+            if ($usuarioNuevo['email'] == $usuario->email) {
 
                 $emailRepetido = false;
             }
-            else if ($usuarioNuevo['email'] != $_POST['email']) {
+            else if ($usuarioNuevo['email'] != $usuario->email) {
 
-                $emailRepetido = UsuariosModel::existeEmail($_POST['email']);
+                UsuariosModel::existeEmail($usuarioNuevo['email']);
+
+                $emailRepetido = UsuariosModel::existeEmail($usuarioNuevo['email']);
             }
 
             if ($emailRepetido == false) { 
 
-                $datos = ['nombre'      => $_POST["nombre"],
-                          'apellidos'   => $_POST["apellidos"],
-                          'sexo'        => $_POST["sexo"],
-                          'fechaNac'    => $_POST["fechaNac"],
-                          'direccion'   => $_POST["direccion"],
-                          'telefono'    => $_POST["telefono"],
-                          'email'       => $_POST["email"],
-                          'clave'       => md5($_POST["clave"]),
-                          'idCategoria' => $_POST["idCategoria"]
-                ];
+                UsuariosModel::editar($usuarioNuevo);
 
-                UsuariosModel::editar($datos); 
+                header("location: /login/logueado");
 
-                echo $this->view->render('usuarios/index', [
-                    'idUsuario'    => $idUsuario,
-                    'usuarios'     => $usuarios,
-                    'categorias'   => $categorias,
-                    'usuario'      => $usuario
-                ]);
             } 
             else {
 
                Session::add('feedback_negative', 
                             'Este Email pertenece a otro Usuario. Por Favor, escoja otro Email.'); 
 
-                $usuario = $_POST;
-
                 echo $this->view->render('usuarios/editar', [
                     'idUsuario'    => $idUsuario,
                     //'usuarios'     => $usuarios,
                     'categorias'   => $categorias,
-                    'usuario'      => $usuario
+                    'usuario'      => $usuarioNuevo
                 ]);
             } 
         }
-
-        $usuario = $_POST;
-
-                echo $this->view->render('usuarios/editar', [
-                    'idUsuario'    => $idUsuario,
-                    //'usuarios'     => $usuarios,
-                    'categorias'   => $categorias,
-                    'usuario'      => $usuario
-        ]);
-
     }
 
 

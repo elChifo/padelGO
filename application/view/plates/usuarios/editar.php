@@ -3,13 +3,20 @@
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
 
-<h2>EDITAR DATOS DE usuario</h2>
+<h2>EDITAR DATOS DE USUARIO</h2>
    
     <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
         <fieldset> 
             <legend>
                 <h2> Datos del Usuario </h2> 
-            </legend>  
+            </legend>
+
+            <p>
+            <label for="idUsuario"></label>
+            <input type="hidden" name="idUsuario" 
+                    value="<?= (isset($usuario->idUsuario)) ? $usuario->idUsuario : "" ?>"
+                    placeholder="Introduzca el Nombre">
+            </p>  
 
             <p>
             <label for="nombre">Nombre </label>
@@ -58,7 +65,7 @@
             </p>
             
             <p>
-            <input type="hidden" name="email" 
+            <input type="email" name="email" 
                     value="<?= (isset($usuario->email)) ? $usuario->email : "" ?>"
                     placeholder="Introduzca el Email">
             </p>

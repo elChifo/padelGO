@@ -12,30 +12,26 @@ class Login extends Controller
     public function logueado()
     {
         $this->view->addData(['titulo' => 'Logueado']);
-       
-        if(LoginModel::logueado($_POST)) {
+
+        $usuarioSesion = Session::get('idUsuario');
+        
+        LoginModel::logueado($_POST);
 
             $email = LoginModel::logueado($_POST);
-            $usuarios = UsuariosModel::getUsuario();
+            $usuario = UsuariosModel::getIdUsuario($usuarioSesion);
 
             if($email == 'admin@admin.com') {
 
                     echo $this->view->render('login/privado', [
-                        'email' => $email,
-                        'usuarios' => $usuarios
+                        'usuario' => $usuario
                     ]);
             }    
             else {                    
                     echo $this->view->render('login/logueado', [
-                        'email' => $email,
-                        'usuarios' => $usuarios
+                        'usuario' => $usuario
                     ]);
             }
-        } 
-
-        else {
-            echo $this->view->render('login/index');
-        }
+        
         
     }
 
