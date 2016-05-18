@@ -45,6 +45,8 @@
 
 								<?php if (!empty($value->jugador1)) : ?>
 									<b><?php echo $value->jugador1; ?></b>
+								<?php elseif (!Session::get('idUsuario')) : ?>
+									<a href="../login/index">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
 								<?php endif ?>
@@ -54,7 +56,9 @@
 
 								<?php if (!empty($value->jugador3)) : ?>
 									<b><?php echo $value->jugador3; ?></b>
-								<?php else : ?>						
+								<?php elseif (!Session::get('idUsuario')) : ?>
+									<a href="../login/index">login</a>
+								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
 								<?php endif ?>
 							</td>
@@ -68,7 +72,9 @@
 
 								<?php if (!empty($value->jugador2)) : ?>
 									<b><?php echo $value->jugador2; ?></b>
-								<?php else : ?>						
+								<?php elseif (!Session::get('idUsuario')) : ?>
+									<a href="../login/index">login</a>
+								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
 								<?php endif ?>
 							</td>
@@ -77,8 +83,10 @@
 
 								<?php if (!empty($value->jugador4)) : ?>
 									<b><?php echo $value->jugador4; ?></b>
-								<?php else : ?>						
-									<a href="partidos/entrar"><b>entrar</b></a>	
+								<?php elseif (!Session::get('idUsuario')) : ?>
+									<a href="../login/index">login</a>
+								<?php else : ?>									
+									<a href="partidos/entrar"><b>entrar</b></a>
 								<?php endif ?>
 							</td>
 

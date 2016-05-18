@@ -8,9 +8,16 @@ class Clubs extends Controller
 
         $clubs = ClubsModel::getClub();
 
-        echo $this->view->render("clubs/index", [
-        		'clubs' => $clubs
-        ]);     
+        // echo $this->view->render("clubs/index", [
+        // 		'clubs' => $clubs
+        // ]);     
+
+        if (!$_POST) {
+
+            echo $this->view->render('clubs/index', [
+                'clubs' => $clubs
+            ]);
+        } 
     }
 
     public function insertar()

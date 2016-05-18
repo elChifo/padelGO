@@ -31,7 +31,8 @@ class Partidos extends Controller
 
         $partidos = PartidosModel::getPartido();
         $categorias = PartidosModel::getCategoria();
-        $usuarios = PartidosModel::getUsuario();
+        $usuarios = UsuariosModel::getUsuario();
+        $usuarioPartido = PartidosModel::getIdUsuario(Session::get('idUsuario'));
         $clubs = PartidosModel::getClub();
 
         $idUsuario = Session::get('idUsuario');
@@ -40,11 +41,9 @@ class Partidos extends Controller
         if(!$_POST) {
 
             echo $this->view->render('partidos/insertar', [
-                'partidos' => $partidos,
                 'categorias' => $categorias,
                 'usuarios' => $usuarios,
                 'clubs' => $clubs, 
-                'idUsuario' => $idUsuario,
                 'usuarioPartido' => $usuarioPartido
             ]);            
         } 

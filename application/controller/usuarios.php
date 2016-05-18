@@ -49,7 +49,7 @@ class Usuarios extends Controller
 
         $idUsuario = Session::get('idUsuario'); 
 
-        if ($idUsuario = 7) {
+        if ($idUsuario == 7) {
 
             $usuario = UsuariosModel::getIdUsuario($_GET['idUsuario']);     
         }
@@ -82,7 +82,7 @@ class Usuarios extends Controller
 
                 UsuariosModel::editar($usuarioNuevo);
 
-                if ($idUsuario = 7) {
+                if ($idUsuario == 7) {
 
                     echo $this->view->render('usuarios/administrar', [
                         'usuarios'     => $usuarios
@@ -91,6 +91,10 @@ class Usuarios extends Controller
                 else {
 
                     header("location: ../login/index");
+
+                    // echo $this->view->render('login/logueado', [
+                    //     'usuario'     => $usuario
+                    // ]);
                 }
 
 

@@ -20,8 +20,9 @@
 		   					<li> Nº Pistas: <?php echo $value->numPistas ?>  </li>	   					
 		   			</ul> 
 		   		</li>
-
 		   </ul>
+		   <br>
+		   		<a href="">Ver Partidos en este club</a>
 		</fieldset>   
 		<?php endforeach ?>
     <?php endif ?>
