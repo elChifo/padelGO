@@ -5,7 +5,7 @@
 
     <h2>ACCESO DE USUARIOS </h2>
 
-    <form  action="/login/logueado" method="post" class="login">
+    <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="login">
         <fieldset> 
             <legend>
                 <h2> Credenciales del Usuario </h2> 

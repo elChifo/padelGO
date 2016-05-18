@@ -19,6 +19,10 @@ class Clubs extends Controller
 
         $clubs = ClubsModel::getClub();
 
+        $idSession = Session::get('idUsuario');
+
+        $usuario = UsuariosModel::getIdUsuario($idSession);
+
         if (!$_POST) {
 
             echo $this->view->render('clubs/insertar', [
@@ -44,7 +48,10 @@ class Clubs extends Controller
             );
 
             if(ClubsModel::insertar($datos)) {
-                echo $this->view->render('login/privado');
+
+                 echo $this->view->render('login/privado', [
+                            'usuario' => $usuario
+                        ]);
             } 
             else {
                 echo $this->view->render('clubs/insertar',array(
@@ -53,48 +60,6 @@ class Clubs extends Controller
                 ));
             }
         }        
-    }
-
-                    
-    public function editar($id = 0)
-    {
-        if(!$_POST){
-
-            $this->view->addData(['titulo' => 'Actividades Extraescolares']);
-
-            $idCentro = CentrosModel::getIdCentro($id);
-            
-            if($idCentro){
-                echo $this->view->render('centros/formulario', array(
-                        'idCentro' => get_object_vars($idCentro),
-                        'accion' => 'editar',
-                 ));
-            } 
-            else {
-                header("location: /centros");
-            }
-        } 
-        else {
-            $datos = array(
-                'nombreCentro' => (isset($_POST["nombreCentro"])) ? $_POST["nombreCentro"] : "",
-                'domicilioCentro' => (isset($_POST["domicilioCentro"])) ? $_POST["domicilioCentro"] : "",
-                'telefonoCentro' => (isset($_POST["telefonoCentro"])) ? $_POST["telefonoCentro"] : "",
-                'contactoCentro' => (isset($_POST["contactoCentro"])) ? $_POST["contactoCentro"] : "",
-                'idCentro' => (isset($_POST["idCentro"])) ? $_POST["idCentro"] : ""
-            );
-
-            if(CentrosModel::editar($datos)) {
-                
-                header('location: /centros');
-            } 
-            else {
-                echo $this->view->render('centros/formulario', array(
-                    'errores' => array('Error al editar'),
-                    'datos'   => $_POST,
-                    'accion'  => 'editar'
-                ));
-            }
-        }
     }
 
 }

@@ -1,14 +1,21 @@
-<?php $this->layout('layout') ?>
+<?php $this->layout('layout') ?>  
+<?php if (Session::get('idUsuario')) { Session::delete('feedback_negative');} ?>
 
 <div class="container">
     
     <h2>LOGIN CORRECTO</h2>
-    <p>
-    	Bienvenid@ al sistema, 
-    	<?= Session::get('nombre') ?> <?= Session::get('apellidos') ?>
-    </p>
-	</br>					
 
+	<?php if ($usuario->sexo == 'Hombre') : ?>
+	    <p>
+	    	Bienvenido al sistema, <?php echo $usuario->nombre; ?>
+	    </p>
+	<?php else : ?>
+		<p>
+			Bienvenida al sistema, <?php echo $usuario->nombre; ?>
+		</p>
+	<?php endif ?>
+
+	</br>					
 		<h3> SUS DATOS:	</h3> 
 			<ul>
 				<li>NOMBRE:  <?php echo $usuario->nombre; ?> </li>
@@ -22,7 +29,7 @@
 			</ul>	
 			
 	<p>
-    <a href="../usuarios/editar">
+    <a href="../usuarios/editar"> 
     	<h3>Editar los datos de Usuario</h3>
     </a>
 	</p>

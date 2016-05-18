@@ -4,36 +4,59 @@ class Login extends Controller
 {
     public function index()    
     {
-        $this->view->addData(['titulo' => 'Login']);    
+        $this->view->addData(['titulo' => 'Login']); 
 
-        echo $this->view->render('login/index');
-    }
+        if (Session::get('idUsuario')) {
 
-    public function logueado()
-    {
-        $this->view->addData(['titulo' => 'Logueado']);
+            $idSession = Session::get('idUsuario');
 
-        $usuarioSesion = Session::get('idUsuario');
-        
-        LoginModel::logueado($_POST);
+            $usuario = UsuariosModel::getIdUsuario($idSession);
 
-            $email = LoginModel::logueado($_POST);
-            $usuario = UsuariosModel::getIdUsuario($usuarioSesion);
+            if ($usuario->email == 'admin@admin.com') {
 
-            if($email == 'admin@admin.com') {
+                        echo $this->view->render('login/privado', [
+                            'usuario' => $usuario
+                        ]);
+                }    
+                else {                    
+                        echo $this->view->render('login/logueado', [
+                            'usuario' => $usuario
+                        ]);
+                } 
+        }        
+        else if (!$_POST) {
 
-                    echo $this->view->render('login/privado', [
-                        'usuario' => $usuario
-                    ]);
-            }    
-            else {                    
-                    echo $this->view->render('login/logueado', [
-                        'usuario' => $usuario
-                    ]);
+            echo $this->view->render('login/index');
+
+        }
+        else {
+
+            if (LoginModel::logueado($_POST)) {
+
+                $idSession = Session::get('idUsuario');
+
+                $usuario = UsuariosModel::getIdUsuario($idSession);
+
+                if ($_POST['email'] == 'admin@admin.com') {
+
+                        echo $this->view->render('login/privado', [
+                            'usuario' => $usuario
+                        ]);
+                }    
+                else {                    
+                        echo $this->view->render('login/logueado', [
+                            'usuario' => $usuario
+                        ]);
+                }    
             }
-        
-        
+            else {
+
+                echo $this->view->render('login/index');
+            }
+        }
     }
+
+    
 
     public function salir()
     {

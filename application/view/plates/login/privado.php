@@ -6,7 +6,11 @@
     <p>
     	Bienvenido a la Página de Administración, 
     	<?= Session::get('nombre') ?> <?= Session::get('apellidos') ?>
+        <a href="../usuarios/editar?idUsuario=<?php echo $usuario->idUsuario; ?>"> 
+            <h3>Editar los datos de Usuario</h3>
+        </a>
     </p>
+    
     </br>                   
 
         <h3> SUS DATOS: </h3> 
@@ -23,12 +27,9 @@
             
     
 	<p>
-    <a href="/clubs/insertar"><h3>Registrar Un Club</h3></a>    
-    <a href="/usuarios/administrar"><h3>Administrar Usuarios</h3></a>
-
-
-    <!-- <a href="/actividades/insertar"><h3>Registrar Una Actividad</h3></a>
-	</p> -->
+        <a href="../clubs/insertar"><h3>Registrar Un Club</h3></a>    
+        <a href="../usuarios/administrar"><h3>Administrar Usuarios</h3></a>
+    </p>
 
 	<!-- <p>
     <a href="/clubs/privado"><h3>Editar Un Club</h3></a>

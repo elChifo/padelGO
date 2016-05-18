@@ -18,12 +18,14 @@ class Usuarios extends Controller
         $this->view->addData(['titulo' => 'Borrar Usuarios']);        
 
         $idUsuario = $_GET['idUsuario'];
+        
+        if (UsuariosModel::borrar($idUsuario)) {
 
-        UsuariosModel::borrar($idUsuario);
-
-        echo $this->view->render('usuarios/borrar', [
-                'idUsuario'     => $idUsuario
-        ]);
+            echo $this->view->render('usuarios/borrar');
+        }
+        else {
+            echo $this->view->render('usuarios/noBorrado');
+        }
 
     }
 
@@ -41,21 +43,24 @@ class Usuarios extends Controller
     {        
         $this->view->addData(['titulo' => 'Editar Usuarios']);
 
-        $idUsuario = Session::get('idUsuario'); 
-
         $categorias = UsuariosModel::getCategoria();
 
         $usuarios = UsuariosModel::getUsuario();
 
-        $usuario = UsuariosModel::getIdUsuario($idUsuario);
+        $idUsuario = Session::get('idUsuario'); 
+
+        if ($idUsuario = 7) {
+
+            $usuario = UsuariosModel::getIdUsuario($_GET['idUsuario']);     
+        }
+        else {
+
+            $usuario = UsuariosModel::getIdUsuario($idUsuario);
+        }
 
         if(!$_POST) {
 
-            $usuario = UsuariosModel::getIdUsuario($idUsuario);
-
             echo $this->view->render('usuarios/editar', [
-                    'idUsuario'    => $idUsuario,
-                    //'usuarios'     => $usuarios,
                     'categorias'   => $categorias,
                     'usuario'      => $usuario
             ]);
@@ -70,8 +75,6 @@ class Usuarios extends Controller
             }
             else if ($usuarioNuevo['email'] != $usuario->email) {
 
-                UsuariosModel::existeEmail($usuarioNuevo['email']);
-
                 $emailRepetido = UsuariosModel::existeEmail($usuarioNuevo['email']);
             }
 
@@ -79,20 +82,30 @@ class Usuarios extends Controller
 
                 UsuariosModel::editar($usuarioNuevo);
 
-                header("location: /login/logueado");
+                if ($idUsuario = 7) {
 
-            } 
+                    echo $this->view->render('usuarios/administrar', [
+                        'usuarios'     => $usuarios
+                    ]);
+                }
+                else {
+
+                    header("location: ../login/index");
+                }
+
+
+            }
             else {
 
                Session::add('feedback_negative', 
                             'Este Email pertenece a otro Usuario. Por Favor, escoja otro Email.'); 
 
                 echo $this->view->render('usuarios/editar', [
-                    'idUsuario'    => $idUsuario,
-                    //'usuarios'     => $usuarios,
                     'categorias'   => $categorias,
-                    'usuario'      => $usuarioNuevo
-                ]);
+                    'usuario'      => $usuario
+            ]);
+
+               
             } 
         }
     }

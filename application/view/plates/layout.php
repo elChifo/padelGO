@@ -41,7 +41,6 @@
     <!-- logo -->
     <div class="logo">Padel GO!
     </div>
-
     <!-- navigation -->
 <?php $this->insert('partials/menu') ?> 
 

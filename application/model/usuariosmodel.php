@@ -37,6 +37,7 @@ class UsuariosModel
     public static function borrar($idUsuario)
     {           
         $conn = Database::getInstance()->getDatabase();
+        $errores_validacion = false; 
 
         $ssql = "DELETE FROM Usuarios WHERE idUsuario=:idUsuario";
         $query = $conn->prepare($ssql);
@@ -51,7 +52,7 @@ class UsuariosModel
         $query = $conn->prepare($ssql);
         $params = [':email' => $email];
         $query->execute($params);
-
+        
         $cuenta = $query->rowCount();
 
         if($cuenta == 1) {
