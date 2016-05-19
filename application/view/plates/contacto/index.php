@@ -2,9 +2,9 @@
 
 <div class="container">
     
-    <head>
-        <link href="public/css/styleform.css" rel="stylesheet" type="text/css"></link>
-        <script  src="public/js/codigoform.js" type="text/javascript"></script>   
+    <head>       
+        <link type="text/css" rel="stylesheet" href="css/styleform.css"  ></link>
+        <script type="text/javascript" src="js/codigoform.js"></script>    
     </head>
 
     <body>
