@@ -20,6 +20,7 @@
         <!-- BOOTSTRAP -->
     <script type="text/javascript" src="<?php echo URL; ?>js/bootstrap.min.js"></script>
 
+    <script type="text/javascript" src="<?php echo URL; ?>js/codigoform.js"></script>   
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-es.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-setup.js"></script>
@@ -35,6 +36,7 @@
     -->
 
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/style.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo URL; ?>css/styleform.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/jcalendar/theme.css">
 </head>
 <body style="background-color: rgba(170, 250, 5, 0.4); ">

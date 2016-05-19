@@ -1,13 +1,7 @@
 <?php $this->layout('layout') ?>
 
 <div class="container">
-    
-    <head>       
-        <link type="text/css" rel="stylesheet" href="css/styleform.css"  ></link>
-        <script type="text/javascript" src="js/codigoform.js"></script>    
-    </head>
 
-    <body>
     <!-- El formulario se envía a una URL externa y muestra los datos que se reciben en el servidor-->
         <form action="http://www.redti.es/tools/dump.php" method="POST" id="registro" onsubmit="return validacion()">
             <fieldset>

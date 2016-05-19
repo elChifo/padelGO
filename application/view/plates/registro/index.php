@@ -3,7 +3,7 @@
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
 
-<h2>INSCRIPCIÓN DE USUARIOS</h2>
+<h2 style="margin-left: 20rem;">INSCRIPCIÓN DE USUARIOS</h2>
    
     <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
         <fieldset> 
