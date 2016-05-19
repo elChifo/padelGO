@@ -16,10 +16,10 @@
     </script>
 
     <!-- our JavaScript -->
-
-        <!-- BOOTSTRAP -->
-    <script type="text/javascript" src="<?php echo URL; ?>js/bootstrap.min.js"></script>
-
+        
+    <!-- BOOTSTRAP 
+        <script type="text/javascript" src="<?php echo URL; ?>js/bootstrap.min.js"></script>
+    -->
     <script type="text/javascript" src="<?php echo URL; ?>js/codigoform.js"></script>   
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-es.js"></script>
