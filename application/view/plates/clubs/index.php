@@ -1,4 +1,5 @@
-<?php $this->layout('layout') ?>
+<?php $this->layout('layout') ?> 
+<?php $idUsuario = Session::get('idUsuario'); ?>
 
 <div class="container">
 
@@ -26,4 +27,9 @@
 		</fieldset>   
 		<?php endforeach ?>
     <?php endif ?>
+
+    <?php if ($idUsuario == 7) : ?>
+		<a href="../login/index"><h4>...Volver a Administración</h4></a>
+	<?php endif ?>	
+
 </div>

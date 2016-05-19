@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/jcalendar/theme.css">
 </head>
-<body>
+<body style="background-color: rgba(170, 250, 5, 0.4); ">
     <!-- logo -->
     <div class="logo">Padel GO!
     </div>

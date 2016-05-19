@@ -5,17 +5,15 @@
 
 <h2>EDITAR DATOS DE USUARIO</h2>
    
-    <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
+    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
         <fieldset> 
             <legend>
                 <h2> Datos del Usuario </h2> 
             </legend>
 
             <p>
-            <label for="idUsuario"></label>
             <input type="hidden" name="idUsuario" 
-                    value="<?= (isset($usuario->idUsuario)) ? $usuario->idUsuario : "" ?>"
-                    placeholder="Introduzca el Nombre">
+                    value="<?= (isset($usuario->idUsuario)) ? $usuario->idUsuario : "" ?>">
             </p>  
 
             <p>

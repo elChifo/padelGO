@@ -4,6 +4,8 @@
 <div class="container">
     
     <h2>ADMINISTRACIÓN DE USUARIOS</h2>
+
+    <h4><a href="<?php echo URL; ?>../registro">Registrar un Nuevo Usuario</a></h4>
     
 		<?php foreach($usuarios as $usuario): ?>
 
@@ -34,13 +36,15 @@
                 </li>
        		
         			<p>
-    					<a href="../usuarios/editar?idUsuario=<?php echo $usuario->idUsuario; ?>">
-    						<h3>Editar los datos de Usuario</h3>
-    					</a> 
+                        <h4>
+        					<a href="../usuarios/editar?idUsuario=<?php echo $usuario->idUsuario; ?>">
+        						Editar los datos de Usuario
+        					</a> &nbsp;&nbsp;&nbsp;
 
-    			   		<a href="../usuarios/borrar?idUsuario=<?php echo $usuario->idUsuario; ?>">
-    			   			<h3>Borrar los datos de Usuario</h3>
-    			   		</a>
+        			   		<a href="../usuarios/borrar?idUsuario=<?php echo $usuario->idUsuario; ?>">
+        			   			Borrar los datos de Usuario
+        			   		</a>
+                        </h4>    
 					</p>
         		
            </ul>
@@ -48,4 +52,6 @@
            <?php endif ?>
 
         <?php endforeach ?>
+        
+        <a href="../login/index"><h4>...Volver a Administración</h4></a>
 </div>

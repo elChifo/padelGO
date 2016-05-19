@@ -14,8 +14,7 @@
 			Bienvenida al sistema, <?php echo $usuario->nombre; ?>
 		</p>
 	<?php endif ?>
-
-	</br>					
+					
 		<h3> SUS DATOS:	</h3> 
 			<ul>
 				<li>NOMBRE:  <?php echo $usuario->nombre; ?> </li>

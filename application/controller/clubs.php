@@ -56,9 +56,7 @@ class Clubs extends Controller
 
             if(ClubsModel::insertar($datos)) {
 
-                 echo $this->view->render('login/privado', [
-                            'usuario' => $usuario
-                        ]);
+                 header("location: ../clubs/index");
             } 
             else {
                 echo $this->view->render('clubs/insertar',array(
@@ -67,6 +65,16 @@ class Clubs extends Controller
                 ));
             }
         }        
+    }
+
+    public function administrar()
+    {
+        $this->view->addData(['titulo' => 'Administrar Clubs']);         
+        $clubs = ClubsModel::getClub(); 
+
+        echo $this->view->render('clubs/administrar', [
+                'clubs'     => $clubs
+        ]);
     }
 
 }

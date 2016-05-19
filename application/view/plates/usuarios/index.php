@@ -8,7 +8,7 @@
 
     <?php else: ?>
         
-        <h2>Disponemos de <?= count($usuarios)-1 ?> Usuarios inscritos en la Base de Datos.</h2> 
+        <h2>Disponemos de <?= count($usuarios)-1 ?> Usuarios en la Base de Datos.</h2> 
 
          <?php foreach($usuarios as $usuario): ?>
            
@@ -40,5 +40,9 @@
 
         <?php endforeach ?> 
 
+    <?php endif ?>
+
+    <?php if ($idUsuario == 7) : ?>
+        <a href="../login/index"><h4>...Volver a Administración</h4></a>
     <?php endif ?>
 </div>

@@ -1,24 +1,7 @@
-<?php $this->layout('layout') ?> <?php $idUsuario = Session::get('usuarioPartido'); ?>
+<?php $this->layout('layout') ?> 
+<?php $idUsuario = Session::get('usuarioPartido'); ?>
 
-
-<div class="container">
-
-	<div class="nuevoPartido">	
-
-		<?php if(isset($idUsuario)) : ?>
-		
-			<a href="partidos/insertar"><h2>Crear un Nuevo Partido</h2></a>
-
-		<?php else: ?>
-	
-			<h2>Para inscribirse en un partido necesita: </h2> 
-
-			<a href="login/index">Loguearse</a> ...						
-			<a href="registro/index">Registrarse</a>
-
-		<?php endif ?>
-
-	</div>
+<div class="container">	
 
     <?php if(count($partidos) == 0): ?>
 
@@ -26,7 +9,24 @@
 
     <?php else: ?>
 
-        <h3>Disponemos de <?= count($partidos) ?> Partidos disponibles.</h3>  
+        <h2>Disponemos de <?= count($partidos) ?> Partidos. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+				     		
+
+		<?php if(isset($idUsuario)) : ?>		
+
+				<a href="partidos/insertar">Crear un Nuevo Partido</a>
+			
+		<?php else: ?>	
+				
+				<login style="font-size: 18px;">
+					Para inscribirse en un partido necesita:&nbsp;&nbsp;&nbsp;&nbsp;  
+					<a href="login/index">Loguearse</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					<a href="registro/index">Registrarse</a>
+				<login/>
+
+		<?php endif ?>
+
+        </h2>  
 
 		<?php foreach($partidos as $value) : ?>
 			
@@ -141,7 +141,7 @@
 							<b>El partido lo ha creado: </b><?php echo $usuario->nombre . ' ' . $usuario->apellidos; ?>
 							<?php if(isset($idUsuario)) : ?>
 		
-								<a href="partidos/entrar"><h4>Entrar al Partido</h4></a>
+							<h4><a href="partidos/entrar">Entrar al Partido</a></h4>
 
 							<?php endif ?>
 
@@ -158,5 +158,9 @@
 		
 		<?php endforeach ?>
     <?php endif ?>
+
+    <?php if ($idUsuario == 7) : ?>
+		<a href="../login/index"><h4>...Volver a Administración</h4></a>
+	<?php endif ?>	
 </div>
 

@@ -6,9 +6,11 @@ class Usuarios extends Controller
     {        
         $this->view->addData(['titulo' => 'Usuarios']);
         $usuarios = UsuariosModel::getUsuario(); 
+        $idUsuario = Session::get('idUsuario');
 
         echo $this->view->render('usuarios/index', [
-                'usuarios'     => $usuarios
+                'usuarios'  => $usuarios,
+                'idUsuario' => $idUsuario
         ]);
     }
 
@@ -81,23 +83,23 @@ class Usuarios extends Controller
             if ($emailRepetido == false) { 
 
                 UsuariosModel::editar($usuarioNuevo);
+                
+                header("location: ../login/index");
 
-                if ($idUsuario == 7) {
+                // $admin = UsuariosModel::getIdUsuario($idUsuario);
 
-                    echo $this->view->render('usuarios/administrar', [
-                        'usuarios'     => $usuarios
-                    ]);
-                }
-                else {
+                // if ($admin->email == 'admin@admin.com') {
 
-                    header("location: ../login/index");
+                //     echo $this->view->render('usuarios/administrar', [
+                //         'usuarios' => $usuarios
+                //     ]);
+                // }
+                // else if ($_GET['idUsuario'] == '7') {
 
-                    // echo $this->view->render('login/logueado', [
-                    //     'usuario'     => $usuario
-                    // ]);
-                }
-
-
+                //     header("location: ../login/index");    
+                // }
+                // else {                    
+                // }
             }
             else {
 
