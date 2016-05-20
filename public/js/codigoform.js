@@ -1,5 +1,6 @@
 function iniciar(){
   //comprueba la existencia de todos los campos
+  //addEventListener sirve para adjuntar un evento de clic a un elemento
   nombre1=document.getElementById("nombre");
   nombre1.addEventListener("input", validacion, false);
   email=document.getElementById("email");
@@ -38,13 +39,43 @@ if(coment.value==""){
   coment.setCustomValidity('');
   coment.style.background='#bbeffa';
 }
+/*
+if(coment.value=="") {
+  check.setCustomValidity('Aceptar los terminos y condiciones');
+}else {
+  check.setCustomValidity('');
+}
+*/
 
-   /* check = document.getElementById("registro_condiciones");
+/*
+   check = document.getElementById("aceptar_condiciones");
     if (!check.checked) {
         alert("Debe seleccionar el checkbox!");
         return false;
-    }*/
+    }
+    return true;
+*/
+
+  
 
 }
+
+ //controla el numero de caracteres permitidos en el text area
+function contar(){ 
+   var max = "150"; 
+         var cadena = document.getElementById("coment").value; 
+         var longitud = cadena.length; 
+
+             if(longitud <= max) { 
+                  document.getElementById("contador").value = max-longitud; 
+             } else { 
+                  document.getElementById("coment").value = cadena.substr(0, max); 
+             } 
+} 
+
+
+
+
+
 //El método addEventListener () concede un controlador de eventos para el elemento especificado.
 window.addEventListener("load", iniciar, false);
