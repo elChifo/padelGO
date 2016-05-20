@@ -2,6 +2,7 @@
 
 class ClubsModel
 {
+    //obtenemos el club mediante la consulta query
     public static function getClub()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -10,7 +11,7 @@ class ClubsModel
         $query->execute();
         return $query->fetchAll();
     }
-
+    //obtenemos el identificador del club mediante la consulta query
     public static function getIdClubs($id) {
         $conn = Database::getInstance()->getDatabase();
         $id = (int) $id;
@@ -24,23 +25,22 @@ class ClubsModel
         return $query->fetch();
 
     }
-
-    public static function insertar($datos)
-    {
+    //insertamos datos en el club mediante el formulario
+    public static function insertar($datos)  {
         $conn = Database::getInstance()->getDatabase();
 
         $errores_validacion = false;
 
         if(empty($datos['nombreClub'])) {
-            Session::add('feedback_negative', "No he recibido el Nombre del Club");
+            Session::add('feedback_negative', "No se he recibido el Nombre del Club");
             $errores_validacion = true;
         }
         if(empty($datos['direccionClub'])) {
-            Session::add('feedback_negative', "No he recibido la Dirección del Club");
+            Session::add('feedback_negative', "No se ha recibido la Dirección del Club");
             $errores_validacion = true;
         }
         if(empty($datos['numPistas'])) {
-            Session::add('feedback_negative', "No he recibido el Nº de Pistas del Club");
+            Session::add('feedback_negative', "No se ha recibido el Nº de Pistas del Club");
             $errores_validacion = true;
         }
         
@@ -68,6 +68,7 @@ class ClubsModel
         }
     }   
 
+    //obtenemos los datos del club ya existentes para modificarlos
     public static function editar($datos){
 
         $conn = Database::getInstance()->getDatabase();
@@ -75,27 +76,27 @@ class ClubsModel
         $errores_validacion = false;
 
         if(empty($datos['idCentro'])){
-            Session::add('feedback_negative', 'No he recibido el Centro');
+            Session::add('feedback_negative', 'No se ha recibido el Centro');
             $errores_validacion = true;
         }
 
         if(empty($datos['nombreCentro'])){
-            Session::add('feedback_negative', "No he recibido el Nombre del Centro");
+            Session::add('feedback_negative', "No se ha recibido el Nombre del Centro");
             $errores_validacion = true;
         }
 
         if(empty($datos['domicilioCentro'])){
-            Session::add('feedback_negative', "No he recibido el Domicilio del Centro");
+            Session::add('feedback_negative', "No se ha recibido el Domicilio del Centro");
             $errores_validacion = true;
         }
 
         if(empty($datos['telefonoCentro'])){
-            Session::add('feedback_negative', "No he recibido el Teléfono del Centro");
+            Session::add('feedback_negative', "No se ha recibido el Teléfono del Centro");
             $errores_validacion = true;
         }
 
         if(empty($datos['contactoCentro'])){
-            Session::add('feedback_negative', "No he recibido el Contacto del Centro");
+            Session::add('feedback_negative', "No se ha recibido el Contacto del Centro");
             $errores_validacion = true;
         }
 
@@ -118,7 +119,7 @@ class ClubsModel
             $query->execute($parameters);
             $count = $query->rowCount();
             if($count == 1){
-                Session::add('feedback_positive', 'Editado con éxito, gracias!!!');
+                Session::add('feedback_positive', 'Datos actualizados.');
                 return true;
             }
             Session::add('feedback_positive', 'Actualizadas 0 casillas');
