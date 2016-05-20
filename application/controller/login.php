@@ -2,6 +2,7 @@
 
 class Login extends Controller
 {
+    //funcion principal. Comprueba el acceso del usuario
     public function index()    
     {
         $this->view->addData(['titulo' => 'Login']); 
@@ -57,7 +58,7 @@ class Login extends Controller
     }
 
     
-
+    //finaliza la sesion y redirecciona a la raiz de la web
     public function salir()
     {
         Session::destroy();
