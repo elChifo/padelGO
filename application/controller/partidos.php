@@ -2,6 +2,7 @@
 
 class Partidos extends Controller
 {
+    //funcion principal. Comprueba el acceso del usuario
    	public function index()
    	{
         $this->view->addData(['titulo' => 'Partidos']);
@@ -25,6 +26,7 @@ class Partidos extends Controller
         ]);
     }
 
+    //introduce los nuevos datos para un nuevo partido
     public function insertar()
     {                   
         $this->view->addData(['titulo' => 'Nuevo Partido']);
@@ -48,7 +50,7 @@ class Partidos extends Controller
             ]);            
         } 
         else {            
-
+            //datos obligatorios que se necesitan para poder forman un partido
             $datos = array(                              
                 'tipoPartido' => $_POST["tipoPartido"],
                 'fechaPartido' => $_POST["fechaPartido"],
@@ -88,11 +90,12 @@ class Partidos extends Controller
         }
     }
 
+     //obtenemos los datos ya existentes en la base de datos para poder modificarlos
     public function editar($id = 0)
     {
         if(!$_POST){
 
-            $this->view->addData(['titulo' => 'Actividades Extraescolares']);
+            $this->view->addData(['titulo' => 'Padel GO']);
 
             $centros = ActividadesModel::getCentro();
             $idActividad = ActividadesModel::getIdActividad($id);
@@ -133,7 +136,7 @@ class Partidos extends Controller
 
     public function privado()
     {
-        $this->view->addData(['titulo' => 'Actividades Extraescolares']);
+        $this->view->addData(['titulo' => 'Padel GO']);
 
         $actividades = ActividadesModel::getActividad();
         $centros = ActividadesModel::getCentro();
