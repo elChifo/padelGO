@@ -2,6 +2,7 @@
 
 class RegistroModel
 {
+    //obtenemos los datos de la categoría mediante la consulta query
     public static function getCategoria()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -11,6 +12,7 @@ class RegistroModel
         return $query->fetchAll();
     }
 
+     //insertamos los datos mediante formulario con sus validaciones
     public static function insertar($datos)
     {
         $conn = Database::getInstance()->getDatabase();
@@ -18,35 +20,35 @@ class RegistroModel
         $errores_validacion = false;
      
         if(empty($datos['nombre'])){
-            Session::add('feedback_negative', "No he recibido el Nombre del Usuario");
+            Session::add('feedback_negative', "No se ha recibido el Nombre del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['apellidos'])){
-            Session::add('feedback_negative', "No he recibido los Apellidos del Usuario");
+            Session::add('feedback_negative', "No se ha recibido los Apellidos del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['sexo'])) {
-            Session::add('feedback_negative', "No he recibido el Sexo del Usuario");
+            Session::add('feedback_negative', "No se ha recibido el Sexo del Usuario");
             $errores_validacion = true;
         }  
         if(empty($datos['fechaNac'])){
-            Session::add('feedback_negative', "No he recibido la Fecha de Nacimiento del Usuario");
+            Session::add('feedback_negative', "No se ha recibido la Fecha de Nacimiento del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['direccion'])){
-            Session::add('feedback_negative', "No he recibido la Dirección del Usuario");
+            Session::add('feedback_negative', "No se ha recibido la Dirección del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['telefono'])){
-            Session::add('feedback_negative', "No he recibido el Teléfono del Usuario");
+            Session::add('feedback_negative', "No se ha recibido el Teléfono del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['email'])){
-            Session::add('feedback_negative', "No he recibido el Email del Usuario");
+            Session::add('feedback_negative', "No se ha recibido el Email del Usuario");
             $errores_validacion = true;
         } 
         if(empty($datos['clave'])){
-            Session::add('feedback_negative', "No he recibido la Clave del Usuario");
+            Session::add('feedback_negative', "No se ha recibido la Clave del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['idCategoria'])){
@@ -83,6 +85,7 @@ class RegistroModel
         }
     } 
 
+    //comprobamos el email
     public static function existeEmail($email)
     {
         $conn = Database::getInstance()->getDatabase();
