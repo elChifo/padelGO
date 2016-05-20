@@ -2,9 +2,10 @@
 
 class Buscar extends Controller
 {
+    //funcion principal. Comprueba centros, actividades, alumnos y sus IDs correspondientes
     public function index()
     {
-        $this->view->addData(['titulo' => 'Actividades Extraescolares']);
+        $this->view->addData(['titulo' => 'Padel GO!']);
 
         $centros = BuscarModel::getCentro();
         $actividades = BuscarModel::getActividad();
@@ -43,8 +44,6 @@ class Buscar extends Controller
        
                 
     } 
-
-
 
    
 
