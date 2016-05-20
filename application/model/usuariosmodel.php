@@ -2,6 +2,7 @@
 
 class UsuariosModel
 {
+     //obtenemos la categoria mediante la consulta query
     public static function getCategoria()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -11,6 +12,7 @@ class UsuariosModel
         return $query->fetchAll();
     }
 
+     //obtenemos el usuario mediante la consulta query
         public static function getUsuario()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -20,6 +22,7 @@ class UsuariosModel
         return $query->fetchAll();
     }
 
+     //obtenemos el id del usuario mediante la consulta query
     public static function getIdUsuario($id) {
         $conn = Database::getInstance()->getDatabase();
         $id = (int) $id;
@@ -33,7 +36,7 @@ class UsuariosModel
         return $query->fetch();
     }
 
-
+     //consulta query para borrar todos los campos de un usuario en la base de datos
     public static function borrar($idUsuario)
     {           
         $conn = Database::getInstance()->getDatabase();
@@ -45,6 +48,7 @@ class UsuariosModel
         $query->execute($params);
     }
     
+     //comprobamos el email mediante la consulta query
     public static function existeEmail($email)
     {        
         $conn = Database::getInstance()->getDatabase();
@@ -65,7 +69,7 @@ class UsuariosModel
         }
     }
 
-
+     //obtenemos los datos ya existentes en la base de datos para poder modificarlos
     public static function editar($datos)
     {
         $conn = Database::getInstance()->getDatabase();
@@ -73,45 +77,46 @@ class UsuariosModel
         $errores_validacion = false;        
      
         if(empty($datos['nombre'])){
-            Session::add('feedback_negative', "No he recibido el Nombre del Usuario");
+            Session::add('feedback_negative', "No se ha recibido el Nombre del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['apellidos'])){
-            Session::add('feedback_negative', "No he recibido los Apellidos del Usuario");
+            Session::add('feedback_negative', "No se ha recibido los Apellidos del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['sexo'])) {
-            Session::add('feedback_negative', "No he recibido el Sexo del Usuario");
+            Session::add('feedback_negative', "No se ha recibido el Sexo del Usuario");
             $errores_validacion = true;
         }  
         if(empty($datos['fechaNac'])){
-            Session::add('feedback_negative', "No he recibido la Fecha de Nacimiento del Usuario");
+            Session::add('feedback_negative', "No se ha recibido la Fecha de Nacimiento del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['direccion'])){
-            Session::add('feedback_negative', "No he recibido la Dirección del Usuario");
+            Session::add('feedback_negative', "No se ha recibido la Dirección del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['telefono'])){
-            Session::add('feedback_negative', "No he recibido el Teléfono del Usuario");
+            Session::add('feedback_negative', "No se ha recibido el Teléfono del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['email'])){
-            Session::add('feedback_negative', "No he recibido el Email del Usuario");
+            Session::add('feedback_negative', "No se ha recibido el Email del Usuario");
             $errores_validacion = true;
         } 
         if(empty($datos['clave'])){
-            Session::add('feedback_negative', "No he recibido la Clave del Usuario");
+            Session::add('feedback_negative', "No se ha recibido la Clave del Usuario");
             $errores_validacion = true;
         }
         if(empty($datos['idCategoria'])){
-            Session::add('feedback_negative', "No he recibido la Categoría del Usuario");
+            Session::add('feedback_negative', "No se ha recibido la Categoría del Usuario");
             $errores_validacion = true;
         }       
         
         if($errores_validacion) {
             return false;
         }
+         //actualizamos los datos nuevos y hacemos el registro en la base de datos
         else {
             $params = array(
                 ':idUsuario'   => $datos['idUsuario'],   
@@ -144,37 +149,7 @@ class UsuariosModel
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
 
 
 
