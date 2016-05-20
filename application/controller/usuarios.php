@@ -2,6 +2,7 @@
 
 class Usuarios extends Controller
 {
+    //funcion principal. Comprueba el usuario
     public function index() 
     {        
         $this->view->addData(['titulo' => 'Usuarios']);
@@ -14,7 +15,7 @@ class Usuarios extends Controller
         ]);
     }
 
-
+    //Selecciona un usuario y lo borra de la base de datos
     public function borrar()
     {
         $this->view->addData(['titulo' => 'Borrar Usuarios']);        
@@ -31,6 +32,7 @@ class Usuarios extends Controller
 
     }
 
+    //?
     public function administrar()
     {
         $this->view->addData(['titulo' => 'Administrar Usuarios']);         
@@ -41,6 +43,7 @@ class Usuarios extends Controller
         ]);
     }
 
+    //Recoge los datos del usuario, los muestra y permite actualizarlos
     public function editar() 
     {        
         $this->view->addData(['titulo' => 'Editar Usuarios']);
@@ -116,7 +119,7 @@ class Usuarios extends Controller
         }
     }
 
-
+    //comprueba la validez del numero de telefono
     public function formatoTelefono($numero) 
     {
         $telefono = $numero[0] . $numero[1] . $numero[2] ." . ". 
@@ -126,6 +129,7 @@ class Usuarios extends Controller
         return $telefono;
     }
 
+    //comprueba que la fecha introducida está en el formato correcto
     public function formatoFecha($fecha) 
     {
         $date = explode("-", $fecha);
