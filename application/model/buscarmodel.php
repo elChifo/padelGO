@@ -2,7 +2,7 @@
 
 class BuscarModel
 {
-
+    //obtenemos los datos del centro mediante la consulta query
     public static function getCentro()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -11,7 +11,7 @@ class BuscarModel
         $query->execute();
         return $query->fetchAll();
     }
-    
+    //obtenemos los datos de la actividad mediante la consulta query
     public static function getActividad()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -20,7 +20,7 @@ class BuscarModel
         $query->execute();
         return $query->fetchAll();
     }
-
+    //obtenemos los datos del alumno mediante la consulta query
     public static function getAlumno()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -29,8 +29,6 @@ class BuscarModel
         $query->execute();
         return $query->fetchAll();
     }  
-
-   
 
 }
 
