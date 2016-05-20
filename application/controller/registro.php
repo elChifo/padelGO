@@ -2,6 +2,7 @@
 
 class Registro extends Controller
 {
+    //funcion principal. Comprueba el acceso de nuevo usuario
     public function index()
     {            
         $this->view->addData(['titulo' => 'Registro']);
@@ -14,7 +15,7 @@ class Registro extends Controller
                      'categorias' => $categorias]);
         } 
         else {
-
+            //recoge todos los datos obligatorios en el formulario de registro
             $datos = array(
                  'nombre'      => $_POST["nombre"],
                  'apellidos'   => $_POST["apellidos"],
@@ -24,7 +25,7 @@ class Registro extends Controller
                  'telefono'    => $_POST["telefono"],            
                  'idCategoria' => $_POST["idCategoria"]
             );
-
+            //comprueba si el usuario ya está registrado en la base de datos
             if (RegistroModel::existeEmail($_POST["email"])) {
 
                 Session::add('feedback_negative', "El Email ya está registrado");
@@ -35,7 +36,7 @@ class Registro extends Controller
                          ]);
             }
             else {
-
+                //si todos los campos son correctos se completa el registro
                 $registro = array(
                     'nombre'      => $_POST["nombre"],
                     'apellidos'   => $_POST["apellidos"],
@@ -53,9 +54,9 @@ class Registro extends Controller
                     echo $this->view->render('registro/registrado');
                 } 
                 else {
-
-                    Session::add('feedback_negative', "El Registro NO ha sido posible... Inténtelo de nuevo");
-
+                    //error al hacer el registro
+                    Session::add('feedback_negative', "El Registro no ha sido posible, Inténtelo de nuevo");
+                    //si se produce el fallo, salta la alerta y redirecciona
                     echo $this->view->render('registro/index', [
                             'datos'      => $datos,
                             'categorias' => $categorias
@@ -66,19 +67,6 @@ class Registro extends Controller
     }
 }
         
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
