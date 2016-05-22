@@ -51,7 +51,7 @@ class LoginModel
             Session::add('feedback_negative', 'La Clave Login no coincide');
             return false;
         }
-        //se comprueban los datos recibidos
+        //se guardan en $_SESSION los datos del usuario logueado
         Session::set('idUsuario', $usuario->idUsuario);
         Session::set('nombre', $usuario->nombre);
         Session::set('apellidos', $usuario->apellidos);
@@ -69,36 +69,6 @@ class LoginModel
         $query->execute();
         return $query->fetchAll();
     }
-
-
-// METODOS PARA LISTAR LOS DATOS DE LOS USUARIOS
-    /*    
-    public static function getTutor()
-    {
-        $conn = Database::getInstance()->getDatabase();
-        $ssql = "SELECT * FROM Tutores";
-        $query = $conn->prepare($ssql);
-        $query->execute();
-        return $query->fetchAll();
-    }
-
-     public static function getCentro()
-    {
-        $conn = Database::getInstance()->getDatabase();
-        $ssql = "SELECT * FROM Centros";
-        $query = $conn->prepare($ssql);
-        $query->execute();
-        return $query->fetchAll();
-    }
-    public static function getActividad()
-    {
-        $conn = Database::getInstance()->getDatabase();
-        $ssql = "SELECT * FROM Actividades";
-        $query = $conn->prepare($ssql);
-        $query->execute();
-        return $query->fetchAll();
-    }
-    */
 
 
 }

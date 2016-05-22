@@ -1,4 +1,5 @@
 <?php $this->layout('layout') ?>
+<?php $idUsuario = Session::get('usuarioPartido'); ?>
 
 <div class="container">
 

@@ -54,7 +54,7 @@ class Usuarios extends Controller
 
         $idUsuario = Session::get('idUsuario'); 
 
-        if ($idUsuario == 7) {
+        if ($idUsuario == 1) {
 
             $usuario = UsuariosModel::getIdUsuario($_GET['idUsuario']);     
         }

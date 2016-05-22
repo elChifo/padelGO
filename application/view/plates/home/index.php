@@ -2,7 +2,8 @@
 <div class="container">
 	<div class="col-md-12">
 		<div class="col-md-4">
-			<h2> PRESENTACIÓN </h2>
+		<h6> .</h6>
+		<h3> PRESENTACIÓN </h3>
 		    <p><?= $presentacion ?></p>
 		</div>
 		<div class="col-md-4">	

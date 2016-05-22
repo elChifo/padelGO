@@ -4,31 +4,35 @@
 <div class="container">
 
 	<?php if(count($clubs) == 0): ?>
-
-        <p>No se encuentran Clubs en la Base de Datos</p>
+		<h6> .</h6>
+        <h3>No se encuentran Clubs en la Base de Datos</h3>
 
     <?php else: ?>
-		   	
-        <h2>Disponemos de <?= count($clubs) ?> clubs en la ciudad.</h2>       
+		<h6> .</h6>	   	
+        <h3>Disponemos de <?= count($clubs) ?> clubs en la ciudad. </h3>  
+
+	<?php endif ?>
 
 		<?php foreach($clubs as $value): ?>
 		<fieldset>
-		   <ul> 
-		   		<li> 
-		   				Nombre Club: <strong> <?php echo $value->nombreClub ?> </strong>  
+		    <ul> 
+		   		<li> Nombre Club:
+		   			<strong> 
+		   				<?php echo $value->nombreClub ?> &nbsp;&nbsp;&nbsp; 
+		   				<a href="">Ver Partidos</a>
+		   			</strong> 
 		   			<ul>		   					
-		   					<li> Direccion : <?php echo $value->direccionClub ?>  </li>
-		   					<li> Nº Pistas: <?php echo $value->numPistas ?>  </li>	   					
+	   					<li> Direccion : <?php echo $value->direccionClub ?>  </li>
+	   					<li> Nº Pistas: <?php echo $value->numPistas ?>  </li>	   					
 		   			</ul> 
 		   		</li>
-		   </ul>
-		   <br>
-		   		<a href="">Ver Partidos en este club</a>
+		    </ul>
+		   		
 		</fieldset>   
 		<?php endforeach ?>
-    <?php endif ?>
+    
 
-    <?php if ($idUsuario == 7) : ?>
+    <?php if ($idUsuario == 1) : ?>
 		<a href="../login/index"><h4>...Volver a Administración</h4></a>
 	<?php endif ?>	
 

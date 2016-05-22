@@ -5,23 +5,35 @@
 
     <?php if(count($partidos) == 0): ?>
 
-        <p>No se encuentran Partidos Disponible</p>
+		<h6> .</h6>
+        <h3>No se encuentran Partidos Disponible</h3>
 
     <?php else: ?>
-
-        <h2>Disponemos de <?= count($partidos) ?> Partidos. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+		<h6> .</h6>
+        <h3>Disponemos de <?= count($partidos) ?> Partidos. </h3> <br>   
 				     		
+	<?php endif ?>
 
-		<?php if(isset($idUsuario)) : ?>		
+		<?php if(isset($idUsuario)) : ?>	
 
-				<a href="partidos/insertar">Crear un Nuevo Partido</a>
-			
+				<login style="font-size: 18px;">	
+					<a href="partidos/insertar">Crear un Nuevo Partido</a>
+				<login/>
+				
 		<?php else: ?>	
 				
 				<login style="font-size: 18px;">
-					Para inscribirse en un partido necesita:&nbsp;&nbsp;&nbsp;&nbsp;  
-					<a href="login/index">Loguearse</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-					<a href="registro/index">Registrarse</a>
+					Para inscribirse en un partido necesita:&nbsp;&nbsp;&nbsp;&nbsp;
+					<button type="button" class="botonlogin" title="Registrarse" 
+                    	onclick="window.location.href='<?php echo URL; ?>registro'">Registrarse
+	                </button>
+	                <button type="button" class="botonlogin" title="Iniciar Sesión" 
+	                    onclick="window.location.href='<?php echo URL; ?>login'">Iniciar Sesión
+	                </button>
+					<!-- 
+						<a href="login/">Loguearse</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						<a href="registro/">Registrarse</a> 
+					-->
 				<login/>
 
 		<?php endif ?>
@@ -46,7 +58,7 @@
 								<?php if (!empty($value->jugador1)) : ?>
 									<b><?php echo $value->jugador1; ?></b>
 								<?php elseif (!Session::get('idUsuario')) : ?>
-									<a href="../login/index">login</a>
+									<a href="../login/">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
 								<?php endif ?>
@@ -57,7 +69,7 @@
 								<?php if (!empty($value->jugador3)) : ?>
 									<b><?php echo $value->jugador3; ?></b>
 								<?php elseif (!Session::get('idUsuario')) : ?>
-									<a href="../login/index">login</a>
+									<a href="../login/">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
 								<?php endif ?>
@@ -73,7 +85,7 @@
 								<?php if (!empty($value->jugador2)) : ?>
 									<b><?php echo $value->jugador2; ?></b>
 								<?php elseif (!Session::get('idUsuario')) : ?>
-									<a href="../login/index">login</a>
+									<a href="../login/">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
 								<?php endif ?>
@@ -84,7 +96,7 @@
 								<?php if (!empty($value->jugador4)) : ?>
 									<b><?php echo $value->jugador4; ?></b>
 								<?php elseif (!Session::get('idUsuario')) : ?>
-									<a href="../login/index">login</a>
+									<a href="../login/">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
 								<?php endif ?>
@@ -157,9 +169,9 @@
 			</div>
 		
 		<?php endforeach ?>
-    <?php endif ?>
+    
 
-    <?php if ($idUsuario == 7) : ?>
+    <?php if ($idUsuario == 1) : ?>
 		<a href="../login/index"><h4>...Volver a Administración</h4></a>
 	<?php endif ?>	
 </div>

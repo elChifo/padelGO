@@ -4,15 +4,17 @@
        
     <?php if(count($usuarios) == 0): ?>
 
-        <p>No se encuentran Usuarios en la Base de Datos</p>
+        <h6> .</h6>
+        <h3>No se encuentran Usuarios en la Base de Datos</h3>
 
     <?php else: ?>
         
-        <h2>Disponemos de <?= count($usuarios)-1 ?> Usuarios en la Base de Datos.</h2> 
+        <h6> .</h6>
+        <h3>Disponemos de <?= count($usuarios)-1 ?> Usuarios en la Base de Datos.</h3> 
 
          <?php foreach($usuarios as $usuario): ?>
            
-           <?php if ($usuario->email != 'admin@admin.com'): ?>
+           <?php if ($usuario->idUsuario != 1): ?>
 
                <fieldset>
            <ul> 
@@ -42,7 +44,7 @@
 
     <?php endif ?>
 
-    <?php if ($idUsuario == 7) : ?>
+    <?php if ($idUsuario == 1) : ?>
         <a href="../login/index"><h4>...Volver a Administración</h4></a>
     <?php endif ?>
 </div>
