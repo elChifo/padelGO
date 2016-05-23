@@ -1,9 +1,14 @@
-Quitar del index el "quienes somos" y añadirlo como la politica de privacidad en una seccion llamada 
+
+
+-Quitar del index el "quienes somos" y añadirlo como la politica de privacidad en una seccion llamada 
 
 FAQ. Poner dentro de contacto en el footer por ejemplo.
 
-Hacer DFD
+-Footer: poner los datos de un centro como si fuese nuestra sede, para la dirección etc...
+-Hacer DFD
 
-Crear usuario admin@admin.es con contraseña: admin
+-Crear usuario admin@admin.es con contraseña: admin
 
-Poner nuestro usuario personal para hacer pruebas y que los datos en la base sean los mas realistas posibles.
+-Poner nuestro usuario personal para hacer pruebas y que los datos en la base sean los mas realistas posibles.
+
+-Mejorar formulario
