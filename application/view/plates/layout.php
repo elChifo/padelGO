@@ -26,13 +26,14 @@
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-es.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-setup.js"></script>
-        
-    <!-- CSS -->
+    
+    <!-- CSS -->   
+    <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/estilo.css">
+
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/bootstrap.min.css">
 
-    <!--<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/style.css">-->    
-    <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/estilo.css">
+    <!--<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/style.css">--> 
 
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/jcalendar/theme.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/font-awesome.min.css">
@@ -51,12 +52,11 @@
             <?php $this->insert('partials/menu') ?> 
         </div>
 
-
         <div class="col-md-2 zona-login">
 
             <?php if (isset($_SESSION['idUsuario'])) : ?> 
 
-                <p> Estas logueado como: 
+                <p> Bienvenid@: 
                     <strong class="pColor">
                         <?= Session::get('nombre') ?> <?= Session::get('apellidos') ?> 
                     </strong>
@@ -82,6 +82,7 @@
             <?php endif ?>
         </div>
     </div>
+    
     <?= $this->section('content') ?>
     <!-- footer -->
     <div class="col-md-12 pie">

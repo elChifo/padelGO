@@ -1,6 +1,4 @@
 
-<div class="navigation">
-
     <a title="INICIO" href="<?php echo URL; ?>">
     	<img src="<?php echo URL; ?>img/menu/inicio.png" alt="INICIO" height="85" class="imagen-menu1"/>
     </a>
@@ -24,5 +22,3 @@
     <a title="CONTACTO" href="<?php echo URL; ?>contacto">
     	<img src="<?php echo URL; ?>img/menu/contacto.png" alt="CONTACTO" height="85" class="imagen-menu6" />
     </a>
-
-</div>

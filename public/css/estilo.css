@@ -13,19 +13,28 @@ body {
 }
 
 .menu {
-	margin-top: 7px;
 	float: left;
+	width: 40rem;
+	padding: 1.5rem 0rem;
 }
+
+.menu a img{
+	width: 6rem;
+}
+
 .logo {
-	margin-top: 7px;
-	float: left;
-	padding-bottom: 7px;
+	float: left;	
+	width: 13rem;
+	padding: 1.5rem;
+
 }
 
 .cabecera {
 	background-image: url(../img/fondo-web5.jpg); 
 	background-size: 100%;
 	border-bottom: solid 5px #c5f619;
+	height: 10rem;
+	width: 100%;
 }
 
 .pie {
@@ -40,14 +49,20 @@ body {
 }
 
 .zona-login {
-	margin-top: 7px;
 	color: white;
-	float: right;
+	float: left;
+	width: 15rem;
 	text-align: right;
+	padding: 1.5rem;
 }
 
 .enlaceLogin {
 	color: white;
+}
+
+.enlaceLogin img {	
+	height: 7% !important;
+	width: 7% !important;
 }
 
 .enlaceLogin:hover {
