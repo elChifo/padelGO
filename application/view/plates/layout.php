@@ -16,25 +16,21 @@
         var url = "<?php echo URL; ?>";
     </script>
 
-    <!-- our JavaScript -->    
-    <script type="text/javascript" src="<?php echo URL; ?>js/codigoform.js"></script>
+    <!-- our JavaScript -->
 
     <!-- BOOTSTRAP -->
     <script type="text/javascript" src="<?php echo URL; ?>js/bootstrap.min.js"></script>
 
-    <!-- JCALENDAR -->
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-es.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>js/jcalendar/calendar-setup.js"></script>
-    
-    <!-- CSS -->   
+        
+    <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/bootstrap.min.css">
+
+    <!--<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/style.css">-->
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/estilo.css">
-
-    <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/bootstrap.min.css">
-
-    <!--<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/style.css">--> 
-
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/jcalendar/theme.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/font-awesome.css">
@@ -44,90 +40,83 @@
     <div class="col-md-12 cabecera">
         <!-- logo -->
         <div class="col-md-2 logo">
-             <a title="Inicio" href="<?php echo URL; ?>">
-                <img src="<?php echo URL; ?>img/home.png" alt="Padel GO!" height="100">
-            </a>
+             <a title="Inicio" href="<?php echo URL; ?>"><img src="<?php echo URL; ?>img/home.png" alt="Padel GO!" height="100"></a>
         </div>
         <div class="col-md-8 menu">
             <?php $this->insert('partials/menu') ?> 
         </div>
-
         <div class="col-md-2 zona-login">
-
             <?php if (isset($_SESSION['idUsuario'])) : ?> 
-
-                <p> Bienvenid@: 
-                    <strong class="pColor">
-                        <?= Session::get('nombre') ?> <?= Session::get('apellidos') ?> 
-                    </strong>
-                </p>
-
-                <a class="enlaceLogin" title="Mi cuenta" href="<?php echo URL; ?>login">Mi cuenta 
-                    <img src="<?php echo URL; ?>img/micuenta.png" alt="Mi cuenta" height="15" />
-                </a>
-                <br>
-                <button type="button" class="botonlogin" title="Cerrar Sesión" 
-                    onclick="window.location.href='<?php echo URL; ?>login/salir'"> Cerrar Sesión
-                </button>
-
+                <p>Estas logueado como: <b class="pColor"><?= Session::get('nombre') ?></b></p>
+                <a class="enlaceLogin" title="Mi cuenta" href="<?php echo URL; ?>login">Mi cuenta <img src="<?php echo URL; ?>img/micuenta.png" alt="Mi cuenta" height="15" /></a><br>
+                <button type="button" class="botonlogin" title="Cerrar Sesión" onclick="window.location.href='<?php echo URL; ?>login/salir'">Cerrar Sesión</button>
             <?php else : ?>
-
-                <button type="button" class="botonlogin" title="Registrarse" 
-                    onclick="window.location.href='<?php echo URL; ?>registro'">Registrarse
-                </button>
-                <button type="button" class="botonlogin" title="Iniciar Sesión" 
-                    onclick="window.location.href='<?php echo URL; ?>login'">Iniciar Sesión
-                </button>
-
+                <button type="button" class="botonlogin" title="Registrarse" onclick="window.location.href='<?php echo URL; ?>registro'">Registrarse</button>
+                <button type="button" class="botonlogin" title="Iniciar Sesión" onclick="window.location.href='<?php echo URL; ?>login'">Iniciar Sesión</button>
             <?php endif ?>
         </div>
     </div>
-    
     <?= $this->section('content') ?>
     <!-- footer -->
     <div class="col-md-12 pie">
         <div class="col-md-3 divpie">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin vestibulum purus, sed viverra purus tristique suscipit. Quisque ullamcorper nunc congue mi porttitor posuere. Nam sem lectus, commodo elementum porta non, suscipit ac dui. Donec pellentesque felis magna, vel varius purus venenatis ac. Phasellus eu diam vel elit gravida fringilla a sed sem. Duis aliquet a nibh non vehicula. Nullam fringilla euismod justo, vel interdum quam elementum ac. 
+            <p class="pFooter">SECCIONES WEB</p>
+            <a href="<?php echo URL; ?>" title="Ir a INICIO">INICIO</a><br>
+            <a href="<?php echo URL; ?>partidos" title="Ir a PARTIDOS">PARTIDOS</a><br>
+            <a href="<?php echo URL; ?>noticias" title="Ir a NOTICIAS">NOTICIAS</a><br>
+            <a href="<?php echo URL; ?>usuarios" title="Ir a USUARIOS">USUARIOS</a><br>
+            <a href="<?php echo URL; ?>clubs" title="Ir a CLUBS">CLUBS</a><br>
+            <a href="<?php echo URL; ?>contacto" title="Ir a CONTACTO">CONTACTO</a><br>
+            <a href="<?php echo URL; ?>login" title="Ir a MI CUENTA">MI CUENTA</a><br>
+            <a href="<?php echo URL; ?>registro" title="Ir a REGISTRARME">REGISTRARME</a>
         </div>
         <div class="col-md-3 divpie">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin vestibulum purus, sed viverra purus tristique suscipit. Quisque ullamcorper nunc congue mi porttitor posuere. Nam sem lectus, commodo elementum porta non, suscipit ac dui. Donec pellentesque felis magna, vel varius purus venenatis ac. Phasellus eu diam vel elit gravida fringilla a sed sem. Duis aliquet a nibh non vehicula. Nullam fringilla euismod justo, vel interdum quam elementum ac. 
+            <p class="pFooter">CORPORATIVO</p>
+            <a href="#" title="">EL CONCEPTO PADELGO!</a><br>
+            <a href="#" title="">POLÍTICA DE PRIVACIDAD</a><br>
+            <a href="#" title="">FAQ</a>
         </div>
         <div class="col-md-3 divpie">
-            <div id="cont_5646df3e0bb3848a035b26e2dfbe669d">
-                <span id="h_5646df3e0bb3848a035b26e2dfbe669d">
-                    <a id="a_5646df3e0bb3848a035b26e2dfbe669d" href="http://www.tiempo.com/murcia.htm"    target="_blank" style="color: #00ABEB; font-family: 1; font-size: 13px; text-decoration: none;">El tiempo en MURCIA
-                    </a>
-                </span>
-                <script type="text/javascript" 
-                    async src="https://www.tiempo.com/wid_loader/5646df3e0bb3848a035b26e2dfbe669d">
-                </script>
+            <p class="pFooter">CLIMA EN MURCIA</p>
+            <div id="cont_9655d95d1c1b9c5a02dc9b564ac720a6"><span id="h_9655d95d1c1b9c5a02dc9b564ac720a6"><a id="a_9655d95d1c1b9c5a02dc9b564ac720a6" href="http://www.tiempo.com/murcia.htm" target="_blank" rel="nofollow" style="color: #00ABEB; font-family: Roboto; font-size: 13px; text-decoration: none;">HOY</a></span><script type="text/javascript" async src="https://www.tiempo.com/wid_loader/9655d95d1c1b9c5a02dc9b564ac720a6"></script></div>
+        </div>
+        <div class="col-md-3 divpie">
+            <p class="pFooter">CONTACTO</p>
+            <!--<a href="#" target="_blank"><img alt="Siguenos en facebook" height="48" src="<?php echo URL; ?>img/facebook.png" title="Siguenos en facebook" width="48" /></a>
+            <a href="#" target="_blank"><img alt="Siguenos en Twitter" height="48" src="<?php echo URL; ?>img/twitter.png" title="Siguenos en Twitter" width="48" /></a>
+            <a href="#" target="_blank"><img alt="Canal de youtube" height="48" src="<?php echo URL; ?>img/youtube.png" title="Canal de youtube" width="48" /></a> 
+            <a href="#" target="_blank"><img alt="Rss feed" height="48" src="<?php echo URL; ?>img/rss.png" title="Rss feed" width="48" /></a>
+            <a href="#" target="_blank"><img alt="Siguenos en Instagram" height="48" src="<?php echo URL; ?>img/instagram.png" title="Siguenos en Instagram" width="48" /></a>
+            <a href="<?php echo URL; ?>contacto" target="_blank"><img alt="Envíanos un Correo" height="48" src="<?php echo URL; ?>img/correo.png" title="Envíanos un Correo" width="48" /></a>-->
+            <div class='social_bookmarks_container redes'>
+                <ul class='social_bookmarks'>
+                    <li class='iconfacebook'>
+                        <a href='#'>
+                            Facebook
+                        </a>
+                    </li>
+                    <li class='icontwitter'>
+                        <a href='#'>
+                            Twitter
+                        </a>
+                    </li>
+                    <li class='icongplus'>
+                        <a href='#'>
+                            Google Plus
+                        </a>
+                    </li>
+                    <li class='iconrss'>
+                        <a href='#'>
+                            RSS
+                        </a>
+                    </li>
+                    <li class='iconrssmail'>
+                        <a href='<?php echo URL; ?>contacto'>
+                            RSS Mail
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div class="col-md-3 divpie">
-            <a href="#" target="_blank">
-                <img alt="Siguenos en facebook" height="48" title="Siguenos en facebook" 
-                    src="<?php echo URL; ?>img/facebook.png" width="48" />
-            </a>
-            <a href="#" target="_blank">
-                <img alt="Siguenos en Twitter" height="48" title="Siguenos en Twitter" 
-                src="<?php echo URL; ?>img/twitter.png" width="48" />
-            </a>
-            <a href="#" target="_blank">
-                <img alt="Canal de youtube" height="48" title="Canal de youtube" 
-                    src="<?php echo URL; ?>img/youtube.png" width="48" />
-            </a> 
-            <a href="#" target="_blank">
-                <img alt="Rss feed" height="48" title="Rss feed" 
-                    src="<?php echo URL; ?>img/rss.png" width="48" />
-            </a>
-            <a href="#" target="_blank">
-                <img alt="Siguenos en Instagram" height="48" title="Siguenos en Instagram" 
-                    src="<?php echo URL; ?>img/instagram.png" width="48" />
-            </a>
-            <a href="<?php echo URL; ?>contacto" target="_blank">
-                <img alt="Envíanos un Correo" height="48" title="Envíanos un Correo" 
-                    src="<?php echo URL; ?>img/correo.png" width="48" />
-            </a>
         </div>
     </div>
 
