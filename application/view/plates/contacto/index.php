@@ -1,5 +1,4 @@
 <?php $this->layout('layout') ?>
-<?php $idUsuario = Session::get('usuarioPartido'); ?>
 
 <div class="container">
 
@@ -18,9 +17,9 @@
 
                     <tr><td> <label> Caracteres restantes: </label><input disabled size="1" value="150" id="contador"></td></tr>
 
-                    <tr><td></td><td><input type="checkbox" name="check" value="check">Acepto la <a href="politica.html">politica de privacidad</a></td></tr><br>
+                    <tr><td></td><td><input type="checkbox" name="check" id="check" required>Acepto la <a href="politica.html">politica de privacidad</a></td></tr><br>
 
-                    <tr><td></td><td><input type="submit" value="Enviar"> <input type="reset" value="Reiniciar"><p>Los campos marcados con (*) son obligatorios.</p></td></tr>
+                    <tr><td></td><td><input type="submit" value="Enviar" onclick="validarcheck()"> <input type="reset" value="Reiniciar"><p>Los campos marcados con (*) son obligatorios.</p></td></tr>
 
                   </table>
               </fieldset>
