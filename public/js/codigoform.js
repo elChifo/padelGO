@@ -39,23 +39,11 @@ if(coment.value==""){
   coment.setCustomValidity('');
   coment.style.background='#bbeffa';
 }
-/*
-if(coment.value=="") {
-  check.setCustomValidity('Aceptar los terminos y condiciones');
-}else {
-  check.setCustomValidity('');
+
+function validarcheck() {
+    var x = document.getElementById("check").required;
+    document.getElementById("demo").innerHTML = x;
 }
-*/
-
-/*
-   check = document.getElementById("aceptar_condiciones");
-    if (!check.checked) {
-        alert("Debe seleccionar el checkbox!");
-        return false;
-    }
-    return true;
-*/
-
   
 
 }
