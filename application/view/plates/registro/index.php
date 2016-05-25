@@ -26,7 +26,7 @@
             <label for="apellidos">Apellidos</label>
             <input type="text" name="apellidos" 
                     value="<?= (isset($datos['apellidos'])) ? $datos['apellidos'] : "" ?>"
-                    placeholder="Introduzca los Apellidos">
+                    placeholder="Introduzca los Apellidos"> 
             </div>
             
             <div>
