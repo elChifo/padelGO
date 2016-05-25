@@ -49,9 +49,38 @@ class Registro extends Controller
                     'idCategoria' => $_POST["idCategoria"]
                 );
 
-                if(RegistroModel::insertar($registro)) {
+                if(RegistroModel::insertar($registro)) { 
 
-                    echo $this->view->render('registro/registrado');
+
+                    if(isset($_FILES['imagenUsuario'])) {
+
+                        //Validar::imagen($_FILES['imagenContacto']);
+
+                        $imagen['idUsuario'] = RegistroModel::obtenerID($_POST['email']);
+                        $imagen['imagenUsuario'] = $_FILES['imagenUsuario'];
+                        $imagen['path'] = 'img/usuarios/';
+
+                        RegistroModel::insertarImagen($imagen);
+                    } 
+                  
+                    if ((isset($_SESSION['idUsuario'])) && ($_SESSION['idUsuario'] == 1)) {
+                        
+                            header("location: ../usuarios/administrar");       
+                    }
+                    else {
+
+                        $login = array (
+                            'email' => $_POST['email'],
+                            'clave' => $_POST['clave']
+                        );
+
+                        LoginModel::logueado($login);
+
+                        header("Location: /login");                        
+                    }                
+
+
+                    
                 } 
                 else {
                     //error al hacer el registro

@@ -27,6 +27,11 @@
 				<li>CATEGORÍA:  <?php echo $usuario->idCategoria . "ª Categoría"; ?> </li>	
 			</ul>	
 			
+			<div class="imagenUsuario">
+				<img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
+				alt="usuario<?= $usuario->idUsuario; ?>" height="25" />	
+			</div>
+
 	<p>
     <a href="../usuarios/editar"> 
     	<h3>Editar los datos de Usuario</h3>

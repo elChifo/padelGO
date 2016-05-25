@@ -106,5 +106,34 @@ class RegistroModel
         }
     }
 
+    public static function obtenerID($email)
+    {        
+        $conn = Database::getInstance()->getDatabase();
+        $ssql = "SELECT idUsuario FROM Usuarios WHERE email=:email";
+        $query = $conn->prepare($ssql);
+        $parameters = [':email' => $email];
+        $query->execute($parameters);
+
+        $fila = $query->fetch(PDO::FETCH_ASSOC);
+
+        return $fila['idUsuario'];
+    }
+
+    public static function insertarImagen($datos)
+    {        
+        $conn = Database::getInstance()->getDatabase();
+        $rutaImagen = $datos['path'] . 'usuario' . $datos['idUsuario'] . '.png';
+
+        $editar = 'imagenUsuario="' . $rutaImagen . '"';
+
+        $ssql = 'UPDATE Usuarios SET ' . $editar . ' WHERE idUsuario=:idUsuario';
+
+        $query = $conn->prepare($ssql);
+        $parameters = [':idUsuario' => $datos['idUsuario']];
+        $query->execute($parameters);
+
+        move_uploaded_file($datos['imagenUsuario']['tmp_name'], $rutaImagen);
+    }
+
 
 }

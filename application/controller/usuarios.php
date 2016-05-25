@@ -87,7 +87,29 @@ class Usuarios extends Controller
 
                 UsuariosModel::editar($usuarioNuevo);
                 
-                header("location: ../login/index");
+
+
+                if(isset($_FILES['imagenUsuario'])) {
+
+                    //Validar::imagen($_FILES['imagenContacto']);
+
+                    $imagen['idUsuario'] = RegistroModel::obtenerID($usuarioNuevo['email']);
+                    $imagen['imagenUsuario'] = $_FILES['imagenUsuario'];
+                    $imagen['path'] = 'img/usuarios/';
+
+                    RegistroModel::insertarImagen($imagen);                    
+                }
+
+                $idUsuario = Session::get('idUsuario');
+
+                if ($idUsuario == 1) {
+
+                    header("location: ../usuarios/administrar");       
+                }
+                else {
+
+                    header("location: ../login/");
+                }
 
                 // $admin = UsuariosModel::getIdUsuario($idUsuario);
 
@@ -97,9 +119,9 @@ class Usuarios extends Controller
                 //         'usuarios' => $usuarios
                 //     ]);
                 // }
-                // else if ($_GET['idUsuario'] == '7') {
+                // else if ($_GET['idUsuario'] == 1) {
 
-                //     header("location: ../login/index");    
+                //     header("location: ../login");    
                 // }
                 // else {                    
                 // }

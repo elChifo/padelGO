@@ -26,6 +26,12 @@
         <li>EMAIL:  <?php echo $usuario->email; ?> </li>    
         <li>CATEGORÍA:  <?php echo $usuario->idCategoria . "ª Categoría"; ?> </li>  
     </ul> 
+    
+    <div class="imagenUsuario">
+        <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
+                alt="usuario<?= $usuario->idUsuario; ?>" height="25" /> 
+    </div>
+
 	<p>
         <h4>
             <a href="../usuarios/administrar">Administrar Usuarios</a>

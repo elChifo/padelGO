@@ -5,7 +5,7 @@
 
 <h2 style="margin-left: 20rem;">INSCRIPCIÓN DE USUARIOS</h2>
    
-    <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
+    <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
         <fieldset> 
             <legend>
                 <h2> Datos del Usuario </h2> 
@@ -65,6 +65,12 @@
             </script>
 
             <br>
+
+            <div class="subidaImagen">
+                <label id="imagenUsuario" for="imagenUsuario">Subir Imagen de Usuario</label>
+                <input id="subida" type="file" name="imagenUsuario">
+            </div>
+
             <div>
             <label for="direccion">Dirección</label>
             <input type="text" name="direccion" 

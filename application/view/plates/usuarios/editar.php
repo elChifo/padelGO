@@ -5,7 +5,7 @@
 
 <h2>EDITAR DATOS DE USUARIO</h2>
    
-    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
+    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
         <fieldset> 
             <legend>
                 <h2> Datos del Usuario </h2> 
@@ -87,7 +87,18 @@
                     </option>
                 <?php endforeach ?>
 
-            </select>                    
+            </select> 
+
+            <div class="imagenUsuario">
+                <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
+                alt="usuario<?= $usuario->idUsuario; ?>" height="25" /> 
+            </div>
+
+            <div class="subidaImagen">
+                <label id="imagenUsuario" for="imagenUsuario">Editar Imagen de Usuario</label>
+                <input id="subida" type="file" name="imagenUsuario">
+            </div>
+            
             <p>
                 <input type="submit" value="Enviar">
             </p>        

@@ -34,7 +34,11 @@
                 <li> 
                 	CATEGORÍA: <strong> <?php echo $usuario->idCategoria . ' ª Categoría'; ?> </strong>
                 </li>
-       		
+       		       
+                <div class="imagenUsuario">
+                    <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
+                            alt="usuario<?= $usuario->idUsuario; ?>" height="25" /> 
+                </div>   
         			<p>
                         <h4>
         					<a href="../usuarios/editar?idUsuario=<?php echo $usuario->idUsuario; ?>">
@@ -53,5 +57,5 @@
 
         <?php endforeach ?>
         
-        <a href="../login/index"><h4>...Volver a Administración</h4></a>
+        <a href="../login"><h4>...Volver a Administración</h4></a>
 </div>
