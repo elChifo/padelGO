@@ -16,7 +16,7 @@ class LoginModel
             Session::add('feedback_negative', 'No se ha indicado la Clave');
         }
         if(Session::get('feedback_negative')) {
-            return false;
+            return false; 
         }
 
     // CODIGO PARA VALIDAR EL LOGIN DNI
