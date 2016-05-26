@@ -36,6 +36,12 @@
                     </strong>                                      
                 </li>
            </ul>
+
+           <div class="imagenUsuario">
+                <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
+                alt="usuario<?= $usuario->idUsuario; ?>" height="25" /> 
+            </div>
+            
            </fieldset>
 
            <?php endif ?>
@@ -43,6 +49,8 @@
         <?php endforeach ?> 
 
     <?php endif ?>
+
+
 
     <?php if ($idUsuario == 1) : ?>
         <a href="../login/index"><h4>...Volver a Administración</h4></a>
