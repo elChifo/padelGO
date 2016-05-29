@@ -85,9 +85,7 @@ class Usuarios extends Controller
 
             if ($emailRepetido == false) { 
 
-                UsuariosModel::editar($usuarioNuevo);
-                
-
+                UsuariosModel::editar($usuarioNuevo); 
 
                 if(isset($_FILES['imagenUsuario'])) {
 

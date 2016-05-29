@@ -3,8 +3,7 @@
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
 
-    <h2>INSCRIPCIÓN DE NUEVOS CLUBS</h2>
-
+<h2>INSCRIPCIÓN DE NUEVOS CLUBS</h2>
 
     <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
 

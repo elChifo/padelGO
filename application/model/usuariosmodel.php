@@ -128,13 +128,13 @@ class UsuariosModel
                 ':telefono'    => $datos["telefono"],
                 ':email'       => $datos["email"],
                 ':clave'       => $datos["clave"],
-                ':idCategoria' => $datos["idCategoria"],
+                ':idCategoria' => $datos["idCategoria"]
             );
 
             $ssql = "UPDATE Usuarios SET idUsuario = :idUsuario, nombre = :nombre, 
                         apellidos = :apellidos, sexo = :sexo, fechaNac = :fechaNac, 
                         direccion = :direccion, telefono = :telefono, email = :email, 
-                        clave = clave, idCategoria = :idCategoria WHERE idUsuario=:idUsuario";
+                        clave = clave, idCategoria = :idCategoria WHERE idUsuario = :idUsuario";
 
             $query = $conn->prepare($ssql);
             $query->execute($params);

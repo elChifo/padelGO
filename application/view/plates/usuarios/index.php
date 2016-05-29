@@ -39,7 +39,7 @@
 
            <div class="imagenUsuario">
                 <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
-                alt="usuario<?= $usuario->idUsuario; ?>" height="25" /> 
+                alt="usuario<?= $usuario->idUsuario; ?>" height="100" /> 
             </div>
             
            </fieldset>

@@ -29,7 +29,7 @@
     
     <div class="imagenUsuario">
         <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
-                alt="usuario<?= $usuario->idUsuario; ?>" height="25" /> 
+                alt="usuario<?= $usuario->idUsuario; ?>" height="100" /> 
     </div>
 
 	<p>
@@ -37,6 +37,9 @@
             <a href="../usuarios/administrar">Administrar Usuarios</a>
             &nbsp;&nbsp;&nbsp;
             <a href="../clubs/administrar">Administrar Clubs</a> 
+            &nbsp;&nbsp;&nbsp;
+            <a href="../noticias/administrar">Administrar Noticias</a> 
+
         </h4>    
     </p>
 

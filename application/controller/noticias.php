@@ -18,43 +18,36 @@ class Noticias extends Controller
     {            
         $this->view->addData(['titulo' => 'Crear Noticia']);
 
-        $noticias = NoticiasModel::getNoticias();
+        //$noticias = NoticiasModel::getNoticias();
 
         if (!$_POST) {
 
-            echo $this->view->render('noticias/crear', [
-                'noticias' => $noticias
-            ]);
+            echo $this->view->render('noticias/crear');
         } 
         else {
 
-            if(!isset($_POST["titular"])) {
-                $_POST["titular"] = "";
-            }
-            if(!isset($_POST["fechaNoticia"])) {
-                $_POST["fechaNoticia"] = "";
-            }
-            if(!isset($_POST["contenido"])) {
-                $_POST["contenido"] = "";
-            }
+            $noticia = $_POST;            
 
-            $datos = array(
-                'titular' => $_POST["titular"],
-                'fechaNoticia' => $_POST["fechaNoticia"],
-                'contenido' => $_POST["contenido"],
-                //'imagen' => $_POST["imagen"]
-            );
+            if (NoticiasModel::crear($noticia)) {
 
-            if(NoticiasModel::crear($datos)) {
+                if (isset($_FILES['imagen'])) {
 
-                 header("location: ../noticias/index");
+                    //Validar::imagen($_FILES['imagenContacto']);
+
+                    $imagen['idNoticia'] = NoticiasModel::obtenerID($_POST['titular']);
+                    $imagen['imagen'] = $_FILES['imagen'];
+                    $imagen['path'] = 'img/noticias/';
+
+                    NoticiasModel::insertarImagen($imagen);
+                }  
+
+                header("location: ../noticias/administrar");
             } 
             else {
-                echo $this->view->render('noticias/crear', 
-                        array(
-                            'errores' => array('Error al insertar'),
-                            'datos' => $_POST
-                        ));
+                echo $this->view->render('noticias/crear', [                    
+                        'errores' => array('Error al insertar'),
+                        'noticia' => $noticia
+                    ]);
             }
         }        
     }
@@ -68,6 +61,62 @@ class Noticias extends Controller
                 'noticias' => $noticias
         ]);
     }
+
+
+    public function editar()
+    {            
+        $this->view->addData(['titulo' => 'Editar Noticia']);
+
+        $noticias = NoticiasModel::getNoticias();
+
+        $noticia = NoticiasModel::getIdNoticia($_GET['idNoticia']);
+
+        $idUsuario = Session::get('idUsuario');        
+
+        if ($idUsuario != 1) {
+
+            header("location: ../error/index");     
+        }
+
+        else {
+
+            if (!$_POST) {
+
+                echo $this->view->render('noticias/editar', [
+                   // 'noticias' => $noticias,
+                    'noticia'  => $noticia
+                ]);
+            } 
+            else { 
+
+                NoticiasModel::editar($_POST);  
+
+                    if (isset($_FILES['imagen'])) {
+
+                        //Validar::imagen($_FILES['imagenContacto']);
+
+                        $imagen['idNoticia'] = NoticiasModel::obtenerID($_POST['titular']);
+                        $imagen['imagen'] = $_FILES['imagen'];
+                        $imagen['path'] = 'img/noticias/';
+
+                        NoticiasModel::insertarImagen($imagen);
+                    } 
+
+                    header("location: ../noticias/administrar"); 
+                
+                
+            }
+        }        
+    }
+
+
+
+
+
+
+
+
+
 
 
 

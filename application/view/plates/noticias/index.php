@@ -36,10 +36,10 @@
                 </li>
            </ul>
 
-         <!--   <div class="imagenNoticia">
-                <img src="<?= URL; ?>img/noticias/noticia<?= $noticia->idUsuario; ?>.png" 
-                alt="noticia<?= $noticia->idNoticia; ?>" height="25" /> 
-            </div> -->
+            <div class="imagenNoticia">
+                <img src="<?= URL; ?>img/noticias/noticia<?= $noticia->idNoticia; ?>.png" 
+                alt="noticia<?= $noticia->idNoticia; ?>" height="150" /> 
+            </div>
             
            </fieldset>           
 

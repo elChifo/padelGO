@@ -3,7 +3,7 @@
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
 
-<h2>CREACIÓN DE UNA NUEVA NOTICIA</h2>
+<h2>EDITAR LA NOTICIA</h2>
    
     <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
         <fieldset> 
@@ -30,18 +30,21 @@
                     placeholder="Introduzca la Fecha de la Noticia (AAAA-mm-dd)">
             </p>
 
+            <div class="imagenNoticia">
+                <img src="<?= URL; ?>img/noticias/noticia<?= $noticia->idNoticia; ?>.png" 
+                alt="noticia<?= $noticia->idNoticia; ?>" height="150" /> 
+            </div>
+                   
+            
             <p>
             <label for="contenido">Contenido</label>
-            <textarea  name="contenido" 
-                    value="<?= (isset($noticia->contenido)) ? $noticia->contenido : "" ?>"
-                    placeholder="Introduzca el Contenido de la Noticia" rows="5" cols="50"></textarea>
+            <textarea  name="contenido" placeholder="Introduzca el Contenido de la Noticia" 
+                rows="5" cols="50"> <?= (isset($noticia->contenido)) ? $noticia->contenido : "" ?> </textarea>
             </p>
 
             <p>
-
             <div class="subidaImagen">
-                <label id="imagenNoticia" for="imagen">Agregar una Imagen a la Noticia (max. 2 MB)
-                </label>
+                <label id="imagenNoticia" for="imagen">Editar la Imagen de la Noticia (max. 2 MB)</label>
                 <input id="imagen" type="file" name="imagen">
             </div>
             
