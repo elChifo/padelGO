@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="<?= URL; ?>img/padelgoico.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
     <!-- JS -->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -23,9 +24,8 @@
     </script>
 
     <script type="text/javascript" src="<?= URL; ?>/js/cookieconsent.min.js"></script>
+    <script type="text/javascript" src="<?= URL; ?>/js/demopolitica.js"></script>
 
-
-    <!-- our JavaScript -->
 
     <!-- BOOTSTRAP -->
     <script type="text/javascript" src="<?= URL; ?>js/bootstrap.min.js"></script>
@@ -40,6 +40,7 @@
 
     <!--<link rel="stylesheet" type="text/css" href="<?= URL; ?>css/style.css">-->
     <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/estilo.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/demopolitica.css"> -->
     <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/jcalendar/theme.css">
     <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/font-awesome.css">
@@ -70,7 +71,8 @@
     <div class="col-md-12 pie">
         <div class="col-md-3 divpie">
             <!-- REDIRECCIONAR -->
-       <a href="home/politica.php">Política de Cookies</a> 
+       <a href="../home/cookies">Política de Cookies</a> 
+       <a href="../home/privacidad">Política de Privacidad</a> 
         </div>
         <div class="col-md-3 divpie">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin vestibulum purus, sed viverra purus tristique suscipit. Quisque ullamcorper nunc congue mi porttitor posuere. Nam sem lectus, commodo elementum porta non, suscipit ac dui. Donec pellentesque felis magna, vel varius purus venenatis ac. Phasellus eu diam vel elit gravida fringilla a sed sem. Duis aliquet a nibh non vehicula. Nullam fringilla euismod justo, vel interdum quam elementum ac. 

@@ -88,6 +88,7 @@ class Usuarios extends Controller
         else {
 
             $usuarioNuevo = $_POST;
+            var_dump($usuarioNuevo);
 
             if ($usuarioNuevo['email'] == $usuario->email) {
 

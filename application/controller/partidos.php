@@ -6,6 +6,7 @@ class Partidos extends Controller
    	public function index()
    	{
         $this->view->addData(['titulo' => 'Partidos']);
+        $idSession = Session::get('idUsuario');
         $usuarioPartido = Session::set('usuarioPartido', $idSession);        
 
         $partidos = PartidosModel::getPartido();

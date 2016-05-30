@@ -80,7 +80,7 @@
                    
                 <?php foreach($categorias as $categoria): ?>
 
-                    <option value="<?php echo $value->idCategoria ?>" 
+                    <option value="<?= $categoria->idCategoria ?>" 
 
                         <?php if($categoria->idCategoria == $usuario->idCategoria) { echo 'selected'; } ?>  > 
                             <?= $categoria->nombreCategoria ?>

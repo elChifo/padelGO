@@ -15,7 +15,7 @@
 
                     <tr><td>Comentario:(*)</td><td><textarea id="coment" placeholder="Déjanos tu comentario" required="required" onKeyDown="contar()" onKeyUp="contar()"></textarea></td></tr>
 
-                    <tr><td> <label> Caracteres restantes: </label><input disabled size="1" value="150" id="contador"></td></tr>
+                    <tr><td> <label> Caracteres restantes: </label><input disabled size="3" value="150" id="contador"></td></tr>
 
                     <tr><td></td><td><input type="checkbox" name="check" id="check" required>Acepto la <a href="politica.html">politica de privacidad</a></td></tr><br>
 
