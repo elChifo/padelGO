@@ -16,6 +16,15 @@
         var url = "<?= URL; ?>";
     </script>
 
+    <!-- Política de Cookies -->
+        <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {"message":"Utilizamos cookies para facilitar el uso de nuestra página web","dismiss":"Ok!","learnMore":"Más info","link":"http://www.padelgo.es","theme":"dark-bottom"};
+    </script>
+
+    <script type="text/javascript" src="<?= URL; ?>/js/cookieconsent.min.js"></script>
+
+
     <!-- our JavaScript -->
 
     <!-- BOOTSTRAP -->
