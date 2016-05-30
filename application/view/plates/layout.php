@@ -69,7 +69,8 @@
     <!-- footer -->
     <div class="col-md-12 pie">
         <div class="col-md-3 divpie">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin vestibulum purus, sed viverra purus tristique suscipit. Quisque ullamcorper nunc congue mi porttitor posuere. Nam sem lectus, commodo elementum porta non, suscipit ac dui. Donec pellentesque felis magna, vel varius purus venenatis ac. Phasellus eu diam vel elit gravida fringilla a sed sem. Duis aliquet a nibh non vehicula. Nullam fringilla euismod justo, vel interdum quam elementum ac. 
+            <!-- REDIRECCIONAR -->
+       <a href="home/politica.php">Política de Cookies</a> 
         </div>
         <div class="col-md-3 divpie">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin vestibulum purus, sed viverra purus tristique suscipit. Quisque ullamcorper nunc congue mi porttitor posuere. Nam sem lectus, commodo elementum porta non, suscipit ac dui. Donec pellentesque felis magna, vel varius purus venenatis ac. Phasellus eu diam vel elit gravida fringilla a sed sem. Duis aliquet a nibh non vehicula. Nullam fringilla euismod justo, vel interdum quam elementum ac. 
