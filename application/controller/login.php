@@ -59,19 +59,10 @@ class Login extends Controller
 
     
     //finaliza la sesion y redirecciona a la raiz de la web
-    public function salir()
+    public static function salir()
     {
         Session::destroy();
         header('location: /');
         exit();
-    }
-
-    public static function espacio($num)
-    {       
-        for ($i=0; $i<$num; $i++) {
-            echo '&nbsp;';
-        }
-    }
-
-     
+    }       
 }

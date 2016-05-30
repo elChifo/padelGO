@@ -4,7 +4,7 @@
     
     <h2>ADMINISTRACIÓN DE NOTICIAS</h2>
 
-    <h4><a href="<?php echo URL; ?>../noticias/crear">Crear una Noticia</a></h4>
+    <h4><a href="<?= URL; ?>../noticias/crear">Crear una Noticia</a></h4>
     
 	<?php foreach($noticias as $noticia): ?>
 
@@ -38,10 +38,10 @@
    		
     			<p>
                     <h4>
-    					<a href="../noticias/editar?idNoticia=<?php echo $noticia->idNoticia; ?>">
+    					<a href="../noticias/editar?idNoticia=<?= $noticia->idNoticia; ?>">
     						Editar la Noticia
     					</a> &nbsp;&nbsp;&nbsp;
-    			   		<a href="../noticias/borrar?idNoticia=<?php echo $noticia->idNoticia; ?>">
+    			   		<a href="../noticias/borrar?idNoticia=<?= $noticia->idNoticia; ?>">
     			   			Borrar la Noticia
     			   		</a>
                     </h4>

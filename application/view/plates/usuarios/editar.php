@@ -78,12 +78,12 @@
             <label for="idCategoria">Elegir una Categoría</label>
             <select name="idCategoria">
                    
-                <?php foreach($categorias as $value): ?>
+                <?php foreach($categorias as $categoria): ?>
 
                     <option value="<?php echo $value->idCategoria ?>" 
 
-                        <?php if($value->idCategoria == $usuario->idCategoria) { echo 'selected'; } ?> >
-                            <?php echo $value->nombreCategoria ?>
+                        <?php if($categoria->idCategoria == $usuario->idCategoria) { echo 'selected'; } ?>  > 
+                            <?= $categoria->nombreCategoria ?>
                     </option>
                 <?php endforeach ?>
 

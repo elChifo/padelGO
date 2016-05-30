@@ -12,7 +12,7 @@
                 <h2> Datos del Partido </h2>
             </legend> 
         
-            <!-- <input type="hidden" name="idPartido" value="<?= $datos['idPartido'] ?>"> -->
+            <input type="hidden" name="idPartido" value="<?= $datos['idPartido'] ?>">
 
             <div>
                 <label for="tipoPartido">Tipo de Partido</label>
@@ -140,8 +140,8 @@
                             
                         <?php foreach($categorias as $categoria): ?>
 
-                            <option value="<?php echo $categoria->idCategoria; ?>">
-                                    <?php echo $categoria->nombreCategoria; ?>
+                            <option value="<?= $categoria->idCategoria; ?>">
+                                    <?= $categoria->nombreCategoria; ?>
                             </option>
 
                         <?php endforeach ?>
@@ -149,7 +149,7 @@
             </div>
 
             <div>
-                <input type="hidden" name="idUsuario" value="<?= $idUsuario ?>">
+                <input type="hidden" name="idUsuario" value="<?= $usuarioPartido ?>">
 
             </div>
 
@@ -160,8 +160,8 @@
                             
                         <?php foreach($clubs as $club): ?>
 
-                            <option value="<?php echo $club->idClub; ?>">
-                                    <?php echo $club->nombreClub; ?>
+                            <option value="<?= $club->idClub; ?>">
+                                    <?= $club->nombreClub; ?>
                             </option>
 
                         <?php endforeach ?>

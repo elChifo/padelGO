@@ -1,5 +1,5 @@
 <?php $this->layout('layout') ?> 
-<?php $idUsuario = Session::get('idUsuario'); ?>
+<?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
 
@@ -18,12 +18,12 @@
 		    <ul> 
 		   		<li> Nombre Club:
 		   			<strong> 
-		   				<?php echo $value->nombreClub ?> &nbsp;&nbsp;&nbsp; 
+		   				<?= $value->nombreClub ?> &nbsp;&nbsp;&nbsp; 
 		   				<a href="">Ver Partidos</a>
 		   			</strong> 
 		   			<ul>		   					
-	   					<li> Direccion : <?php echo $value->direccionClub ?>  </li>
-	   					<li> Nº Pistas: <?php echo $value->numPistas ?>  </li>	   					
+	   					<li> Direccion : <?= $value->direccionClub ?>  </li>
+	   					<li> Nº Pistas: <?= $value->numPistas ?>  </li>	   					
 		   			</ul> 
 		   		</li>
 		    </ul>
@@ -32,7 +32,7 @@
 		<?php endforeach ?>
     
 
-    <?php if ($idUsuario == 1) : ?>
+    <?php if ($idSession == 1) : ?>
 		<a href="../login/index"><h4>...Volver a Administración</h4></a>
 	<?php endif ?>	
 

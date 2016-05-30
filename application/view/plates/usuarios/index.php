@@ -1,4 +1,5 @@
 <?php $this->layout('layout') ?>
+<?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
        
@@ -52,7 +53,7 @@
 
 
 
-    <?php if ($idUsuario == 1) : ?>
+    <?php if ($idSession == 1) : ?>
         <a href="../login/index"><h4>...Volver a Administración</h4></a>
     <?php endif ?>
 </div>

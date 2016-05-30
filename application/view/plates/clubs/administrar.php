@@ -5,26 +5,26 @@
     
     <h2>ADMINISTRACIÓN DE CLUBS</h2>
 
-    <h4><a href="<?php echo URL; ?>../clubs/insertar">Registrar un Nuevo Club</a></h4>
+    <h4><a href="<?= URL; ?>../clubs/insertar">Registrar un Nuevo Club</a></h4>
     
 	<?php foreach($clubs as $club): ?>
 
        <fieldset>
        <ul> 
             <li> 
-                    Nombre Club: <strong> <?php echo $club->nombreClub ?> </strong>  
+                    Nombre Club: <strong> <?= $club->nombreClub ?> </strong>  
                 <ul>                            
-                        <li> Direccion : <?php echo $club->direccionClub ?>  </li>
-                        <li> Nº Pistas: <?php echo $club->numPistas ?>  </li>                      
+                        <li> Direccion : <?= $club->direccionClub ?>  </li>
+                        <li> Nº Pistas: <?= $club->numPistas ?>  </li>                      
                 </ul> 
             </li>
    		
     			<p>
                     <h4>
-    					<a href="../clubs/editar?idClub=<?php echo $club->idClub; ?>">
+    					<a href="../clubs/editar?idClub=<?= $club->idClub; ?>">
     						Editar los datos de Club
     					</a> &nbsp;&nbsp;&nbsp;
-    			   		<a href="../clubs/borrar?idClub=<?php echo $club->idClub; ?>">
+    			   		<a href="../clubs/borrar?idClub=<?= $club->idClub; ?>">
     			   			Borrar los datos de Club
     			   		</a>
                     </h4>

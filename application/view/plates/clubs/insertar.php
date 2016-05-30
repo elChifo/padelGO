@@ -17,19 +17,19 @@
             <p>
             <label for="nombreClub">Nombre del Club</label>
             <input type="text" name="nombreClub" 
-                    value="<?= (isset($datos['nombreClub'])) ? $datos['nombreClub'] : "" ?>">
+                    value="<?= (isset($club['nombreClub'])) ? $club['nombreClub'] : "" ?>">
             </p>
 
             <p>
             <label for="direccionClub">Dirección</label>
             <input type="text" name="direccionClub" 
-                    value="<?= (isset($datos['direccionClub'])) ? $datos['direccionClub'] : "" ?>">
+                    value="<?= (isset($club['direccionClub'])) ? $club['direccionClub'] : "" ?>">
             </p>
 
             <p>
             <label for="numPistas">Número de Pistas</label>
             <input type="date" name="numPistas" 
-                    value="<?= (isset($datos['numPistas'])) ? $datos['numPistas'] : "" ?>">
+                    value="<?= (isset($club['numPistas'])) ? $club['numPistas'] : "" ?>">
             </p>
            
                 <input type="submit" value="Registrar">

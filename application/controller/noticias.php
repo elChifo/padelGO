@@ -8,7 +8,6 @@ class Noticias extends Controller
 
         $noticias = NoticiasModel::getNoticias();
 
-
             echo $this->view->render('noticias/index', [
                 'noticias' => $noticias
             ]);         
@@ -18,78 +17,23 @@ class Noticias extends Controller
     {            
         $this->view->addData(['titulo' => 'Crear Noticia']);
 
-        //$noticias = NoticiasModel::getNoticias();
+        $idSession = Session::get('idUsuario');
 
-        if (!$_POST) {
+        if ($idSession != 1) {
 
-            echo $this->view->render('noticias/crear');
-        } 
-        else {
-
-            $noticia = $_POST;            
-
-            if (NoticiasModel::crear($noticia)) {
-
-                if (isset($_FILES['imagen'])) {
-
-                    //Validar::imagen($_FILES['imagenContacto']);
-
-                    $imagen['idNoticia'] = NoticiasModel::obtenerID($_POST['titular']);
-                    $imagen['imagen'] = $_FILES['imagen'];
-                    $imagen['path'] = 'img/noticias/';
-
-                    NoticiasModel::insertarImagen($imagen);
-                }  
-
-                header("location: ../noticias/administrar");
-            } 
-            else {
-                echo $this->view->render('noticias/crear', [                    
-                        'errores' => array('Error al insertar'),
-                        'noticia' => $noticia
-                    ]);
-            }
-        }        
-    }
-
-    public function administrar()
-    {
-        $this->view->addData(['titulo' => 'Administrar Clubs']);         
-        $noticias = NoticiasModel::getNoticias();
-
-        echo $this->view->render('noticias/administrar', [
-                'noticias' => $noticias
-        ]);
-    }
-
-
-    public function editar()
-    {            
-        $this->view->addData(['titulo' => 'Editar Noticia']);
-
-        $noticias = NoticiasModel::getNoticias();
-
-        $noticia = NoticiasModel::getIdNoticia($_GET['idNoticia']);
-
-        $idUsuario = Session::get('idUsuario');        
-
-        if ($idUsuario != 1) {
-
-            header("location: ../error/index");     
+            header('location: ../error');
         }
-
         else {
 
             if (!$_POST) {
 
-                echo $this->view->render('noticias/editar', [
-                   // 'noticias' => $noticias,
-                    'noticia'  => $noticia
-                ]);
+                echo $this->view->render('noticias/crear');
             } 
-            else { 
+            else {
 
-                NoticiasModel::editar($_POST);  
+                $noticia = $_POST;            
+
+                if (NoticiasModel::crear($noticia)) {
 
                     if (isset($_FILES['imagen'])) {
 
@@ -100,25 +44,79 @@ class Noticias extends Controller
                         $imagen['path'] = 'img/noticias/';
 
                         NoticiasModel::insertarImagen($imagen);
-                    } 
+                    }  
 
-                    header("location: ../noticias/administrar"); 
-                
+                    header("location: ../noticias/administrar");
+                } 
+                else {
+
+                    echo $this->view->render('noticias/crear', [                    
+                            'errores' => array('Error al insertar'),
+                            'noticia' => $noticia
+                    ]);
+                }
+            } 
+        }   
+    }
+
+    public function administrar()
+    {
+        $this->view->addData(['titulo' => 'Administrar Noticias']); 
+        $idSession = Session::get('idUsuario');
+
+        $noticias = NoticiasModel::getNoticias();        
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            echo $this->view->render('noticias/administrar', [
+                    'noticias' => $noticias
+            ]);
+        }
+    }
+
+
+    public function editar()
+    {            
+        $this->view->addData(['titulo' => 'Editar Noticia']);
+        $idSession = Session::get('idUsuario');        
+
+        $noticia = NoticiasModel::getIdNoticia($_GET['idNoticia']);
+
+        if ($idSession != 1) {
+
+            header("location: ../error/");     
+        }
+        else {
+
+            if (!$_POST) {
+
+                echo $this->view->render('noticias/editar', [
+                    'noticia'  => $noticia
+                ]);
+            } 
+            else { 
+
+                NoticiasModel::editar($_POST);  
+
+                if (isset($_FILES['imagen'])) {
+
+                    //Validar::imagen($_FILES['imagenContacto']);
+
+                    $imagen['idNoticia'] = NoticiasModel::obtenerID($_POST['titular']);
+                    $imagen['imagen'] = $_FILES['imagen'];
+                    $imagen['path'] = 'img/noticias/';
+
+                    NoticiasModel::insertarImagen($imagen);
+                } 
+
+                header("location: ../noticias/administrar");                
                 
             }
         }        
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

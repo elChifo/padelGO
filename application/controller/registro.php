@@ -16,42 +16,26 @@ class Registro extends Controller
         } 
         else {
             //recoge todos los datos obligatorios en el formulario de registro
-            $datos = array(
-                 'nombre'      => $_POST["nombre"],
-                 'apellidos'   => $_POST["apellidos"],
-                 'sexo'        => $_POST["sexo"],
-                 'fechaNac'    => $_POST["fechaNac"],
-                 'direccion'   => $_POST["direccion"],
-                 'telefono'    => $_POST["telefono"],            
-                 'idCategoria' => $_POST["idCategoria"]
-            );
-            //comprueba si el usuario ya está registrado en la base de datos
+            $registro = $_POST;
+
+
+            //comprueba si el email ya está registrado en la base de datos
             if (RegistroModel::existeEmail($_POST["email"])) {
 
                 Session::add('feedback_negative', "El Email ya está registrado");
 
                 echo $this->view->render('registro/index', [
-                         'datos'      => $datos,
+                         'registro'      => $registro,
                          'categorias' => $categorias
                          ]);
             }
             else {
-                //si todos los campos son correctos se completa el registro
-                $registro = array(
-                    'nombre'      => $_POST["nombre"],
-                    'apellidos'   => $_POST["apellidos"],
-                    'sexo'        => $_POST["sexo"],
-                    'fechaNac'    => $_POST["fechaNac"],
-                    'direccion'   => $_POST["direccion"],
-                    'telefono'    => $_POST["telefono"],
-                    'email'       => $_POST["email"],
-                    'clave'       => $_POST["clave"],                
-                    'idCategoria' => $_POST["idCategoria"]
-                );
 
-                if(RegistroModel::insertar($registro)) { 
+                //si todos los campos son correctos se completa el registro                
 
-                    if(isset($_FILES['imagenUsuario'])) {
+                if (RegistroModel::insertar($registro)) { 
+
+                    if (isset($_FILES['imagenUsuario'])) {
 
                         //Validar::imagen($_FILES['imagenContacto']);
 
@@ -73,9 +57,10 @@ class Registro extends Controller
                             'clave' => $_POST['clave']
                         );
 
-                        LoginModel::logueado($login);
+                        if (LoginModel::logueado($login)) {
 
-                        header("Location: /login");                        
+                            header("Location: /login");
+                        }                        
                     }                     
                 } 
                 else {
@@ -83,7 +68,7 @@ class Registro extends Controller
                     Session::add('feedback_negative', "El Registro no ha sido posible, Inténtelo de nuevo");
                     //si se produce el fallo, salta la alerta y redirecciona
                     echo $this->view->render('registro/index', [
-                            'datos'      => $datos,
+                            'registro'      => $registro,
                             'categorias' => $categorias
                             ]);
                 }
