@@ -13,17 +13,17 @@
 
 	<?php endif ?>
 
-		<?php foreach($clubs as $value): ?>
+		<?php foreach($clubs as $club): ?>
 		<fieldset>
 		    <ul> 
 		   		<li> Nombre Club:
 		   			<strong> 
-		   				<?= $value->nombreClub ?> &nbsp;&nbsp;&nbsp; 
+		   				<?= $club->nombreClub ?> &nbsp;&nbsp;&nbsp; 
 		   				<a href="">Ver Partidos</a>
 		   			</strong> 
 		   			<ul>		   					
-	   					<li> Direccion : <?= $value->direccionClub ?>  </li>
-	   					<li> Nº Pistas: <?= $value->numPistas ?>  </li>	   					
+	   					<li> Direccion : <?= $club->direccionClub ?>  </li>
+	   					<li> Nº Pistas: <?= $club->numPistas ?>  </li>	   					
 		   			</ul> 
 		   		</li>
 		    </ul>
