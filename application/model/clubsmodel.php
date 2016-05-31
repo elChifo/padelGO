@@ -18,9 +18,9 @@ class ClubsModel
         if($id == 0){
             return false;
         }
-        $ssql = "SELECT * FROM Clubs WHERE idClub = :id";
+        $ssql = "SELECT * FROM Clubs WHERE idClub = :idClub";
         $query = $conn->prepare($ssql);
-        $query->bindValue(":id", $id, PDO::PARAM_INT);
+        $query->bindValue(":idClub", $id, PDO::PARAM_INT);
         $query->execute();
         return $query->fetch();
 
@@ -68,6 +68,35 @@ class ClubsModel
         }
     }   
 
+    public static function obtenerID($nombreClub)
+    {        
+        $conn = Database::getInstance()->getDatabase();
+        $ssql = "SELECT idClub FROM Clubs WHERE nombreClub=:nombreClub";
+        $query = $conn->prepare($ssql);
+        $parameters = [':nombreClub' => $nombreClub];
+        $query->execute($parameters);
+
+        $fila = $query->fetch(PDO::FETCH_ASSOC);
+
+        return $fila['idClub'];
+    }
+
+    public static function insertarImagen($datos)
+    {        
+        $conn = Database::getInstance()->getDatabase();
+        $rutaImagen = $datos['path'] . 'club' . $datos['idClub'] . '.png';
+
+        $editar = 'imagenClub="' . $rutaImagen . '"';
+
+        $ssql = 'UPDATE Clubs SET ' . $editar . ' WHERE idClub=:idClub';
+
+        $query = $conn->prepare($ssql);
+        $parameters = [':idClub' => $datos['idClub']];
+        $query->execute($parameters);
+
+        move_uploaded_file($datos['imagenClub']['tmp_name'], $rutaImagen);
+    }
+
     //obtenemos los datos del club ya existentes para modificarlos
     public static function editar($datos){
 
@@ -75,54 +104,43 @@ class ClubsModel
 
         $errores_validacion = false;
 
-        if(empty($datos['idCentro'])){
-            Session::add('feedback_negative', 'No se ha recibido el Centro');
+        if(empty($datos['nombreClub'])){
+            Session::add('feedback_negative', "No se ha recibido el Nombre del Club");
             $errores_validacion = true;
         }
 
-        if(empty($datos['nombreCentro'])){
-            Session::add('feedback_negative', "No se ha recibido el Nombre del Centro");
+        if(empty($datos['direccionClub'])){
+            Session::add('feedback_negative', "No se ha recibido la Dirección del Club");
             $errores_validacion = true;
         }
 
-        if(empty($datos['domicilioCentro'])){
-            Session::add('feedback_negative', "No se ha recibido el Domicilio del Centro");
+        if(empty($datos['numPistas'])){
+            Session::add('feedback_negative', "No se ha recibido el Nº de Pistas del Club");
             $errores_validacion = true;
-        }
-
-        if(empty($datos['telefonoCentro'])){
-            Session::add('feedback_negative', "No se ha recibido el Teléfono del Centro");
-            $errores_validacion = true;
-        }
-
-        if(empty($datos['contactoCentro'])){
-            Session::add('feedback_negative', "No se ha recibido el Contacto del Centro");
-            $errores_validacion = true;
-        }
-
+        }        
     
         if($errores_validacion) {
             return false;
         } 
         else {
-            $ssql = "UPDATE Centros SET nombreCentro=:nombreCentro, domicilioCentro=:domicilioCentro, 
-             telefonoCentro=:telefonoCentro, contactoCentro=:contactoCentro WHERE idCentro=:id";
-            $query = $conn->prepare($ssql);
 
-            $parameters = array(
-                ':nombreCentro' => $datos["nombreCentro"],
-                ':domicilioCentro' => $datos["domicilioCentro"],
-                ':telefonoCentro' => $datos["telefonoCentro"],
-                ':contactoCentro' => $datos["contactoCentro"],
-                ':id'     => $datos["idCentro"]
+            $params = array(
+                'idClub' => $_POST["idClub"],
+                'nombreClub' => $_POST["nombreClub"],
+                'direccionClub' => $_POST["direccionClub"],
+                'numPistas' => $_POST["numPistas"]
             );
-            $query->execute($parameters);
-            $count = $query->rowCount();
-            if($count == 1){
-                Session::add('feedback_positive', 'Datos actualizados.');
-                return true;
+
+            $ssql = "UPDATE Clubs SET idClub=:idClub, nombreClub=:nombreClub, 
+             direccionClub=:direccionClub, numPistas=:numPistas WHERE idClub=:idClub";
+
+            $query = $conn->prepare($ssql);            
+            $query->execute($params);
+
+            $cuenta = $query->rowCount();
+            if($cuenta == 1) {
+                return $conn->lastInsertId();
             }
-            Session::add('feedback_positive', 'Actualizadas 0 casillas');
             return false;
         }
     }

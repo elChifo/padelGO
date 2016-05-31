@@ -10,7 +10,6 @@ class Login extends Controller
         if (Session::get('idUsuario')) {
 
             $idSession = Session::get('idUsuario');
-
             $usuario = UsuariosModel::getIdUsuario($idSession);
 
             if ($usuario->email == 'admin@admin.com') {

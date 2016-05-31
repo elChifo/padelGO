@@ -27,6 +27,11 @@
 		   			</ul> 
 		   		</li>
 		    </ul>
+
+		    <div class="imagenClub">
+                <img src="<?= URL; ?>img/clubs/club<?= $club->idClub; ?>.png" 
+                alt="club<?= $club->idClub; ?>" height="150" /> 
+            </div>
 		   		
 		</fieldset>   
 		<?php endforeach ?>

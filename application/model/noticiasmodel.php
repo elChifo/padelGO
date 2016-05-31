@@ -53,7 +53,6 @@ class NoticiasModel
             $params = array(
                 'titular' => $_POST["titular"],
                 'contenido' => $_POST["contenido"],
-                //'imagen' => $_POST["imagen"],
                 'fechaNoticia' => $_POST["fechaNoticia"]
             );
 
@@ -90,8 +89,6 @@ class NoticiasModel
         $rutaImagen = $datos['path'] . 'noticia' . $datos['idNoticia'] . '.png';
 
         $editar = 'imagen="' . $rutaImagen . '"';
-
-        //var_dump($editar);
 
         $ssql = 'UPDATE Noticias SET ' . $editar . ' WHERE idNoticia=:idNoticia';
 

@@ -5,7 +5,7 @@
 
 <h2>INSCRIPCIÓN DE NUEVOS CLUBS</h2>
 
-    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
+    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
 
         <fieldset>
             <legend>
@@ -31,6 +31,12 @@
             <input type="date" name="numPistas" 
                     value="<?= (isset($club['numPistas'])) ? $club['numPistas'] : "" ?>">
             </p>
+
+            <div class="subidaClub">
+                <label id="imagenClub" for="imagenClub">Agregar una Imagen al Club (max. 2 MB)
+                </label>
+                <input id="imagenclub" type="file" name="imagenClub">
+            </div>
            
                 <input type="submit" value="Registrar">
 

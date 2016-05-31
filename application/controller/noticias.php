@@ -16,7 +16,6 @@ class Noticias extends Controller
     public function crear()
     {            
         $this->view->addData(['titulo' => 'Crear Noticia']);
-
         $idSession = Session::get('idUsuario');
 
         if ($idSession != 1) {
