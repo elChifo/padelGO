@@ -1,6 +1,7 @@
 <?php $this->layout('layout') ?>
-<div class="container">
-	<div class="col-md-12">
+		<div class="col-md-12">
+			
+		</div>
 		<div class="col-md-4">
 		<h6> .</h6>
 		<h3> PRESENTACIÓN </h3>
@@ -22,6 +23,5 @@
 		    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin vestibulum purus, sed viverra purus tristique suscipit. Quisque ullamcorper nunc congue mi porttitor posuere. Nam sem lectus, commodo elementum porta non, suscipit ac dui. Donec pellentesque felis magna, vel varius purus venenatis ac. Phasellus eu diam vel elit gravida fringilla a sed sem. Duis aliquet a nibh non vehicula. Nullam fringilla euismod justo, vel interdum quam elementum ac. 
 		    </p>
 		</div>
-	</div>
-</div>
+	
 
