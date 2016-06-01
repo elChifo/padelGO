@@ -1,4 +1,5 @@
 <?php $this->layout('layout') ?>
+<?php $this->insert('partials/feedback') ?>
 
 <div class="container">
     

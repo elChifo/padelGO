@@ -1,0 +1,23 @@
+
+    
+.errorf, .exitof{
+    background-color: #ffdddd;
+    padding: 15px;
+    color: #d66;
+    font-size: 110%;
+    border: 1px solid #f99;
+    margin-bottom: 15px;
+}
+.errorf ul, .exitof ul{
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+.errorf li, .exitof li{
+    margin: 0;
+    padding: 4px;
+}
+.exitof{
+    background-color: #ddffdd;
+    color: #3c3;
+    border: 1px solid #9f9;
+}

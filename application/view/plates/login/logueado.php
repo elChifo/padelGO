@@ -1,5 +1,5 @@
 <?php $this->layout('layout') ?>  
-<?php // if (Session::get('idUsuario')) { Session::delete('feedback_negative');} ?>
+<?php $this->insert('partials/feedback') ?>
 
 <div class="container">
     

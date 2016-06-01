@@ -1,6 +1,7 @@
 <?php $this->layout('layout') ?> 
 
-<div class="container">    
+<div class="container"> 
+<?php $this->insert('partials/feedback') ?>   
 
 	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="calcelacion">
         <fieldset> 
