@@ -64,7 +64,6 @@ class Usuarios extends Controller
         else {
 
             $usuarioNuevo = $_POST;
-            var_dump($usuarioNuevo);
 
             if ($usuarioNuevo['email'] == $usuario->email) {
 
@@ -129,13 +128,10 @@ class Usuarios extends Controller
         }
         else {
 
-            if (UsuariosModel::borrar($idUsuario)) {
+            UsuariosModel::borrar($idUsuario);
 
-                echo $this->view->render('usuarios/borrar');
-            }
-            else {
-                echo $this->view->render('usuarios/noBorrado');
-            }
+            header('location: ../usuarios/administrar');           
+           
         }
 
     }
