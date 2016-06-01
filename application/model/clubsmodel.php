@@ -68,6 +68,17 @@ class ClubsModel
         }
     }   
 
+    public static function borrar($idClub)
+    {           
+        $conn = Database::getInstance()->getDatabase();
+        $errores_validacion = false; 
+
+        $ssql = "DELETE FROM Clubs WHERE idClub=:idClub";
+        $query = $conn->prepare($ssql);
+        $params = [':idClub' => $idClub];
+        $query->execute($params);
+    }
+
     public static function obtenerID($nombreClub)
     {        
         $conn = Database::getInstance()->getDatabase();

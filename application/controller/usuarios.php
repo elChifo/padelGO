@@ -130,7 +130,7 @@ class Usuarios extends Controller
 
             UsuariosModel::borrar($idUsuario);
 
-            header('location: ../usuarios/administrar');           
+            header('location: ../usuarios/borrar');           
            
         }
 

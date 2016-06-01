@@ -118,4 +118,25 @@ class Noticias extends Controller
         }        
     }
 
+    public function borrar()
+    {
+        $this->view->addData(['titulo' => 'Borrar Noticias']);         
+        $idSession = Session::get('idUsuario');       
+
+        $idNoticia = $_GET['idNoticia'];        
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            NoticiasModel::borrar($idNoticia);
+
+            echo $this->view->render('noticias/borrar');           
+           
+        }
+
+    }
+
 }

@@ -83,7 +83,15 @@
             <a href="<?php echo URL; ?>clubs" title="Ir a CLUBS">CLUBS</a><br>
             <a href="<?php echo URL; ?>contacto" title="Ir a CONTACTO">CONTACTO</a><br>
             <a href="<?php echo URL; ?>login" title="Ir a MI CUENTA">MI CUENTA</a><br>
+
+        <?php $idSession = Session::get('idUsuario'); ?>   
+        <?php if (!isset($idSession)) : ?>
+
             <a href="<?php echo URL; ?>registro" title="Ir a REGISTRARME">REGISTRARME</a>
+
+        <?php endif ?>
+
+
         </div>
         <div class="col-md-3 divpie">
         <p class="pFooter">CORPORATIVO</p>

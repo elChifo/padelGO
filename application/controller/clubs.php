@@ -122,4 +122,26 @@ class Clubs extends Controller
     }
 
 
+    public function borrar()
+    {
+        $this->view->addData(['titulo' => 'Borrar Club']);         
+        $idSession = Session::get('idUsuario');       
+
+        $idClub = $_GET['idClub'];        
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            ClubsModel::borrar($idClub);
+
+            echo $this->view->render('clubs/borrar');           
+           
+        }
+
+    }
+
+
 }

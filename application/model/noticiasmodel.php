@@ -27,7 +27,6 @@ class NoticiasModel
         return $query->fetch();
     }
 
-
     public static function crear($datos)
     {
         $conn = Database::getInstance()->getDatabase();
@@ -69,6 +68,16 @@ class NoticiasModel
         }
     } 
 
+    public static function borrar($idNoticia)
+    {           
+        $conn = Database::getInstance()->getDatabase();
+        $errores_validacion = false; 
+
+        $ssql = "DELETE FROM Noticias WHERE idNoticia=:idNoticia";
+        $query = $conn->prepare($ssql);
+        $params = [':idNoticia' => $idNoticia];
+        $query->execute($params);
+    }
 
     public static function obtenerID($titular)
     {        
