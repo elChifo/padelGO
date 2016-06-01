@@ -37,6 +37,11 @@
     	<h3>Editar los datos de Usuario</h3>
     </a>
 	</p>
+	<p>
+    <a href="../usuarios/cancelacion"> 
+    	<h3>Solicitar Cancelación de la Cuenta</h3>
+    </a>
+	</p>
 
 
 </div>

@@ -15,31 +15,7 @@ class Usuarios extends Controller
                 'categorias' => $categorias
         ]);
     }
-
-    //Selecciona un usuario y lo borra de la base de datos
-    public function borrar()
-    {
-        $this->view->addData(['titulo' => 'Borrar Usuarios']);         
-        $idSession = Session::get('idUsuario');       
-
-        $idUsuario = $_GET['idUsuario'];        
-
-        if ($idSession != 1) {
-
-            header('location: ../error');
-        }
-        else {
-
-            if (UsuariosModel::borrar($idUsuario)) {
-
-                echo $this->view->render('usuarios/borrar');
-            }
-            else {
-                echo $this->view->render('usuarios/noBorrado');
-            }
-        }
-
-    }
+    
 
     //?
     public function administrar()
@@ -137,6 +113,67 @@ class Usuarios extends Controller
         }
     }  
 
+
+
+    //Selecciona un usuario y lo borra de la base de datos
+    public function borrar()
+    {
+        $this->view->addData(['titulo' => 'Borrar Usuarios']);         
+        $idSession = Session::get('idUsuario');       
+
+        $idUsuario = $_GET['idUsuario'];        
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            if (UsuariosModel::borrar($idUsuario)) {
+
+                echo $this->view->render('usuarios/borrar');
+            }
+            else {
+                echo $this->view->render('usuarios/noBorrado');
+            }
+        }
+
+    }
+
+    public function cancelacion()
+    {        
+        $this->view->addData(['titulo' => 'Cancelar Cuenta']);         
+        $idSession = Session::get('idUsuario');   
+
+        if (!$_POST) {
+
+            echo $this->view->render('usuarios/cancelacion', [
+                    'idSession' => $idSession 
+            ]);
+
+        }
+        elseif (empty($_POST['otrosmotivos'])) {
+
+            Session::add('feedback_negative', "La Cancelación no ha sido posible, Inténtelo de nuevo");
+
+            echo $this->view->render('usuarios/cancelacion', [
+                    'idSession' => $idSession 
+            ]);
+        } 
+        elseif (isset($_POST['otrosmotivos'] {
+
+            $motivosCancelacion = $_POST;
+
+            Session::set('motivosCancelacion', $motivosCancelacion);
+
+            Session::add('feedback_positive', "Su Cuenta será Cancelada en menos de 24 Horas.");
+
+            var_dump($_POST);
+
+           // header('location: ../login');
+        } 
+          
+    }
 
 
  
