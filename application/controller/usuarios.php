@@ -152,7 +152,12 @@ class Usuarios extends Controller
             ]);
 
         }
-        elseif (empty($_POST['otrosmotivos'])) {
+        elseif ( empty($_POST['otrosmotivos']) && 
+                (!isset($_POST['privacidad'])) &&
+                (!isset($_POST['dificultad'])) &&
+                (!isset($_POST['negativa'])) &&
+                (!isset($_POST['desuso'])) 
+            ) {
 
             Session::add('feedback_negative', "La Cancelación no ha sido posible, Inténtelo de nuevo");
 
@@ -160,7 +165,7 @@ class Usuarios extends Controller
                     'idSession' => $idSession 
             ]);
         } 
-        elseif (isset($_POST['otrosmotivos'] {
+        else {
 
             $motivosCancelacion = $_POST;
 
@@ -168,15 +173,9 @@ class Usuarios extends Controller
 
             Session::add('feedback_positive', "Su Cuenta será Cancelada en menos de 24 Horas.");
 
-            var_dump($_POST);
-
-           // header('location: ../login');
+            header('location: ../login');
         } 
-          
     }
-
-
- 
 }
 
 

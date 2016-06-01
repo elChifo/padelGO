@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="<?= URL; ?>img/padelgoico.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
     <!-- JS -->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -22,8 +21,9 @@
     <script type="text/javascript">
         window.cookieconsent_options = {"message":"Utilizamos cookies para facilitar el uso de nuestra página web","dismiss":"Ok!","learnMore":"Más info","link":"http://www.padelgo.es","theme":"dark-bottom"};
     </script>
-
+    
     <script type="text/javascript" src="<?= URL; ?>/js/cookieconsent.min.js"></script>
+    <script type="text/javascript" src="<?= URL; ?>/js/codigoform.js"></script>
     <script type="text/javascript" src="<?= URL; ?>/js/demopolitica.js"></script>
 
 
@@ -40,6 +40,7 @@
 
     <!--<link rel="stylesheet" type="text/css" href="<?= URL; ?>css/style.css">-->
     <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/styleform.css">
     <!-- <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/demopolitica.css"> -->
     <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/jcalendar/theme.css">
     <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/font-awesome.min.css">
