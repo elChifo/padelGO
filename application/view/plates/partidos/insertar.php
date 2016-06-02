@@ -30,7 +30,8 @@
             
             <br>
             <div>
-                <label for="fechaPartido"><!--Fecha del Partido--></label>
+            <!-- fecha antigua 
+                <label for="fechaPartido"></label>
                 <input type="hidden" name="fechaPartido" id="fecha" />
                     <span style="background-color: #ffc; cursor:default; padding:.3em; border:thin solid #ff0; text-decoration:underline; color: blue;" 
                             onmouseover="this.style.cursor = 'pointer'; this.style.cursor = 'hand'; 
@@ -39,6 +40,11 @@
                             Pinchar aqui para Seleccionar la fecha 
                     </span>                    
                 <p id="error_fecha"></p>
+                -->
+                <label for="fechayhora">Fecha:
+                 <input type="text" id="fechayhora" value="" />
+                </label>
+
             </div>
             <br>
 
@@ -66,6 +72,9 @@
                     <input type="radio" name="horario" value="tarde" /> Tarde <br>   
                     <input type="radio" name="horario" value="noche" /> Noche <br> 
                 -->
+                     
+
+
 
                         <select name="horaPartido" >
                             <option value="7:00">7:00</option>
