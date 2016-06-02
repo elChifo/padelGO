@@ -11,6 +11,36 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
+     <!-- DateTimePicker -->
+       <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
+        <script>
+         $.datepicker.regional['es'] = {
+         closeText: 'Cerrar',
+         prevText: '<Ant',
+         nextText: 'Sig>',
+         currentText: 'Hoy',
+         monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+         monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+         dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+         dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+         dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+         weekHeader: 'Sm',
+         dateFormat: 'dd/mm/yy',
+         firstDay: 1,
+         isRTL: false,
+         showMonthAfterYear: false,
+         yearSuffix: ''
+         };
+         $.datepicker.setDefaults($.datepicker.regional['es']);
+        $(function () {
+        $("#fechayhora").datepicker();
+        });
+        </script>
+<!-- FIN DateTimePicker -->
+
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
     <script>
         var url = "<?= URL; ?>";
@@ -29,11 +59,11 @@
 
     <!-- BOOTSTRAP -->
     <script type="text/javascript" src="<?= URL; ?>js/bootstrap.min.js"></script>
-
+    <!-- calendario fecha antiguo (da conflicto con el nuevo)
     <script type="text/javascript" src="<?= URL; ?>js/jcalendar/calendar.js"></script>
     <script type="text/javascript" src="<?= URL; ?>js/jcalendar/calendar-es.js"></script>
     <script type="text/javascript" src="<?= URL; ?>js/jcalendar/calendar-setup.js"></script>
-        
+        --> 
     <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/bootstrap.min.css">
