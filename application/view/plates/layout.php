@@ -128,7 +128,7 @@
             <a href="#" title="">EL CONCEPTO PADELGO!</a><br>
             <a href="../home/cookies">POLÍTICA DE COOKIES</a><br>
             <a href="../home/privacidad">POLÍTICA DE PRIVACIDAD</a><br>
-            <a href="#" title="">FAQ</a>
+            <a href="../home/faq">FAQ</a>
         </div>
         <div class="col-md-3 divpie">
         <p class="pFooter">CLIMA EN MURCIA</p>
