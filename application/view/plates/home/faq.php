@@ -12,14 +12,35 @@
 
 					<h3>FAQ</h3> 
 					<h2>Preguntas Frecuentes </h2>
+					<br/>
+					<h3>1.-Objetivo de la web</h3>
+					Dar a conocer nuestro proyecto en el IES Ingeniero de la Cierva en el Grado Superior de Desarrollo de Aplicaciones Web.<br/>
+					<br/>
 
-					A los efectos de lo previsto en la Ley Orgánica 15/99 de 13 de Diciembre de Protección de datos de carácter personal, PadelGo informa al usuario de la existencia de un fichero automatizado de datos personales creado por y para PadelGo, y bajo su responsabilidad, con la finalidad de realizar el mantenimiento y gestión de la relación con el usuario, así como las labores de información, formación y comercialización del servicio y de las actividades relacionadas con los mismos.<br/>
+					<h3>2.-Acceso a la web</h3>
+					PadelGo, precisará de la recogida de unos datos básicos e imprescindibles para la prestación de los servicios. Dichos datos son: Nombre, apellidos, dirección, código Postal, y teléfono del Usuario. LA presentación se hará en una maquina real con el servicio en local, pero conectado a interntet para hacer uso de algunos servicios online.
 					<br/>
-					En el momento de aceptación de las presentes Condiciones Generales, PadelGo, precisará de la recogida de unos datos básicos e imprescindibles para la prestación de los servicios. Dichos datos son: Nombre, apellidos, dirección, código Postal, y teléfono del Usuario. En el momento de la aceptación del presente contrato el Usuario será informado del carácter necesario de la recogida de tales datos
+
+					<h3>3.-Contenido de la web</h3>
+					El idioma utilizado de PADELGO! en la web será el castellano.<br/>
+					<br/>	
+
+					<h3>4.-Usuarios de la web</h3>	
+					Se han establecido datos verídicos y ficticios por parte de los desarrolladores para poder llevar a cabo una presentación lo más real posible.
+					<br/>	
+
+					<h3>5.-Menores de edad</h3>
+					Los menores de edad deben solicitar y obtener el permiso de sus padres, del tutor o del representante legal antes de poder acceder a los servicios y / o contenidos que se incorporan en la web. Queda prohibido el acceso y uso del portal a los menores de edad no autorizados. 
 					<br/>
-					El usuario presta su consentimiento para que PadelGo, pueda hacer uso de sus datos de navegación por Internet a fin de remitirle publicidad de terceros acorde con los sitios web que visite. Los anunciantes serán los únicos responsables de la veracidad, exactitud y legalidad de su publicidad siendo PadelGo un mero difusor de la misma.<br/>
-					<br/>			
-					De conformidad con lo establecido en las condiciones generales el usuario conoce y acepta el empleo de la tecnología "Cookie" por parte de PadelGo, si bien puede configurar su navegador para ser avisado de ello e impedir la instalación de "Cookies" en su disco duro, por favor, consulte instrucciones y manual de su navegador para completar esta información.
+
+					<h3>5.-Menores de edad</h3>
+					Los menores de edad deben solicitar y obtener el permiso de sus padres, del tutor o del representante legal antes de poder acceder a los servicios y / o contenidos que se incorporan en la web. Queda prohibido el acceso y uso del portal a los menores de edad no autorizados. 
+					<br/>
+
+					<h3>6.-Política de Privacidad</h3>
+					En el momento de aceptación de las presentes Condiciones Generales, PadelGo, precisará de la recogida de unos datos básicos e imprescindibles para la prestación de los servicios. Dichos datos son: Nombre, apellidos, dirección, código Postal, y teléfono del Usuario. 
+					<br/>
+
 					<span class="close">Cerrar</span>
 				</div>		
 			</div>
