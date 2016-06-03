@@ -2,7 +2,6 @@
 <div class="container">
 	<div class="col-md-12">
 		<div class="col-md-4">
-
 			<script>!window.jQuery && document.write(unescape('%3Cscript src="<?= URL; ?>jsjquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
 			<input type="button" value="faq" class="button" data-type="zoom" />
