@@ -12,20 +12,20 @@
             </legend>  
             
             <input type="hidden" name="idUsuario" 
-                    value="<?= (isset($datos['idUsuario'])) ? $datos['idUsuario'] : "" ?>"> 
+                    value="<?= (isset($registro['idUsuario'])) ? $registro['idUsuario'] : "" ?>"> 
             </input>
             
             <div>
             <label for="nombre">Nombre </label>
             <input type="text" name="nombre" 
-                    value="<?= (isset($datos['nombre'])) ? $datos['nombre'] : "" ?>"
+                    value="<?= (isset($registro['nombre'])) ? $registro['nombre'] : "" ?>"
                     placeholder="Introduzca el Nombre">
             </div>
 
             <div>
             <label for="apellidos">Apellidos</label>
             <input type="text" name="apellidos" 
-                    value="<?= (isset($datos['apellidos'])) ? $datos['apellidos'] : "" ?>"
+                    value="<?= (isset($registro['apellidos'])) ? $registro['apellidos'] : "" ?>"
                     placeholder="Introduzca los Apellidos"> 
             </div>
             
@@ -74,21 +74,21 @@
             <div>
             <label for="direccion">Dirección</label>
             <input type="text" name="direccion" 
-                    value="<?= (isset($datos['direccion'])) ? $datos['direccion'] : "" ?>"
+                    value="<?= (isset($registro['direccion'])) ? $registro['direccion'] : "" ?>"
                     placeholder="Introduzca una Dirección">
             </div>
 
             <div>
             <label for="telefono">Teléfono</label>
             <input type="tel" name="telefono" 
-                    value="<?= (isset($datos['telefono'])) ? $datos['telefono'] : "" ?>"
+                    value="<?= (isset($registro['telefono'])) ? $registro['telefono'] : "" ?>"
                     placeholder="Introduzca el Teléfono">
             </div>
             
             <div>
             <label for="email">Email</label>
             <input type="email" name="email" 
-                    value="<?= (isset($datos['email'])) ? $datos['email'] : "" ?>"
+                    value="<?= (isset($registro['email'])) ? $registro['email'] : "" ?>"
                     placeholder="Introduzca el Email">
             </div>
 
@@ -103,10 +103,10 @@
             <select name="idCategoria">
                     <option value="0"> Seleccione una Categoría </option> 
 
-                <?php foreach($categorias as $value): ?>
+                <?php foreach($categorias as $categoria): ?>
                     
-                    <option value="<?php echo $value->idCategoria ?>" >
-                            <?php echo $value->nombreCategoria ?>
+                    <option value="<?= $categoria->idCategoria ?>" >
+                            <?= $categoria->nombreCategoria ?>
                     </option>
                 <?php endforeach ?>
             </select>    

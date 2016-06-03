@@ -2,79 +2,146 @@
 
 class Clubs extends Controller
 {
+
    	public function index()
     {
         $this->view->addData(['titulo' => 'Clubs']);
 
         $clubs = ClubsModel::getClub();
-
-        // echo $this->view->render("clubs/index", [
-        // 		'clubs' => $clubs
-        // ]);     
-
-        if (!$_POST) {
-
-            echo $this->view->render('clubs/index', [
+        
+        echo $this->view->render('clubs/index', [
                 'clubs' => $clubs
-            ]);
-        } 
+        ]);         
     }
 
     public function insertar()
     {            
         $this->view->addData(['titulo' => 'Insertar Club']);
-
-        $clubs = ClubsModel::getClub();
-
         $idSession = Session::get('idUsuario');
 
+        $clubs = ClubsModel::getClub();
         $usuario = UsuariosModel::getIdUsuario($idSession);
 
-        if (!$_POST) {
+        if ($idSession != 1) {
 
-            echo $this->view->render('clubs/insertar', [
-                'clubs' => $clubs
-            ]);
-        } 
+            header('location: ../error');
+        }
         else {
 
-            if(!isset($_POST["nombreClub"])) {
-                $_POST["nombreClub"] = "";
-            }
-            if(!isset($_POST["direccionClub"])) {
-                $_POST["direccionClub"] = "";
-            }
-            if(!isset($_POST["numPistas"])) {
-                $_POST["numPistas"] = "";
-            }
+            if (!$_POST) {
 
-            $datos = array(
-                'nombreClub' => $_POST["nombreClub"],
-                'direccionClub' => $_POST["direccionClub"],
-                'numPistas' => $_POST["numPistas"]
-            );
-
-            if(ClubsModel::insertar($datos)) {
-
-                 header("location: ../clubs/index");
+                echo $this->view->render('clubs/insertar');
             } 
-            else {
-                echo $this->view->render('clubs/insertar',array(
-                        'errores' => array('Error al insertar'),
-                        'datos' => $_POST
-                ));
+            else {                
+
+                $club = $_POST;
+
+                if(ClubsModel::insertar($club)) {
+
+                    if (isset($_FILES['imagenClub'])) {
+
+                        //Validar::imagen($_FILES['imagenContacto']);
+
+                        $imagen['idClub'] = ClubsModel::obtenerID($_POST['titular']);
+                        $imagen['imagenClub'] = $_FILES['imagenClub'];
+                        $imagen['path'] = 'img/clubs/';
+
+                        ClubsModel::insertarImagen($imagen);
+                    }  
+
+                    header("location: ../clubs/administrar");
+                } 
+                else {
+                    echo $this->view->render('clubs/insertar',array(
+                            'errores' => array('Error al insertar'),
+                            'club' => $club
+                    ));
+                }
+            }     
+        } 
+    }
+
+
+    public function administrar()
+    {
+        $this->view->addData(['titulo' => 'Administrar Clubs']);
+        $idSession = Session::get('idUsuario'); 
+
+        $clubs = ClubsModel::getClub();         
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            echo $this->view->render('clubs/administrar', [
+                    'clubs'     => $clubs
+            ]);
+        }
+    }
+
+    public function editar()
+    {            
+        $this->view->addData(['titulo' => 'Editar Club']);
+        $idSession = Session::get('idUsuario');        
+
+        $club = ClubsModel::getIdClubs($_GET['idClub']);
+
+        if ($idSession != 1) {
+
+            header("location: ../error/");     
+        }
+        else {
+
+            if (!$_POST) {
+
+                echo $this->view->render('clubs/editar', [
+                    'club'  => $club
+                ]);
+            } 
+            else { 
+
+                ClubsModel::editar($_POST);
+
+                if (isset($_FILES['imagenClub'])) {
+
+                    //Validar::imagen($_FILES['imagenContacto']);
+
+                    $imagen['idClub'] = ClubsModel::obtenerID($_POST['nombreClub']);
+                    $imagen['imagenClub'] = $_FILES['imagenClub'];
+                    $imagen['path'] = 'img/clubs/';
+
+                    ClubsModel::insertarImagen($imagen);
+                }                
+                
+                    header("location: ../clubs/administrar");                               
+                
             }
         }        
     }
 
-    public function administrar()
-    {
-        $this->view->addData(['titulo' => 'Administrar Clubs']);         
-        $clubs = ClubsModel::getClub(); 
 
-        echo $this->view->render('clubs/administrar', [
-                'clubs'     => $clubs
-        ]);
+    public function borrar()
+    {
+        $this->view->addData(['titulo' => 'Borrar Club']);         
+        $idSession = Session::get('idUsuario');       
+
+        $idClub = $_GET['idClub'];        
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            ClubsModel::borrar($idClub);
+
+            echo $this->view->render('clubs/borrar');           
+           
+        }
+
     }
+
 
 }

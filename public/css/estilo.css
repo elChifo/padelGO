@@ -1,10 +1,10 @@
 body {
 	background-image: url(../img/fondo-web6.jpg); 
 	background-size: 100%;
-	border-bottom: solid 5px #c5f619;
+	background-attachment: fixed;
 }
 
-.container {
+.contenido {
 	background-color: white;
 }
 
@@ -12,9 +12,13 @@ body {
 	height: 100%;
 }
 
+.navigation {
+	padding-left: 10px;
+}
+
 .menu {
 	margin-top: 7px;
-	float: left;
+	/float: left;
 }
 .logo {
 	margin-top: 7px;
@@ -58,7 +62,7 @@ body {
 .pFooter {
 	text-align: center;
 	font-size: 20px;
-	color:#333;
+	color:#a0a0a0;
 	border-bottom: 2px solid #333;
 }
 
@@ -67,6 +71,10 @@ body {
 	color: white;
 	float: right;
 	text-align: right;
+}
+
+.imgLogin {
+	padding-bottom: 2px;
 }
 
 .enlaceLogin {
@@ -83,37 +91,37 @@ body {
 }
 
 .imagen-menu1 {
-	margin-top: 7px;
+	margin-top: 9px;
 }
 .imagen-menu1:hover {
 	margin-top: -5px;
 }
 .imagen-menu2 {
-	margin-top: 7px;
+	margin-top: 9px;
 }
 .imagen-menu2:hover {
 	margin-top: -5px;
 }
 .imagen-menu3 {
-	margin-top: 7px;
+	margin-top: 9px;
 }
 .imagen-menu3:hover {
 	margin-top: -5px;
 }
 .imagen-menu4 {
-	margin-top: 7px;
+	margin-top: 9px;
 }
 .imagen-menu4:hover {
 	margin-top: -5px;
 }
 .imagen-menu5 {
-	margin-top: 7px;
+	margin-top: 9px;
 }
 .imagen-menu5:hover {
 	margin-top: -5px;
 }
 .imagen-menu6 {
-	margin-top: 7px;
+	margin-top: 9px;
 }
 .imagen-menu6:hover {
 	margin-top: -5px;
@@ -207,3 +215,4 @@ text-decoration:none;
 .social_bookmarks .iconrssmail:hover{background-position:center -57px; background-color: #FFDE00;}
 .social_bookmarks li:hover a{background: transparent url(//lh4.googleusercontent.com/-XNviZ_JqvyU/U4vDMDFAX8I/AAAAAAAALLk/E4VIJr1onlo/s57/icon-social-reflect.png) no-repeat;
 }
+

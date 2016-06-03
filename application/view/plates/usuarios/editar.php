@@ -78,12 +78,12 @@
             <label for="idCategoria">Elegir una Categoría</label>
             <select name="idCategoria">
                    
-                <?php foreach($categorias as $value): ?>
+                <?php foreach($categorias as $categoria): ?>
 
-                    <option value="<?php echo $value->idCategoria ?>" 
+                    <option value="<?= $categoria->idCategoria ?>" 
 
-                        <?php if($value->idCategoria == $usuario->idCategoria) { echo 'selected'; } ?> >
-                            <?php echo $value->nombreCategoria ?>
+                        <?php if($categoria->idCategoria == $usuario->idCategoria) { echo 'selected'; } ?>  > 
+                            <?= $categoria->nombreCategoria ?>
                     </option>
                 <?php endforeach ?>
 
@@ -91,7 +91,7 @@
 
             <div class="imagenUsuario">
                 <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
-                alt="usuario<?= $usuario->idUsuario; ?>" height="25" /> 
+                alt="usuario<?= $usuario->idUsuario; ?>" height="100" /> 
             </div>
 
             <div class="subidaImagen">

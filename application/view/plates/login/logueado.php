@@ -1,5 +1,5 @@
 <?php $this->layout('layout') ?>  
-<?php if (Session::get('idUsuario')) { Session::delete('feedback_negative');} ?>
+<?php $this->insert('partials/feedback') ?>
 
 <div class="container">
     
@@ -7,34 +7,39 @@
 
 	<?php if ($usuario->sexo == 'Hombre') : ?>
 	    <p>
-	    	Bienvenido al sistema, <?php echo $usuario->nombre; ?>
+	    	Bienvenido al sistema, <?= $usuario->nombre; ?>
 	    </p>
 	<?php else : ?>
 		<p>
-			Bienvenida al sistema, <?php echo $usuario->nombre; ?>
+			Bienvenida al sistema, <?= $usuario->nombre; ?>
 		</p>
 	<?php endif ?>
 					
 		<h3> SUS DATOS:	</h3> 
 			<ul>
-				<li>NOMBRE:  <?php echo $usuario->nombre; ?> </li>
-				<li>APELLIDOS:  <?php echo $usuario->apellidos; ?> </li>
-				<li>SEXO:  <?php echo $usuario->sexo; ?> </li>
-				<li>FECHA NACIMIENTO:  <?php echo $usuario->fechaNac; ?> </li>
-				<li>DIRECCIÓN:  <?php echo $usuario->direccion; ?> </li>
-				<li>TELÉFONO:  <?php echo $usuario->telefono; ?> </li>
-				<li>EMAIL:  <?php echo $usuario->email; ?> </li>	
-				<li>CATEGORÍA:  <?php echo $usuario->idCategoria . "ª Categoría"; ?> </li>	
+				<li>NOMBRE:  <?= $usuario->nombre; ?> </li>
+				<li>APELLIDOS:  <?= $usuario->apellidos; ?> </li>
+				<li>SEXO:  <?= $usuario->sexo; ?> </li>
+				<li>FECHA NACIMIENTO:  <?= $usuario->fechaNac; ?> </li>
+				<li>DIRECCIÓN:  <?= $usuario->direccion; ?> </li>
+				<li>TELÉFONO:  <?= $usuario->telefono; ?> </li>
+				<li>EMAIL:  <?= $usuario->email; ?> </li>	
+				<li>CATEGORÍA:  <?= $usuario->idCategoria . "ª Categoría"; ?> </li>	
 			</ul>	
 			
 			<div class="imagenUsuario">
 				<img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
-				alt="usuario<?= $usuario->idUsuario; ?>" height="25" />	
+				alt="usuario<?= $usuario->idUsuario; ?>" height="100" />	
 			</div>
 
 	<p>
     <a href="../usuarios/editar"> 
     	<h3>Editar los datos de Usuario</h3>
+    </a>
+	</p>
+	<p>
+    <a href="../usuarios/cancelacion"> 
+    	<h3>Solicitar Cancelación de la Cuenta</h3>
     </a>
 	</p>
 

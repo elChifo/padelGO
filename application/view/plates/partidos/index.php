@@ -1,5 +1,6 @@
 <?php $this->layout('layout') ?> 
-<?php $idUsuario = Session::get('usuarioPartido'); ?>
+<?php $idSession = Session::get('idUsuario'); ?>
+<?php $usuarioPartido = Session::get('usuarioPartido'); ?>
 
 <div class="container">	
 
@@ -14,38 +15,35 @@
 				     		
 	<?php endif ?>
 
-		<?php if(isset($idUsuario)) : ?>	
+		<?php if (isset($idSession)) : ?>	
 
 				<login style="font-size: 18px;">	
 					<a href="partidos/insertar">Crear un Nuevo Partido</a>
 				<login/>
 				
-		<?php else: ?>	
+		<?php else : ?>	
 				
 				<login style="font-size: 18px;">
 					Para inscribirse en un partido necesita:&nbsp;&nbsp;&nbsp;&nbsp;
 					<button type="button" class="botonlogin" title="Registrarse" 
-                    	onclick="window.location.href='<?php echo URL; ?>registro'">Registrarse
+                    	onclick="window.location.href='<?= URL; ?>registro'">Registrarse
 	                </button>
 	                <button type="button" class="botonlogin" title="Iniciar Sesión" 
-	                    onclick="window.location.href='<?php echo URL; ?>login'">Iniciar Sesión
-	                </button>
-					<!-- 
-						<a href="login/">Loguearse</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-						<a href="registro/">Registrarse</a> 
-					-->
+	                    onclick="window.location.href='<?= URL; ?>login'">Iniciar Sesión
+	                </button>					
+
 				<login/>
 
 		<?php endif ?>
 
         </h2>  
 
-		<?php foreach($partidos as $value) : ?>
+		<?php foreach ($partidos as $partido) : ?>
 			
 			<div class="partido">
 			<fieldset>
 				<div class="idPartido">
-					<p>Número de Partido: <?php echo $value->idPartido; ?></p>
+					<p>Número de Partido: <?= $partido->idPartido; ?></p>
 				</div>
 
 				<div class="cancha">
@@ -55,9 +53,9 @@
 
 							<td class:"jugador1">Jugador 1: 
 
-								<?php if (!empty($value->jugador1)) : ?>
-									<b><?php echo $value->jugador1; ?></b>
-								<?php elseif (!Session::get('idUsuario')) : ?>
+								<?php if (!empty($partido->jugador1)) : ?>
+									<b><?= $partido->jugador1; ?></b>
+								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
@@ -66,9 +64,9 @@
 
 							<td class:"jugador3">Jugador 3: 
 
-								<?php if (!empty($value->jugador3)) : ?>
-									<b><?php echo $value->jugador3; ?></b>
-								<?php elseif (!Session::get('idUsuario')) : ?>
+								<?php if (!empty($partido->jugador3)) : ?>
+									<b><?= $partido->jugador3; ?></b>
+								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
@@ -82,9 +80,9 @@
 
 							<td class:"jugador2">Jugador 2: 
 
-								<?php if (!empty($value->jugador2)) : ?>
-									<b><?php echo $value->jugador2; ?></b>
-								<?php elseif (!Session::get('idUsuario')) : ?>
+								<?php if (!empty($partido->jugador2)) : ?>
+									<b><?= $partido->jugador2; ?></b>
+								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
@@ -93,9 +91,9 @@
 
 							<td class:"jugador4">Jugador 4: 
 
-								<?php if (!empty($value->jugador4)) : ?>
-									<b><?php echo $value->jugador4; ?></b>
-								<?php elseif (!Session::get('idUsuario')) : ?>
+								<?php if (!empty($partido->jugador4)) : ?>
+									<b><?= $partido->jugador4; ?></b>
+								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
 									<a href="partidos/entrar"><b>entrar</b></a>
@@ -110,31 +108,31 @@
 				<div class="datosPartido">
 					<ul>
 						<li class="tipoPartido">Tipo de Partido: 
-							<?php echo $value->tipoPartido; ?>
+							<?= $partido->tipoPartido; ?>
 						</li>
 
 						<li class="fechaPartido">Fecha del Partido: 
-							<?php echo $value->fechaPartido; ?>
+							<?= $partido->fechaPartido; ?>
 						</li>
 
 						<li class="horaPartido">Hora del Partido: 
-							<?php echo $value->horaPartido; ?>
+							<?= $partido->horaPartido; ?>
 						</li>
 					</ul>
 				</div>
 
 				<div class="datosClub">
-					<?php foreach ($clubs as $datos) : ?>
+					<?php foreach ($clubs as $club) : ?>
 					
-					<?php if($datos->idClub == $value->idClub): ?>
+					<?php if($club->idClub == $partido->idClub): ?>
 
 						<ul>
 							<li class="nombreClub">Nombre del Club: 
-								<?php echo $datos->nombreClub; ?>
+								<?= $club->nombreClub; ?>
 							</li>
 
 							<li class="direcciónClub">Dirección del Club: 
-								<?php echo $datos->direccionClub; ?>
+								<?= $club->direccionClub; ?>
 							</li>
 						</ul>        			
 
@@ -147,11 +145,12 @@
 
 					<?php foreach ($usuarios as $usuario) : ?>
 
-						<?php if ($usuario->idUsuario == $value->idUsuario): ?>
+						<?php if ($usuario->idUsuario == $usuarioPartido) : ?>
 
 						<p>								
-							<b>El partido lo ha creado: </b><?php echo $usuario->nombre . ' ' . $usuario->apellidos; ?>
-							<?php if(isset($idUsuario)) : ?>
+							<b>El partido lo ha creado: </b><?= $usuario->nombre . ' ' . $usuario->apellidos; ?>
+
+							<?php if(isset($idSession)) : ?>
 		
 							<h4><a href="partidos/entrar">Entrar al Partido</a></h4>
 
@@ -171,7 +170,7 @@
 		<?php endforeach ?>
     
 
-    <?php if ($idUsuario == 1) : ?>
+    <?php if ($idSession == 1) : ?>
 		<a href="../login/index"><h4>...Volver a Administración</h4></a>
 	<?php endif ?>	
 </div>

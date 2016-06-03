@@ -1,17 +1,7 @@
 <?php
 
 class UsuariosModel
-{
-     //obtenemos la categoria mediante la consulta query
-    public static function getCategoria()
-    {
-        $conn = Database::getInstance()->getDatabase();
-        $ssql = "SELECT * FROM Categorias";
-        $query = $conn->prepare($ssql);
-        $query->execute();
-        return $query->fetchAll();
-    }
-
+{    
      //obtenemos el usuario mediante la consulta query
         public static function getUsuario()
     {
@@ -29,11 +19,21 @@ class UsuariosModel
         if($id == 0){
             return false;
         }
-        $ssql = "SELECT * FROM Usuarios WHERE idUsuario = :id";
+        $ssql = "SELECT * FROM Usuarios WHERE idUsuario = :idUsuario";
         $query = $conn->prepare($ssql);
-        $query->bindValue(":id", $id, PDO::PARAM_INT);
+        $query->bindValue(":idUsuario", $id, PDO::PARAM_INT);
         $query->execute();
         return $query->fetch();
+    }
+
+     //obtenemos la categoria mediante la consulta query
+    public static function getCategoria()
+    {
+        $conn = Database::getInstance()->getDatabase();
+        $ssql = "SELECT * FROM Categorias";
+        $query = $conn->prepare($ssql);
+        $query->execute();
+        return $query->fetchAll();
     }
 
      //consulta query para borrar todos los campos de un usuario en la base de datos
@@ -128,13 +128,13 @@ class UsuariosModel
                 ':telefono'    => $datos["telefono"],
                 ':email'       => $datos["email"],
                 ':clave'       => $datos["clave"],
-                ':idCategoria' => $datos["idCategoria"],
+                ':idCategoria' => $datos["idCategoria"]
             );
 
             $ssql = "UPDATE Usuarios SET idUsuario = :idUsuario, nombre = :nombre, 
                         apellidos = :apellidos, sexo = :sexo, fechaNac = :fechaNac, 
                         direccion = :direccion, telefono = :telefono, email = :email, 
-                        clave = clave, idCategoria = :idCategoria WHERE idUsuario=:idUsuario";
+                        clave = clave, idCategoria = :idCategoria WHERE idUsuario = :idUsuario";
 
             $query = $conn->prepare($ssql);
             $query->execute($params);

@@ -7,6 +7,6 @@
 
     <p>
     	La página que estas buscando no se encuentra, vuelve a la web pinchando
-    	<a href="<?php echo URL; ?>">AQUI</a>
+    	<a href="<?= URL; ?>">AQUI</a>
     </p>
 </div>

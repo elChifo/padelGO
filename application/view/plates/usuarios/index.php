@@ -1,4 +1,5 @@
 <?php $this->layout('layout') ?>
+<?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
        
@@ -36,6 +37,12 @@
                     </strong>                                      
                 </li>
            </ul>
+
+           <div class="imagenUsuario">
+                <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
+                alt="usuario<?= $usuario->idUsuario; ?>" height="100" /> 
+            </div>
+            
            </fieldset>
 
            <?php endif ?>
@@ -44,7 +51,9 @@
 
     <?php endif ?>
 
-    <?php if ($idUsuario == 1) : ?>
+
+
+    <?php if ($idSession == 1) : ?>
         <a href="../login/index"><h4>...Volver a Administración</h4></a>
     <?php endif ?>
 </div>

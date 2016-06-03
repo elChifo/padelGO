@@ -1,5 +1,5 @@
 <?php $this->layout('layout') ?> 
-<?php $idUsuario = Session::get('idUsuario'); ?>
+<?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
 
@@ -13,26 +13,31 @@
 
 	<?php endif ?>
 
-		<?php foreach($clubs as $value): ?>
+		<?php foreach($clubs as $club): ?>
 		<fieldset>
 		    <ul> 
 		   		<li> Nombre Club:
 		   			<strong> 
-		   				<?php echo $value->nombreClub ?> &nbsp;&nbsp;&nbsp; 
+		   				<?= $club->nombreClub ?> &nbsp;&nbsp;&nbsp; 
 		   				<a href="">Ver Partidos</a>
 		   			</strong> 
 		   			<ul>		   					
-	   					<li> Direccion : <?php echo $value->direccionClub ?>  </li>
-	   					<li> Nº Pistas: <?php echo $value->numPistas ?>  </li>	   					
+	   					<li> Direccion : <?= $club->direccionClub ?>  </li>
+	   					<li> Nº Pistas: <?= $club->numPistas ?>  </li>	   					
 		   			</ul> 
 		   		</li>
 		    </ul>
+
+		    <div class="imagenClub">
+                <img src="<?= URL; ?>img/clubs/club<?= $club->idClub; ?>.png" 
+                alt="club<?= $club->idClub; ?>" height="150" /> 
+            </div>
 		   		
 		</fieldset>   
 		<?php endforeach ?>
     
 
-    <?php if ($idUsuario == 1) : ?>
+    <?php if ($idSession == 1) : ?>
 		<a href="../login/index"><h4>...Volver a Administración</h4></a>
 	<?php endif ?>	
 
