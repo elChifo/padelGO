@@ -41,7 +41,12 @@ class Home extends Controller
         echo $this->view->render('home/privacidad');
     }
 
+    public function faq()
+    {
+        $this->view->addData(['titulo' => 'Faq']);
 
+        echo $this->view->render('home/faq');
+    }
 
 
 
