@@ -117,7 +117,7 @@
         <?php $idSession = Session::get('idUsuario'); ?>   
         <?php if (!isset($idSession)) : ?>
 
-            <a href="<?php echo URL; ?>registro" title="Ir a REGISTRARME">REGISTRARME</a>
+            <a href="<?= URL; ?>registro" title="Ir a REGISTRARME">REGISTRARME</a>
 
         <?php endif ?>
 
@@ -159,7 +159,7 @@
                         </a>
                     </li>
                     <li class='iconrssmail'>
-                        <a href='<?php echo URL; ?>contacto'>
+                        <a href='<?= URL; ?>contacto'>
                             RSS Mail
                         </a>
                     </li>
