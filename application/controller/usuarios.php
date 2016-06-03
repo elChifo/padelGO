@@ -172,6 +172,8 @@ class Usuarios extends Controller
             header('location: ../login');
         } 
     }
+
+
 }
 
 

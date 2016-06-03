@@ -3,7 +3,7 @@
 class UsuariosModel
 {    
      //obtenemos el usuario mediante la consulta query
-        public static function getUsuario()
+    public static function getUsuario()
     {
         $conn = Database::getInstance()->getDatabase();
         $ssql = "SELECT * FROM Usuarios";

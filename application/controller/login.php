@@ -63,5 +63,28 @@ class Login extends Controller
         Session::destroy();
         header('location: /');
         exit();
-    }       
-}
+    } 
+
+
+    public function articulos()
+    {        
+        $this->view->addData(['titulo' => 'Artículos']);  
+
+        $articulos = MercadilloModel::getArticulos(); 
+        $usuarios = MercadilloModel::getUsuario();       
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+            
+            echo $this->view->render('login/articulos', [
+                'articulos' => $articulos,
+                'usuarios' => $usuarios
+            ]);
+        }
+
+            
+    }
+}  
