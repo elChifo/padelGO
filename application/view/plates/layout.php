@@ -106,13 +106,13 @@
     <div class="col-md-12 pie">
         <div class="col-md-3 divpie">
             <p class="pFooter">SECCIONES WEB</p>
-            <a href="<?php echo URL; ?>" title="Ir a INICIO">INICIO</a><br>
-            <a href="<?php echo URL; ?>partidos" title="Ir a PARTIDOS">PARTIDOS</a><br>
-            <a href="<?php echo URL; ?>noticias" title="Ir a NOTICIAS">NOTICIAS</a><br>
-            <a href="<?php echo URL; ?>usuarios" title="Ir a USUARIOS">USUARIOS</a><br>
-            <a href="<?php echo URL; ?>clubs" title="Ir a CLUBS">CLUBS</a><br>
-            <a href="<?php echo URL; ?>contacto" title="Ir a CONTACTO">CONTACTO</a><br>
-            <a href="<?php echo URL; ?>login" title="Ir a MI CUENTA">MI CUENTA</a><br>
+            <a href="<?= URL; ?>" title="Ir a INICIO">INICIO</a><br>
+            <a href="<?= URL; ?>partidos" title="Ir a PARTIDOS">PARTIDOS</a><br>
+            <a href="<?= URL; ?>noticias" title="Ir a NOTICIAS">NOTICIAS</a><br>
+            <a href="<?= URL; ?>usuarios" title="Ir a USUARIOS">USUARIOS</a><br>
+            <a href="<?= URL; ?>clubs" title="Ir a CLUBS">CLUBS</a><br>
+            <a href="<?= URL; ?>contacto" title="Ir a CONTACTO">CONTACTO</a><br>
+            <a href="<?= URL; ?>login" title="Ir a MI CUENTA">MI CUENTA</a><br>
 
         <?php $idSession = Session::get('idUsuario'); ?>   
         <?php if (!isset($idSession)) : ?>
