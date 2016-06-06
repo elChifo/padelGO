@@ -4,16 +4,25 @@ body {
 form {
     width: 700px;
     margin: 20px auto 0 auto;
+    
+}
+
+tr td{
+    padding: 10px;
+    margin: 10px;
 }
 
 table {
     width: 600px;
+    border-spacing:  10px 25px;
+
 }
 
-  input.a {
+input.a {
     background-repeat:no-repeat;
     padding:5px 5px 5px 25px;
     width:200px;
+    border: 15px;
     }
 
     input:focus {

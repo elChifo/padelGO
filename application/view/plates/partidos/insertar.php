@@ -30,17 +30,6 @@
             
             <br>
             <div>
-            <!-- fecha antigua 
-                <label for="fechaPartido"></label>
-                <input type="hidden" name="fechaPartido" id="fecha" />
-                    <span style="background-color: #ffc; cursor:default; padding:.3em; border:thin solid #ff0; text-decoration:underline; color: blue;" 
-                            onmouseover="this.style.cursor = 'pointer'; this.style.cursor = 'hand'; 
-                                this.style.backgroundColor = '#ff8'; this.style.textDecoration='none';"
-                            onmouseout="this.style.backgroundColor = '#ffc'; this.style.textDecoration = 'underline';" id="fecha_usuario"> 
-                            Pinchar aqui para Seleccionar la fecha 
-                    </span>                    
-                <p id="error_fecha"></p>
-                -->
                 <label for="fechayhora">Fecha:
                  <input type="text" id="fechayhora" value="" />
                 </label>
@@ -58,23 +47,12 @@
                 });
             </script>
 
+<div>
+
+
+</div>
             <div>
                 <label for="horaPartido">Hora del Partido</label>
-
-                <!-- 
-                    <input type="text" name="horaPartido" 
-                    value="<?= (isset($datos['horaPartido'])) ? $datos['horaPartido'] : "" ?>"
-                    placeholder="Introduzca la Hora del Partido (hh:mm)"> 
-                -->
-                  
-                <!--  
-                    <input type="radio" name="horario" value="mañana" /> Mañana <br>
-                    <input type="radio" name="horario" value="tarde" /> Tarde <br>   
-                    <input type="radio" name="horario" value="noche" /> Noche <br> 
-                -->
-                     
-
-
 
                         <select name="horaPartido" >
                             <option value="7:00">7:00</option>

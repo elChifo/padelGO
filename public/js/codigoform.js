@@ -17,16 +17,14 @@ function validacion(){
   //realiza todas las validaciones campo a campo
   if(nombre1.value==""){
     //si el campo nombre está vacio salta la alerta y pinta el campo, si es correcto lo pinta de otro color
-  nombre1.setCustomValidity('Inserte un nombre');
-  nombre1.style.background='#FFDDDD';
+  nombre1.setCustomValidity('Inserte un nombre');  
   }else{
   nombre1.setCustomValidity('');
   nombre1.style.background='#bbeffa';
 }
 
 if(email.value==""){
-  email.setCustomValidity('Inserte una direccion de correo valida');
-  email.style.background='#FFDDDD';
+  email.setCustomValidity('Inserte una direccion de correo válida');  
   }else{
   email.setCustomValidity('');
   email.style.background='#bbeffa';
@@ -34,7 +32,6 @@ if(email.value==""){
 
 if(coment.value==""){
   coment.setCustomValidity('Inserte un comentario');
-  coment.style.background='#FFDDDD';
   }else{
   coment.setCustomValidity('');
   coment.style.background='#bbeffa';
