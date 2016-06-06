@@ -13,11 +13,13 @@
 
                     <tr><td>Teléfono:</td><td><input type="tel" placeholder="Escribe tu teléfono"></td></tr>
 
-                    <tr><td>Comentario:(*)</td><td><textarea id="coment" placeholder="Déjanos tu comentario" required="required"></textarea></td></tr>
+                    <tr><td>Comentario:(*)</td><td><textarea id="coment" placeholder="Déjanos tu comentario" required="required" onKeyDown="contar()" onKeyUp="contar()"></textarea></td></tr>
 
-                    <tr><td></td><td><input type="checkbox" id="registro_condiciones" name="check" value="check">Acepto la <a href="politica.html">politica de privacidad</a></td></tr><br>
+                    <tr><td> <label> Caracteres restantes: </label><input disabled size="3" value="150" id="contador"></td></tr>
 
-                    <tr><td></td><td><input type="submit" value="Enviar"> <input type="reset" value="Reiniciar"><p>Los campos marcados con (*) son obligatorios.</p></td></tr>
+                    <tr><td></td><td><input type="checkbox" name="check" id="check" required>Acepto la <a href="politica.html">politica de privacidad</a></td></tr><br>
+
+                    <tr><td></td><td><input type="submit" value="Enviar" onclick="validarcheck()"> <input type="reset" value="Reiniciar"><p>Los campos marcados con (*) son obligatorios.</p></td></tr>
 
                   </table>
               </fieldset>

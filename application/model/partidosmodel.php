@@ -2,6 +2,7 @@
 
 class PartidosModel
 {    
+    //obtenemos los datos del partido mediante la consulta query
     public static function getPartido()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -10,7 +11,7 @@ class PartidosModel
         $query->execute();
         return $query->fetchAll();
     }
-
+    //obtenemos los datos del identificador del partido mediante la consulta query
     public static function getIdPartido($id) 
     {
         $conn = Database::getInstance()->getDatabase();
@@ -24,7 +25,7 @@ class PartidosModel
         $query->execute();
         return $query->fetch();
     }
-
+    //obtenemos los datos de la categoría del partido mediante la consulta query
     public static function getCategoria()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -33,7 +34,7 @@ class PartidosModel
         $query->execute();
         return $query->fetchAll();
     } 
-
+    //obtenemos los datos del usuario mediante la consulta query
     public static function getUsuario()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -42,7 +43,7 @@ class PartidosModel
         $query->execute();
         return $query->fetchAll();
     }
-
+    //obtenemos el identificador del usuario mediante la consulta query
     public static function getIdUsuario($id) 
     {
         $conn = Database::getInstance()->getDatabase();
@@ -56,7 +57,7 @@ class PartidosModel
         $query->execute();
         return $query->fetch();
     } 
-
+    //obtenemos los datos del club mediante la consulta query
     public static function getClub()
     {
         $conn = Database::getInstance()->getDatabase();
@@ -65,7 +66,7 @@ class PartidosModel
         $query->execute();
         return $query->fetchAll();
     } 
-
+    //insertamos los datos mediante formulario con sus validaciones
     public static function insertar($datos)
     {
         $conn = Database::getInstance()->getDatabase();
@@ -104,6 +105,7 @@ class PartidosModel
         if($errores_validacion) {
             return false;
         }
+        //comprobamos todos los campos
         else {
             $params = array(
                 'tipoPartido' => $_POST["tipoPartido"],
@@ -132,7 +134,7 @@ class PartidosModel
         }
     }
 
-
+    //obtenemos los datos ya existentes en la base de datos para poder modificarlos
     public static function editar($datos){
 
         $conn = Database::getInstance()->getDatabase();
@@ -164,10 +166,10 @@ class PartidosModel
             $errores_validacion = true;
         }
 
-    
         if($errores_validacion) {
             return false;
         } 
+        //actualizamos los datos nuevos y hacemos el registro en la base de datos
         else {
             $ssql = "UPDATE Actividades SET nombreActividad=:nombreActividad, monitor=:monitor, 
              descripcion=:descripcion, idCentro=:idCentro WHERE idActividad=:id";
@@ -183,7 +185,7 @@ class PartidosModel
             $query->execute($parameters);
             $count = $query->rowCount();
             if($count == 1){
-                Session::add('feedback_positive', 'Editado con éxito, gracias!!!');
+                Session::add('feedback_positive', 'Datos actualizados');
                 return true;
             }
             Session::add('feedback_positive', 'Actualizadas 0 casillas');

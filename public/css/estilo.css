@@ -1,0 +1,218 @@
+body {
+	background-image: url(../img/fondo-web6.jpg); 
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+.contenido {
+	background-color: white;
+}
+
+.central {
+	height: 100%;
+}
+
+.navigation {
+	padding-left: 10px;
+}
+
+.menu {
+	margin-top: 7px;
+	/float: left;
+}
+.logo {
+	margin-top: 7px;
+	float: left;
+	padding-bottom: 7px;
+}
+
+.cabecera {
+	background-image: url(../img/fondo-web5.jpg); 
+	background-size: 100%;
+	border-bottom: solid 5px #c5f619;
+}
+
+.pie {
+	bottom: 0%;
+	background-color: #000;
+	min-height: 119px;
+	border-top: solid 5px #c5f619;
+}
+
+.divpie {
+	padding: 15px;
+	text-align: center;
+}
+
+.ul-footer {
+	list-style:none;
+	color:#333;
+}
+
+.pie a {
+	text-decoration:none;
+	color:#333;
+}
+
+.pie a:hover{
+	text-decoration:none;
+	color:#c5f619;
+}
+
+.pFooter {
+	text-align: center;
+	font-size: 20px;
+	color:#a0a0a0;
+	border-bottom: 2px solid #333;
+}
+
+.zona-login {
+	margin-top: 7px;
+	color: white;
+	float: right;
+	text-align: right;
+}
+
+.imgLogin {
+	padding-bottom: 2px;
+}
+
+.enlaceLogin {
+	color: white;
+}
+
+.enlaceLogin:hover {
+	color: #c5f619;
+	text-decoration: none;
+}
+
+.pColor {
+	color: #c5f619;
+}
+
+.imagen-menu1 {
+	margin-top: 9px;
+}
+.imagen-menu1:hover {
+	margin-top: -5px;
+}
+.imagen-menu2 {
+	margin-top: 9px;
+}
+.imagen-menu2:hover {
+	margin-top: -5px;
+}
+.imagen-menu3 {
+	margin-top: 9px;
+}
+.imagen-menu3:hover {
+	margin-top: -5px;
+}
+.imagen-menu4 {
+	margin-top: 9px;
+}
+.imagen-menu4:hover {
+	margin-top: -5px;
+}
+.imagen-menu5 {
+	margin-top: 9px;
+}
+.imagen-menu5:hover {
+	margin-top: -5px;
+}
+.imagen-menu6 {
+	margin-top: 9px;
+}
+.imagen-menu6:hover {
+	margin-top: -5px;
+}
+
+.botonlogin {
+	margin-top: 15px;
+	padding:4.5px 9px; 
+	border:none; 
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px; 
+	border-radius: 2px; 
+	font:12px Verdana, Geneva, sans-serif; 
+	font-weight:bold; 
+	color:#000000; 
+	background:#c6f619; 
+	-webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	-moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+}
+
+.botonlogin:hover{
+	padding:4.5px 9px; 
+	border:none; 
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px; 
+	border-radius: 2px; 
+	font:12px Verdana, Geneva, sans-serif; 
+	font-weight:bold; 
+	color:#E5FFFF; 
+	background-color:#000000; 
+	background-image: -moz-linear-gradient(top, #000000 0%, #c6f619 100%); 
+	background-image: -webkit-linear-gradient(top, #000000 0%, #c6f619 100%); 
+	background-image: -o-linear-gradient(top, #000000 0%, #c6f619 100%); 
+	background-image: -ms-linear-gradient(top, #000000 0% ,#c6f619 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6f619', endColorstr='#c6f619',GradientType=0 ); 
+	background-image: linear-gradient(top, #000000 0% ,#c6f619 100%);   
+	-webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	-moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+}
+
+/* Botones de Redes Sociales - Ciudad Blogger */
+.social_bookmarks_container {
+width:100%;
+height:65px;
+padding:0;
+position:relative;
+}
+.social_bookmarks {
+position:relative;
+float:left;
+margin:0;
+padding:0;
+}
+.social_bookmarks li {
+margin:0 0 1px 1px;
+height:57px;
+width:57px;
+list-style:none;
+float:left;
+padding:0;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+transition: all 0.4s ease-in-out;
+}
+.social_bookmarks li a {
+float:left;
+width:57px;
+line-height:24px;
+display: block;
+text-indent: -99999px;
+margin:0px;
+outline: none;
+padding:0;
+min-height:57px;
+height:100%;
+text-decoration:none;
+}
+.social_bookmarks .iconrss{background: #A4A4A4 url(//lh6.googleusercontent.com/-s8sIx3OX2WI/U4vC1nmgr0I/AAAAAAAALK4/W3Z3qXMwrCg/s114/icon-rss.png) top left no-repeat;}
+.social_bookmarks .iconrssmail{background: #BDBDBD url(//lh5.googleusercontent.com/-H4iUybdCAyU/U4vC1yQWu1I/AAAAAAAALLE/fTpR7eN4cIw/s114/icon-rssmail.png) top left no-repeat;}
+.social_bookmarks .icontwitter{background: #D8D8D8 url(//lh6.googleusercontent.com/-4TshwJW7hIE/U4vC2JM25AI/AAAAAAAALLI/tcIkpheXrYU/s114/icon-twitter.png) top left no-repeat;}
+.social_bookmarks .iconfacebook{background: #E6E6E6 url(//lh5.googleusercontent.com/-nt-UdZG1ns0/U4vC1v57lwI/AAAAAAAALLQ/pAOWjEBSnSg/s114/icon-facebook.png) top left no-repeat;}
+.social_bookmarks .icongplus{background: #F1F1F1 url(//lh6.googleusercontent.com/-brT53y4GgMs/U4vC1UPpmFI/AAAAAAAALK8/vRxosS7GGKs/s114/icon-gplus.png) top left no-repeat;}
+.social_bookmarks .iconfacebook:hover{background-position:center -57px; background-color: #37589b;}
+.social_bookmarks .icontwitter:hover {background-position:center -57px; background-color: #46d4fe;}
+.social_bookmarks .icongplus:hover {background-position:center -57px; background-color: #de5a49;}
+.social_bookmarks .iconrss:hover{background-position:center -57px; background-color: #ff6600;}
+.social_bookmarks .iconrssmail:hover{background-position:center -57px; background-color: #FFDE00;}
+.social_bookmarks li:hover a{background: transparent url(//lh4.googleusercontent.com/-XNviZ_JqvyU/U4vDMDFAX8I/AAAAAAAALLk/E4VIJr1onlo/s57/icon-social-reflect.png) no-repeat;
+}
+

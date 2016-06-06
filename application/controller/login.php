@@ -2,6 +2,7 @@
 
 class Login extends Controller
 {
+    //funcion principal. Comprueba el acceso del usuario
     public function index()    
     {
         $this->view->addData(['titulo' => 'Login']); 
@@ -9,7 +10,6 @@ class Login extends Controller
         if (Session::get('idUsuario')) {
 
             $idSession = Session::get('idUsuario');
-
             $usuario = UsuariosModel::getIdUsuario($idSession);
 
             if ($usuario->email == 'admin@admin.com') {
@@ -57,20 +57,35 @@ class Login extends Controller
     }
 
     
-
-    public function salir()
+    //finaliza la sesion y redirecciona a la raiz de la web
+    public static function salir()
     {
         Session::destroy();
         header('location: /');
         exit();
-    }
+    } 
 
-    public static function espacio($num)
-    {       
-        for ($i=0; $i<$num; $i++) {
-            echo '&nbsp;';
+
+    public function articulos()
+    {        
+        $this->view->addData(['titulo' => 'Artículos']);
+        $idSession = Session::get('idUsuario');  
+
+        $articulos = MercadilloModel::getArticulos(); 
+        $usuarios = MercadilloModel::getUsuario();       
+
+        if (!$idSession) {
+
+            header('location: ../error');
         }
-    }
+        else {
+            
+            echo $this->view->render('login/articulos', [
+                'articulos' => $articulos,
+                'usuarios' => $usuarios
+            ]);
+        }
 
-     
-}
+            
+    }
+}  

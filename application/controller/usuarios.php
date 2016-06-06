@@ -2,70 +2,64 @@
 
 class Usuarios extends Controller
 {
+    //funcion principal. Comprueba el usuario
     public function index() 
     {        
         $this->view->addData(['titulo' => 'Usuarios']);
+
         $usuarios = UsuariosModel::getUsuario(); 
-        $idUsuario = Session::get('idUsuario');
+        $categorias = UsuariosModel::getCategoria();
 
         echo $this->view->render('usuarios/index', [
                 'usuarios'  => $usuarios,
-                'idUsuario' => $idUsuario
+                'categorias' => $categorias
         ]);
     }
+    
 
-
-    public function borrar()
-    {
-        $this->view->addData(['titulo' => 'Borrar Usuarios']);        
-
-        $idUsuario = $_GET['idUsuario'];
-        
-        if (UsuariosModel::borrar($idUsuario)) {
-
-            echo $this->view->render('usuarios/borrar');
-        }
-        else {
-            echo $this->view->render('usuarios/noBorrado');
-        }
-
-    }
-
+    //?
     public function administrar()
     {
-        $this->view->addData(['titulo' => 'Administrar Usuarios']);         
+        $this->view->addData(['titulo' => 'Administrar Usuarios']);       
+        $idSession = Session::get('idUsuario');  
+
         $usuarios = UsuariosModel::getUsuario(); 
 
-        echo $this->view->render('usuarios/administrar', [
-                'usuarios'     => $usuarios
-        ]);
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            echo $this->view->render('usuarios/administrar', [
+                    'usuarios'     => $usuarios
+            ]);
+        }        
     }
 
+    //Recoge los datos del usuario, los muestra y permite actualizarlos
     public function editar() 
     {        
-        $this->view->addData(['titulo' => 'Editar Usuarios']);
+        $this->view->addData(['titulo' => 'Editar Usuarios']);        
+        $idSession = Session::get('idUsuario'); 
 
-        $categorias = UsuariosModel::getCategoria();
+        $categorias = UsuariosModel::getCategoria(); 
 
-        $usuarios = UsuariosModel::getUsuario();
-
-        $idUsuario = Session::get('idUsuario'); 
-
-        if ($idUsuario == 7) {
+        if ($idSession == 1) {
 
             $usuario = UsuariosModel::getIdUsuario($_GET['idUsuario']);     
         }
         else {
 
-            $usuario = UsuariosModel::getIdUsuario($idUsuario);
+            $usuario = UsuariosModel::getIdUsuario($idSession);
         }
 
         if(!$_POST) {
 
-            echo $this->view->render('usuarios/editar', [
-                    'categorias'   => $categorias,
-                    'usuario'      => $usuario
-            ]);
+            echo $this->view->render('usuarios/editar', [                    
+                    'usuario'      => $usuario,
+                    'categorias'   => $categorias
+            ]); 
         }
         else {
 
@@ -75,122 +69,156 @@ class Usuarios extends Controller
 
                 $emailRepetido = false;
             }
-            else if ($usuarioNuevo['email'] != $usuario->email) {
+            else {
 
                 $emailRepetido = UsuariosModel::existeEmail($usuarioNuevo['email']);
             }
 
             if ($emailRepetido == false) { 
 
-                UsuariosModel::editar($usuarioNuevo);
-                
-                header("location: ../login/index");
+                UsuariosModel::editar($usuarioNuevo); 
 
-                // $admin = UsuariosModel::getIdUsuario($idUsuario);
+                if(isset($_FILES['imagenUsuario'])) {
 
-                // if ($admin->email == 'admin@admin.com') {
+                    //Validar::imagen($_FILES['imagenContacto']);
 
-                //     echo $this->view->render('usuarios/administrar', [
-                //         'usuarios' => $usuarios
-                //     ]);
-                // }
-                // else if ($_GET['idUsuario'] == '7') {
+                    $imagen['idUsuario'] = RegistroModel::obtenerID($usuarioNuevo['email']);
+                    $imagen['imagenUsuario'] = $_FILES['imagenUsuario'];
+                    $imagen['path'] = 'img/usuarios/';
 
-                //     header("location: ../login/index");    
-                // }
-                // else {                    
-                // }
+                    RegistroModel::insertarImagen($imagen);                    
+                }
+
+                if ($idSession == 1) {
+
+                    header("location: ../usuarios/administrar");       
+                }
+                else {
+
+                    header("location: ../login/");
+                }                
             }
             else {
 
                Session::add('feedback_negative', 
                             'Este Email pertenece a otro Usuario. Por Favor, escoja otro Email.'); 
 
-                echo $this->view->render('usuarios/editar', [
-                    'categorias'   => $categorias,
-                    'usuario'      => $usuario
-            ]);
-
+                echo $this->view->render('usuarios/editar', [                    
+                    'usuario'      => $usuario,
+                    'categorias'   => $categorias
+                ]);
                
             } 
         }
-    }
+    }  
 
 
-    public function formatoTelefono($numero) 
+
+    //Selecciona un usuario y lo borra de la base de datos
+    public function borrar()
     {
-        $telefono = $numero[0] . $numero[1] . $numero[2] ." . ". 
-                    $numero[3] . $numero[4] . $numero[5] ." . ".
-                    $numero[6] . $numero[7] . $numero[8];
+        $this->view->addData(['titulo' => 'Borrar Usuarios']);         
+        $idSession = Session::get('idUsuario');       
 
-        return $telefono;
+        $idUsuario = $_GET['idUsuario'];        
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            UsuariosModel::borrar($idUsuario);
+
+            header('location: ../usuarios/borrar');           
+           
+        }
+
     }
 
-    public function formatoFecha($fecha) 
-    {
-        $date = explode("-", $fecha);
+    public function cancelacion()
+    {        
+        $this->view->addData(['titulo' => 'Cancelar Cuenta']);         
+        $idSession = Session::get('idUsuario');   
 
-        $fechaformato = $date[2] .' del '. $date[1] .' de '. $date[0];
+        if (!$_POST) {
 
-        return $fechaformato;  
+            echo $this->view->render('usuarios/cancelacion', [
+                    'idSession' => $idSession 
+            ]);
+
+        }
+        elseif ( empty($_POST['otrosmotivos']) && 
+                (!isset($_POST['privacidad'])) &&
+                (!isset($_POST['dificultad'])) &&
+                (!isset($_POST['negativa'])) &&
+                (!isset($_POST['desuso'])) 
+            ) {
+
+            Session::add('feedback_negative', "La Cancelación no ha sido posible, Inténtelo de nuevo");
+
+            echo $this->view->render('usuarios/cancelacion', [
+                    'idSession' => $idSession 
+            ]);
+        } 
+        else {
+
+            $fecha = time();
+
+            $fechaMensaje = date("Y-m-d H:i:s", $fecha);
+
+            $motivos = 'Motivos de Cancelación de Cuenta: <br>';
+
+            if (isset($_POST['privacidad'])) {
+                $privacidad = $_POST['privacidad'];
+                $motivos = $motivos .= $privacidad . '<br>';
+            }
+            if (isset($_POST['dificultad'])) {
+                $dificultad = $_POST['dificultad'];
+                $motivos = $motivos .= $dificultad . '<br>';
+            }
+            if (isset($_POST['malaImpresion'])) {
+                $malaImpresion = $_POST['malaImpresion'];
+                $motivos = $motivos .= $malaImpresion . '<br>';
+            }
+            if (isset($_POST['desuso'])) {
+                $desuso = $_POST['desuso'];
+                $motivos = $motivos .= $desuso . '<br>';
+            }
+            if (!empty($_POST['otrosmotivos'])) {
+                $otrosmotivos = $_POST['otrosmotivos'];
+                $motivos = $motivos .= 'Otros Motivos: <br>' . $otrosmotivos;
+            }
+
+            $mensaje = array(                              
+                'idUsuario' => $idSession,
+                'idReceptor' => '1',
+                'fechaMensaje' => $fechaMensaje,
+                'mensaje' => $motivos
+            );
+
+            if (MensajesModel::enviar($mensaje)) {
+
+            Session::add('feedback_positive', "Su Cuenta será Cancelada en menos de 24 Horas.");
+
+            header('location: ../login');
+
+            }
+            else {
+
+            Session::add('feedback_negative', "La Cancelación no ha sido posible, Inténtelo de nuevo");
+
+            echo $this->view->render('usuarios/cancelacion', [
+                    'idSession' => $idSession 
+            ]);
+            }
+
+
+        } 
     }
 
 
-
- 
 }
 
 
-    // public function insertar()
-    // {                   
-    //     $this->view->addData(['titulo' => 'Actividades Extraescolares']);
-
-    //     $actividades = UsuariosModel::getActividad();
-
-    //     if(!$_POST) {
-    //         echo $this->view->render('usuarios/insertar', [
-    //                 'actividades' => $actividades
-    //         ]);            
-    //     } 
-    //     else {
-
-    //         if(!isset($_POST["nombreAlumno"])) {
-    //             $_POST["nombreAlumno"] = "";
-    //         }
-    //         if(!isset($_POST["apellidosAlumno"])) {
-    //             $_POST["apellidosAlumno"] = "";
-    //         }
-    //         if(!isset($_POST["fechaNac"])) {
-    //             $_POST["fechaNac"] = "";
-    //         }
-    //         if(!isset($_POST["curso"])) {
-    //             $_POST["curso"] = "";
-    //         }
-    //         if(!isset($_POST["observaciones"])) {
-    //             $_POST["observaciones"] = "";
-    //         }
-         
-    //         $datos = array(
-    //             'nombreAlumno' => $_POST["nombreAlumno"],
-    //             'apellidosAlumno' => $_POST["apellidosAlumno"],
-    //             'fechaNac' => $_POST["fechaNac"],
-    //             'curso' => $_POST["curso"],
-    //             'observaciones' => $_POST["observaciones"],
-    //             'idActividad' => $_POST["idActividad"],
-    //         );
-
-    //         if(UsuariosModel::insertar($datos)) {
-    //             echo $this->view->render('usuarios/alumnoinsertado');
-    //         } 
-    //         else {
-    //             echo $this->view->render('usuarios/insertar',array(
-    //                     'errores' => array('Error al insertar'),
-    //                     'datos' => $_POST
-    //             ));
-    //         }
-    //     }
-    // }
-
     
-
-    // 

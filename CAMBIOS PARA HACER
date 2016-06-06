@@ -1,3 +1,29 @@
-Quitar del index el "quienes somos" y añadirlo como la politica de privacidad en una seccion llamada 
 
-FAQ. Poner dentro de contacto en el footer por ejemplo.
+
+-Añadirl politica de privacidad en el footer 
+
+-Hacer DFD
+
+-Crear usuario admin@admin.es con contraseña: admin (para la presentacion del proyecto queda mas pro)
+
+-Poner nuestro usuario personal para hacer pruebas y que los datos en la base sean los mas realistas posibles.
+
+-Mejorar formulario
+
+-Actualizar formulario
+
+-Poner hora en partidos
+
+-Meter date picker en plibreria aparte
+
+-quitar calendario antiguo/(codigo comentado)
+
+-banner de politica de cookies enlazar a su pagina con la descripcion
+
+-añadir usuarios a la base de datos (3 desarrolladores que sea admin)
+
+---------------------------
+
+-Mercadillo: igual que noticias pero usuario logueado. solo el usuario pùede añadir
+tabla monitores-.Solicitar ser monitor en el administrador
+

@@ -1,11 +1,10 @@
 <?php $this->layout('layout') ?>
 
-
 <div class="container">
     
     <h2>ADMINISTRACIÓN DE USUARIOS</h2>
 
-    <h4><a href="<?php echo URL; ?>../registro">Registrar un Nuevo Usuario</a></h4>
+    <h4><a href="<?= URL; ?>../registro">Registrar un Nuevo Usuario</a></h4>
     
 		<?php foreach($usuarios as $usuario): ?>
 
@@ -14,34 +13,38 @@
            <fieldset>
            <ul> 
                 <li> 
-                	NOMBRE: <strong> <?php echo $usuario->nombre; ?> </strong>
+                	NOMBRE: <strong> <?= $usuario->nombre; ?> </strong>
                 </li>
                 <li> 
-                	APELLIDOS: <strong> <?php echo $usuario->apellidos; ?> </strong>
+                	APELLIDOS: <strong> <?= $usuario->apellidos; ?> </strong>
                 </li>
                 <li> 
-                	SEXO: <strong> <?php echo $usuario->sexo; ?> </strong>
+                	SEXO: <strong> <?= $usuario->sexo; ?> </strong>
                 </li>
                 <li> 
-                	FECHA NACIMIENTO: <strong> <?php echo $usuario->fechaNac; ?> </strong>
+                	FECHA NACIMIENTO: <strong> <?= $usuario->fechaNac; ?> </strong>
                 </li>
                 <li> 
-                	DIRECCIÓN: <strong> <?php echo $usuario->direccion; ?> </strong>
+                	DIRECCIÓN: <strong> <?= $usuario->direccion; ?> </strong>
                 </li>
                 <li> 
-                	TELÉFONO: <strong> <?php echo $usuario->telefono; ?> </strong>
+                	TELÉFONO: <strong> <?= $usuario->telefono; ?> </strong>
                 </li>
                 <li> 
-                	CATEGORÍA: <strong> <?php echo $usuario->idCategoria . ' ª Categoría'; ?> </strong>
+                	CATEGORÍA: <strong> <?= $usuario->idCategoria . ' ª Categoría'; ?> </strong>
                 </li>
-       		
+       		       
+                <div class="imagenUsuario">
+                    <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
+                            alt="usuario<?= $usuario->idUsuario; ?>" height="100" /> 
+                </div>   
         			<p>
                         <h4>
-        					<a href="../usuarios/editar?idUsuario=<?php echo $usuario->idUsuario; ?>">
+        					<a href="../usuarios/editar?idUsuario=<?= $usuario->idUsuario; ?>">
         						Editar los datos de Usuario
         					</a> &nbsp;&nbsp;&nbsp;
 
-        			   		<a href="../usuarios/borrar?idUsuario=<?php echo $usuario->idUsuario; ?>">
+        			   		<a href="../usuarios/borrar?idUsuario=<?= $usuario->idUsuario; ?>">
         			   			Borrar los datos de Usuario
         			   		</a>
                         </h4>    
@@ -53,5 +56,5 @@
 
         <?php endforeach ?>
         
-        <a href="../login/index"><h4>...Volver a Administración</h4></a>
+        <a href="../login"><h4>...Volver a Administración</h4></a>
 </div>

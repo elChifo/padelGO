@@ -1,34 +1,43 @@
 <?php $this->layout('layout') ?> 
-<?php $idUsuario = Session::get('idUsuario'); ?>
+<?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
 
 	<?php if(count($clubs) == 0): ?>
-
-        <p>No se encuentran Clubs en la Base de Datos</p>
+		<h6> .</h6>
+        <h3>No se encuentran Clubs en la Base de Datos</h3>
 
     <?php else: ?>
-		   	
-        <h2>Disponemos de <?= count($clubs) ?> clubs en la ciudad.</h2>       
+		<h6> .</h6>	   	
+        <h3>Disponemos de <?= count($clubs) ?> clubs en la ciudad. </h3>  
 
-		<?php foreach($clubs as $value): ?>
+	<?php endif ?>
+
+		<?php foreach($clubs as $club): ?>
 		<fieldset>
-		   <ul> 
-		   		<li> 
-		   				Nombre Club: <strong> <?php echo $value->nombreClub ?> </strong>  
+		    <ul> 
+		   		<li> Nombre Club:
+		   			<strong> 
+		   				<?= $club->nombreClub ?> &nbsp;&nbsp;&nbsp; 
+		   				<a href="">Ver Partidos</a>
+		   			</strong> 
 		   			<ul>		   					
-		   					<li> Direccion : <?php echo $value->direccionClub ?>  </li>
-		   					<li> Nº Pistas: <?php echo $value->numPistas ?>  </li>	   					
+	   					<li> Direccion : <?= $club->direccionClub ?>  </li>
+	   					<li> Nº Pistas: <?= $club->numPistas ?>  </li>	   					
 		   			</ul> 
 		   		</li>
-		   </ul>
-		   <br>
-		   		<a href="">Ver Partidos en este club</a>
+		    </ul>
+
+		    <div class="imagenClub">
+                <img src="<?= URL; ?>img/clubs/club<?= $club->idClub; ?>.png" 
+                alt="club<?= $club->idClub; ?>" height="150" /> 
+            </div>
+		   		
 		</fieldset>   
 		<?php endforeach ?>
-    <?php endif ?>
+    
 
-    <?php if ($idUsuario == 7) : ?>
+    <?php if ($idSession == 1) : ?>
 		<a href="../login/index"><h4>...Volver a Administración</h4></a>
 	<?php endif ?>	
 
