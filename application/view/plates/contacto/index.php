@@ -2,7 +2,7 @@
 
 <div class="container">
 
-    <!-- El formulario se envía a una URL externa y muestra los datos que se reciben en el servidor-->
+    <!-- El formulario se envía a una URL externa y muestra los datos que se reciben en el servidor.-->
         <form action="http://www.redti.es/tools/dump.php" method="POST" id="registro">
             <fieldset>
             <legend>Ponte en contacto con nosotros</legend>

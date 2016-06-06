@@ -3,8 +3,7 @@ body {
     font-family: arial, helvetica;}
 form {
     width: 700px;
-    margin: 20px auto 0 auto;
-    
+    margin: 20px auto 0 auto;    
 }
 
 tr td{
@@ -15,7 +14,6 @@ tr td{
 table {
     width: 600px;
     border-spacing:  10px 25px;
-
 }
 
 input.a {
