@@ -8,7 +8,7 @@
     
 		<?php foreach($usuarios as $usuario): ?>
 
-            <?php if ($usuario->email != 'admin@admin.com') : ?>
+            <?php if ($usuario->email != 'admin@padelgo.com') : ?>
 
            <fieldset>
            <ul> 

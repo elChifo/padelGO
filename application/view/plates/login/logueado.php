@@ -36,7 +36,9 @@
 	<h4>
         <a href="../usuarios/editar">Editar los datos de Usuario</a>
         &nbsp;&nbsp;&nbsp;
-        <a href="../usuarios/cancelacion">Solicitar Cancelación de la Cuenta</a> 
+        <a href="../usuarios/cancelacion">Solicitar Cancelación de la Cuenta</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="../monitores/solicitar">Ofrecerse como Monitor</a> 
     </h4> 
 
 	<h3>

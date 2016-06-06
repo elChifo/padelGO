@@ -12,7 +12,7 @@ class Login extends Controller
             $idSession = Session::get('idUsuario');
             $usuario = UsuariosModel::getIdUsuario($idSession);
 
-            if ($usuario->email == 'admin@admin.com') {
+            if ($usuario->email == 'admin@padelgo.com') {
 
                         echo $this->view->render('login/privado', [
                             'usuario' => $usuario
@@ -37,7 +37,7 @@ class Login extends Controller
 
                 $usuario = UsuariosModel::getIdUsuario($idSession);
 
-                if ($_POST['email'] == 'admin@admin.com') {
+                if ($_POST['email'] == 'admin@padelgo.com') {
 
                         echo $this->view->render('login/privado', [
                             'usuario' => $usuario

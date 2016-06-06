@@ -6,5 +6,5 @@
     <a title="CLUBS" href="<?= URL; ?>clubs"><img src="<?= URL; ?>img/menu/clubs.png" alt="CLUBS" height="80" class="imagen-menu5" /></a>
     <a title="CONTACTO" href="<?= URL; ?>contacto"><img src="<?= URL; ?>img/menu/contacto.png" alt="CONTACTO" height="80" class="imagen-menu6" /></a>
     <a title="MERCADILLO" href="<?= URL; ?>mercadillo"><img src="<?= URL; ?>img/menu/2mano.png" alt="MERCADILLO" height="80" class="imagen-menu6" /></a>
-    <a title="MONITORES" href="<?= URL; ?>monitoresSS"><img src="<?= URL; ?>img/menu/monitores.png" alt="MONITORES" height="80" class="imagen-menu6" /></a>
+    <a title="MONITORES" href="<?= URL; ?>monitores"><img src="<?= URL; ?>img/menu/monitores.png" alt="MONITORES" height="80" class="imagen-menu6" /></a>
 </div>

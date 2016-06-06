@@ -53,7 +53,7 @@ class Mensajes extends Controller
                     ($_POST['idReceptor'] == '0') 
                 ) {
 
-                Session::add('feedback_negative', "Elija un Destinatario y Escriba el Mensaje");
+                Session::add('feedback_negative', "Elija un Destinatario y escriba un Mensaje");
 
                 echo $this->view->render('mensajes/enviar', [
                         'idSession' => $idSession,

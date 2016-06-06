@@ -3,13 +3,13 @@
 <div class="container"> 
 <?php $this->insert('partials/feedback') ?>   
 
-	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="calcelacion">
+	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="cancelacion">
         <fieldset> 
             <legend>
                 <h2> Cancelación de la Cuenta de Usuario. </h2> 
             </legend>             
             	
-           		<h3>Por favor, indique el/los motivos de la cancelación.</h3>
+           		<h4>Por favor, indique los motivos de la cancelación.</h4>
 				<br><br>
 
 				<div class="cancelarCuenta">

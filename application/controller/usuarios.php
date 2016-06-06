@@ -155,7 +155,7 @@ class Usuarios extends Controller
                 (!isset($_POST['desuso'])) 
             ) {
 
-            Session::add('feedback_negative', "La Cancelación no ha sido posible, Inténtelo de nuevo");
+            Session::add('feedback_negative', "Escoja un motivo e Inténtelo de nuevo");
 
             echo $this->view->render('usuarios/cancelacion', [
                     'idSession' => $idSession 
@@ -167,23 +167,23 @@ class Usuarios extends Controller
 
             $fechaMensaje = date("Y-m-d H:i:s", $fecha);
 
-            $motivos = 'Motivos de Cancelación de Cuenta: <br>';
+            $motivos = 'Motivos de Cancelación de Cuenta: <br><br>';
 
             if (isset($_POST['privacidad'])) {
                 $privacidad = $_POST['privacidad'];
-                $motivos = $motivos .= $privacidad . '<br>';
+                $motivos = $motivos .= $privacidad . '<br><br>';
             }
             if (isset($_POST['dificultad'])) {
                 $dificultad = $_POST['dificultad'];
-                $motivos = $motivos .= $dificultad . '<br>';
+                $motivos = $motivos .= $dificultad . '<br><br>';
             }
             if (isset($_POST['malaImpresion'])) {
                 $malaImpresion = $_POST['malaImpresion'];
-                $motivos = $motivos .= $malaImpresion . '<br>';
+                $motivos = $motivos .= $malaImpresion . '<br><br>';
             }
             if (isset($_POST['desuso'])) {
                 $desuso = $_POST['desuso'];
-                $motivos = $motivos .= $desuso . '<br>';
+                $motivos = $motivos .= $desuso . '<br><br>';
             }
             if (!empty($_POST['otrosmotivos'])) {
                 $otrosmotivos = $_POST['otrosmotivos'];

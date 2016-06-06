@@ -17,7 +17,7 @@
            
            <?php if ($usuario->idUsuario != 1): ?>
 
-               <fieldset>
+              <fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;">
            <ul> 
                 <li> NOMBRE: 
                     <strong> 
