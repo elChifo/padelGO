@@ -9,8 +9,8 @@
 			<div class="overlay-container">
 				<div class="ventana zoom">
 
-					<h3>FAQ</h3> 
-					<h2>Preguntas Frecuentes </h2>
+					<h3>FAQ - Preguntas Frecuentes</h3> 
+					
 					<br/>
 					<h3>1.-Objetivo de la web</h3>
 					Dar a conocer nuestro proyecto en el IES Ingeniero de la Cierva en el Grado Superior de Desarrollo de Aplicaciones Web.<br/>
