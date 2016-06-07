@@ -26,10 +26,12 @@
 
             <?php if ($articulo->idUsuario == $usuario->idUsuario) : ?>                         
 
-               <fieldset>
+               <fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;"> 
+                <table border="1" class="tablapartidos">
+                <tr><td>
                    <ul> 
                         <li> 
-                            <h3><?= $articulo->nombreArticulo; ?> </h3>      
+                            <h3 class="tituloanuncio"><?= $articulo->nombreArticulo; ?> </h3>      
                         </li>
                         <li>
                             <div class="vendedor">
@@ -50,7 +52,8 @@
                         </li>
                         
                    </ul>
-
+                    </td></tr>
+                    </table>
            <div class="imagenArticulo">
                     <img src="<?= URL; ?>img/articulos/articulo<?= $articulo->idArticulo; ?>.png" 
                     alt="articulo<?= $articulo->idArticulo; ?>" height="150" /> 

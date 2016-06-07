@@ -9,17 +9,19 @@
 
     <?php else: ?>
 		<h6> .</h6>	   	
-        <h3>Disponemos de <?= count($clubs) ?> clubs en la ciudad. </h3>  
+        <h3>Disponemos de <?= count($clubs) ?> clubs en la ciudad.</h3>  
 
 	<?php endif ?>
 
 		<?php foreach($clubs as $club): ?>
-		<fieldset>
-		    <ul> 
+		<fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;">
+		   <table border="1" class="tablapartidos">
+				<tr><td>
+				<ul> 
 		   		<li> Nombre Club:
 		   			<strong> 
 		   				<?= $club->nombreClub ?> &nbsp;&nbsp;&nbsp; 
-		   				<a href="">Ver Partidos</a>
+		   				
 		   			</strong> 
 		   			<ul>		   					
 	   					<li> Direccion : <?= $club->direccionClub ?>  </li>
@@ -27,7 +29,11 @@
 		   			</ul> 
 		   		</li>
 		    </ul>
-
+			</td></tr>
+			<tr><td>
+			<a href="">Ver Partidos</a>
+			</td></tr>
+			</table>
 		    <div class="imagenClub">
                 <img src="<?= URL; ?>img/clubs/club<?= $club->idClub; ?>.png" 
                 alt="club<?= $club->idClub; ?>" height="150" /> 

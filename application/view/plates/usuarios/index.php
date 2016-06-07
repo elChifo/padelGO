@@ -10,7 +10,7 @@
 
     <?php else: ?>
         
-        <h6> .</h6>
+        <h6> ...</h6>
         <h3>Disponemos de <?= count($usuarios)-1 ?> Usuarios en la Base de Datos.</h3> 
 
          <?php foreach($usuarios as $usuario): ?>

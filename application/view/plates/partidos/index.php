@@ -47,9 +47,9 @@
 				</div>
 
 				<div class="cancha">
-					<table border="1">
+					<table border="1" class="tablapartidos">
 						<tr>
-							<td></td>
+							<td><img src="img/iconojugador.png" alt="iconojugador"></td>
 
 							<td class:"jugador1">Jugador 1: 
 
@@ -73,10 +73,10 @@
 								<?php endif ?>
 							</td>
 
-							<td></td>
+							<td><img src="img/iconojugador.png" alt="iconojugador"></td>
 						</tr>
 						<tr>
-							<td></td>
+							<td><img src="img/iconojugador.png" alt="iconojugador"></td>
 
 							<td class:"jugador2">Jugador 2: 
 
@@ -100,17 +100,21 @@
 								<?php endif ?>
 							</td>
 
-							<td></td>					
+							<td><img src="img/iconojugador.png" alt="iconojugador"></td>					
 						</tr>					
 					</table>				
 				</div>
+<br />
+<h3>Datos del Partido</h3>
 
 				<div class="datosPartido">
+				<table border="1" class="tablapartidos">
+				<tr><td>
 					<ul>
 						<li class="tipoPartido">Tipo de Partido: 
 							<?= $partido->tipoPartido; ?>
 						</li>
-
+					
 						<li class="fechaPartido">Fecha del Partido: 
 							<?= $partido->fechaPartido; ?>
 						</li>
@@ -119,9 +123,14 @@
 							<?= $partido->horaPartido; ?>
 						</li>
 					</ul>
+					</td></tr>
+					</table>
 				</div>
 
+<h3>Datos del Club</h3>
 				<div class="datosClub">
+				<table border="1" class="tablapartidos">
+				<tr><td>
 					<?php foreach ($clubs as $club) : ?>
 					
 					<?php if($club->idClub == $partido->idClub): ?>
@@ -135,10 +144,12 @@
 								<?= $club->direccionClub; ?>
 							</li>
 						</ul>        			
-
+					
 	    			<?php endif ?>	
 					
 					<?php endforeach ?>
+					</td></tr>
+					</table>
 				</div>
 
 				<div class="idUsuario"> 

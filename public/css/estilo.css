@@ -216,3 +216,28 @@ text-decoration:none;
 .social_bookmarks li:hover a{background: transparent url(//lh4.googleusercontent.com/-XNviZ_JqvyU/U4vDMDFAX8I/AAAAAAAALLk/E4VIJr1onlo/s57/icon-social-reflect.png) no-repeat;
 }
 
+.cancha {
+    text-align: center;
+    margin-left: 200px;
+}
+
+.tablapartidos tr {
+	border: 6px solid black;
+     background-color: #8cff66;
+     margin: 0 auto;
+     
+}
+
+.imagenClub {
+	width: 50px;
+	margin-left: 150px;
+}
+
+.imagenArticulo {
+	margin-left: 150px;
+}
+
+.tituloanuncio {
+	text-transform: uppercase;
+	text-decoration: underline;
+}

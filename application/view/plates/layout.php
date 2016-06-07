@@ -44,7 +44,7 @@
 <!-- HORA -->
 
 
-    <!-- FIN HORA -->
+<!-- FIN HORA -->
 
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
     <script>
@@ -69,6 +69,13 @@
     <script type="text/javascript" src="<?= URL; ?>js/jcalendar/calendar-es.js"></script>
     <script type="text/javascript" src="<?= URL; ?>js/jcalendar/calendar-setup.js"></script>
         --> 
+
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/styleslider.css">
+
     <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="<?= URL; ?>css/bootstrap.min.css">
@@ -117,6 +124,8 @@
             <a href="<?= URL; ?>usuarios" title="Ir a USUARIOS">USUARIOS</a><br>
             <a href="<?= URL; ?>clubs" title="Ir a CLUBS">CLUBS</a><br>
             <a href="<?= URL; ?>contacto" title="Ir a CONTACTO">CONTACTO</a><br>
+            <a href="<?= URL; ?>mercadillo" title="Ir a 2ª MANO">2ª MANO</a><br>
+            <a href="<?= URL; ?>monitores" title="Ir a MONITORES">MONITORES</a><br>
             <a href="<?= URL; ?>login" title="Ir a MI CUENTA">MI CUENTA</a><br>
 
         <?php $idSession = Session::get('idUsuario'); ?>   
