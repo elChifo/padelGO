@@ -14,13 +14,19 @@ class Home extends Controller
                                     <li>Votar nivel de otros jugadores</li>
                                     <li>Gestionar agenda de jugadores</li>
                                     <li>Dar de alta clubs y acceder a su información</li>
-                                    <li>Cambiar tu ubicación en cualquier momento</li>
+                                    <li>Gestionar tus datos del perfil</li>
                                     <li>y mucho más por llegar....</li>
                                 </ul>",
 
         				'objetivos' => "A todos nos gusta progresar en la práctica de nuestro deporte, y si tenemos un buen profesor, mejor que mejor.",
 
-        				'desarrollo' => "'PADEL GO!' ofrece infinitas posibilidades: podemos tomárnoslo con calma y simplemente buscar un poco de ejercicio físico durante la semana, o bien mucho más en serio y querer competir a tope."
+        				'desarrollo' => "'PADEL GO!' ofrece infinitas posibilidades: podemos tomárnoslo con calma y simplemente buscar un poco de ejercicio físico durante la semana, o bien mucho más en serio y querer competir seriamente.",
+
+                        'quienessomos' => "El equipo de 'PADEL GO!' esta integrado por un grupo humano con amplia experiencia en todos los  ámbitos referentes al mundo del pádel.
+                        <br /> <br /> 
+                            Nos encargaremos de que tu experiencia tanto en el juego, como en la interación con los usuarios sea lo más agradable posible.
+                        <br /> <br /> 
+                            para cualquier duda o sugerencia puedes ponerte en contacto con nosotros en la sección de contacto."
         ]);
 
         echo $this->view->render("home/index"); 
