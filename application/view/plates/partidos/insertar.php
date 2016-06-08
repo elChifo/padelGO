@@ -10,7 +10,7 @@
 
         <fieldset>
             <legend>
-                <h2> Datos del Partido </h2>
+                <h2> Datos del Partido0</h2>
             </legend> 
         
             <input type="hidden" name="idPartido" value="<?= $datos['idPartido'] ?>">

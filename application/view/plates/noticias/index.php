@@ -14,7 +14,11 @@
          <?php foreach($noticias as $noticia): ?>                   
 
                <fieldset>
-           <ul> 
+               
+               <table border="1" class="tablapartidos">
+
+                <tr><td>
+                <ul> 
                 <li> 
                     <h3><?= $noticia->titular; ?> </h3>                    
                                                                             
@@ -23,21 +27,25 @@
                     <h5 style="color:red;">FECHA:  <?= $noticia->fechaNoticia; ?> </h5>
                 </li>
                 <li> 
-                    <fieldset>
+                  <fieldset>
                         <h5>CONTENIDO: </h5>
                         <p>
                             <?= $noticia->contenido; ?>
                         </p>
-                    </fieldset>                  
-                                                                            
+                    </fieldset>   
+                    <div class="imagenNoticia">
+                    <img src="<?= URL; ?>img/noticias/noticia<?= $noticia->idNoticia; ?>.png" 
+                    alt="noticia<?= $noticia->idNoticia; ?>" height="150" /> 
+                    </div>               
+                    
+                     </tr></td>                                                       
                 </li>
-           </ul>
+                 </ul>
+        
 
-            <div class="imagenNoticia">
-                <img src="<?= URL; ?>img/noticias/noticia<?= $noticia->idNoticia; ?>.png" 
-                alt="noticia<?= $noticia->idNoticia; ?>" height="150" /> 
-            </div>
             
+              </td></tr>
+              </table>
            </fieldset>           
 
         <?php endforeach ?> 
