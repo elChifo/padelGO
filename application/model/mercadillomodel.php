@@ -158,7 +158,16 @@ class MercadilloModel
         move_uploaded_file($datos['imagenArticulo']['tmp_name'], $rutaImagen);
     }
 
+    public static function borrar($idArticulo)
+    {           
+        $conn = Database::getInstance()->getDatabase();
+        $errores_validacion = false; 
 
+        $ssql = "DELETE FROM Mercadillo WHERE idArticulo=:idArticulo";
+        $query = $conn->prepare($ssql);
+        $params = [':idArticulo' => $idArticulo];
+        $query->execute($params);
+    }
 
 }
 

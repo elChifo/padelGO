@@ -1,16 +1,20 @@
 <?php $this->layout('layout') ?>
-<?php $idSession = Session::get('idUsuario'); ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
+    <?php $this->insert('partials/feedback') ?>
+
+    <h4>
+        <a href="../mercadillo/vender">Vender un Artículo</a>
+    </h4>
        
     <?php if(count($articulos) == 0): ?>
 
-        <h6> .</h6>
-        <h3>No se encuentran Artículos en la Base de Datos</h3>
+        <h3 class="titulo-pagina">No se encuentran Artículos en la Base de Datos</h3>
 
     <?php else: ?>
         
-        <h3>Disponemos de <?= count($articulos) ?> Artículos en la Base de Datos.</h3> 
+       <h3 class="titulo-pagina">MIS ARTÍCULOS</h3> 
 
          <?php foreach($articulos as $articulo): ?> 
 
@@ -29,34 +33,28 @@
                         </li>
                    </ul>
 
-                <div class="imagenArticulo">
-                    <img src="<?= URL; ?>img/articulos/articulo<?= $articulo->idArticulo; ?>.png" 
-                    alt="articulo<?= $articulo->idArticulo; ?>" height="150" /> 
-                </div> 
+                    <div class="imagenArticulo">
+                        <img src="<?= URL; ?>img/articulos/articulo<?= $articulo->idArticulo; ?>.png" 
+                        alt="articulo<?= $articulo->idArticulo; ?>" height="150" /> 
+                    </div> 
             
 					<p>
                         <h4>
         					<a href="../mercadillo/editar?idArticulo=<?= $articulo->idArticulo; ?>">
-        						Editar los datos de Usuario
+        						Editar los datos del Artículo
         					</a> &nbsp;&nbsp;&nbsp;
 
         			   		<a href="../mercadillo/borrar?idArticulo=<?= $articulo->idArticulo; ?>">
-        			   			Borrar los datos de Usuario
+        			   			Borrar los datos del Artículo
         			   		</a>
                         </h4>    
 					</p>
 
-                </fieldset> 
+                </fieldset>                     
 
             <?php endif ?>               
 
         <?php endforeach ?> 
-
-        <?php if ($articulo->idUsuario != $idSession) : ?>
-                    
-            <h3>No Tiene Artículos a la Venta <a href="../login/"> ...Volver </a></h3>
-                
-        <?php endif ?> 
 
     <?php endif ?>
 

@@ -69,4 +69,27 @@ class Partidos extends Controller
         }
     }
 
+    public function ver()
+    {
+        $this->view->addData(['titulo' => 'Ver Partidos']);
+        $idSession = Session::get('idUsuario');
+        $usuarioPartido = Session::set('usuarioPartido', $idSession);        
+
+        $partidos = PartidosModel::getPartido();
+        $categorias = PartidosModel::getCategoria();
+        $usuarios = PartidosModel::getUsuario();
+        $clubs = PartidosModel::getClub();
+
+        $idClub = $_GET['idClub'];
+
+        echo $this->view->render("partidos/ver", [
+                'partidos' => $partidos,
+                'categorias' => $categorias,
+                'usuarios' => $usuarios,
+                'clubs' => $clubs,
+                'usuarioPartido' => $usuarioPartido,
+                'idClub'         => $idClub                 
+        ]);
+    }
+
 }

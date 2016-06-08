@@ -37,6 +37,10 @@
 	
 	Hacer Presentacion
 
+	Los imput de fecha como 'Nuevo Partido' no estan con sus llamadas al dateTimePicker
+
+	Por eso no funcionan las fechas y da error
+
 	
 
 

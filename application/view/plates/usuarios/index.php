@@ -1,17 +1,15 @@
 <?php $this->layout('layout') ?>
-<?php $idSession = Session::get('idUsuario'); ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
        
     <?php if(count($usuarios) == 0): ?>
 
-        <h6> .</h6>
-        <h3>No se encuentran Usuarios en la Base de Datos</h3>
+        <h3 class="titulo-pagina">No se encuentran Usuarios en la Base de Datos</h3>
 
     <?php else: ?>
         
-        <h6> ...</h6>
-        <h3>Disponemos de <?= count($usuarios)-1 ?> Usuarios en la Base de Datos.</h3> 
+        <h3 class="titulo-pagina">USUARIOS</h3> 
 
          <?php foreach($usuarios as $usuario): ?>
            
@@ -21,19 +19,13 @@
            <ul> 
                 <li> NOMBRE: 
                     <strong> 
-                        <?php
-                            echo $usuario->nombre; echo ' ';                            
-                            echo $usuario->apellidos; 
-                        ?> 
+                        <?= $usuario->nombre . ' ' . $usuario->apellidos; ?> 
                     </strong>                                      
                 </li>
                 <br>
                 <li> CATEGORÍA: 
                     <strong> 
-                        <?php
-                            echo $usuario->idCategoria; 
-                            echo ' ª Categoría'; 
-                        ?> 
+                        <?= $usuario->idCategoria . ' ª Categoría'; ?> 
                     </strong>                                      
                 </li>
            </ul>
@@ -49,11 +41,5 @@
 
         <?php endforeach ?> 
 
-    <?php endif ?>
-
-
-
-    <?php if ($idSession == 1) : ?>
-        <a href="../login/index"><h4>...Volver a Administración</h4></a>
     <?php endif ?>
 </div>

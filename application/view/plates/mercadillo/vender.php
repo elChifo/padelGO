@@ -1,5 +1,5 @@
 <?php $this->layout('layout') ?>
-<?php $idSession = Session::get('idUsuario'); ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
@@ -26,8 +26,14 @@
             <input type="text" name="descripcionArticulo" 
                     value="<?= (isset($articulo->descripcionArticulo)) ? $articulo->descripcionArticulo : "" ?>"
                     placeholder="Introduzca la Descripción del Artículo">
-            </p>         
-            
+            </p> 
+
+            <p>
+            <label for="precio">Precio</label>
+            <input type="text" name="precio" 
+                    value="<?= (isset($articulo->precio)) ? $articulo->precio : "" ?>"
+                    placeholder="Introduzca el Precio del Artículo">
+            </p>
 
             <div class="subidaImagen">
                 <label id="imagenArticulo" for="imagenArticulo">Editar la Imagen del Artículo (max. 2 MB)

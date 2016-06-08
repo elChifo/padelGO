@@ -6,36 +6,37 @@
 
     <?php if(count($partidos) == 0): ?>
 
-       <h3 class="titulo-pagina">No se encuentran Partidos Disponible</h3>
+        <h3 class="titulo-pagina">No se encuentran Partidos Disponible</h3>
 
     <?php else: ?>
-
-        <h3 class="titulo-pagina">PARTIDOS  
-
-			<?php if (isset($idSession)) : ?>	
-
-				<login style="font-size: 18px;">	
-					<a href="partidos/insertar">Crear un Nuevo Partido</a>
-				<login/>	
-
-		<?php endif ?>
-
-        </h3> 
-		<br>	
-
+      
+      	<h3 class="titulo-pagina">PARTIDOS
 		<?php foreach ($partidos as $partido) : ?>
 			
-			<div class="partido">
-			<fieldset>
+			<?php if ($partido->idClub == $idClub): ?>
+
+					<?php foreach ($clubs as $club) : ?>
+					
+					<?php if($club->idClub == $partido->idClub): ?>
+						
+						&nbsp;&nbsp;&nbsp;&nbsp;"<?= $club->nombreClub; ?>"</h3>
+
+						<span>Dirección del Club: <?= $club->direccionClub; ?> </span>
+										
+	    			<?php endif ?>	
+					
+					<?php endforeach ?>
+				 <br>
+
 				<div class="partido" style="border: 2px double green; padding: 1rem; width: 55%;">
 
-				<div class="idPartido">				
-				<h3>Partido Nº <?= $partido->idPartido; ?></h3>
+				<div class="datosPartido">				
+				<h3>Datos del Partido</h3>
 
 				<table border="1" class="tablapartidos">
 
 				<tr><td>
-				<span></span>
+				<span>Partido Nº <?= $partido->idPartido; ?></span>
 					<ul>						
 						</li>
 						<li class="tipoPartido">Tipo de Partido: <?= $partido->tipoPartido; ?>
@@ -123,28 +124,16 @@
 						</tr>					
 					</table>				
 				</div>
+
+				<?php if(isset($idSession)) : ?>
+		
+					<h4><a href="../partidos/entrar">Entrar al Partido</a></h4>
+
+				<?php endif ?>		
+
 			</div>
-
-				<div class="datosClub">				
-				<table border="1" class="tablapartidos">
-				<tr><td>
-					<?php foreach ($clubs as $club) : ?>
-					
-					<?php if($club->idClub == $partido->idClub): ?>
-						
-						<h3>CLUB: <?= $club->nombreClub; ?></h3>
-
-						<span>Dirección del Club: <?= $club->direccionClub; ?> </span>	
-					
-	    			<?php endif ?>	
-					
-					<?php endforeach ?>
-					</td></tr>
-					</table>
-				</div>
-
-			</fieldset>	
-			</div>
+				
+			<?php endif ?>
 		
 		<?php endforeach ?>
 	 		

@@ -43,7 +43,6 @@
 
 <!-- HORA -->
 
-
 <!-- FIN HORA -->
 
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
@@ -123,9 +122,9 @@
             <a href="<?= URL; ?>noticias" title="Ir a NOTICIAS">NOTICIAS</a><br>
             <a href="<?= URL; ?>usuarios" title="Ir a USUARIOS">USUARIOS</a><br>
             <a href="<?= URL; ?>clubs" title="Ir a CLUBS">CLUBS</a><br>
-            <a href="<?= URL; ?>contacto" title="Ir a CONTACTO">CONTACTO</a><br>
             <a href="<?= URL; ?>mercadillo" title="Ir a 2ª MANO">2ª MANO</a><br>
             <a href="<?= URL; ?>monitores" title="Ir a MONITORES">MONITORES</a><br>
+            <a href="<?= URL; ?>contacto" title="Ir a CONTACTO">CONTACTO</a><br>
             <a href="<?= URL; ?>login" title="Ir a MI CUENTA">MI CUENTA</a><br>
 
         <?php $idSession = Session::get('idUsuario'); ?>   
@@ -153,29 +152,19 @@
             <div class='social_bookmarks_container redes'>
                 <ul class='social_bookmarks'>
                     <li class='iconfacebook'>
-                        <a href='#'>
-                            Facebook
-                        </a>
+                        <a href='#'>Facebook</a>
                     </li>
                     <li class='icontwitter'>
-                        <a href='#'>
-                            Twitter
-                        </a>
+                        <a href='#'>Twitter</a>
                     </li>
                     <li class='icongplus'>
-                        <a href='#'>
-                            Google Plus
-                        </a>
+                        <a href='#'>Google Plus</a>
                     </li>
                     <li class='iconrss'>
-                        <a href='#'>
-                            RSS
-                        </a>
+                        <a href='#'>RSS</a>
                     </li>
                     <li class='iconrssmail'>
-                        <a href='<?= URL; ?>contacto'>
-                            RSS Mail
-                        </a>
+                        <a href='<?= URL; ?>contacto'>RSS Mail</a>
                     </li>
                 </ul>
             </div>

@@ -1,5 +1,6 @@
 <?php $this->layout('layout') ?>
-
+  <?php $idSession = Session::get('idUsuario'); ?>
+  
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
 
@@ -18,7 +19,6 @@
                 <label>Password:</label>
                 <input type="password" name="clave" required="required">            
                 
-                <label>&nbsp;</label>
                 <input type="submit" value="Acceder"> 
             </section>
         </fieldset>

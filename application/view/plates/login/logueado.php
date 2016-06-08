@@ -1,7 +1,8 @@
-<?php $this->layout('layout') ?>  
-<?php $this->insert('partials/feedback') ?>
+<?php $this->layout('layout') ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
+    <?php $this->insert('partials/feedback') ?>
     
     <h2>LOGIN CORRECTO</h2>
 
@@ -15,7 +16,7 @@
 		</p>
 	<?php endif ?>
 					
-		<h3> SUS DATOS:	</h3> 
+		<h3 class="titulo-pagina"> SUS DATOS:	</h3> 
 			<ul>
 				<li>NOMBRE:  <?= $usuario->nombre; ?> </li>
 				<li>APELLIDOS:  <?= $usuario->apellidos; ?> </li>
@@ -34,17 +35,17 @@
 
 	
 	<h4>
-        <a href="../usuarios/editar">Editar los datos de Usuario</a>
+        <a href="../usuarios/editar">Editar datos de Usuario</a>
         &nbsp;&nbsp;&nbsp;
-        <a href="../usuarios/cancelacion">Solicitar Cancelación de la Cuenta</a>
+        <a href="../usuarios/cancelacion">Solicitar cancelación de la Cuenta</a>
         &nbsp;&nbsp;&nbsp;
         <a href="../monitores/solicitar">Ofrecerse como Monitor</a> 
     </h4> 
 
 	<h3>
-        <a href="../login/articulos" style="color:red !important;">Ver tus artículos del Mercadillo</a>
+        <a href="../login/articulos" style="color:red !important;">Artículos del Mercadillo</a>
         &nbsp;&nbsp;&nbsp;
-        <a href="../mensajes/index" style="color:orange !important;">Ver Mensajes</a> 
+        <a href="../mensajes/index" style="color:orange !important;">Mensajes</a> 
     </h3> 
 
 </div>

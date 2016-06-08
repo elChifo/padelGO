@@ -1,4 +1,6 @@
 <?php $this->layout('layout') ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
+  
 <div class="container">
 	<div class="col-md-12">
 		<div class="col-md-4">

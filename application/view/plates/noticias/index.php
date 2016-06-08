@@ -1,18 +1,15 @@
 <?php $this->layout('layout') ?>
-
-<?php $idUsuario = Session::get('idUsuario'); ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
        
     <?php if(count($noticias) == 0): ?>
 
-        <h6> .</h6>
-        <h3>No se encuentran Noticias en la Base de Datos</h3>
+        <h3 class="titulo-pagina">No se encuentran Noticias en la Base de Datos</h3>
 
     <?php else: ?>
         
-        <h6> .</h6>
-        <h3>Disponemos de <?= count($noticias) ?> Noticias en la Base de Datos.</h3> 
+        <h3 class="titulo-pagina">NOTICIAS</h3> 
 
          <?php foreach($noticias as $noticia): ?>                   
 
@@ -47,9 +44,4 @@
 
     <?php endif ?>
 
-
-
-    <?php if ($idUsuario == 1) : ?>
-        <a href="../login/index"><h4>...Volver a Administración</h4></a>
-    <?php endif ?>
 </div>
