@@ -11,39 +11,20 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-     <!-- DateTimePicker -->
-       <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    
 
-        <script>
-         $.datepicker.regional['es'] = {
-         closeText: 'Cerrar',
-         prevText: '<Ant',
-         nextText: 'Sig>',
-         currentText: 'Hoy',
-         monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-         monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-         dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-         dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-         dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-         weekHeader: 'Sm',
-         dateFormat: 'dd/mm/yy',
-         firstDay: 1,
-         isRTL: false,
-         showMonthAfterYear: false,
-         yearSuffix: ''
-         };
-         $.datepicker.setDefaults($.datepicker.regional['es']);
-        $(function () {
-        $("#fechayhora").datepicker();
-        });
-        </script>
-<!-- FIN DateTimePicker -->
-
-<!-- HORA -->
-
-<!-- FIN HORA -->
+<!-- flecha arriba -->
+<script language='javascript' type='text/javascript'>
+var arriba;
+function subir() {
+if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
+window.scrollBy(0, -15);
+arriba = setTimeout('subir()', 10); //retardo en segundos
+}
+else clearTimeout(arriba);
+}
+</script>
+<!-- FIN flecha arriba -->
 
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
     <script>
@@ -172,9 +153,7 @@
     </div>
     </div>
 
-    <!-- jQuery, loaded in the recommended protocol-less way -->
-    <!-- more http://www.paulirish.com/2010/the-protocol-relative-url/ -->
-    
+  
 </body>
 </html>
 

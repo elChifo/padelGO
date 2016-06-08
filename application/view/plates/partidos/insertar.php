@@ -9,8 +9,10 @@
     <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
 
         <fieldset>
+         <table border="1" class="tablapartidos">
+            <tr><td>
             <legend>
-                <h2> Datos del Partido0</h2>
+                <h2>Datos del Partido</h2>
             </legend> 
         
             <input type="hidden" name="idPartido" value="<?= $datos['idPartido'] ?>">
@@ -24,18 +26,20 @@
                     <option value="Mixto">Mixto</option>
                 </select>
             </div>
-
+            </td></tr>
             <script type="text/javascript">
                 try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
             </script>
             
             <br>
+            <tr><td>
             <div>
                 <label for="fechayhora">Fecha:
                  <input type="text" id="fechayhora" value="" />
                 </label>
 
             </div>
+            </td></tr>
             <br>
 
             <script type="text/javascript">
@@ -49,10 +53,18 @@
             </script>
 
 <div>
-
-
+<tr><td>
+<h3>DateTimePicker</h3>
+    <input type="text" value="" id="datetimepicker"/><br><br>
+    <h3>TimePicker</h3>
+    <input type="text" id="datetimepicker1"/><br><br>
+    <h3>DatePicker</h3>
+    <input type="text" id="datetimepicker2"/><br><br>
+    </td></tr>
 </div>
+
             <div>
+            <tr><td>
                 <label for="horaPartido">Hora del Partido</label>
 
                         <select name="horaPartido" >
@@ -91,37 +103,47 @@
                             <option value="23:00">23:00</option>
                             <option value="23:30">23:30</option>
                         </select> 
+                        </td></tr>
             </div>
 
             <div>
+            <tr><td>
                 <label for="jugador1">Jugador 1</label>
                 <input type="text" name="jugador1" 
                     value="<?= (isset($datos['jugador1'])) ? $datos['jugador1'] : "" ?>"
                     placeholder="Introduzca el Código de Jugador">
+            </td></tr>
             </div>
 
             <div>
+            <tr><td>
                 <label for="jugador2">Jugador 2</label>
                 <input type="text" name="jugador2" 
                     value="<?= (isset($datos['jugador2'])) ? $datos['jugador2'] : "" ?>"
                     placeholder="Introduzca el Código de Jugador">
+            </td></tr>
             </div>
 
             <div>
+            <tr><td>
                 <label for="jugador3">Jugador 3</label>
                 <input type="text" name="jugador3" 
                     value="<?= (isset($datos['jugador3'])) ? $datos['jugador3'] : "" ?>"
                     placeholder="Introduzca el Código de Jugador">
+            </td></tr>
             </div>
 
             <div>
+            <tr><td>
                 <label for="jugador4">Jugador 4</label>
                 <input type="text" name="jugador4" 
                     value="<?= (isset($datos['jugador4'])) ? $datos['jugador4'] : "" ?>"
                     placeholder="Introduzca el Código de Jugador">
+            </td></tr>
             </div>
 
             <div>
+            <tr><td>
                 <label for="idCategoria">Categoría</label> 
                 
                 <select name="idCategoria">
@@ -134,14 +156,15 @@
 
                         <?php endforeach ?>
                 </select>
+            </td></tr>
             </div>
 
             <div>
-                <input type="hidden" name="idUsuario" value="<?= $usuarioPartido ?>">
-
+                <input type="hidden" name="idUsuario" value="<?= $usuarioPartido ?>">            
             </div>
 
             <div>
+            <tr><td>
                 <label for="idClub">Clubs</label> 
                 
                 <select name="idClub">
@@ -154,15 +177,18 @@
 
                         <?php endforeach ?>
                 </select>
+            </td></tr>
             </div>
 
 
             <div>
+            <tr><td>
                 <input type="submit" value="Crear Partido">
+            </td></tr>
             </div>      
-
+        </table>
         </fieldset> 
 
     </form>
-
+<a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>

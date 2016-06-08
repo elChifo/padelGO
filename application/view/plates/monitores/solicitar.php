@@ -11,7 +11,7 @@
             </legend>             
             	
            		<h5>Para ser Monitor de "PadelGO!" rellene este formulario, 
-           			Y nos pondremos en Contacto con Usted</h5>
+           			y nos pondremos en contacto con Usted</h5>
 				<br><br>
 
 				<div class="ofrecerMonitor">
@@ -54,4 +54,5 @@
 				<input type="submit" value="Enviar">
         </fieldset>
     </form>
+    <a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>

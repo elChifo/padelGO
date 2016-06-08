@@ -46,4 +46,5 @@
         <?php endforeach ?> 
 
     <?php endif ?>
+    <a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>

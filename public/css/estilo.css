@@ -261,3 +261,29 @@ text-decoration:none;
 .imagenNoticia {
 	margin-left: 100px;
 }
+
+.btnimprimir {
+	background-color: #999966;
+}
+
+.flecha{
+	float: right;
+	margin-right: 50px;
+}
+.flecha:hover {   
+-webkit-animation: cssAnimation 1s 16 ease;
+-moz-animation: cssAnimation 1s 16 ease;
+-o-animation: cssAnimation 1s 16 ease;
+}
+@-webkit-keyframes cssAnimation {
+from { -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+@-moz-keyframes cssAnimation {
+from { -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+to { -moz-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+@-o-keyframes cssAnimation {
+from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+to { -o-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}

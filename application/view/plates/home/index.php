@@ -72,10 +72,6 @@
   </div>
   <div class="col-md-4">  
     <h3> QUIÉNES SOMOS </h3>    
-      <p> El equipo de 'PADEL GO!' esta integrado por un grupo humano con amplia experiencia en todos los  ámbitos referentes al mundo del pádel. 
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin vestibulum purus, sed viverra purus tristique suscipit. Quisque ullamcorper nunc congue mi porttitor posuere. Nam sem lectus, commodo elementum porta non, suscipit ac dui. Donec pellentesque felis magna, vel varius purus venenatis ac. Phasellus eu diam vel elit gravida fringilla a sed sem. Duis aliquet a nibh non vehicula. Nullam fringilla euismod justo, vel interdum quam elementum ac. 
-      </p>
+      <p><?= $quienessomos ?></p>
   </div>
 </div>

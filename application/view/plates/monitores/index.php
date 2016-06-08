@@ -13,7 +13,7 @@
 
         <?php if (isset($idSession)) : ?>   
 
-            <login style="font-size: 18px;">Eres Monitor? Anunciate 
+            <login style="font-size: 18px;">¿Eres Monitor? Anunciate 
                 <a href="../monitores/solicitar">AQUI</a>
             <login/>
                 
@@ -67,5 +67,5 @@
         <?php endforeach ?> 
 
     <?php endif ?>
-
+<a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>

@@ -49,5 +49,6 @@
 		<?php endforeach ?>
 
 	<?php endif ?>
-	
+	<input type="button" class="btnimprimir" value="Imprimir página" onclick="window.print()">
+	<a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>
