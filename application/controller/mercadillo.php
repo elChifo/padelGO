@@ -126,21 +126,22 @@ class Mercadillo extends Controller
 
     public function borrar()
     {
-        $this->view->addData(['titulo' => 'Borrar Noticias']);         
+        $this->view->addData(['titulo' => 'Borrar Artículo']);         
         $idSession = Session::get('idUsuario');       
 
-        $idNoticia = $_GET['idNoticia'];        
+        $idArticulo = $_GET['idArticulo'];        
 
-        if ($idSession != 1) {
+        if (!$idSession) {
 
             header('location: ../error');
         }
         else {
 
-            NoticiasModel::borrar($idNoticia);
+            MercadilloModel::borrar($idArticulo);
+                
+            Session::add('feedback_positive', "El Artículo a la venta ha sido Borrado.");
 
-            echo $this->view->render('noticias/borrar');           
-           
+            header("location: ../login");           
         }
 
     }

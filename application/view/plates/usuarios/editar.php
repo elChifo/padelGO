@@ -1,5 +1,6 @@
 <?php $this->layout('layout') ?>
-
+  <?php $idSession = Session::get('idUsuario'); ?>
+  
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
 

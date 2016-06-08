@@ -5,7 +5,7 @@
 
 <h2 style="margin-left: 20rem;">INSCRIPCIÓN DE USUARIOS</h2>
    
-    <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data" class="formregistro">
+    <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
         <fieldset> 
             <legend>
                 <h2> Datos del Usuario </h2> 
@@ -14,27 +14,21 @@
             <input type="hidden" name="idUsuario" 
                     value="<?= (isset($registro['idUsuario'])) ? $registro['idUsuario'] : "" ?>"> 
             </input>
-
-            <table>
-            <tr><td>
+            
             <div>
             <label for="nombre">Nombre </label>
             <input type="text" name="nombre" 
                     value="<?= (isset($registro['nombre'])) ? $registro['nombre'] : "" ?>"
                     placeholder="Introduzca el Nombre">
             </div>
-            </td></tr>
 
-            <tr><td>
             <div>
             <label for="apellidos">Apellidos</label>
             <input type="text" name="apellidos" 
                     value="<?= (isset($registro['apellidos'])) ? $registro['apellidos'] : "" ?>"
                     placeholder="Introduzca los Apellidos"> 
             </div>
-            </td></tr>
-
-             <tr><td>
+            
             <div>
                 <label for="sexo">Sexo</label>
                 <select name="sexo">
@@ -43,12 +37,11 @@
                     <option value="Mujer"> Mujer </option>
                 </select>
             </div>
-            </td></tr>
+            
             <script type="text/javascript">
                 try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
             </script>
 
-             <tr><td>
             <div>
             <label for="fechaNac"><br><!--Fecha Nacimiento--></label>
                 <input type="hidden" name="fechaNac" id="fecha" />
@@ -60,7 +53,7 @@
                     </span>                    
                 <p id="error_fecha"></p>
             </div>
-            </td></tr>
+
             <script type="text/javascript">
                 Calendar.setup({
                 inputField: "fecha",
@@ -73,49 +66,38 @@
 
             <br>
 
-            <tr><td>
             <div class="subidaImagen">
                 <label id="imagenUsuario" for="imagenUsuario">Subir Imagen de Usuario</label>
                 <input id="subida" type="file" name="imagenUsuario">
             </div>
-            </td></tr>
 
-            <tr><td>
             <div>
             <label for="direccion">Dirección</label>
             <input type="text" name="direccion" 
                     value="<?= (isset($registro['direccion'])) ? $registro['direccion'] : "" ?>"
                     placeholder="Introduzca una Dirección">
             </div>
-            </td></tr>
 
-            <tr><td>
             <div>
             <label for="telefono">Teléfono</label>
             <input type="tel" name="telefono" 
                     value="<?= (isset($registro['telefono'])) ? $registro['telefono'] : "" ?>"
                     placeholder="Introduzca el Teléfono">
             </div>
-            </td></tr>
-
-            <tr><td>
+            
             <div>
             <label for="email">Email</label>
             <input type="email" name="email" 
                     value="<?= (isset($registro['email'])) ? $registro['email'] : "" ?>"
                     placeholder="Introduzca el Email">
             </div>
-            </td></tr>
 
-            <tr><td>
             <div>
             <label for="clave">Clave Login</label>
             <input type="password" name="clave" 
                     placeholder="Introduzca la Clave Login">
             </div>
-               </td></tr>
-
-               <tr><td>
+               
             <div>
             <label for="idCategoria">Categoría</label>
             <select name="idCategoria">
@@ -128,16 +110,10 @@
                     </option>
                 <?php endforeach ?>
             </select>    
-            </div> 
-            </td></tr>
-
-            <tr><td>               
+            </div>                
             <div>
                 <input type="submit" value="Enviar">
-            </div> 
-            </td></tr>
-
-            </table>       
+            </div>        
         </fieldset>   
     </form>   
 </div>

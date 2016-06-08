@@ -1,4 +1,5 @@
 <?php $this->layout('layout') ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
     <?php $this->insert('partials/feedback') ?>
@@ -9,7 +10,7 @@
 
         <fieldset>
             <legend>
-                <h2> Datos del Partido </h2>
+                <h2> Datos del Partido0</h2>
             </legend> 
         
             <input type="hidden" name="idPartido" value="<?= $datos['idPartido'] ?>">
@@ -48,8 +49,6 @@
             </script>
 
 <div>
-<h3>DateTimePicker</h3>
-    <input type="text" value="" id="datetimepicker"/><br><br>
 
 
 </div>

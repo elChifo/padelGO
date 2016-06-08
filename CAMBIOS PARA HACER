@@ -24,16 +24,22 @@
 	
 	Meter date picker en libreria aparte (Cuando no exista conflicto meto el plugin de 			la hora)
 
-
+	Intentar andar el plugin datetimepicker en insertar partidos, está enlazado y un .rar funcionando en la carpeta "plugin"
 
 
 	-----------------------
 	---  MIRETE
 	-----------------------
 
-	Poner hora en partidos
-
 	Hacer DFD
+	
+	Hacer Documentacion
+	
+	Hacer Presentacion
+
+	Los imput de fecha como 'Nuevo Partido' no estan con sus llamadas al dateTimePicker
+
+	Por eso no funcionan las fechas y da error
 
 	
 

@@ -1,7 +1,8 @@
-<?php $this->layout('layout') ?> 
-
+<?php $this->layout('layout') ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
+  
 <div class="container"> 
-<?php $this->insert('partials/feedback') ?>   
+	<?php $this->insert('partials/feedback') ?>   
 
 	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="cancelacion">
         <fieldset> 

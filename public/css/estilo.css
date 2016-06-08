@@ -242,6 +242,22 @@ text-decoration:none;
 	text-decoration: underline;
 }
 
-.formregistro {
-	background-image: url("../public/img/fondocespedpartido.jpg");
+#myCarousel {
+	margin-top: 15px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 100%;
+}
+
+.titulo-pagina {
+	font-size: 3rem;
+	font-style: italic;
+	font-weight: bolder;
+	color:green;
+}
+
+.imagenNoticia {
+	margin-left: 100px;
 }

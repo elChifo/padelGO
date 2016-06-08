@@ -1,7 +1,8 @@
 <?php $this->layout('layout') ?>
-<?php $this->insert('partials/feedback') ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
+    <?php $this->insert('partials/feedback') ?>
     
     <h2>LOGIN CORRECTO</h2>
     <p>
@@ -42,9 +43,9 @@
     </h4> 
 
     <h3>
-        <a href="../login/articulos" style="color:red !important;">Ver tus artículos del Mercadillo</a>
+        <a href="../login/articulos" style="color:red !important;">Artículos del Mercadillo</a>
         &nbsp;&nbsp;&nbsp;
-        <a href="../mensajes/index" style="color:orange !important;">Ver Mensajes</a> 
+        <a href="../mensajes/index" style="color:orange !important;">Mensajes</a> 
     </h3> 
 
 </div>

@@ -1,23 +1,20 @@
-<?php $this->layout('layout') ?> 
-<?php $idSession = Session::get('idUsuario'); ?>
-<?php $this->insert('partials/feedback') ?>
+<?php $this->layout('layout') ?>
+  <?php $idSession = Session::get('idUsuario'); ?>
 
-<div class="container">
-	
+<div class="container">	
+	<?php $this->insert('partials/feedback') ?>
+
 	<h4>
 	    <a href="../mensajes/enviar">Enviar Un Mensaje</a>
     </h4>
 
 	<?php if(count($mensajes) == 0): ?>
-		<h6> .</h6>
-        <h3>No se encuentran Mensajes en la Base de Datos</h3>
+
+        <h3 class="titulo-pagina">No se encuentran Mensajes en la Base de Datos</h3>
 
     <?php else: ?>
-		<h6> .</h6>	 
 
-		<h3 style="color:navy;">MENSAJES RECIBIDOS </h3> 
-
-	<?php endif ?>
+		<h3 class="titulo-pagina">MENSAJES RECIBIDOS </h3> 	
 
 		<?php foreach($mensajes as $mensaje): ?>
 
@@ -53,10 +50,8 @@
 
 			<?php endif ?>			
 
-		<?php endforeach ?>    
-
-    <?php if ($idSession == 1) : ?>
-		<a href="../login/index"><h4>...Volver a Administración</h4></a>
-	<?php endif ?>	
+		<?php endforeach ?>
+		 
+	<?php endif ?>  
 
 </div>
