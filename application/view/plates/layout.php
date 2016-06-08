@@ -13,18 +13,33 @@
 
     
 
-<!-- flecha arriba -->
-<script language='javascript' type='text/javascript'>
-var arriba;
-function subir() {
-if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
-window.scrollBy(0, -15);
-arriba = setTimeout('subir()', 10); //retardo en segundos
-}
-else clearTimeout(arriba);
-}
-</script>
-<!-- FIN flecha arriba -->
+    <!-- flecha arriba -->
+    <script language='javascript' type='text/javascript'>
+    var arriba;
+    function subir() {
+    if (document.body.scrollTop != 0 || document.documentElement.scrollTop != 0) {
+    window.scrollBy(0, -15);
+    arriba = setTimeout('subir()', 10); //retardo en segundos
+    }
+    else clearTimeout(arriba);
+    }
+    </script>
+    <!-- FIN flecha arriba -->
+
+    <!-- efecto ventana modal-->
+
+        <script type="text/javascript">
+        function toogle(a,b,c)
+        {
+        document.getElementById(b).style.display=a;
+        document.getElementById(c).style.display=a;
+        }
+        </script>
+
+
+
+    <!-- fin efecto ventana modal -->
+
 
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
     <script>
@@ -123,6 +138,19 @@ else clearTimeout(arriba);
             <a href="../home/cookies">POLÍTICA DE COOKIES</a><br>
             <a href="../home/privacidad">POLÍTICA DE PRIVACIDAD</a><br>
             <a href="../home/faq">FAQ</a>
+
+
+            <a href="#" onclick="toogle('block','modal','ventana')">Abrir Modal</a>
+        <div id="modal" style="display: none;">
+
+
+        <div id="ventana" class="contenedor" style="display: none;">
+        <h2>Titulo</h2> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        <a href="#close" title="Cerrar" onclick="toogle('none','modal','ventana')">Close</a>
+        </div>
+        </div>
+
+
         </div>
         <div class="col-md-3 divpie">
         <p class="pFooter">CLIMA EN MURCIA</p>
@@ -133,16 +161,16 @@ else clearTimeout(arriba);
             <div class='social_bookmarks_container redes'>
                 <ul class='social_bookmarks'>
                     <li class='iconfacebook'>
-                        <a href='#'>Facebook</a>
+                        <a href='https://es-es.facebook.com/' target="_blank">Facebook</a>
                     </li>
                     <li class='icontwitter'>
-                        <a href='#'>Twitter</a>
+                        <a href='https://twitter.com/?lang=es' target="_blank">Twitter</a>
                     </li>
                     <li class='icongplus'>
-                        <a href='#'>Google Plus</a>
+                        <a href='https://plus.google.com/collections/featured' target="_blank">Google Plus</a>
                     </li>
                     <li class='iconrss'>
-                        <a href='#'>RSS</a>
+                        <a href='http://gplusrss.com/' target="_blank">RSS</a>
                     </li>
                     <li class='iconrssmail'>
                         <a href='<?= URL; ?>contacto'>RSS Mail</a>

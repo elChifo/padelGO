@@ -60,8 +60,24 @@
     <input type="text" id="datetimepicker1"/><br><br>
     <h3>DatePicker</h3>
     <input type="text" id="datetimepicker2"/><br><br>
+    
+
+    <a href="#" onclick="toogle('block','modal','ventana')">Abrir Modal</a>
+<div id="modal" style="display: none;">
+
+
+<div id="ventana" class="contenedor" style="display: none;">
+<h2>Titulo</h2> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+<a href="#close" title="Cerrar" onclick="toogle('none','modal','ventana')">Close</a>
+</div>
+</div>
+
+
     </td></tr>
 </div>
+
+
+
 
             <div>
             <tr><td>
