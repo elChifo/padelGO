@@ -38,32 +38,11 @@
                 </select>
             </div>
             
-            <script type="text/javascript">
-                try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
-            </script>
-
             <div>
-            <label for="fechaNac"><br><!--Fecha Nacimiento--></label>
-                <input type="hidden" name="fechaNac" id="fecha" />
-                    <span style="background-color: #ffc; cursor:default; padding:.3em; border:thin solid #ff0; text-decoration:underline; color: blue;" 
-                            onmouseover="this.style.cursor = 'pointer'; this.style.cursor = 'hand'; 
-                                this.style.backgroundColor = '#ff8'; this.style.textDecoration='none';"
-                            onmouseout="this.style.backgroundColor = '#ffc'; this.style.textDecoration = 'underline';" id="fecha_usuario"> 
-                            Pinchar aqui para Seleccionar la fecha 
-                    </span>                    
-                <p id="error_fecha"></p>
+            <label for="fechaNac"><br>Fecha Nacimiento</label>
+                <input type="text" value="" id="datetimepicker"/>
             </div>
-
-            <script type="text/javascript">
-                Calendar.setup({
-                inputField: "fecha",
-                ifFormat:   "%d/%m/%Y",
-                weekNumbers: false,
-                displayArea: "fecha_usuario",
-                daFormat:    "%A, %d de %B de %Y"
-                });
-            </script>
-
+            
             <br>
 
             <div class="subidaImagen">
