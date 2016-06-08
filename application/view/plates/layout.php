@@ -41,10 +41,23 @@
         </script>
 <!-- FIN DateTimePicker -->
 
-<!-- HORA -->
+<!-- TIMEPICKER NUEVO -->
+<link rel="stylesheet" type="text/css" href="<?= URL; ?>css/jquery.datetimepicker.css">
+<script type="text/javascript" src="<?= URL; ?>/js/jquery.js"></script>
+<script type="text/javascript" src="<?= URL; ?>/js/build/jquery.datetimepicker.full.js"></script>
 
+<script>
+$.datetimepicker.setLocale('es');
+$('#datetimepicker').datetimepicker({
+dayOfWeekStart : 1,
+lang:'es',
+disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
+startDate:  '1986/01/05'
+});
+$('#datetimepicker').datetimepicker({value:'2015/04/15 05:03',step:10});
+</script>
 
-<!-- FIN HORA -->
+<!-- FIN TIMEPICKER NUEVO -->
 
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
     <script>

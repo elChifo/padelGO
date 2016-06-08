@@ -241,3 +241,7 @@ text-decoration:none;
 	text-transform: uppercase;
 	text-decoration: underline;
 }
+
+.formregistro {
+	background-image: url("../public/img/fondocespedpartido.jpg");
+}

@@ -48,6 +48,8 @@
             </script>
 
 <div>
+<h3>DateTimePicker</h3>
+    <input type="text" value="" id="datetimepicker"/><br><br>
 
 
 </div>
