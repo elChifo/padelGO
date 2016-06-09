@@ -125,7 +125,7 @@
             <br />
             
             <div>
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar" class="btnform">
             </div> 
              </td></tr> 
             </table>       

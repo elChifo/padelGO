@@ -52,18 +52,15 @@
 
 <div>
 
-<h3>DateTimePicker</h3>
-    <input type="text" value="" id="datetimepicker"/><br><br>
-    <h3>TimePicker</h3>
-    <input type="text" id="datetimepicker1"/><br><br>
-    <h3>DatePicker</h3>
-    <input type="text" id="datetimepicker2"/><br><br>
-    
+    <h3>DateTimePicker</h3>
+        <input type="text" value="" id="datetimepicker"/><br><br>
+        <h3>TimePicker</h3>
+        <input type="text" id="datetimepicker1"/><br><br>
+        <h3>DatePicker</h3>
+        <input type="text" id="datetimepicker2"/><br><br>
 </div>
 
 <br />
-
-
             <div>
                 <label for="horaPartido">Hora del Partido</label>
 
@@ -180,7 +177,7 @@
             <br />
 
             <div>
-                <input type="submit" value="Crear Partido">
+                <input type="submit" value="Crear Partido" class="btnform">
             </div>      
         </table>
         </fieldset> 

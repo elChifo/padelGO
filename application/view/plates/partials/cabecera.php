@@ -14,3 +14,4 @@
                 <button type="button" class="botonlogin" title="Iniciar Sesión" onclick="window.location.href='<?= URL; ?>login'">Iniciar Sesión</button>
             <?php endif ?>
         </div>
+</div>

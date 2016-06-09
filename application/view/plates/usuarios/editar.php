@@ -103,7 +103,7 @@
             </div>
             <br />
             <p>
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar" class="btnform">
             </p> 
             </p>
             </td></tr>

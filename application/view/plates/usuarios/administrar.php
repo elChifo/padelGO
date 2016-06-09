@@ -47,9 +47,11 @@
         						Editar los datos de Usuario
         					</a> &nbsp;&nbsp;&nbsp;
 
-        			   		<a href="../usuarios/borrar?idUsuario=<?= $usuario->idUsuario; ?>">
+        			   		<a href="../usuarios/borrar?idUsuario=<?= $usuario->idUsuario; ?>"
+                            onclick="return confirm('&#191;Confirmar borrado?')">
         			   			Borrar los datos de Usuario
         			   		</a>
+                            
                         </h4>    
 					</p>
         		

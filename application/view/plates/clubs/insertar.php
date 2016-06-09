@@ -9,6 +9,9 @@
     <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
 
         <fieldset>
+        <table border="1" class="tablapartidos">
+        <tr>
+         <td>
             <legend>
                 <h2> Datos del Club </h2>
             </legend>       
@@ -39,8 +42,9 @@
                 <input id="imagenclub" type="file" name="imagenClub">
             </div>
            
-                <input type="submit" value="Registrar">
-
+                <input type="submit" value="Registrar" class="btnform">
+        </td></tr>
+        </table>
         </fieldset> 
 
     </form>
