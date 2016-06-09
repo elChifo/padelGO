@@ -9,10 +9,12 @@ class Usuarios extends Controller
 
         $usuarios = UsuariosModel::getUsuario(); 
         $categorias = UsuariosModel::getCategoria();
+        $favoritos = FavoritosModel::getFavoritos();
 
         echo $this->view->render('usuarios/index', [
                 'usuarios'  => $usuarios,
-                'categorias' => $categorias
+                'categorias' => $categorias,
+                'favoritos' => $favoritos
         ]);
     }
     

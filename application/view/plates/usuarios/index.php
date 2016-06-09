@@ -16,11 +16,35 @@
            <?php if ($usuario->idUsuario != 1): ?>
 
               <fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;">
+
+              <?php foreach ($favoritos as $favorito): ?>                
+                
+                <?php if ($favorito->Favorito != $usuario->idUsuario): ?>
+
+                    <?php if ($usuario->idUsuario != $favorito->idUsuario): ?>
+
+                      <a href="../favoritos/quitar?Favorito=<?= $usuario->idUsuario; ?>">
+                        <img src="<?= URL; ?>img/favorito.png" alt="FAVORITO" height="30" /></a>
+                       
+                  <?php var_dump($favorito); ?>
+                  
+                   <?php endif ?>
+
+                <?php else : ?>
+
+                  <a href="../favoritos/agregar?Favorito=<?= $usuario->idUsuario; ?>">
+                    <img src="<?= URL; ?>img/favoritoVacio.png" alt="FAVORITO VACIO" height="30" /></a>
+
+             <?php endif ?>  
+                
+              <?php endforeach ?> 
+              
+            
+
+
+
+
            <ul> 
-                <li>
-                  <a href="../favoritos/agregar"><img src="<?= URL; ?>img/favorito.png" alt="FAVORITO" height="30" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="../favoritos/quitar"><img src="<?= URL; ?>img/favoritoVacio.png" alt="FAVORITO VACIO" height="30" /></a>
-                </li>
                 <li> NOMBRE: 
                     <strong> 
                         <?= $usuario->nombre . ' ' . $usuario->apellidos; ?> 
