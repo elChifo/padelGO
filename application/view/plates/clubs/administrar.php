@@ -29,9 +29,11 @@
     					<a href="../clubs/editar?idClub=<?= $club->idClub; ?>">
     						Editar los datos de Club
     					</a> &nbsp;&nbsp;&nbsp;
-    			   		<a href="../clubs/borrar?idClub=<?= $club->idClub; ?>">
+    			   		<a href="../clubs/borrar?idClub=<?= $club->idClub; ?>"
+                        onclick="return confirm('&#191;Confirmar borrado?')">
     			   			Borrar los datos de Club
     			   		</a>
+                        
                     </h4>
 				</p>
     		

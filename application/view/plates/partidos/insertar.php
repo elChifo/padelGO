@@ -60,9 +60,8 @@
     <input type="text" id="datetimepicker2"/><br><br>
     
 
-    <a href="#" onclick="toogle('block','modal','ventana')">Abrir Modal</a>
+<a href="#" onclick="toogle('block','modal','ventana')">Abrir Modal</a>
 <div id="modal" style="display: none;">
-
 
 <div id="ventana" class="contenedor" style="display: none;">
 <h2>Titulo</h2> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -191,7 +190,7 @@
             <br />
 
             <div>
-                <input type="submit" value="Crear Partido">
+                <input type="submit" value="Crear Partido" class="btnform">
             </div>      
         </table>
         </fieldset> 

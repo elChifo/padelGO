@@ -30,11 +30,11 @@
 					<label>
 						<br>
 						<textarea rows="4" cols="50" name="mensaje" 
-								placeholder="Escriba Aqui Su Mensaje..."></textarea>
+								placeholder="Escriba aqui su mensaje..."></textarea>
 					</label>
 				</div>
 
-				<input type="submit" value="Enviar">
+				<input type="submit" value="Enviar" class="btnform">
         </fieldset>
     </form>
 </div>

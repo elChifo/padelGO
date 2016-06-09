@@ -44,7 +44,8 @@
     					<a href="../noticias/editar?idNoticia=<?= $noticia->idNoticia; ?>">
     						Editar la Noticia
     					</a> &nbsp;&nbsp;&nbsp;
-    			   		<a href="../noticias/borrar?idNoticia=<?= $noticia->idNoticia; ?>">
+    			   		<a href="../noticias/borrar?idNoticia=<?= $noticia->idNoticia; ?>"
+                        onclick="return confirm('&#191;Confirmar borrado?')">
     			   			Borrar la Noticia
     			   		</a>
                     </h4>

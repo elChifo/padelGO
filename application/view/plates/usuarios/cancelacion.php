@@ -7,7 +7,7 @@
 	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="cancelacion">
         <fieldset> 
             <legend>
-                <h2> Cancelación de la Cuenta de Usuario. </h2> 
+                <h2> Cancelación de la Cuenta de Usuario</h2> 
             </legend>             
             	
            		<h4>Por favor, indique los motivos de la cancelación.</h4>
@@ -46,7 +46,7 @@
 					</label>
 				</div>
 
-				<input type="submit" value="Enviar">
+				<input type="submit" value="Enviar" class="btnform">
         </fieldset>
     </form>
 </div>

@@ -46,7 +46,7 @@
         						Editar los datos del Artículo
         					</a> &nbsp;&nbsp;&nbsp;
 
-        			   		<a href="../mercadillo/borrar?idArticulo=<?= $articulo->idArticulo; ?>">
+        			   		<a href="../mercadillo/borrar?idArticulo=<?= $articulo->idArticulo; ?>" onclick="return confirm('&#191;Confirmar borrado?')">
         			   			Borrar los datos del Artículo
         			   		</a>
                         </h4>    

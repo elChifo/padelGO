@@ -27,7 +27,6 @@
     <!-- FIN flecha arriba -->
 
     <!-- efecto ventana modal-->
-
         <script type="text/javascript">
         function toogle(a,b,c)
         {
