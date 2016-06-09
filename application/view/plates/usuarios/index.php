@@ -13,38 +13,41 @@
 
          <?php foreach($usuarios as $usuario): ?>
            
-           <?php if ($usuario->idUsuario != 1): ?>
+           <?php if ( ($usuario->idUsuario != $idSession) && ($usuario->idUsuario != 1) ): ?>
 
-              <fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;">
+              <fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;"> 
+              <table border="1" class="tablapartidos">
+             <tr><td>
+              <ul> 
 
-              <?php foreach ($favoritos as $favorito): ?>                
+              <?php foreach ($favoritos as $favorito): ?>  
                 
-                <?php if ($favorito->Favorito != $usuario->idUsuario): ?>
+                    <?php if ($usuario->idUsuario == $favorito->Favorito): ?>
 
-                    <?php if ($usuario->idUsuario != $favorito->idUsuario): ?>
+                      <?php if ($usuario->idUsuario != $favorito->idUsuario): ?>  
+
 
                       <a href="../favoritos/quitar?Favorito=<?= $usuario->idUsuario; ?>">
                         <img src="<?= URL; ?>img/favorito.png" alt="FAVORITO" height="30" /></a>
-                       
-                  <?php var_dump($favorito); ?>
-                  
-                   <?php endif ?>
+                    
+                      <?php endif ?>
 
-                <?php else : ?>
 
-                  <a href="../favoritos/agregar?Favorito=<?= $usuario->idUsuario; ?>">
+                    <?php else: ?>
+
+
+
+              
+                 <a href="../favoritos/agregar?Favorito=<?= $usuario->idUsuario; ?>">
                     <img src="<?= URL; ?>img/favoritoVacio.png" alt="FAVORITO VACIO" height="30" /></a>
 
-             <?php endif ?>  
-                
-              <?php endforeach ?> 
-              
-            
 
 
 
+               <?php endif ?> 
 
-           <ul> 
+              <?php endforeach ?>               
+
                 <li> NOMBRE: 
                     <strong> 
                         <?= $usuario->nombre . ' ' . $usuario->apellidos; ?> 
@@ -60,9 +63,10 @@
 
            <div class="imagenUsuario">
                 <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
-                alt="usuario<?= $usuario->idUsuario; ?>" height="100" /> 
+                alt="usuario<?= $usuario->idUsuario; ?>" height="100" style="border-radius: 100px;"/> 
             </div>
-            
+            </td></tr>
+            </table>
            </fieldset>
 
            <?php endif ?>

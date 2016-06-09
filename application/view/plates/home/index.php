@@ -70,8 +70,5 @@
       <p><?= $objetivos ?></p>    
       <p><?= $desarrollo ?></p>
   </div>
-  <div class="col-md-4">  
-    <h3> QUIÉNES SOMOS </h3>    
-      <p><?= $quienessomos ?></p>
-  </div>
+  
 </div>
