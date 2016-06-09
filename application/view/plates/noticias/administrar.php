@@ -11,11 +11,14 @@
 
        <fieldset>
             <fieldset>
-           <ul> 
+             <table border="1" class="tablapartidos">
+                <tr><td>
+                <ul> 
                 <li> 
                     <h3>TITULAR: </h3>                    
                     <?= $noticia->titular; ?>                                                         
                 </li>
+
                 <br>
 
                 <li> 
@@ -29,14 +32,13 @@
                     <?= $noticia->contenido; ?>                                                         
                 </li>
                 <br>
-
            </ul>
-
+           
            <div class="imagenNoticia">
                 <img src="<?= URL; ?>img/noticias/noticia<?= $noticia->idNoticia; ?>.png" 
                 alt="noticia<?= $noticia->idNoticia; ?>" height="150" /> 
             </div>
-   		
+   	        <tr><td>
     			<p>
                     <h4>
     					<a href="../noticias/editar?idNoticia=<?= $noticia->idNoticia; ?>">
@@ -47,9 +49,12 @@
     			   		</a>
                     </h4>
 				</p>
-    		       
+                </td></tr>
+    		  </td></tr> 
+              </table>    
        </fieldset>
     <?php endforeach ?>
 
     <a href="../login/index"><h4>...Volver a Administración</h4></a>
+    <a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>

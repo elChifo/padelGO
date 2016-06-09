@@ -16,7 +16,9 @@
 
 				<div class="ofrecerMonitor">
 
-					<fieldset style="border:1px dotted green;">
+					<fieldset>
+					<table border="1" class="tablapartidos">
+            		<tr><td>
 						<legend>
 							Datos para el Administrador
 						</legend>
@@ -31,9 +33,15 @@
 							<textarea rows="4" cols="50" name="experiencia" 
 									placeholder="Indique su Experiencia..."></textarea>
 						</label>
+						</td></tr>
+						</table>
 					</fieldset>
+			
+					<br />
 
-					<fieldset style="border:1px dotted orange;">
+					<fieldset>
+					<table border="1" class="tablapartidos">
+            		<tr><td>
 						<legend>
 							Datos para el Anuncio
 						</legend>
@@ -48,9 +56,11 @@
 							<textarea rows="4" cols="50" name="horarios" 
 									placeholder="Indique sus Horarios y Precios..."></textarea>
 						</label>
+						</td></tr>
+						</table>
 					</fieldset>
 				</div>
-
+				<br />
 				<input type="submit" value="Enviar">
         </fieldset>
     </form>

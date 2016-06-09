@@ -12,6 +12,8 @@
             <?php if ($usuario->email != 'admin@padelgo.com') : ?>
 
            <fieldset>
+           <table border="1" class="tablapartidos">
+            <tr><td>
            <ul> 
                 <li> 
                 	NOMBRE: <strong> <?= $usuario->nombre; ?> </strong>
@@ -52,10 +54,13 @@
 					</p>
         		
            </ul>
+           </td></tr>
+           </table>
            </fieldset>
            <?php endif ?>
 
         <?php endforeach ?>
         
         <a href="../login"><h4>...Volver a Administración</h4></a>
+        <a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a> 
 </div>

@@ -39,5 +39,6 @@
        </fieldset>
     <?php endforeach ?>
 
+    <a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a> 
     <a href="../login/index"><h4>...Volver a Administración</h4></a>
 </div>

@@ -26,7 +26,7 @@ class Home extends Controller
                         <br /> <br /> 
                             Nos encargaremos de que tu experiencia tanto en el juego, como en la interación con los usuarios sea lo más agradable posible.
                         <br /> <br /> 
-                            para cualquier duda o sugerencia puedes ponerte en contacto con nosotros en la sección de contacto."
+                            Para cualquier duda o sugerencia puedes ponerte en contacto con nosotros en la sección de contacto."
         ]);
 
         echo $this->view->render("home/index"); 

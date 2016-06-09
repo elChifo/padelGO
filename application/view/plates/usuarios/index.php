@@ -16,7 +16,9 @@
            <?php if ($usuario->idUsuario != 1): ?>
 
               <fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;">
-           <ul> 
+               <table border="1" class="tablapartidos">
+             <tr><td>
+              <ul> 
                 <li> NOMBRE: 
                     <strong> 
                         <?= $usuario->nombre . ' ' . $usuario->apellidos; ?> 
@@ -34,7 +36,8 @@
                 <img src="<?= URL; ?>img/usuarios/usuario<?= $usuario->idUsuario; ?>.png" 
                 alt="usuario<?= $usuario->idUsuario; ?>" height="100" /> 
             </div>
-            
+            </td></tr>
+            </table>
            </fieldset>
 
            <?php endif ?>
