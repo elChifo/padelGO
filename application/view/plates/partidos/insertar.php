@@ -18,39 +18,41 @@
             <input type="hidden" name="idPartido" value="<?= $datos['idPartido'] ?>">
 
             <div>
-                <label for="tipoPartido">Tipo de Partido</label>
-                <select name="tipoPartido">
-                    <option value="0">Seleccione el Tipo de Partido</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Mixto">Mixto</option>
-                </select>
+                <label for="tipoPartido">Tipo de Partido</label> <br />                
+                <input name="tipoPartido" type="radio" value="Masculino">Masculino &nbsp;&nbsp;&nbsp;
+                <input name="tipoPartido" type="radio" value="Femenino">Femenino &nbsp;&nbsp;&nbsp;
+                <input name="tipoPartido" type="radio" value="Mixto">Mixto &nbsp;&nbsp;&nbsp;
             </div>
+
+
             <br />
             <script type="text/javascript">
                 try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
+           
             </script>
-            
-            
-            <div>
-                <label for="fechayhora">Fecha:
-                 <input type="text" id="fechayhora" value="" />
-                </label>
 
-            </div>
-           <br />
+            <p></p>
+            <input type="hidden" name="fechaPartido" id="fecha" />
+            <span style="background-color: #ffc; cursor:default; padding:.3em; border:thin solid #ff0; text-decoration:underline; color: blue;" 
+            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#ff8'; this.style.textDecoration='none';"
+            onmouseout="this.style.backgroundColor='#ffc'; this.style.textDecoration='underline';"
+            id="fecha_usuario">
+            Pincha aqui para seleccionar la fecha
+            </span>
+
 
             <script type="text/javascript">
-                Calendar.setup({
-                inputField: "fecha",
-                ifFormat:   "%d/%m/%Y",
-                weekNumbers: false,
-                displayArea: "fecha_usuario",
-                daFormat:    "%A, %d de %B de %Y"
-                });
+            Calendar.setup({
+              inputField: "fecha",
+              ifFormat:   "%Y/%m/%d",
+              weekNumbers: false,
+              displayArea: "fecha_usuario",
+              daFormat:    "%A, %d de %B de %Y"
+            });
             </script>
+            <br />
 
-<div>
+<!-- <div>
 
     <h3>DateTimePicker</h3>
         <input type="text" value="" id="datetimepicker"/><br><br>
@@ -59,7 +61,7 @@
         <h3>DatePicker</h3>
         <input type="text" id="datetimepicker2"/><br><br>
 </div>
-
+ -->
 <br />
             <div>
                 <label for="horaPartido">Hora del Partido</label>

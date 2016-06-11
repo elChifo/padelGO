@@ -27,10 +27,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
-    <!-- calendario fecha antiguo (da conflicto con el nuevo)
     <script type="text/javascript" src="<?= URL; ?>js/jcalendar/calendar.js"></script>
     <script type="text/javascript" src="<?= URL; ?>js/jcalendar/calendar-es.js"></script>
     <script type="text/javascript" src="<?= URL; ?>js/jcalendar/calendar-setup.js"></script>
-        --> 
 
 
