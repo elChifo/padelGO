@@ -20,20 +20,17 @@
 
 
         </div>
+
         <div class="col-md-3 divpie">
         <p class="pFooter">CORPORATIVO</p>
             <a href="#" onclick="toogle('block','ventana_aviso','aviso')">AVISO LEGAL</a><br>
-            <a href="#" onclick="toogle('block','ventana_cookies','cookies')">POLÍTICA DE COOKIES</a><br>
-            <a href="#" onclick="toogle('block','ventana_padelgo','padelgo')">QUIÉNES SOMOS</a><br>            
-
-            <a href="../home/faq">FAQ</a>
-
-
         </div>
+
         <div class="col-md-3 divpie">
         <p class="pFooter">CLIMA EN MURCIA</p>
             <div id="cont_9655d95d1c1b9c5a02dc9b564ac720a6"><span id="h_9655d95d1c1b9c5a02dc9b564ac720a6"><a id="a_9655d95d1c1b9c5a02dc9b564ac720a6" href="http://www.tiempo.com/murcia.htm" target="_blank" rel="nofollow" style="color: #00ABEB; font-family: Roboto; font-size: 13px; text-decoration: none;">HOY</a></span><script type="text/javascript" async src="https://www.tiempo.com/wid_loader/9655d95d1c1b9c5a02dc9b564ac720a6"></script></div>
         </div>
+        
         <div class="col-md-3 divpie">
         <p class="pFooter">CONTACTO</p>
             <div class='social_bookmarks_container redes'>

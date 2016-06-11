@@ -30,28 +30,4 @@ class Home extends Controller
     } 
 
 
-    public function cookies()
-    {
-        $this->view->addData(['titulo' => 'Cookies']);
-
-        echo $this->view->render('home/cookies');
-    }
-
-    public function privacidad()
-    {
-        $this->view->addData(['titulo' => 'Privacidad']);
-
-        echo $this->view->render('home/privacidad');
-    }
-
-    public function faq()
-    {
-        $this->view->addData(['titulo' => 'Faq']);
-
-        echo $this->view->render('home/faq');
-    }
-
-
-
-
 }
