@@ -22,11 +22,6 @@ class Home extends Controller
 
         				'desarrollo' => "'PADEL GO!' ofrece infinitas posibilidades: podemos tomárnoslo con calma y simplemente buscar un poco de ejercicio físico durante la semana, o bien mucho más en serio y querer competir seriamente.",
 
-                        'quienessomos' => "El equipo de 'PADEL GO!' esta integrado por un grupo humano con amplia experiencia en todos los  ámbitos referentes al mundo del pádel.
-                        <br /> <br /> 
-                            Nos encargaremos de que tu experiencia tanto en el juego, como en la interación con los usuarios sea lo más agradable posible.
-                        <br /> <br /> 
-                            Para cualquier duda o sugerencia puedes ponerte en contacto con nosotros en la sección de contacto."
         ]);
 
         echo $this->view->render("home/index"); 

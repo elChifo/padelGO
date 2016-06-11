@@ -288,7 +288,9 @@ from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
 to { -o-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
 }
 
-#modal
+#ventana_cookies, 
+#ventana_aviso,
+#ventana_padelgo
 {
 position: absolute;
 padding: 0;
@@ -310,8 +312,8 @@ overflow: auto;
 
 .contenedor
 {
-width: 500px;
-background: #fff;
+width: 50%;
+background: white;
 position: relative;
 margin: 10% auto;
 padding: 30px;
