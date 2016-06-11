@@ -40,7 +40,6 @@ class UsuariosModel
     public static function borrar($idUsuario)
     {           
         $conn = Database::getInstance()->getDatabase();
-        $errores_validacion = false; 
 
         $ssql = "DELETE FROM Usuarios WHERE idUsuario=:idUsuario";
         $query = $conn->prepare($ssql);
