@@ -3,9 +3,12 @@
 
 <div class="container">
     
-    <h2>ADMINISTRACIÓN DE USUARIOS</h2>
+    <h3 class="titulo-pagina">ADMINISTRACIÓN DE USUARIOS &nbsp;&nbsp;&nbsp;  
 
-    <h4><a href="<?= URL; ?>../registro">Registrar un Nuevo Usuario</a></h4>
+                <login style="font-size: 18px;">    
+                    <a href="../registro">Registrar un Nuevo Usuario</a>
+                <login/>    
+    </h3>
     
 		<?php foreach($usuarios as $usuario): ?>
 
@@ -34,7 +37,7 @@
                 	TELÉFONO: <strong> <?= $usuario->telefono; ?> </strong>
                 </li>
                 <li> 
-                	CATEGORÍA: <strong> <?= $usuario->idCategoria . ' ª Categoría'; ?> </strong>
+                	CATEGORÍA: <strong> <?= $usuario->idCategoria . 'ª Categoría'; ?> </strong>
                 </li>
        		       
                 <div class="imagenUsuario">

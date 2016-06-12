@@ -5,38 +5,37 @@ class Clubs extends Controller
 
    	public function index()
     {
-        $this->view->addData(['titulo' => 'Clubs']);
+        $this->view->addData(['titulo' => 'Clubs | Padel GO!']);
 
-        $clubs = ClubsModel::getClub();
+        $clubs = ClubsModel::getClub(); // Recoge todos los clubs de la base de datos
         
-        echo $this->view->render('clubs/index', [
+        echo $this->view->render('clubs/index', [ // Imprime la vista y añade datos
                 'clubs' => $clubs
         ]);         
     }
 
     public function insertar()
     {            
-        $this->view->addData(['titulo' => 'Insertar Club']);
-        $idSession = Session::get('idUsuario');
+        $this->view->addData(['titulo' => 'Clubs | Insertar']);
+        $idSession = Session::get('idUsuario'); // Recoge el Usuario Logueado en Sesión
 
-        $clubs = ClubsModel::getClub();
-        $usuario = UsuariosModel::getIdUsuario($idSession);
+        $clubs = ClubsModel::getClub();  // Recoge todos los clubs de la base de datos
 
-        if ($idSession != 1) {
+        if ($idSession != 1) { // Error si no es Administrador 
 
-            header('location: ../error');
+            header('location: ../error'); // LLama al controlador que trae la vista
         }
         else {
 
             if (!$_POST) {
 
-                echo $this->view->render('clubs/insertar');
+                echo $this->view->render('clubs/insertar'); // Imprime la vista
             } 
             else {                
 
                 $club = $_POST;
 
-                if(ClubsModel::insertar($club)) {
+                if(ClubsModel::insertar($club)) { // Inserta los datos en la base de datos 
 
                     if (isset($_FILES['imagenClub'])) {
 
@@ -46,16 +45,15 @@ class Clubs extends Controller
                         $imagen['imagenClub'] = $_FILES['imagenClub'];
                         $imagen['path'] = 'img/clubs/';
 
-                        ClubsModel::insertarImagen($imagen);
+                        ClubsModel::insertarImagen($imagen); // Inserta los datos en la base de datos
                     }  
 
-                    header("location: ../clubs/administrar");
+                    header("location: ../clubs/administrar"); // LLama al controlador que trae la vista
                 } 
                 else {
-                    echo $this->view->render('clubs/insertar',array(
-                            'errores' => array('Error al insertar'),
+                    echo $this->view->render('clubs/insertar', [ // Imprime la vista y añade datos
                             'club' => $club
-                    ));
+                    ]);
                 }
             }     
         } 
@@ -64,18 +62,18 @@ class Clubs extends Controller
 
     public function administrar()
     {
-        $this->view->addData(['titulo' => 'Administrar Clubs']);
-        $idSession = Session::get('idUsuario'); 
+        $this->view->addData(['titulo' => 'Clubs | Administrar']);
+        $idSession = Session::get('idUsuario');  // Recoge el Usuario Logueado en Sesión
 
-        $clubs = ClubsModel::getClub();         
+        $clubs = ClubsModel::getClub(); // Recoge todos los clubs de la base de datos         
 
-        if ($idSession != 1) {
+        if ($idSession != 1) { // Error si no es Administrador
 
-            header('location: ../error');
+            header('location: ../error'); // LLama al controlador que trae la vista
         }
         else {
 
-            echo $this->view->render('clubs/administrar', [
+            echo $this->view->render('clubs/administrar', [ // Imprime la vista y añade datos
                     'clubs'     => $clubs
             ]);
         }
@@ -83,26 +81,26 @@ class Clubs extends Controller
 
     public function editar()
     {            
-        $this->view->addData(['titulo' => 'Editar Club']);
-        $idSession = Session::get('idUsuario');        
+        $this->view->addData(['titulo' => 'Clubs | Editar']);
+        $idSession = Session::get('idUsuario');  // Recoge el Usuario Logueado en Sesión       
 
-        $club = ClubsModel::getIdClubs($_GET['idClub']);
+        $club = ClubsModel::getIdClubs($_GET['idClub']); // Recoge el club mediante el ID
 
-        if ($idSession != 1) {
+        if ($idSession != 1) { // Error si no es Administrador
 
-            header("location: ../error/");     
+            header("location: ../error/"); // LLama al controlador que trae la vista     
         }
         else {
 
             if (!$_POST) {
 
-                echo $this->view->render('clubs/editar', [
+                echo $this->view->render('clubs/editar', [ // Imprime la vista y añade datos
                     'club'  => $club
                 ]);
             } 
             else { 
 
-                ClubsModel::editar($_POST);
+                ClubsModel::editar($_POST); // Edita los datos de la base de datos
 
                 if (isset($_FILES['imagenClub'])) {
 
@@ -112,10 +110,10 @@ class Clubs extends Controller
                     $imagen['imagenClub'] = $_FILES['imagenClub'];
                     $imagen['path'] = 'img/clubs/';
 
-                    ClubsModel::insertarImagen($imagen);
+                    ClubsModel::insertarImagen($imagen); // Edita los datos de la base de datos
                 }                
                 
-                    header("location: ../clubs/administrar");                               
+                    header("location: ../clubs/administrar"); // LLama al controlador que trae la vista                               
                 
             }
         }        
@@ -124,20 +122,20 @@ class Clubs extends Controller
 
     public function borrar()
     {
-        $this->view->addData(['titulo' => 'Borrar Club']);         
-        $idSession = Session::get('idUsuario');       
+        $this->view->addData(['titulo' => 'Clubs | Borrar']);         
+        $idSession = Session::get('idUsuario');  // Recoge el Usuario Logueado en Sesión      
 
         $idClub = $_GET['idClub'];        
 
-        if ($idSession != 1) {
+        if ($idSession != 1) { // Error si no es Administrador
 
-            header('location: ../error');
+            header('location: ../error'); // LLama al controlador que trae la vista
         }
         else {
 
-            ClubsModel::borrar($idClub);
+            ClubsModel::borrar($idClub); // Borra los datos del ID
 
-            echo $this->view->render('clubs/borrar');           
+            echo $this->view->render('clubs/administrar'); // Imprime la vista 
            
         }
 

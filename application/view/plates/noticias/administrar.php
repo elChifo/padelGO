@@ -2,10 +2,13 @@
   <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
-    
-    <h2>ADMINISTRACIÓN DE NOTICIAS</h2>
 
-    <h4><a href="<?= URL; ?>../noticias/crear">Crear una Noticia</a></h4>
+    <h3 class="titulo-pagina">ADMINISTRACIÓN DE NOTICIAS &nbsp;&nbsp;&nbsp;
+
+                <login style="font-size: 18px;">    
+                    <a href="../noticias/crear">Registrar una Nueva Noticia</a>
+                <login/>    
+    </h3>
     
 	<?php foreach($noticias as $noticia): ?>
 

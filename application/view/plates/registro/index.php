@@ -10,53 +10,47 @@
             <legend>
                 <h2> Datos del Usuario </h2> 
             </legend>  
-            
-            <input type="hidden" name="idUsuario" 
-                    value="<?= (isset($registro['idUsuario'])) ? $registro['idUsuario'] : "" ?>"> 
-            </input>
 
             <table border="1" class="tablapartidos">
              <tr><td>
             <div>
             <label for="nombre">Nombre </label>
             <input type="text" name="nombre" 
-                    value="<?= (isset($registro['nombre'])) ? $registro['nombre'] : "" ?>"
                     placeholder="Introduzca el Nombre">
             </div>
             <br />
+            
             <div>
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" 
-                    value="<?= (isset($registro['apellidos'])) ? $registro['apellidos'] : "" ?>"
+            <input type="text" name="apellidos"
                     placeholder="Introduzca los Apellidos"> 
             </div>
-            <br />
+            <br />            
+
             <div>
-                <label for="sexo">Sexo</label>
-                <select name="sexo">
-                    <option value="0"> Seleccione el Sexo </option>
-                    <option value="Hombre"> Hombre </option>
-                    <option value="Mujer"> Mujer </option>
-                </select>
+                <label for="sexo">Seleccione el Sexo</label>              
+                <input name="sexo" type="radio" value="Hombre">Hombre &nbsp;&nbsp;&nbsp;
+                <input name="sexo" type="radio" value="Mujer">Mujer 
             </div>
+
+
+
             <br />
 
             <script type="text/javascript">
                 try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
             </script>
 
-            
-            <div>
-            <label for="fechaNac"><br><!--Fecha Nacimiento--></label>
-                <input type="hidden" name="fechaNac" id="fecha" />
-                    <span style="background-color: #ffc; cursor:default; padding:.3em; border:thin solid #ff0; text-decoration:underline; color: blue;" 
-                            onmouseover="this.style.cursor = 'pointer'; this.style.cursor = 'hand'; 
-                                this.style.backgroundColor = '#ff8'; this.style.textDecoration='none';"
-                            onmouseout="this.style.backgroundColor = '#ffc'; this.style.textDecoration = 'underline';" id="fecha_usuario"> 
-                            Pinchar aqui para Seleccionar la fecha 
-                    </span>                    
-                <p id="error_fecha"></p>
-            </div>
+           
+            <strong>Fecha de Nacimiento</strong> |  
+            <input type="hidden" name="fechaNac" id="fecha" >
+            <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #c5f619;" 
+            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#c5f619'; this.style.textDecoration='none';"
+            onmouseout="this.style.backgroundColor='white'; this.style.textDecoration='none';"
+            id="fecha_usuario">
+            Elegir AQUI 
+            </span>
+
             <br />
 
             <script type="text/javascript">

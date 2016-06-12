@@ -1,20 +1,13 @@
 <?php
 
 class Error extends Controller
-{
-    private $error;
-
-    public function __construct($error = ""){
-        parent::__construct();
-        $this->error = $error;
-    }
-
+{   
     public function index()
     {        
-        $this->view->addData(['titulo' => 'Padel GO!']);
+        $this->view->addData(['titulo' => 'Error | Padel GO!']);
         
-        echo $this->view->render('error/index', array(
-            'error' => $this->error
-        ));
+        echo $this->view->render('error/index', [ // Imprime la vista y añade datos
+            'error' => $error
+        ]);
     }
 }

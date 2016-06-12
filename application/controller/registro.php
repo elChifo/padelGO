@@ -2,38 +2,34 @@
 
 class Registro extends Controller
 {
-    //funcion principal. Comprueba el acceso de nuevo usuario
+
     public function index()
     {            
-        $this->view->addData(['titulo' => 'Registro']);
+        $this->view->addData(['titulo' => 'Registro | Padel GO!']);
 
-        $categorias = RegistroModel::getCategoria();
+        $categorias = RegistroModel::getCategoria(); // Recoge todas las categorias de la base de datos
 
         if (!$_POST) {
 
-            echo $this->view->render('registro/index', [
+            echo $this->view->render('registro/index', [ // Imprime la vista y añade datos
                      'categorias' => $categorias]);
         } 
         else {
-            //recoge todos los datos obligatorios en el formulario de registro
+
             $registro = $_POST;
 
-
-            //comprueba si el email ya está registrado en la base de datos
-            if (RegistroModel::existeEmail($_POST["email"])) {
+            if (RegistroModel::existeEmail($_POST["email"])) { //Comprueba si existe el email del usuario
 
                 Session::add('feedback_negative', "El Email ya está registrado");
 
-                echo $this->view->render('registro/index', [
-                         'registro'      => $registro,
+                echo $this->view->render('registro/index', [ // Imprime la vista y añade datos
+                         'registro'   => $registro,
                          'categorias' => $categorias
                          ]);
             }
             else {
 
-                //si todos los campos son correctos se completa el registro                
-
-                if (RegistroModel::insertar($registro)) { 
+                if (RegistroModel::insertar($registro)) { // Inserta los datos en la base de datos
 
                     if (isset($_FILES['imagenUsuario'])) {
 
@@ -43,12 +39,12 @@ class Registro extends Controller
                         $imagen['imagenUsuario'] = $_FILES['imagenUsuario'];
                         $imagen['path'] = 'img/usuarios/';
 
-                        RegistroModel::insertarImagen($imagen);
+                        RegistroModel::insertarImagen($imagen); // Inserta los datos en la base de datos
                     } 
                   
                     if ((isset($_SESSION['idUsuario'])) && ($_SESSION['idUsuario'] == 1)) {
                         
-                            header("location: ../usuarios/administrar");       
+                            header("location: ../usuarios/administrar"); // LLama al controlador que trae la vista      
                     }
                     else {
 
@@ -57,17 +53,17 @@ class Registro extends Controller
                             'clave' => $_POST['clave']
                         );
 
-                        if (LoginModel::logueado($login)) {
+                        if (LoginModel::logueado($login)) { // Comprueba si se ha logueado el Usuario
 
-                            header("Location: /login");
+                            header("Location: /login"); // LLama al controlador que trae la vista
                         }                        
                     }                     
                 } 
                 else {
-                    //error al hacer el registro
+
                     Session::add('feedback_negative', "El Registro no ha sido posible, Inténtelo de nuevo");
-                    //si se produce el fallo, salta la alerta y redirecciona
-                    echo $this->view->render('registro/index', [
+
+                    echo $this->view->render('registro/index', [ // Imprime la vista y añade datos
                             'registro'      => $registro,
                             'categorias' => $categorias
                             ]);

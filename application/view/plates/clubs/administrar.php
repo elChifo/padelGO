@@ -3,21 +3,39 @@
 
 <div class="container">
     
-    <h2>ADMINISTRACIÓN DE CLUBS</h2>
+    <h3 class="titulo-pagina">ADMINISTRACIÓN DE CLUBS &nbsp;&nbsp;&nbsp;  
 
-    <h4><a href="<?= URL; ?>../clubs/insertar">Registrar un Nuevo Club</a></h4>
+                <login style="font-size: 18px;">    
+                    <a href="../clubs/insertar">Registrar un Nuevo Club</a>
+                <login/>    
+    </h3>
     
 	<?php foreach($clubs as $club): ?>
 
-       <fieldset>
-       <ul> 
-            <li> 
-                    Nombre Club: <strong> <?= $club->nombreClub ?> </strong>  
-                <ul>                            
-                        <li> Direccion : <?= $club->direccionClub ?>  </li>
-                        <li> Nº Pistas: <?= $club->numPistas ?>  </li>                      
-                </ul> 
-            </li>
+       <fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;">
+       <table border="1" class="tablapartidos">
+                <tr>
+                    <td>
+                        <ul> 
+                            <li> Nombre Club:
+                                <strong> 
+                                    <?= $club->nombreClub ?> &nbsp;&nbsp;&nbsp; 
+                                    
+                                </strong> 
+                                <ul>                            
+                                    <li> Direccion : <?= $club->direccionClub ?>  </li>
+                                    <li> Nº Pistas: <?= $club->numPistas ?>  </li>                      
+                                </ul> 
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="../partidos/ver?idClub=<?= $club->idClub; ?>">Ver Partidos</a>
+                    </td>
+                </tr>
+            </table>
 
             <div class="imagenClub">
                 <img src="<?= URL; ?>img/clubs/club<?= $club->idClub; ?>.png" 
@@ -35,9 +53,7 @@
     			   		</a>
                         
                     </h4>
-				</p>
-    		
-       </ul>
+				</p>    	
        </fieldset>
     <?php endforeach ?>
 

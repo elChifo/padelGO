@@ -13,30 +13,43 @@
             <legend>
                 <h2> Datos de la Noticia </h2> 
             </legend>
-            <br />
-            <p>
-            <input type="hidden" name="idNoticia" 
-                    value="<?= (isset($noticia->idNoticia)) ? $noticia->idNoticia : "" ?>">
-            </p>  
-
+           
             <p>
             <label for="titular">Titular</label>
-            <input type="text" name="titular" 
-                    value="<?= (isset($noticia->titular)) ? $noticia->titular : "" ?>"
+            <input type="text" name="titular"
                     placeholder="Introduzca el Titular de la Noticia">
             </p>          
-           <br />
-            <p>
-            <label for="fechaNoticia">Fecha</label>
-            <input type="text" name="fechaNoticia" 
-                    value="<?= (isset($noticia->fechaNoticia)) ? $noticia->fechaNoticia : "" ?>"
-                    placeholder="Introduzca la Fecha de la Noticia (AAAA-mm-dd)">
-            </p>
+           
             <br />
+            <script type="text/javascript">
+                try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
+           
+            </script>
+
+            <strong>Fecha de la Noticia</strong> | 
+            <input type="hidden" name="fechaNoticia" id="fecha" />
+            <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #c5f619;" 
+            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#c5f619'; this.style.textDecoration='none';"
+            onmouseout="this.style.backgroundColor='white'; this.style.textDecoration='none';"
+            id="fecha_usuario">
+            Elegir AQUI
+            </span>
+
+
+            <script type="text/javascript">
+            Calendar.setup({
+              inputField: "fecha",
+              ifFormat:   "%Y-%m-%d",
+              weekNumbers: false,
+              displayArea: "fecha_usuario",
+              daFormat:    "%A, %d de %B de %Y"
+            });
+            </script>
+            <br /><br />
+
             <p>
             <label for="contenido">Contenido</label>
             <textarea  name="contenido" 
-                    value="<?= (isset($noticia->contenido)) ? $noticia->contenido : "" ?>"
                     placeholder="Introduzca el Contenido de la Noticia" rows="5" cols="50"></textarea>
             </p>
             <br />

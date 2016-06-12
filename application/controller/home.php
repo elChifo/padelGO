@@ -4,7 +4,7 @@ class Home extends Controller
 {
     public function index()
     {
-        $this->view->addData(['titulo' => 'Inicio',
+        $this->view->addData(['titulo' => 'Inicio | Padel GO!',  // Añade datos a la vista
 
         				'presentacion' => "'PADEL GO!' es una web que te permite acceder a una innovadora red social de jugadores de padel, desde tu móvil, y de una forma sencilla e intuitiva, Podrás:
 
@@ -26,7 +26,7 @@ class Home extends Controller
 
         ]);
 
-        echo $this->view->render("home/index"); 
+        echo $this->view->render("home/index");  // Imprime la vista 
     } 
 
 

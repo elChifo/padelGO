@@ -44,7 +44,7 @@
                 <br>
                 <li> CATEGORÍA: 
                     <strong> 
-                        <?= $usuario->idCategoria . ' ª Categoría'; ?> 
+                        <?= $usuario->idCategoria . 'ª Categoría'; ?> 
                     </strong>                                      
                 </li>
            </ul>

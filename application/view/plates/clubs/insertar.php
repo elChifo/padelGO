@@ -20,20 +20,17 @@
 
             <p>
             <label for="nombreClub">Nombre del Club</label>
-            <input type="text" name="nombreClub" 
-                    value="<?= (isset($club['nombreClub'])) ? $club['nombreClub'] : "" ?>">
+            <input type="text" name="nombreClub">
             </p>
 
             <p>
             <label for="direccionClub">Dirección</label>
-            <input type="text" name="direccionClub" 
-                    value="<?= (isset($club['direccionClub'])) ? $club['direccionClub'] : "" ?>">
+            <input type="text" name="direccionClub">
             </p>
 
             <p>
             <label for="numPistas">Número de Pistas</label>
-            <input type="date" name="numPistas" 
-                    value="<?= (isset($club['numPistas'])) ? $club['numPistas'] : "" ?>">
+            <input type="date" name="numPistas">
             </p>
 
             <div class="subidaClub">

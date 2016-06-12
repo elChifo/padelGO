@@ -5,63 +5,62 @@ class Login extends Controller
     //funcion principal. Comprueba el acceso del usuario
     public function index()    
     {
-        $this->view->addData(['titulo' => 'Login']); 
+        $this->view->addData(['titulo' => 'Login | Padel GO!']); 
 
-        if (Session::get('idUsuario')) {
+        if (Session::get('idUsuario')) { 
 
-            $idSession = Session::get('idUsuario');
-            $usuario = UsuariosModel::getIdUsuario($idSession);
+            $idSession = Session::get('idUsuario');  // Recoge el Usuario Logueado en Sesión
+            $usuario = UsuariosModel::getIdUsuario($idSession); // Recoge el usuario mediante el ID
 
-            if ($usuario->email == 'admin@padelgo.com') {
+            if ($usuario->email == 'admin@padelgo.com') { // Si el usuario es el Administrador
 
-                        echo $this->view->render('login/privado', [
+                        echo $this->view->render('login/privado', [ // Imprime la vista y añade datos
                             'usuario' => $usuario
                         ]);
                 }    
                 else {                    
-                        echo $this->view->render('login/logueado', [
+                        echo $this->view->render('login/logueado', [ // Imprime la vista y añade datos
                             'usuario' => $usuario
                         ]);
                 } 
         }        
         else if (!$_POST) {
 
-            echo $this->view->render('login/index');
+            echo $this->view->render('login/index'); // Imprime la vista 
 
         }
         else {
 
-            if (LoginModel::logueado($_POST)) {
+            if (LoginModel::logueado($_POST)) { // Comprueba si se ha logueado el Usuario
 
-                $idSession = Session::get('idUsuario');
+                $idSession = Session::get('idUsuario');  // Recoge el Usuario Logueado en Sesión
 
-                $usuario = UsuariosModel::getIdUsuario($idSession);
+                $usuario = UsuariosModel::getIdUsuario($idSession); // Recoge el usuario mediante el ID
 
-                if ($_POST['email'] == 'admin@padelgo.com') {
+                if ($_POST['email'] == 'admin@padelgo.com') { // Si el usuario es el Administrador
 
-                        echo $this->view->render('login/privado', [
+                        echo $this->view->render('login/privado', [ // Imprime la vista y añade datos
                             'usuario' => $usuario
                         ]);
                 }    
                 else {                    
-                        echo $this->view->render('login/logueado', [
+                        echo $this->view->render('login/logueado', [ // Imprime la vista y añade datos
                             'usuario' => $usuario
                         ]);
                 }    
             }
             else {
 
-                echo $this->view->render('login/index');
+                echo $this->view->render('login/index'); // Imprime la vista 
             }
         }
     }
 
     
-    //finaliza la sesion y redirecciona a la raiz de la web
-    public static function salir()
+    public static function salir() 
     {
-        Session::destroy();
-        header('location: /');
+        Session::destroy(); 
+        header('location: /'); // LLama al controlador que trae la vista
         exit();
     } 
 
@@ -69,23 +68,21 @@ class Login extends Controller
     public function articulos()
     {        
         $this->view->addData(['titulo' => 'Artículos']);
-        $idSession = Session::get('idUsuario');  
+        $idSession = Session::get('idUsuario');  // Recoge el Usuario Logueado en Sesión    
 
-        $articulos = MercadilloModel::getArticulos(); 
-        $usuarios = MercadilloModel::getUsuario();       
+        $articulos = MercadilloModel::getArticulos(); // Recoge todos los articulos de la base de datos 
+        $usuarios = MercadilloModel::getUsuario(); // Recoge todos los usuarios de la base de datos
 
-        if (!$idSession) {
+        if (!$idSession) { // Error si no hay Usuario Logueado
 
-            header('location: ../error');
+            header('location: ../error'); // LLama al controlador que trae la vista
         }
         else {
             
-            echo $this->view->render('login/articulos', [
+            echo $this->view->render('login/articulos', [ // Imprime la vista y añade datos
                 'articulos' => $articulos,
                 'usuarios' => $usuarios
             ]);
-        }
-
-            
+        }            
     }
 }  

@@ -18,7 +18,7 @@
             <input type="hidden" name="idUsuario" 
                     value="<?= (isset($usuario->idUsuario)) ? $usuario->idUsuario : "" ?>">
             </p>  
-            <br />
+            
             <p>
             <label for="nombre">Nombre </label>
             <input type="text" name="nombre" 
@@ -33,24 +33,63 @@
                     placeholder="Introduzca los Apellidos">
             </p>
             <br />
-            <p>
-                <label for="sexo">Sexo</label>
-                <select name="sexo">
+          
 
-                    <option value="Hombre" <?php if($usuario->sexo == 'Hombre') { echo 'selected'; } ?> > Hombre </option>
+            <div>
+                <label for="sexo">Seleccione el Sexo</label>              
+                <input name="sexo" type="radio" 
+                    value="Hombre" <?php if ($usuario->sexo == 'Hombre') : ?> 
+                        checked = 'checked' <?php endif ?> >
+                        Hombre &nbsp;&nbsp;&nbsp;
+                <input name="sexo" type="radio" 
+                    value="Mujer" <?php if ($usuario->sexo == 'Mujer') : ?> 
+                        checked = 'checked' <?php endif ?> >
+                        Mujer 
+            </div>
 
-                    <option value="Mujer" <?php if($usuario->sexo == 'Mujer') { echo 'selected'; } ?> > Mujer </option>
-
-                </select>
-            </p>
             <br />
-            <p>
-            <label for="fechaNac">Fecha de Nacimiento</label>
-            <input type="text" name="fechaNac" 
-                    value="<?= (isset($usuario->fechaNac)) ? $usuario->fechaNac : "" ?>"
-                    placeholder="Introduzca la Fecha de Nacimiento (AAAA-mm-dd)">
-            </p>
+            <script type="text/javascript">
+                try{(function(a){var b="http://",c="librosweb.es",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
+           
+            </script>
+
+            <strong>Fecha de Nacimiento</strong> |  
+            <span style="border: solid 1px black; height: 2rem; margin-right: 1rem; padding: 0.5rem;"><?= $usuario->fechaNac ?>
+            </span>
+
+            <input type="hidden" name="fechaNac" id="fecha" 
+                value="<?= (isset($usuario->fechaNac)) ? $usuario->fechaNac : "" ?>">
+            <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #c5f619;" 
+            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#c5f619'; this.style.textDecoration='none';"
+            onmouseout="this.style.backgroundColor='white'; this.style.textDecoration='none';"
+            id="fecha_usuario">
+            Elegir AQUI 
+            </span>
+
+
+            <script type="text/javascript">
+            Calendar.setup({
+              inputField: "fecha",
+              ifFormat:   "%Y-%m-%d",
+              weekNumbers: false,
+              displayArea: "fecha_usuario",
+              daFormat:    "%A, %d de %B de %Y"
+            });
+            </script>
             <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
             <p>
             <label for="direccion">Dirección</label>
             <input type="text" name="direccion" 

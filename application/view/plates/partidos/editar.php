@@ -31,7 +31,7 @@
                 <input name="tipoPartido" type="radio" 
                     value="Mixto" <?php if ($partido->tipoPartido == 'Mixto') : ?> 
                         checked = 'checked' <?php endif ?> >
-                        Mixto &nbsp;&nbsp;&nbsp;
+                        Mixto 
             </div>
   
             <br />
@@ -40,7 +40,10 @@
            
             </script>
 
-            <strong>Fecha del Partido</strong> |  <input type="text" value="<?= (isset($partido->fechaPartido)) ? $partido->fechaPartido : "" ?>" size="10">
+            <strong>Fecha del Partido</strong> |  
+            <span style="border: solid 1px black; height: 2rem; margin-right: 1rem; padding: 0.5rem;"><?= $partido->fechaPartido ?>
+            </span>
+
             <input type="hidden" name="fechaPartido" id="fecha" 
                 value="<?= (isset($partido->fechaPartido)) ? $partido->fechaPartido : "" ?>">
             <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #c5f619;" 

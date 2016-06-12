@@ -4,10 +4,10 @@
 
 <div class="container">	    
 
-        <h3 class="titulo-pagina">ADMINISTRACIÓN DE PARTIDOS  
+        <h3 class="titulo-pagina">ADMINISTRACIÓN DE PARTIDOS &nbsp;&nbsp;&nbsp;  
 
 				<login style="font-size: 18px;">	
-					<a href="partidos/insertar">Crear un Nuevo Partido</a>
+					<a href="../partidos/insertar">Registrar un Nuevo Partido</a>
 				<login/>	
         </h3> 
 		<br>	

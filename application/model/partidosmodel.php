@@ -194,7 +194,16 @@ class PartidosModel
     }
 
     
+    public static function borrar($idPartido)
+    {           
+        $conn = Database::getInstance()->getDatabase();
+        $errores_validacion = false; 
 
+        $ssql = "DELETE FROM Partidos WHERE idPartido=:idPartido";
+        $query = $conn->prepare($ssql);
+        $params = [':idPartido' => $idPartido];
+        $query->execute($params);
+    }
 
 
 

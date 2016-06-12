@@ -21,7 +21,7 @@
                 <label for="tipoPartido">Tipo de Partido</label>              
                 <input name="tipoPartido" type="radio" value="Masculino">Masculino &nbsp;&nbsp;&nbsp;
                 <input name="tipoPartido" type="radio" value="Femenino">Femenino &nbsp;&nbsp;&nbsp;
-                <input name="tipoPartido" type="radio" value="Mixto">Mixto &nbsp;&nbsp;&nbsp;
+                <input name="tipoPartido" type="radio" value="Mixto">Mixto
             </div>
 
 

@@ -15,12 +15,7 @@
 
 </head>
 <body>
-    <div class="container"> 
-
-            <!-- fancybox -->
-        <div>            
-            <?php $this->insert('partials/fancybox') ?>
-        </div>   
+    <div class="container">    
             
             <!-- cabecera -->
         <div class="col-md-12 cabecera">
@@ -30,6 +25,11 @@
             <!-- contenido -->
         <div class="col-md-12 contenido">
             <?= $this->section('content') ?>
+        </div>
+        
+            <!-- fancybox -->
+        <div>            
+            <?php $this->insert('partials/fancybox') ?>
         </div>
 
             <!-- footer -->
