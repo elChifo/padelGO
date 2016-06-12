@@ -14,10 +14,10 @@
             
             <section>
                 <label>Email:</label>
-                <input type="text" name="email" required="required">
+                <input type="email" name="email" required="required" onblur="validacion()" placeholder="Escribe tu email" autofocus>
                 
                 <label>Password:</label>
-                <input type="password" name="clave" required="required">            
+                <input type="password" name="clave" required="required" onblur="validacion()" placeholder="****">            
                 
                 <input type="submit" value="Acceder" class="btnform"> 
             </section>

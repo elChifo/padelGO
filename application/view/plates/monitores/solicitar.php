@@ -26,12 +26,12 @@
 						<label> Formación
 							<br>
 							<textarea rows="4" cols="50" name="formacion" 
-									placeholder="Indique su Formación..."></textarea>
+									placeholder="Indique su Formación" onblur="validacion2()" required="required" autofocus></textarea>
 						</label>
 						<label> Experiencia
 							<br>
 							<textarea rows="4" cols="50" name="experiencia" 
-									placeholder="Indique su Experiencia..."></textarea>
+									placeholder="Indique su Experiencia" onblur="validacion2()" required="required"></textarea>
 						</label>
 						</td></tr>
 						</table>
@@ -49,12 +49,12 @@
 						<label> Anuncio
 							<br>
 							<textarea rows="4" cols="50" name="anuncio" 
-									placeholder="Indique su Anuncio..."></textarea>
+									placeholder="Indique su Anuncio" onblur="validacion2()" required="required"></textarea>
 						</label>
 						<label> Horarios y Precios
 							<br>
 							<textarea rows="4" cols="50" name="horarios" 
-									placeholder="Indique sus Horarios y Precios..."></textarea>
+									placeholder="Indique sus Horarios y Precios" onblur="validacion2()" required="required"></textarea>
 						</label>
 						</td></tr>
 						</table>

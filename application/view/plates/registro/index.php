@@ -15,25 +15,21 @@
              <tr><td>
             <div>
             <label for="nombre">Nombre </label>
-            <input type="text" name="nombre" 
-                    placeholder="Introduzca el Nombre">
+            <input type="text" name="nombre" autofocus placeholder="Introduzca su nombre" required="required" onblur="validacion2()">
             </div>
             <br />
             
             <div>
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos"
-                    placeholder="Introduzca los Apellidos"> 
+            <input type="text" name="apellidos" required="required" onblur="validacion2()" placeholder="Introduzca sus apellidos"> 
             </div>
             <br />            
 
             <div>
                 <label for="sexo">Seleccione el Sexo</label>              
-                <input name="sexo" type="radio" value="Hombre">Hombre &nbsp;&nbsp;&nbsp;
+                <input name="sexo" type="radio" value="Hombre" checked>Hombre &nbsp;&nbsp;&nbsp;
                 <input name="sexo" type="radio" value="Mujer">Mujer 
             </div>
-
-
 
             <br />
 
@@ -44,11 +40,11 @@
            
             <strong>Fecha de Nacimiento</strong> |  
             <input type="hidden" name="fechaNac" id="fecha" >
-            <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #c5f619;" 
-            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#c5f619'; this.style.textDecoration='none';"
+            <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #f2f2f2;" 
+            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#3a7999'; this.style.textDecoration='none';"
             onmouseout="this.style.backgroundColor='white'; this.style.textDecoration='none';"
             id="fecha_usuario">
-            Elegir AQUI 
+            Seleccionar 
             </span>
 
             <br />
@@ -63,8 +59,7 @@
                 });
             </script>
 
-            <br>
-
+            <br />
            
             <div class="subidaImagen">
                 <label id="imagenUsuario" for="imagenUsuario">Subir Imagen de Usuario</label>
@@ -76,7 +71,7 @@
             <label for="direccion">Dirección</label>
             <input type="text" name="direccion" 
                     value="<?= (isset($registro['direccion'])) ? $registro['direccion'] : "" ?>"
-                    placeholder="Introduzca una Dirección">
+                    placeholder="Introduzca una Dirección" onblur="validacion2()" required="required">
             </div>
             <br />
 
@@ -84,7 +79,7 @@
             <label for="telefono">Teléfono</label>
             <input type="tel" name="telefono" 
                     value="<?= (isset($registro['telefono'])) ? $registro['telefono'] : "" ?>"
-                    placeholder="Introduzca el Teléfono">
+                    placeholder="Introduzca el Teléfono" onblur="validacion2()" required="required">
             </div>
            <br />
 
@@ -92,14 +87,14 @@
             <label for="email">Email</label>
             <input type="email" name="email" 
                     value="<?= (isset($registro['email'])) ? $registro['email'] : "" ?>"
-                    placeholder="Introduzca el Email">
+                    placeholder="Introduzca el Email" onblur="validacion2()" required="required">
             </div>
             <br />
 
             <div>
             <label for="clave">Clave Login</label>
             <input type="password" name="clave" 
-                    placeholder="Introduzca la Clave Login">
+                    placeholder="Introduzca la Clave Login" onblur="validacion2()" required="required">
             </div>
             <br />
 

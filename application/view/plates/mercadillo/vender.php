@@ -20,21 +20,21 @@
             <label for="nombreArticulo">Nombre del Artículo</label>
             <input type="text" name="nombreArticulo" 
                     value="<?= (isset($articulo->nombreArticulo)) ? $articulo->nombreArticulo : "" ?>"
-                    placeholder="Introduzca el Nombre del Artículo">
+                    placeholder="Introduzca el Nombre del Artículo" onblur="validacion2()" required="required" autofocus>
             </p>          
            <br />
             <p>
             <label for="descripcionArticulo">Descripción del Artículo</label>
             <input type="text" name="descripcionArticulo" 
                     value="<?= (isset($articulo->descripcionArticulo)) ? $articulo->descripcionArticulo : "" ?>"
-                    placeholder="Introduzca la Descripción del Artículo">
+                    placeholder="Introduzca la Descripción del Artículo" onblur="validacion2()" required="required">
             </p> 
             <br />
             <p>
             <label for="precio">Precio</label>
-            <input type="text" name="precio" 
+            <input type="number" name="precio" 
                     value="<?= (isset($articulo->precio)) ? $articulo->precio : "" ?>"
-                    placeholder="Introduzca el Precio del Artículo">
+                    placeholder="Introduzca el Precio del Artículo" onblur="validacion2()" required="required" step="0.01" min="0.01" max="99">
             </p>
             <br />
             <div class="subidaImagen">

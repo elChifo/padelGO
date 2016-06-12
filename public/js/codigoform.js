@@ -64,3 +64,135 @@ function contar(){
 
 //El método addEventListener () concede un controlador de eventos para el elemento especificado.
 window.addEventListener("load", iniciar, false);
+
+
+function validacion2(){
+  if(nombre.value==""){
+  nombre1.setCustomValidity('Inserte un nombre');  
+  }else{
+  nombre1.setCustomValidity('');
+  nombre1.style.background='#bbeffa';
+}
+
+
+  if(apellidos.value==""){
+  apellidos.setCustomValidity('Inserte un apellido');  
+  }else{
+  apellidos.setCustomValidity('');
+  apellidos.style.background='#bbeffa';
+}
+
+if(direccion.value==""){
+  direccion.setCustomValidity('Inserte una direccion');  
+  }else{
+  direccion.setCustomValidity('');
+  direccion.style.background='#bbeffa';
+}
+
+if(telefono.value==""){
+  telefono.setCustomValidity('Inserte un telefono');  
+  }else{
+  telefono.setCustomValidity('');
+  telefono.style.background='#bbeffa';
+}
+
+if(email.value==""){
+  email.setCustomValidity('Inserte una direccion de correo válida');  
+  }else{
+  email.setCustomValidity('');
+  email.style.background='#bbeffa';
+}
+
+if(clave.value==""){
+  clave.setCustomValidity('Inserte una clave');  
+  }else{
+  clave.setCustomValidity('');
+  clave.style.background='#bbeffa';
+}
+
+if(jugador1.value==""){
+  jugador1.setCustomValidity('Inserte un nombre de jugador');  
+  }else{
+  jugador1.setCustomValidity('');
+  jugador1.style.background='#bbeffa';
+}
+
+if(jugador2.value==""){
+  jugador2.setCustomValidity('Inserte un nombre de jugador');  
+  }else{
+  jugador2.setCustomValidity('');
+  jugador2.style.background='#bbeffa';
+}
+
+if(jugador3.value==""){
+  jugador3.setCustomValidity('Inserte un nombre de jugador');  
+  }else{
+  jugador3.setCustomValidity('');
+  jugador3.style.background='#bbeffa';
+}
+
+if(jugador4.value==""){
+  jugador4.setCustomValidity('Inserte un nombre de jugador');  
+  }else{
+  jugador4.setCustomValidity('');
+  jugador4.style.background='#bbeffa';
+}
+
+if(nombreArticulo.value==""){
+  nombreArticulo.setCustomValidity('Inserte un nombre de Articulo');  
+  }else{
+  nombreArticulo.setCustomValidity('');
+  nombreArticulo.style.background='#bbeffa';
+}
+
+if(descripcionArticulo.value==""){
+  descripcionArticulo.setCustomValidity('Inserte una descripcion de Articulo');  
+  }else{
+  descripcionArticulo.setCustomValidity('');
+  descripcionArticulo.style.background='#bbeffa';
+}
+
+if(precio.value==""){
+  precio.setCustomValidity('Inserte un precio');  
+  }else{
+  precio.setCustomValidity('');
+  precio.style.background='#bbeffa';
+}
+
+if(formacion.value==""){
+  formacion.setCustomValidity('Indique su formacion');  
+  }else{
+  formacion.setCustomValidity('');
+  formacion.style.background='#bbeffa';
+}
+
+if(experiencia.value==""){
+  experiencia.setCustomValidity('Indique su experiencia');  
+  }else{
+  experiencia.setCustomValidity('');
+  experiencia.style.background='#bbeffa';
+}
+
+if(anuncio.value==""){
+  anuncio.setCustomValidity('Indique su anuncio');  
+  }else{
+  anuncio.setCustomValidity('');
+  anuncio.style.background='#bbeffa';
+}
+
+if(horarios.value==""){
+  horarios.setCustomValidity('Indique sus horarios');  
+  }else{
+  horarios.setCustomValidity('');
+  horarios.style.background='#bbeffa';
+}
+
+if(mensaje.value==""){
+  mensaje.setCustomValidity('Indique su mensaje');  
+  }else{
+  mensaje.setCustomValidity('');
+  mensaje.style.background='#bbeffa';
+}
+
+
+}
