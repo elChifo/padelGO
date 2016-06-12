@@ -19,7 +19,7 @@
                 <label>Password:</label>
                 <input type="password" name="clave" required="required">            
                 
-                <input type="submit" value="Acceder"> 
+                <input type="submit" value="Acceder" class="btnform"> 
             </section>
         </fieldset>
     </form>

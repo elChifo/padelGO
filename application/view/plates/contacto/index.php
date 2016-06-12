@@ -19,7 +19,9 @@
 
                     <tr><td></td><td><input type="checkbox" name="check" id="check" required>Acepto la <a href="/home/privacidad">politica de privacidad</a></td></tr><br>
 
-                    <tr><td></td><td><input type="submit" value="Enviar" onclick="validarcheck()"> <input type="reset" value="Reiniciar"><p>Los campos marcados con (*) son obligatorios.</p></td></tr>
+                    <tr><td></td><td>
+                    <input type="submit" value="Enviar" onclick="validarcheck()"> 
+                    <input type="reset" value="Reiniciar"><p>Los campos marcados con (*) son obligatorios.</p></td></tr>
 
                   </table>
               </fieldset>

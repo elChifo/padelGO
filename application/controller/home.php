@@ -22,34 +22,12 @@ class Home extends Controller
 
         				'desarrollo' => "'PADEL GO!' ofrece infinitas posibilidades: podemos tomárnoslo con calma y simplemente buscar un poco de ejercicio físico durante la semana, o bien mucho más en serio y querer competir seriamente.",
 
+                        'quienessomos' => "El equipo de 'PADEL GO!' esta integrado por un grupo humano con amplia experiencia en todos los  ámbitos referentes al mundo del pádel.",
+
         ]);
 
         echo $this->view->render("home/index"); 
     } 
-
-
-    public function cookies()
-    {
-        $this->view->addData(['titulo' => 'Cookies']);
-
-        echo $this->view->render('home/cookies');
-    }
-
-    public function privacidad()
-    {
-        $this->view->addData(['titulo' => 'Privacidad']);
-
-        echo $this->view->render('home/privacidad');
-    }
-
-    public function faq()
-    {
-        $this->view->addData(['titulo' => 'Faq']);
-
-        echo $this->view->render('home/faq');
-    }
-
-
 
 
 }

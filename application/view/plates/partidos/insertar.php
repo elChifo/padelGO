@@ -67,12 +67,6 @@
                 <label for="horaPartido">Hora del Partido</label>
 
                         <select name="horaPartido" >
-                            <option value="7:00">7:00</option>
-                            <option value="7:30">7:30</option>
-                            <option value="8:00">8:00</option>
-                            <option value="8:30">8:30</option>
-                            <option value="9:00">9:00</option>
-                            <option value="9:30">9:30</option>
                             <option value="10:00">10:00</option>
                             <option value="10:30">10:30</option>
                             <option value="11:00">11:00</option>
@@ -82,9 +76,6 @@
                             <option value="13:00">13:00</option>
                             <option value="13:30">13:30</option>
                             <option value="14:00">14:00</option>
-                            <option value="14:30">14:30</option>
-                            <option value="15:00">15:00</option>
-                            <option value="15:30">15:30</option>
                             <option value="16:00">16:00</option>
                             <option value="16:30">16:30</option>
                             <option value="17:00">17:00</option>
@@ -98,9 +89,6 @@
                             <option value="21:00">21:00</option>
                             <option value="21:30">21:30</option>
                             <option value="22:00">22:00</option>
-                            <option value="22:30">22:30</option>
-                            <option value="23:00">23:00</option>
-                            <option value="23:30">23:30</option>
                         </select> 
             </div>
             
@@ -110,7 +98,7 @@
                 <label for="jugador1">Jugador 1</label>
                 <input type="text" name="jugador1" 
                     value="<?= (isset($datos['jugador1'])) ? $datos['jugador1'] : "" ?>"
-                    placeholder="Introduzca el Código de Jugador">
+                    placeholder="Nombre Jugador">
             </div>
     
             <br />
@@ -119,7 +107,7 @@
                 <label for="jugador2">Jugador 2</label>
                 <input type="text" name="jugador2" 
                     value="<?= (isset($datos['jugador2'])) ? $datos['jugador2'] : "" ?>"
-                    placeholder="Introduzca el Código de Jugador">
+                    placeholder="Nombre Jugador">
             </div>
 
             <br />
@@ -128,7 +116,7 @@
                 <label for="jugador3">Jugador 3</label>
                 <input type="text" name="jugador3" 
                     value="<?= (isset($datos['jugador3'])) ? $datos['jugador3'] : "" ?>"
-                    placeholder="Introduzca el Código de Jugador">
+                    placeholder="Nombre Jugador">
             </div>
 
             <br />
@@ -137,7 +125,7 @@
                 <label for="jugador4">Jugador 4</label>
                 <input type="text" name="jugador4" 
                     value="<?= (isset($datos['jugador4'])) ? $datos['jugador4'] : "" ?>"
-                    placeholder="Introduzca el Código de Jugador">
+                    placeholder="Nombre Jugador">
             </div>
 
             <br />
