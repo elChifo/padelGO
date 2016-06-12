@@ -85,16 +85,8 @@ class PartidosModel
             Session::add('feedback_negative', "No he recibido la Hora del Partido.");
             $errores_validacion = true;
         }
-        if (empty($datos['jugador1'])) {            
-            Session::add('feedback_negative', "No he recibido ningun Jugador.");
-            $errores_validacion = true;
-        }
         if(empty($datos['idCategoria'])) {
             Session::add('feedback_negative', "No he recibido la Categoría.");
-            $errores_validacion = true;
-        }
-        if(empty($datos['idUsuario'])) {
-            Session::add('feedback_negative', "No he recibido el Usuario.");
             $errores_validacion = true;
         }
         if(empty($datos['idClub'])) {
@@ -108,16 +100,16 @@ class PartidosModel
         //comprobamos todos los campos
         else {
             $params = array(
-                'tipoPartido' => $_POST["tipoPartido"],
-                'fechaPartido' => $_POST["fechaPartido"],
-                'horaPartido' => $_POST["horaPartido"],
-                'jugador1' => $_POST["jugador1"],
-                'jugador2' => $_POST["jugador2"],
-                'jugador3' => $_POST["jugador3"],
-                'jugador4' => $_POST["jugador4"],
-                'idCategoria' => $_POST["idCategoria"],
-                'idUsuario' => $_POST["idUsuario"],
-                'idClub' => $_POST["idClub"]
+                'tipoPartido' => $datos["tipoPartido"],
+                'fechaPartido' => $datos["fechaPartido"],
+                'horaPartido' => $datos["horaPartido"],
+                'jugador1' => $datos["jugador1"],
+                'jugador2' => $datos["jugador2"],
+                'jugador3' => $datos["jugador3"],
+                'jugador4' => $datos["jugador4"],
+                'idCategoria' => $datos["idCategoria"],
+                'idUsuario' => $datos["idUsuario"],
+                'idClub' => $datos["idClub"]
             );
 
             $ssql = "INSERT INTO Partidos (tipoPartido, fechaPartido, horaPartido, jugador1, jugador2, jugador3, jugador4, idCategoria, idUsuario, idClub)
@@ -135,65 +127,73 @@ class PartidosModel
     }
 
     //obtenemos los datos ya existentes en la base de datos para poder modificarlos
-    public static function editar($datos){
-
+    public static function editar($datos)
+    {
         $conn = Database::getInstance()->getDatabase();
 
-        $errores_validacion = false;
-
-        if(empty($datos['idActividad'])){
-            Session::add('feedback_negative', 'No he recibido la Actividad');
+        $errores_validacion = false;        
+     
+        if(empty($datos['tipoPartido'])) {
+            Session::add('feedback_negative', "No he recibido el Tipo de Partido.");
             $errores_validacion = true;
         }
-
-        if(empty($datos['nombreActividad'])){
-            Session::add('feedback_negative', "No he recibido el Nombre de la Actividad");
+        if(empty($datos['fechaPartido'])) {
+            Session::add('feedback_negative', "No he recibido la Fecha del Partido.");
             $errores_validacion = true;
         }
-
-        if(empty($datos['monitor'])){
-            Session::add('feedback_negative', "No he recibido el Nombre del Monitor");
+        if(empty($datos['horaPartido'])) {
+            Session::add('feedback_negative', "No he recibido la Hora del Partido.");
             $errores_validacion = true;
         }
-
-        if(empty($datos['descripcion'])){
-            Session::add('feedback_negative', "No he recibido la Descripción");
+        if(empty($datos['idCategoria'])) {
+            Session::add('feedback_negative', "No he recibido la Categoría.");
             $errores_validacion = true;
         }
-
-        if(empty($datos['idCentro'])){
-            Session::add('feedback_negative', "No he recibido el Centro");
+        if(empty($datos['idClub'])) {
+            Session::add('feedback_negative', "No he recibido el Club.");
             $errores_validacion = true;
-        }
-
+        }          
+        
         if($errores_validacion) {
             return false;
-        } 
-        //actualizamos los datos nuevos y hacemos el registro en la base de datos
+        }
+         //actualizamos los datos nuevos y hacemos el registro en la base de datos
         else {
-            $ssql = "UPDATE Actividades SET nombreActividad=:nombreActividad, monitor=:monitor, 
-             descripcion=:descripcion, idCentro=:idCentro WHERE idActividad=:id";
+            $params = array(
+                ':idPartido' => $_POST["idPartido"],
+                ':tipoPartido' => $_POST["tipoPartido"],
+                ':fechaPartido' => $_POST["fechaPartido"],
+                ':horaPartido' => $_POST["horaPartido"],
+                ':jugador1' => $_POST["jugador1"],
+                ':jugador2' => $_POST["jugador2"],
+                ':jugador3' => $_POST["jugador3"],
+                ':jugador4' => $_POST["jugador4"],
+                ':idCategoria' => $_POST["idCategoria"],
+                ':idUsuario' => $_POST["idUsuario"],
+                ':idClub' => $_POST["idClub"]
+            );
+
+             $ssql = "UPDATE Partidos SET idPartido = :idPartido, tipoPartido = :tipoPartido, 
+                             fechaPartido = :fechaPartido, horaPartido = :horaPartido,  
+                             jugador1 = :jugador1, jugador2 = :jugador2,  
+                             jugador3 = :jugador3, jugador4 = :jugador4,  
+                             idCategoria = :idCategoria, idUsuario = :idUsuario, idClub = :idClub 
+                      WHERE idPartido = :idPartido";
+
+                      
             $query = $conn->prepare($ssql);
 
-            $parameters = array(
-                ':nombreActividad' => $datos["nombreActividad"],
-                ':monitor' => $datos["monitor"],
-                ':descripcion' => $datos["descripcion"],
-                ':idCentro' => $datos["idCentro"],
-                ':id'     => $datos["idActividad"]
-            );
-            $query->execute($parameters);
-            $count = $query->rowCount();
-            if($count == 1){
-                Session::add('feedback_positive', 'Datos actualizados');
-                return true;
+            $query->execute($params);
+
+            $cuenta = $query->rowCount();
+            if($cuenta == 1) {
+                return $conn->lastInsertId();
             }
-            Session::add('feedback_positive', 'Actualizadas 0 casillas');
             return false;
         }
     }
 
-
+    
 
 
 

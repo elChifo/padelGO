@@ -2,24 +2,13 @@
   <?php $idSession = Session::get('idUsuario'); ?> 
   <?php $usuarioPartido = Session::get('usuarioPartido'); ?>
 
-<div class="container">	
+<div class="container">	    
 
-    <?php if(count($partidos) == 0): ?>
-
-       <h3 class="titulo-pagina">No se encuentran Partidos Disponible</h3>
-
-    <?php else: ?>
-
-        <h3 class="titulo-pagina">PARTIDOS  
-
-			<?php if (isset($idSession)) : ?>	
+        <h3 class="titulo-pagina">ADMINISTRACIÓN DE PARTIDOS  
 
 				<login style="font-size: 18px;">	
 					<a href="partidos/insertar">Crear un Nuevo Partido</a>
 				<login/>	
-
-		<?php endif ?>
-
         </h3> 
 		<br>	
 
@@ -54,7 +43,7 @@
 						</li>
 						<li class="horaPartido">Hora del Partido: <?= $partido->horaPartido; ?>
 						</li>
-					</ul>	
+					</ul>
 
 					<div class="idUsuario"> 
 
@@ -69,7 +58,7 @@
 							
 						<?php endif ?>
 
-					<?php endforeach ?>
+					<?php endforeach ?>	
 
 					</div>
 					</td></tr>
@@ -176,6 +165,17 @@
 	    			<?php endif ?>	
 					
 					<?php endforeach ?>
+					<p>
+                    <h4>
+    					<a href="../partidos/editar?idPartido=<?= $partido->idPartido; ?>">
+    						Editar el Partido
+    					</a> &nbsp;&nbsp;&nbsp;
+    			   		<a href="../partidos/borrar?idPartido=<?= $partido->idPartido; ?>"
+                        onclick="return confirm('&#191;Confirmar borrado?')">
+    			   			Borrar el Partido
+    			   		</a>
+                    </h4>
+				</p>
 					</td></tr>
 					</table>
 				</div>
@@ -185,7 +185,7 @@
 		
 		<?php endforeach ?>
 	 		
-	<?php endif ?>
+	
 	<br />
 	<input type="button" class="btnimprimir" value="Imprimir página" onclick="window.print()">
 	<a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>

@@ -69,6 +69,85 @@ class Partidos extends Controller
         }
     }
 
+
+    public function administrar()
+    {
+        $this->view->addData(['titulo' => 'Administrar Partidos']); 
+        $idSession = Session::get('idUsuario');
+        $usuarioPartido = Session::set('usuarioPartido', $idSession);        
+
+        $partidos = PartidosModel::getPartido();
+        $categorias = PartidosModel::getCategoria();
+        $usuarios = PartidosModel::getUsuario();
+        $clubs = PartidosModel::getClub();
+
+        if ($idSession != 1) {
+
+            header('location: ../error');
+        }
+        else {
+
+            echo $this->view->render('partidos/administrar', [
+                'partidos' => $partidos,
+                'categorias' => $categorias,
+                'usuarios' => $usuarios,
+                'clubs' => $clubs,
+                'usuarioPartido' => $usuarioPartido 
+            ]);
+        }
+    }
+
+
+
+
+
+
+
+
+
+ 
+    public function editar()
+    {            
+        $this->view->addData(['titulo' => 'Editar Partido']);
+        $idSession = Session::get('idUsuario');
+        $usuarioPartido = Session::set('usuarioPartido', $idSession);
+
+        $idPartido = $_GET['idPartido'];
+
+        $partido = PartidosModel::getIdPartido($idPartido);        
+
+        $categorias = PartidosModel::getCategoria();
+        $usuarios = PartidosModel::getUsuario();
+        $clubs = PartidosModel::getClub();
+
+        if (!$idSession) {
+
+            header("location: ../error/");     
+        }
+        else {
+
+            if (!$_POST) {
+
+                echo $this->view->render('partidos/editar', [
+                        'partido' => $partido,
+                        'categorias' => $categorias,
+                        'usuarios' => $usuarios,
+                        'clubs' => $clubs,
+                        'usuarioPartido' => $usuarioPartido  
+                ]);
+            } 
+            else { 
+              
+                PartidosModel::editar($_POST);  
+
+                header("location: ../partidos/administrar");                
+                
+            }
+        }        
+    }
+
+
+
     public function ver()
     {
         $this->view->addData(['titulo' => 'Ver Partidos']);
@@ -90,6 +169,38 @@ class Partidos extends Controller
                 'usuarioPartido' => $usuarioPartido,
                 'idClub'         => $idClub                 
         ]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function entrar()
+    {
+        $this->view->addData(['titulo' => 'Entrar a Partido']);
+        $idSession = Session::get('idUsuario');
+        $usuarioPartido = Session::set('usuarioPartido', $idSession);
+
+        $idPartido = $_GET['idPartido'];
+
+        $partido = PartidosModel::getIdPartido($idPartido);
+        var_dump($partido);
+
     }
 
 }

@@ -40,6 +40,8 @@
         <a href="../clubs/administrar">Administrar Clubs</a> 
         &nbsp;&nbsp;&nbsp;
         <a href="../noticias/administrar">Administrar Noticias</a> 
+        &nbsp;&nbsp;&nbsp;
+        <a href="../partidos/administrar">Administrar Partidos</a> 
     </h4> 
 
     <h3>

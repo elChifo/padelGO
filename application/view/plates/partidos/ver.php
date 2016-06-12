@@ -19,24 +19,34 @@
 					
 					<?php if($club->idClub == $partido->idClub): ?>
 						
-						&nbsp;&nbsp;&nbsp;&nbsp;"<?= $club->nombreClub; ?>"</h3>
+						&nbsp;&nbsp;&nbsp;"<?= $club->nombreClub; ?>"</h3>
 
 						<span>Dirección del Club: <?= $club->direccionClub; ?> </span>
 										
 	    			<?php endif ?>	
 					
 					<?php endforeach ?>
-				 <br>
+				 <br><br>
 
-				<div class="partido" style="border: 2px double green; padding: 1rem; width: 55%;">
+				<div class="partido" style=" width: 55%; border: solid 1px #c5f619; padding-left: 1rem;">
 
-				<div class="datosPartido">				
-				<h3>Datos del Partido</h3>
+				<div class="idPartido">				
+				<h3>Partido Nº <?= $partido->idPartido; ?></h3>
 
-				<table border="1" class="tablapartidos">
+				<?php foreach ($categorias as $categoria) : ?>
+					
+					<?php if($categoria->idCategoria == $partido->idCategoria): ?>
+				
+					<b>CATEGORÍA DEL PARTIDO:</b> <?= $categoria->nombreCategoria; ?>
+
+    				<?php endif ?>	
+				
+				<?php endforeach ?> <br><br>
+
+				<table class="tablapartidos">
 
 				<tr><td>
-				<span>Partido Nº <?= $partido->idPartido; ?></span>
+				<span></span>
 					<ul>						
 						</li>
 						<li class="tipoPartido">Tipo de Partido: <?= $partido->tipoPartido; ?>
@@ -51,7 +61,7 @@
 
 					<?php foreach ($usuarios as $usuario) : ?>
 
-						<?php if ($usuario->idUsuario == $usuarioPartido) : ?>
+						<?php if ($usuario->idUsuario == $partido->idUsuario) : ?>
 
 						<p>								
 							<b>El partido lo ha creado: </b>
@@ -67,70 +77,90 @@
 					</table>
 
 					<div class="cancha" style="margin-left: 0;">
-					<table border="1" class="tablapartidos">
+					<table class="pista" height="300" width="600">
 						<tr>
-							<td><img src="<?= URL; ?>img/iconojugador.png" alt="iconojugador"></td>
+							<?php if ($partido->tipoPartido == "Masculino") : ?>
+								<td><img class="hombreIzq" title="Plaza Masculina" src="<?= URL; ?>img/hombre1.png" height="75"></td>
+							<?php elseif ($partido->tipoPartido == "Mixto") : ?>
+								<td><img class="hombreIzq" title="Plaza Masculina" src="<?= URL; ?>img/hombre1.png" height="75"></td>
+							<?php else : ?>	
+								<td><img class="hombreIzq" title="Plaza Femenina" src="<?= URL; ?>img/mujer1.png" height="75"></td>
+							<?php endif ?>
 
-							<td class:"jugador1">Jugador 1: 
+							<td class="jugador1">Jugador 1: 
 
 								<?php if (!empty($partido->jugador1)) : ?>
 									<b><?= $partido->jugador1; ?></b>
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a href="../partidos/entrar"><b>entrar</b></a>
+									<a class="colorPadelGO" href="../partidos/entrar?idPartido=<?= $partido->idPartido; ?>">
+									<b>Entrar</b></a>
 								<?php endif ?>
 							</td>
 
-							<td class:"jugador3">Jugador 3: 
+							<td class="jugador3">Jugador 3: 
 
 								<?php if (!empty($partido->jugador3)) : ?>
 									<b><?= $partido->jugador3; ?></b>
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a href="../partidos/entrar"><b>entrar</b></a>
+									<a class="colorPadelGO" href="../partidos/entrar?idPartido=<?= $partido->idPartido; ?>">
+									<b>Entrar</b></a>
 								<?php endif ?>
 							</td>
-
-							<td><img src="<?= URL; ?>img/iconojugador.png" alt="iconojugador"></td>
+							<?php if ($partido->tipoPartido == "Masculino") : ?>
+								<td><img class="hombreDer" title="Plaza Masculina" src="<?= URL; ?>img/hombre2.png" height="75"></td>
+							<?php elseif ($partido->tipoPartido == "Mixto") : ?>
+								<td><img class="hombreDer" title="Plaza Femenina" src="<?= URL; ?>img/mujer2.png" height="75"></td>	
+							<?php else : ?>	
+								<td><img class="hombreDer" title="Plaza Femenina" src="<?= URL; ?>img/mujer2.png" height="75"></td>
+							<?php endif ?>
 						</tr>
 						<tr>
-							<td><img src="<?= URL; ?>img/iconojugador.png" alt="iconojugador"></td>
+							<?php if ($partido->tipoPartido == "Masculino") : ?>
+								<td><img class="hombreIzq" title="Plaza Masculina" src="<?= URL; ?>img/hombre1.png" height="75"></td>
+							<?php elseif ($partido->tipoPartido == "Mixto") : ?>
+								<td><img class="hombreIzq" title="Plaza Femenina" src="<?= URL; ?>img/mujer1.png" height="75"></td>
+							<?php else : ?>	
+								<td><img class="hombreIzq" title="Plaza Femenina" src="<?= URL; ?>img/mujer1.png" height="75"></td>
+							<?php endif ?>
 
-							<td class:"jugador2">Jugador 2: 
+							<td class="jugador2">Jugador 2: 
 
 								<?php if (!empty($partido->jugador2)) : ?>
 									<b><?= $partido->jugador2; ?></b>
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a href="../partidos/entrar"><b>entrar</b></a>
+									<a class="colorPadelGO" href="../partidos/entrar?idPartido=<?= $partido->idPartido; ?>">
+									<b>Entrar</b></a>
 								<?php endif ?>
 							</td>
 
-							<td class:"jugador4">Jugador 4: 
+							<td class="jugador4">Jugador 4: 
 
 								<?php if (!empty($partido->jugador4)) : ?>
 									<b><?= $partido->jugador4; ?></b>
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a href="../partidos/entrar"><b>entrar</b></a>
-								<?php endif ?>
+									<a class="colorPadelGO" href="../partidos/entrar?idPartido=<?= $partido->idPartido; ?>">
+									<b>Entrar</b></a>
+								<?php endif ?> 
 							</td>
 
-							<td><img src="<?= URL; ?>img/iconojugador.png" alt="iconojugador"></td>					
+							<?php if ($partido->tipoPartido == "Masculino") : ?>
+								<td><img class="hombreDer" title="Plaza Masculina" src="<?= URL; ?>img/hombre2.png" height="75"></td>
+							<?php elseif ($partido->tipoPartido == "Mixto") : ?>
+								<td><img class="hombreDer" title="Plaza Masculina" src="<?= URL; ?>img/hombre2.png" height="75"></td>	
+							<?php else : ?>	
+								<td><img class="hombreDer" title="Plaza Femenina" src="<?= URL; ?>img/mujer2.png" height="75"></td>
+							<?php endif ?>		
 						</tr>					
 					</table>				
 				</div>
-
-				<?php if(isset($idSession)) : ?>
-		
-					<h4><a href="../partidos/entrar">Entrar al Partido</a></h4>
-
-				<?php endif ?>		
-
 			</div>
 				
 			<?php endif ?>

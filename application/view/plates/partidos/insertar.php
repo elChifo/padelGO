@@ -18,7 +18,7 @@
             <input type="hidden" name="idPartido" value="<?= $datos['idPartido'] ?>">
 
             <div>
-                <label for="tipoPartido">Tipo de Partido</label> <br />                
+                <label for="tipoPartido">Tipo de Partido</label>              
                 <input name="tipoPartido" type="radio" value="Masculino">Masculino &nbsp;&nbsp;&nbsp;
                 <input name="tipoPartido" type="radio" value="Femenino">Femenino &nbsp;&nbsp;&nbsp;
                 <input name="tipoPartido" type="radio" value="Mixto">Mixto &nbsp;&nbsp;&nbsp;
@@ -31,20 +31,20 @@
            
             </script>
 
-            <p></p>
+            <strong>Fecha del Partido</strong> | 
             <input type="hidden" name="fechaPartido" id="fecha" />
-            <span style="background-color: #ffc; cursor:default; padding:.3em; border:thin solid #ff0; text-decoration:underline; color: blue;" 
-            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#ff8'; this.style.textDecoration='none';"
-            onmouseout="this.style.backgroundColor='#ffc'; this.style.textDecoration='underline';"
+            <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #c5f619;" 
+            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#c5f619'; this.style.textDecoration='none';"
+            onmouseout="this.style.backgroundColor='white'; this.style.textDecoration='none';"
             id="fecha_usuario">
-            Pincha aqui para seleccionar la fecha
+            Elegir AQUI
             </span>
 
 
             <script type="text/javascript">
             Calendar.setup({
               inputField: "fecha",
-              ifFormat:   "%Y/%m/%d",
+              ifFormat:   "%Y-%m-%d",
               weekNumbers: false,
               displayArea: "fecha_usuario",
               daFormat:    "%A, %d de %B de %Y"
