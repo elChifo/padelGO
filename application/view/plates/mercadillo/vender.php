@@ -32,9 +32,9 @@
             <br />
             <p>
             <label for="precio">Precio</label>
-            <input type="number" name="precio" 
+            <input type="text" name="precio" 
                     value="<?= (isset($articulo->precio)) ? $articulo->precio : "" ?>"
-                    placeholder="Introduzca el Precio del Artículo" onblur="validacion2()" required="required" step="0.01" min="0.01" max="99">
+                    placeholder="Introduzca el Precio del Artículo" onblur="validacion2()" required="required">
             </p>
             <br />
             <div class="subidaImagen">
