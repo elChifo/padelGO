@@ -30,7 +30,7 @@
 					<label>
 						<br>
 						<textarea rows="4" cols="50" name="mensaje" 
-								placeholder="Escriba aqui su mensaje..."></textarea>
+								placeholder="Escriba aqui su mensaje" onblur="validacion2()" required="required" autofocus></textarea>
 					</label>
 				</div>
 

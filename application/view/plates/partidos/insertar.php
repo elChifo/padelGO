@@ -19,7 +19,7 @@
 
             <div>
                 <label for="tipoPartido">Tipo de Partido</label>              
-                <input name="tipoPartido" type="radio" value="Masculino">Masculino &nbsp;&nbsp;&nbsp;
+                <input name="tipoPartido" type="radio" value="Masculino" checked>Masculino &nbsp;&nbsp;&nbsp;
                 <input name="tipoPartido" type="radio" value="Femenino">Femenino &nbsp;&nbsp;&nbsp;
                 <input name="tipoPartido" type="radio" value="Mixto">Mixto
             </div>
@@ -33,11 +33,11 @@
 
             <strong>Fecha del Partido</strong> | 
             <input type="hidden" name="fechaPartido" id="fecha" />
-            <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #c5f619;" 
-            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#c5f619'; this.style.textDecoration='none';"
+            <span style="background-color: white; cursor:default; padding:.3em;  text-decoration:none; color: blue; border:solid 1px #f2f2f2;" 
+            onmouseover="this.style.cursor='pointer'; this.style.cursor='hand'; this.style.backgroundColor='#3a7999'; this.style.textDecoration='none';"
             onmouseout="this.style.backgroundColor='white'; this.style.textDecoration='none';"
             id="fecha_usuario">
-            Elegir AQUI
+            Seleccionar
             </span>
 
 
@@ -51,17 +51,7 @@
             });
             </script>
             <br />
-
-<!-- <div>
-
-    <h3>DateTimePicker</h3>
-        <input type="text" value="" id="datetimepicker"/><br><br>
-        <h3>TimePicker</h3>
-        <input type="text" id="datetimepicker1"/><br><br>
-        <h3>DatePicker</h3>
-        <input type="text" id="datetimepicker2"/><br><br>
-</div>
- -->
+ 
 <br />
             <div>
                 <label for="horaPartido">Hora del Partido</label>
@@ -98,7 +88,7 @@
                 <label for="jugador1">Jugador 1</label>
                 <input type="text" name="jugador1" 
                     value="<?= (isset($datos['jugador1'])) ? $datos['jugador1'] : "" ?>"
-                    placeholder="Nombre Jugador">
+                    placeholder="Nombre Jugador" onblur="validacion2()" autofocus>
             </div>
     
             <br />
@@ -107,7 +97,7 @@
                 <label for="jugador2">Jugador 2</label>
                 <input type="text" name="jugador2" 
                     value="<?= (isset($datos['jugador2'])) ? $datos['jugador2'] : "" ?>"
-                    placeholder="Nombre Jugador">
+                    placeholder="Nombre Jugador" onblur="validacion2()" >
             </div>
 
             <br />
@@ -116,7 +106,7 @@
                 <label for="jugador3">Jugador 3</label>
                 <input type="text" name="jugador3" 
                     value="<?= (isset($datos['jugador3'])) ? $datos['jugador3'] : "" ?>"
-                    placeholder="Nombre Jugador">
+                    placeholder="Nombre Jugador" onblur="validacion2()" >
             </div>
 
             <br />
@@ -125,7 +115,7 @@
                 <label for="jugador4">Jugador 4</label>
                 <input type="text" name="jugador4" 
                     value="<?= (isset($datos['jugador4'])) ? $datos['jugador4'] : "" ?>"
-                    placeholder="Nombre Jugador">
+                    placeholder="Nombre Jugador" onblur="validacion2()" >
             </div>
 
             <br />
