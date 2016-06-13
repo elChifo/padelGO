@@ -1,7 +1,7 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
 
-<div class="container">
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">
        
     <?php if(count($noticias) == 0): ?>
 
@@ -15,18 +15,11 @@
 
                <fieldset>
                
-               <table border="1" class="tablapartidos">
+               <table class="tablanoticias" style="width: 85%;">
 
                 <tr><td>
-                <ul> 
-                <li> 
-                    <h3><?= $noticia->titular; ?> </h3>                    
-                                                                            
-                </li>
-                <li> 
-                    <h5 style="color:red;">FECHA:  <?= $noticia->fechaNoticia; ?> </h5>
-                </li>
-                <li> 
+                    <h3><?= $noticia->titular; ?> </h3>  
+                    <h5 style="color:red;">FECHA:  <?= $noticia->fechaNoticia; ?> </h5> 
                   <fieldset>
                         <h5>CONTENIDO: </h5>
                         <p>
@@ -35,12 +28,10 @@
                     </fieldset>   
                     <div class="imagenNoticia">
                     <img src="<?= URL; ?>img/noticias/noticia<?= $noticia->idNoticia; ?>.png" 
-                    alt="noticia<?= $noticia->idNoticia; ?>" height="150" /> 
+                    alt="noticia<?= $noticia->idNoticia; ?>" height="350" style="max-width: 80%" /> 
                     </div>               
                     
-                     </tr></td>                                                       
-                </li>
-                 </ul>
+                     </tr></td>  
         
 
             
