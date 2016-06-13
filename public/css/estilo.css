@@ -316,6 +316,20 @@ text-decoration:none;
 	padding-bottom: 2.5%;
 }
 
+.tablanoticias {
+	margin: 0 auto;
+	margin-bottom: 7%;
+	background-color:  #d2d2d2;
+	border-radius: 9px 9px 9px 9px;
+	-moz-border-radius: 9px 9px 9px 9px;
+	-webkit-border-radius: 9px 9px 9px 9px;
+}
+
+.imagenNoticia {
+	text-align: center;
+	width: 70%;
+}
+
 .tablapartidos {
 	margin: 0 auto;
 }
