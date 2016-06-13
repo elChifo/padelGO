@@ -242,9 +242,66 @@ class Partidos extends Controller
             'idUsuario' => $partido->idUsuario,
             'idClub' => $partido->idClub
             );
-           
-        PartidosModel::editar($entrada); // Edita los datos de la base de datos
-                 
+
+        $par = PartidosModel::getIdPartido($entrada['idPartido']);
+
+        if (isset($_GET['jugador1'])) {
+             
+            if ( ($partido->jugador1 != false) && 
+                    ( ($partido->jugador1 != $par->jugador1) &&
+                      ($partido->jugador1 != $par->jugador2) &&
+                      ($partido->jugador1 != $par->jugador3) &&
+                      ($partido->jugador1 != $par->jugador4) ) ) {
+
+                    PartidosModel::editar($entrada); // Edita los datos de la base de datos
+            }
+            else {
+                Session::add('feedback_negative', 'Ya estás inscrito en este Partido.');
+            }  
+        }
+        if (isset($_GET['jugador2'])) {
+             
+            if ( ($partido->jugador2 != false) && 
+                    ( ($partido->jugador2 != $par->jugador1) &&
+                      ($partido->jugador2 != $par->jugador2) &&
+                      ($partido->jugador2 != $par->jugador3) &&
+                      ($partido->jugador2 != $par->jugador4) ) ) {
+
+                    PartidosModel::editar($entrada); // Edita los datos de la base de datos
+            }
+            else {
+                Session::add('feedback_negative', 'Ya estás inscrito en este Partido.');
+            }  
+        }
+        if (isset($_GET['jugador3'])) {
+             
+            if ( ($partido->jugador3 != false) && 
+                    ( ($partido->jugador3 != $par->jugador1) &&
+                      ($partido->jugador3 != $par->jugador2) &&
+                      ($partido->jugador3 != $par->jugador3) &&
+                      ($partido->jugador3 != $par->jugador4) ) ) {
+
+                    PartidosModel::editar($entrada); // Edita los datos de la base de datos
+            }
+            else {
+                Session::add('feedback_negative', 'Ya estás inscrito en este Partido.');
+            }  
+        }
+        if (isset($_GET['jugador4'])) {
+             
+            if ( ($partido->jugador4 != false) && 
+                    ( ($partido->jugador4 != $par->jugador1) &&
+                      ($partido->jugador4 != $par->jugador2) &&
+                      ($partido->jugador4 != $par->jugador3) &&
+                      ($partido->jugador4 != $par->jugador4) ) ) {
+
+                    PartidosModel::editar($entrada); // Edita los datos de la base de datos
+            }
+            else {
+                Session::add('feedback_negative', 'Ya estás inscrito en este Partido.');
+            }  
+        }
+      
         header("location: ../partidos");// LLama al controlador que trae la vista 
         
        

@@ -87,10 +87,32 @@
 								<td><img class="hombreIzq" title="Plaza Femenina" src="<?= URL; ?>img/mujer1.png" height="75"></td>
 							<?php endif ?>
 
-							<td class="jugador1">Jugador 1: 
+							<td class="jugador1">Jugador 1: <br>
 
 								<?php if (!empty($partido->jugador1)) : ?>
-									<b><?= $partido->jugador1; ?></b>
+
+									<?php foreach ($usuarios as $usuario) : ?>
+
+										<?php if ($usuario->idUsuario == $partido->jugador1) : ?>
+							
+											<?php if ($usuario->sexo == 'Hombre'): ?>
+
+											<b style="color: black; font-size: 2rem;">
+											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
+											</b>
+
+											<?php else : ?>
+
+											<b style="color: red; font-size: 2rem;">
+											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
+											</b>
+												
+											<?php endif ?>
+																					
+										<?php endif ?>
+
+									<?php endforeach ?>	
+									
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
@@ -103,10 +125,32 @@
 								<?php endif ?>
 							</td>
 
-							<td class="jugador3">Jugador 3: 
+							<td class="jugador3">Jugador 3: <br>
 
 								<?php if (!empty($partido->jugador3)) : ?>
-									<b><?= $partido->jugador3; ?></b>
+
+									<?php foreach ($usuarios as $usuario) : ?>
+
+										<?php if ($usuario->idUsuario == $partido->jugador3) : ?>
+							
+											<?php if ($usuario->sexo == 'Hombre'): ?>
+
+											<b style="color: black; font-size: 2rem;">
+											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
+											</b>
+
+											<?php else : ?>
+
+											<b style="color: red; font-size: 2rem;">
+											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
+											</b>
+												
+											<?php endif ?>
+																					
+										<?php endif ?>
+
+									<?php endforeach ?>	
+									
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
@@ -135,14 +179,36 @@
 								<td><img class="hombreIzq" title="Plaza Femenina" src="<?= URL; ?>img/mujer1.png" height="75"></td>
 							<?php endif ?>
 
-							<td class="jugador2">Jugador 2: 
+							<td class="jugador2">Jugador 2: <br>
 
 								<?php if (!empty($partido->jugador2)) : ?>
-									<b><?= $partido->jugador2; ?></b>
+
+									<?php foreach ($usuarios as $usuario) : ?>
+
+										<?php if ($usuario->idUsuario == $partido->jugador2) : ?>
+							
+											<?php if ($usuario->sexo == 'Hombre'): ?>
+
+											<b style="color: black; font-size: 2rem;">
+											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
+											</b>
+
+											<?php else : ?>
+
+											<b style="color: red; font-size: 2rem;">
+											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
+											</b>
+												
+											<?php endif ?>
+																					
+										<?php endif ?>
+
+									<?php endforeach ?>	
+									
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a class="colorPadelGO" 
+									<a class="colorPadelGO"
 
 					href="../partidos/entrar?idPartido=<?= $partido->idPartido;?>
 								&jugador2=<?= $idSession; ?> ">
@@ -151,10 +217,32 @@
 								<?php endif ?>
 							</td>
 
-							<td class="jugador4">Jugador 4: 
+							<td class="jugador4">Jugador 4: <br>
 
 								<?php if (!empty($partido->jugador4)) : ?>
-									<b><?= $partido->jugador4; ?></b>
+
+									<?php foreach ($usuarios as $usuario) : ?>
+
+										<?php if ($usuario->idUsuario == $partido->jugador4) : ?>
+							
+											<?php if ($usuario->sexo == 'Hombre'): ?>
+
+											<b style="color: black; font-size: 2rem;">
+											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
+											</b>
+
+											<?php else : ?>
+
+											<b style="color: red; font-size: 2rem;">
+											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
+											</b>
+												
+											<?php endif ?>
+																					
+										<?php endif ?>
+
+									<?php endforeach ?>	
+									
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
