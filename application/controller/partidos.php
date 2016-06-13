@@ -190,9 +190,6 @@ class Partidos extends Controller
 
     }
 
-
-
-
     public function entrar()
     {
         $this->view->addData(['titulo' => 'Partidos | Entrar']);
@@ -202,8 +199,54 @@ class Partidos extends Controller
         $idPartido = $_GET['idPartido'];
 
         $partido = PartidosModel::getIdPartido($idPartido);
-        var_dump($partido);
 
+        if (isset($_GET['jugador1'])) {
+             
+            if ($partido->jugador1 == false) {
+
+                   $partido->jugador1 = $_GET['jugador1'];
+            }  
+        }
+        if (isset($_GET['jugador2'])) {
+                             
+            if ($partido->jugador2 == false) {
+
+                   $partido->jugador2 = $_GET['jugador2'];
+            } 
+        }
+        if (isset($_GET['jugador3'])) {
+            
+            if ($partido->jugador3 == false) {
+
+                   $partido->jugador3 = $_GET['jugador3'];
+            } 
+        }
+        if (isset($_GET['jugador4'])) {
+            
+            if ($partido->jugador4 == false) {
+
+                   $partido->jugador4 = $_GET['jugador4'];
+            }   
+        } 
+
+        $entrada = array (
+            'idPartido' => $partido->idPartido,
+            'tipoPartido' => $partido->tipoPartido,
+            'fechaPartido' => $partido->fechaPartido,
+            'horaPartido' => $partido->horaPartido,
+            'jugador1' => $partido->jugador1,
+            'jugador2' => $partido->jugador2,
+            'jugador3' => $partido->jugador3,
+            'jugador4' => $partido->jugador4,
+            'idCategoria' => $partido->idCategoria,
+            'idUsuario' => $partido->idUsuario,
+            'idClub' => $partido->idClub
+            );
+           
+        PartidosModel::editar($entrada); // Edita los datos de la base de datos
+                 
+        header("location: ../partidos");// LLama al controlador que trae la vista 
+        
+       
     }
-
 }

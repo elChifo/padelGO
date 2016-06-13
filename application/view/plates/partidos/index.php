@@ -3,6 +3,7 @@
   <?php $usuarioPartido = Session::get('usuarioPartido'); ?>
 
 <div class="container">	
+    <?php $this->insert('partials/feedback') ?>
 
     <?php if(count($partidos) == 0): ?>
 
@@ -93,7 +94,11 @@
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a class="colorPadelGO" href="../partidos/entrar?idPartido=<?= $partido->idPartido; ?>">
+									<a class="colorPadelGO" 
+
+					href="../partidos/entrar?idPartido=<?= $partido->idPartido;?>
+								&jugador1=<?= $idSession; ?> ">
+
 									<b>Entrar</b></a>
 								<?php endif ?>
 							</td>
@@ -105,7 +110,11 @@
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a class="colorPadelGO" href="../partidos/entrar?idPartido=<?= $partido->idPartido; ?>">
+									<a class="colorPadelGO" 
+
+					href="../partidos/entrar?idPartido=<?= $partido->idPartido;?>
+								&jugador3=<?= $idSession; ?> ">
+
 									<b>Entrar</b></a>
 								<?php endif ?>
 							</td>
@@ -133,7 +142,11 @@
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a class="colorPadelGO" href="../partidos/entrar?idPartido=<?= $partido->idPartido; ?>">
+									<a class="colorPadelGO" 
+
+					href="../partidos/entrar?idPartido=<?= $partido->idPartido;?>
+								&jugador2=<?= $idSession; ?> ">
+
 									<b>Entrar</b></a>
 								<?php endif ?>
 							</td>
@@ -145,7 +158,11 @@
 								<?php elseif (!$idSession) : ?>
 									<a href="../login/">login</a>
 								<?php else : ?>									
-									<a class="colorPadelGO" href="../partidos/entrar?idPartido=<?= $partido->idPartido; ?>">
+									<a class="colorPadelGO" 
+
+					href="../partidos/entrar?idPartido=<?= $partido->idPartido;?>
+								&jugador4=<?= $idSession; ?> ">
+
 									<b>Entrar</b></a>
 								<?php endif ?> 
 							</td>

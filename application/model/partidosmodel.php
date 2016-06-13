@@ -160,17 +160,17 @@ class PartidosModel
          //actualizamos los datos nuevos y hacemos el registro en la base de datos
         else {
             $params = array(
-                ':idPartido' => $_POST["idPartido"],
-                ':tipoPartido' => $_POST["tipoPartido"],
-                ':fechaPartido' => $_POST["fechaPartido"],
-                ':horaPartido' => $_POST["horaPartido"],
-                ':jugador1' => $_POST["jugador1"],
-                ':jugador2' => $_POST["jugador2"],
-                ':jugador3' => $_POST["jugador3"],
-                ':jugador4' => $_POST["jugador4"],
-                ':idCategoria' => $_POST["idCategoria"],
-                ':idUsuario' => $_POST["idUsuario"],
-                ':idClub' => $_POST["idClub"]
+                ':idPartido' => $datos["idPartido"],
+                ':tipoPartido' => $datos["tipoPartido"],
+                ':fechaPartido' => $datos["fechaPartido"],
+                ':horaPartido' => $datos["horaPartido"],
+                ':jugador1' => $datos["jugador1"],
+                ':jugador2' => $datos["jugador2"],
+                ':jugador3' => $datos["jugador3"],
+                ':jugador4' => $datos["jugador4"],
+                ':idCategoria' => $datos["idCategoria"],
+                ':idUsuario' => $datos["idUsuario"],
+                ':idClub' => $datos["idClub"]
             );
 
              $ssql = "UPDATE Partidos SET idPartido = :idPartido, tipoPartido = :tipoPartido, 
@@ -205,6 +205,7 @@ class PartidosModel
         $query->execute($params);
     }
 
+    
 
 
 
