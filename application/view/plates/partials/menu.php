@@ -12,7 +12,7 @@
 
     <?php if(isset($idSession)) : ?>
 
-    	 <a title="MENSAJES" href="<?= URL; ?>mensajes"><img src="<?= URL; ?>img/correo.png" alt="MENSAJES" height="70" class="imagen-menu6" /></a>
+    	 <a title="MENSAJES" href="<?= URL; ?>mensajes"><img src="<?= URL; ?>img/menu/mensajes.png" alt="MENSAJES" height="70" class="imagen-menu6" /></a>
 
     <?php endif ?>
 </div>

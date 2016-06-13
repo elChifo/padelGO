@@ -10,6 +10,7 @@
             <a href="<?= URL; ?>monitores" title="Ir a MONITORES">MONITORES</a><br>
             <a href="<?= URL; ?>contacto" title="Ir a CONTACTO">CONTACTO</a><br>
             <a href="<?= URL; ?>login" title="Ir a MI CUENTA">MI CUENTA</a><br>
+            <a href="<?= URL; ?>mensajes" title="Ir a MENSAJES">MENSAJES</a><br>
 
         <?php $idSession = Session::get('idUsuario'); ?>   
         <?php if (!isset($idSession)) : ?>

@@ -2,7 +2,7 @@
   <?php $idSession = Session::get('idUsuario'); ?> 
   <?php $usuarioPartido = Session::get('usuarioPartido'); ?>
 
-<div class="container">	
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">	
     <?php $this->insert('partials/feedback') ?>
 
     <?php if(count($partidos) == 0): ?>
@@ -16,7 +16,7 @@
 			<?php if (isset($idSession)) : ?>	
 
 				<login style="font-size: 18px;">	
-					<a href="partidos/insertar">Crear un Nuevo Partido</a>
+					<a href="partidos/insertar" style="float:right;" class="colorPadelGO2">+ Crear un Nuevo Partido</a>
 				<login/>	
 
 		<?php endif ?>
@@ -26,36 +26,57 @@
 
 		<?php foreach ($partidos as $partido) : ?>
 			
-			<div class="partido">
 			<fieldset>
-				<div class="partido" style=" width: 55%; border: solid 1px #c5f619; padding-left: 1rem;">
+				<div class="partido" style="width: 85%;">
 
-				<div class="idPartido">				
-				<h3>Partido Nº <?= $partido->idPartido; ?></h3>
+				<div class="idPartido">
+				<div class="datosClub">				
+				<table class="tablapartidos">
+				<tr><td>
+					<?php foreach ($clubs as $club) : ?>
+					
+					<?php if($club->idClub == $partido->idClub): ?>
+						
+						<h3>Club : <b><?= $club->nombreClub; ?></b></h3>
+
+	    			<?php endif ?>	
+					
+					<?php endforeach ?>
+					</td></tr>
+					</table>
+				</div>	
 
 				<?php foreach ($categorias as $categoria) : ?>
 					
 					<?php if($categoria->idCategoria == $partido->idCategoria): ?>
 				
-					<b>CATEGORÍA DEL PARTIDO:</b> <?= $categoria->nombreCategoria; ?>
+					Nivel:
+					<?php if ($categoria->nombreCategoria == 'Primera') : ?>
+						<font style="color:#0e2e55;"><b>1ª Categoría</b></font>
+					<?php elseif ($categoria->nombreCategoria == 'Segunda') : ?>	
+						<font style="color:#1d1d1d;"><b>2ª Categoría</b></font>
+					<?php elseif ($categoria->nombreCategoria == 'Tercera') : ?>	
+						<font style="color:#631954;"><b>3ª Categoría</b></font>
+					<?php elseif ($categoria->nombreCategoria == 'Cuarta') : ?>	
+						<font style="color:#472700;"><b>4ª Categoría</b></font>
+					<?php else : ?>		
+						<font style="color:#1d3302;"><b>5ª Categoría</b></font>
+					<?php endif ?>
 
     				<?php endif ?>	
 				
-				<?php endforeach ?> <br><br>
+				<?php endforeach ?> <br>
 
 				<table class="tablapartidos">
 
 				<tr><td>
-				<span></span>
-					<ul>						
-						</li>
-						<li class="tipoPartido">Tipo de Partido: <?= $partido->tipoPartido; ?>
-						</li>					
-						<li class="fechaPartido">Fecha del Partido: <?= $partido->fechaPartido; ?>
-						</li>
-						<li class="horaPartido">Hora del Partido: <?= $partido->horaPartido; ?>
-						</li>
-					</ul>	
+				<span></span>					
+						
+						<p>Tipo de Partido: <b><?= $partido->tipoPartido; ?></b></p>
+											
+						<p><img src="<?= URL; ?>img/fecha.png" alt="CLUBS" height="20" /> <b><?= $partido->fechaPartido; ?></b></p>
+						
+						<p><img src="<?= URL; ?>img/hora.png" alt="CLUBS" height="20" /> <b><?= $partido->horaPartido; ?></b></p>
 
 					<div class="idUsuario"> 
 
@@ -64,8 +85,8 @@
 						<?php if ($usuario->idUsuario == $partido->idUsuario) : ?>
 
 						<p>								
-							<b>El partido lo ha creado: </b>
-							<?= $usuario->nombre . ' ' . $usuario->apellidos; ?>
+							Creado por: 
+							<b><?= $usuario->nombre . ' ' . $usuario->apellidos; ?></b>
 						</p>
 							
 						<?php endif ?>
@@ -75,9 +96,20 @@
 					</div>
 					</td></tr>
 					</table>
+							
+					<div class="cancha">
+					<?php if ($partido->idCategoria == '1') : ?>
+						<table class="pista1" height="300" width="600">
+					<?php elseif ($partido->idCategoria == '2') : ?>	
+						<table class="pista2" height="300" width="600">
+					<?php elseif ($partido->idCategoria == '3') : ?>	
+						<table class="pista3" height="300" width="600">
+					<?php elseif ($partido->idCategoria == '4') : ?>	
+						<table class="pista4" height="300" width="600">	
+					<?php else : ?>		
+						<table class="pista5" height="300" width="600">	
+					<?php endif ?>
 
-					<div class="cancha" style="margin-left: 0;">
-					<table class="pista" height="300" width="600">
 						<tr>
 							<?php if ($partido->tipoPartido == "Masculino") : ?>
 								<td><img class="hombreIzq" title="Plaza Masculina" src="<?= URL; ?>img/hombre1.png" height="75"></td>
@@ -262,37 +294,32 @@
 							<?php else : ?>	
 								<td><img class="hombreDer" title="Plaza Femenina" src="<?= URL; ?>img/mujer2.png" height="75"></td>
 							<?php endif ?>		
-						</tr>					
-					</table>				
-				</div>
-			</div>
-
-				<div class="datosClub">				
+						</tr>	
+						<div class="datosClub">				
 				<table class="tablapartidos">
 				<tr><td>
 					<?php foreach ($clubs as $club) : ?>
 					
 					<?php if($club->idClub == $partido->idClub): ?>
-						
-						<h3>CLUB: <?= $club->nombreClub; ?></h3>
 
-						<span>Dirección del Club: <?= $club->direccionClub; ?> </span>	
+						<br><span>Dirección del Club: <b><?= $club->direccionClub; ?></b></span>	
 
 	    			<?php endif ?>	
 					
 					<?php endforeach ?>
 					</td></tr>
 					</table>
+				</div>				
+					</table>	
+					<br>			
 				</div>
-
-			</fieldset>	
 			</div>
+			</fieldset>	
 		
 		<?php endforeach ?>
 	 		
 	<?php endif ?>
-	<br />
-	<input type="button" class="btnimprimir" value="Imprimir página" onclick="window.print()">
+	<br>
+	<a href="#" onclick="window.print()" style="color:#000; text-decoration: none;font-size: 20px;"><img title="Imprimir Partidos" src="<?= URL; ?>img/imprimir.png" height="30"> Imprimir Partidos</a>
 	<a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>
-
