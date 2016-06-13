@@ -6,7 +6,7 @@ class MensajesModel
     public static function getMensajes()
     {
         $conn = Database::getInstance()->getDatabase();
-        $ssql = "SELECT * FROM Mensajes ORDER BY fechaMensaje DESC";
+        $ssql = "SELECT * FROM Mensajes ORDER BY fechaMensaje ASC";
         $query = $conn->prepare($ssql);
         $query->execute();
         return $query->fetchAll();

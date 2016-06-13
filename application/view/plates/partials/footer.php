@@ -45,9 +45,9 @@
                     <li class='icongplus'>
                         <a href='https://plus.google.com/collections/featured' target="_blank">Google Plus</a>
                     </li>
-                    <li class='iconrss'>
+                    <!--<li class='iconrss'>
                         <a href='http://gplusrss.com/' target="_blank">RSS</a>
-                    </li>
+                    </li>-->
                     <li class='iconrssmail'>
                         <a href='<?= URL; ?>contacto'>RSS Mail</a>
                     </li>

@@ -1,12 +1,8 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
 
-<div class="container">	
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">	
 	<?php $this->insert('partials/feedback') ?>
-
-	<h4>
-	    <a href="../mensajes/enviar">Enviar Un Mensaje</a>
-    </h4>
 
 	<?php if(count($mensajes) == 0): ?>
 
@@ -15,7 +11,11 @@
     <?php else: ?>
 
 		<h3 class="titulo-pagina">MENSAJES RECIBIDOS </h3> 	
-
+		<div id="chat">
+			<div id="header-chat">
+				Chat PADELGO! 
+			</div>
+			<div id="mensajes">
 		<?php foreach($mensajes as $mensaje): ?>
 
             <?php if ($mensaje->idReceptor == $idSession) : ?> 
@@ -23,30 +23,17 @@
             	<?php foreach($usuarios as $usuario): ?>
 
            			<?php if ($mensaje->idUsuario == $usuario->idUsuario) : ?>
-
-						<fieldset style="border: 2px solid navy; width: 35rem; padding: 1rem;">
-						 <table border="1" class="tablapartidos">
-            			<tr><td>
-						    <ul> 
-						   		<li> Enviado Por:
-						   			<strong> 
-						   				<?= $usuario->nombre . ' ' . $usuario->apellidos ?> 
-						   			</strong> 					   			
-						   		</li>
-						   		<li> Fecha Mensaje:
-						   			<strong> 
-						   				<?= $mensaje->fechaMensaje ?> 
-						   			</strong> 					   			
-						   		</li>
-								<div class="mensaje" 
-									style="border: 1px dotted; width: 35rem; padding: 1rem;">
-						   				<?= $mensaje->mensaje ?> 
-								</div>
-						    </ul>
-						    </td></tr>
-						    </table>					   		
-						</fieldset> 
-						<br><br>
+							
+						<div class="mensaje-autor">
+							<img src="foto.jpeg" alt="" class="foto">
+							<div class="flecha-izquierda"></div>
+							<div class="contenido">
+								<b><?= $usuario->nombre . ' ' . $usuario->apellidos ?></b>
+								<br>
+								<?= $mensaje->mensaje ?> 
+							</div>
+							<div class="fecha"><?= $mensaje->fechaMensaje ?> </div>
+						</div>
 
 					<?php endif ?>			 
 
@@ -55,6 +42,12 @@
 			<?php endif ?>			
 
 		<?php endforeach ?>
+				<div id="caja-mensaje">
+					<input type="text" placeholder="Enviar Un Mensaje...">
+					<button onclick="window.location.href='../mensajes/enviar'" style="width: 10%">Enviar &#8594;</button>
+				</div>
+			</div>
+		</div>
 		 
 	<?php endif ?>  
 

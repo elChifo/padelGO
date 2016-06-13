@@ -15,7 +15,7 @@
 					<div>
 			            <label for="idReceptor">Mensaje para:</label>
 			            <select name="idReceptor">
-			                    <option value="0"> Seleccione un Usuario </option> 
+			                    <option value="0" disabled> Seleccione un Usuario </option> 
 
 			                <?php foreach($usuarios as $usuario): ?>
 			                    
