@@ -129,13 +129,13 @@
 							
 											<?php if ($usuario->sexo == 'Hombre'): ?>
 
-											<b style="color: black; font-size: 2rem;">
+											<b style="color: #66ccff; font-size: 1.5rem;">
 											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
 											</b>
 
 											<?php else : ?>
 
-											<b style="color: red; font-size: 2rem;">
+											<b style="color: #ff99cc; font-size: 1.5rem;">
 											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
 											</b>
 												
@@ -167,13 +167,13 @@
 							
 											<?php if ($usuario->sexo == 'Hombre'): ?>
 
-											<b style="color: black; font-size: 2rem;">
+											<b style="color: #66ccff; font-size: 1.5rem;">
 											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
 											</b>
 
 											<?php else : ?>
 
-											<b style="color: red; font-size: 2rem;">
+											<b style="color: #ff99cc; font-size: 1.5rem;">
 											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
 											</b>
 												
@@ -221,13 +221,13 @@
 							
 											<?php if ($usuario->sexo == 'Hombre'): ?>
 
-											<b style="color: black; font-size: 2rem;">
+											<b style="color: #66ccff; font-size: 1.5rem;">
 											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
 											</b>
 
 											<?php else : ?>
 
-											<b style="color: red; font-size: 2rem;">
+											<b style="color: #ff99cc; font-size: 1.5rem;">
 											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
 											</b>
 												
@@ -259,13 +259,13 @@
 							
 											<?php if ($usuario->sexo == 'Hombre'): ?>
 
-											<b style="color: black; font-size: 2rem;">
+											<b style="color: #66ccff; font-size: 1.5rem;">
 											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
 											</b>
 
 											<?php else : ?>
 
-											<b style="color: red; font-size: 2rem;">
+											<b style="color: #ff99cc; font-size: 1.5rem;">
 											<?= $usuario->nombre . '<br>' . $usuario->apellidos; ?>
 											</b>
 												
