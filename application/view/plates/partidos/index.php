@@ -304,7 +304,7 @@
 
 						<br><span>Dirección del Club: <b><?= $club->direccionClub; ?></b></span>	
 
-	    			<?php endif ?>	
+	    			<?php endif ?>	 
 					
 					<?php endforeach ?>
 					</td></tr>
