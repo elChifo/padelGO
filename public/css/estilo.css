@@ -404,12 +404,99 @@ text-decoration:none;
 	border: 5px solid #333;
 }
 
-.divClub {
-
+.divMonitor1 {
+	height: 400px;
+	margin-left:2.5%;
+	margin-bottom: 2.5%;
+	padding-top: 2%;
+	text-align: center;
+	background-image: url(../img/fondocat1.png);
+	border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	border: 5px solid #333;
 }
 
-.imagenClub {
-	
+.divMonitor2 {
+	height: 400px;
+	margin-left:2.5%;
+	margin-bottom: 2.5%;
+	padding-top: 2%;
+	text-align: center;
+	background-image: url(../img/fondocat2.png);
+	border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	border: 5px solid #333;
+}
+
+.divMonitor3 {
+	height: 400px;
+	margin-left:2.5%;
+	margin-bottom: 2.5%;
+	padding-top: 2%;
+	text-align: center;
+	background-image: url(../img/fondocat3.png);
+	border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	border: 5px solid #333;
+}
+
+.divMonitor4 {
+	height: 400px;
+	margin-left:2.5%;
+	margin-bottom: 2.5%;
+	padding-top: 2%;
+	text-align: center;
+	background-image: url(../img/fondocat4.png);
+	border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	border: 5px solid #333;
+}
+
+.descripClases {
+	background-color: #c5f619;
+}
+
+.divMonitor5 {
+	height: 400px;
+	margin-left:2.5%;
+	margin-bottom: 2.5%;
+	padding-top: 2%;
+	text-align: center;
+	background-image: url(../img/fondocat5.png);
+	border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	border: 5px solid #333;
+}
+
+.divClub {
+	background-color: #ececec;
+	height: 300px;
+	margin-left:2.5%;
+	margin-bottom: 2.5%;
+	padding-top: 2%;
+	text-align: center;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border: 2.5px solid #333;
+}
+
+.divMercadillo {
+	background-color: #ececec;
+	height: 450px;
+	margin-left:2.5%;
+	margin-bottom: 2.5%;
+	padding-top: 2%;
+	text-align: center;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border: 2.5px solid #333;
 }
 
 .usuarioRedonda {
@@ -479,7 +566,6 @@ text-decoration:none;
 
 .tituloanuncio {
 	text-transform: uppercase;
-	text-decoration: underline;
 }
 
 #myCarousel {
