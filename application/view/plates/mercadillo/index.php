@@ -1,7 +1,7 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
 
-<div class="container">
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">
        
     <?php if(count($articulos) == 0): ?>
 
@@ -9,69 +9,46 @@
 
     <?php else: ?>
         
-        <h3 class="titulo-pagina">ARTÍCULOS</h3> 
+        <h3 class="titulo-pagina">ARTÍCULOS EN VENTA
 
         <?php if (isset($idSession)) : ?>   
 
             <login style="font-size: 18px;">    
-                <a href="../mercadillo/vender">Vender un Artículo</a>
+                    <a href="../mercadillo/vender" style="font-size: 18px; float:right;" class="colorPadelGO2">+ Vender un Artículo</a>
             <login/>
                 
         <?php endif ?> 
 
-         <?php foreach($articulos as $articulo): ?>   
+        </h3>
 
+         <?php foreach($articulos as $articulo): ?>   
+            <div class="divMercadillo" style="width: 30%;float:left;"> 
             <?php foreach($usuarios as $usuario): ?>
 
-            <?php if ($articulo->idUsuario == $usuario->idUsuario) : ?>                         
+            <?php if ($articulo->idUsuario == $usuario->idUsuario) : ?>  
 
-               <fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;"> 
-                
-                <table border="1" class="tablapartidos">
-                    <tr>
-                        <td>
-                           <ul> 
-                                <li> 
-                                    <h3 class="tituloanuncio"><?= $articulo->nombreArticulo; ?> </h3>
-                                </li>
-                                <li>
-                                    <div class="vendedor">
-                                        <span>
-                                        Vendido por: <?= $usuario->nombre .' '. $usuario->apellidos ?>
-                                        </span>                        
-                                    </div>
-                                </li>
-                                <li> 
-                                    <p><spam>Descrición:</spam>
-                                        <?= $articulo->descripcionArticulo ?>
-                                    </p>
-                                </li>
-                                <li> 
-                                    <p><spam>PRECIO:</spam>
-                                        <?= $articulo->precio ?> €
-                                    </p>
-                                </li><br>
-                                <li> 
-                                    <p><spam>Teléfono de Contacto:</spam>
-                                        <?= $usuario->telefono ?>
-                                    </p>
-                                </li>
-                                
-                           </ul>
-                        </td>
-                    </tr>
-                </table>
-           <div class="imagenArticulo">
-                    <img src="<?= URL; ?>img/articulos/articulo<?= $articulo->idArticulo; ?>.png" 
-                    alt="articulo<?= $articulo->idArticulo; ?>" height="150" /> 
-            </div>
-            
-                </fieldset>
+                <h3 class="tituloanuncio"><?= $articulo->nombreArticulo; ?> </h3>
+                <img src="<?= URL; ?>img/articulos/articulo<?= $articulo->idArticulo; ?>.png" 
+                    alt="articulo<?= $articulo->idArticulo; ?>" height="150" /><br><br>
+                <p><span>Descrición:</span>
+                    <?= $articulo->descripcionArticulo ?>
+                </p>    
+                <div class="vendedor">
+                    <span>
+                    Publicado por: <b><?= $usuario->nombre .' '. $usuario->apellidos ?></b>
+                    </span><br><br>             
+                </div>
+                <p><span>PRECIO:</span>
+                    <b><?= $articulo->precio ?> €</b>
+                </p>
+                <p><span>Teléfono de Contacto:</span>
+                    <b><?= $usuario->telefono ?></b>
+                </p>
 
                 <?php endif ?>           
 
             <?php endforeach ?> 
-
+            </div>
         <?php endforeach ?> 
 
     <?php endif ?>
