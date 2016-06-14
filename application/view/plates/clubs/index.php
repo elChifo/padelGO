@@ -14,38 +14,19 @@
 
 		<?php foreach($clubs as $club): ?>
 
-		<fieldset style="border: 2px solid navy; width: 100rem; padding: 1rem;">
-
-		   <table border="1" class="tablapartidos">
-				<tr>
-					<td>
-						<ul> 
-					   		<li> Nombre Club:
+		   <div class="divClub" style="width: 30%;float:left;"> Nombre Club:
 					   			<strong> 
 					   				<?= $club->nombreClub ?> &nbsp;&nbsp;&nbsp; 
 					   				
-					   			</strong> 
-					   			<ul>		   					
-				   					<li> Direccion : <?= $club->direccionClub ?>  </li>
-				   					<li> Nº Pistas: <?= $club->numPistas ?>  </li>	   					
-					   			</ul> 
-					   		</li>
-					    </ul>
-					</td>
-				</tr>
-				<tr>
-					<td>
+					   			</strong> 			
+				   					<p> Direccion : <?= $club->direccionClub ?>  </p>
+				   					<p> Nº Pistas: <?= $club->numPistas ?>  </p>	
 						<a href="../partidos/ver?idClub=<?= $club->idClub; ?>">Ver Partidos</a>
-					</td>
-				</tr>
-			</table>
-
-		    <div class="imagenClub">
-                <img src="<?= URL; ?>img/clubs/club<?= $club->idClub; ?>.png" 
-                alt="club<?= $club->idClub; ?>" height="150" /> 
-            </div>
-		   		
-		</fieldset> 
+				<div class="imagenClub">
+	                <img src="<?= URL; ?>img/clubs/club<?= $club->idClub; ?>.png" 
+	                title="Club<?= $club->nombreClub; ?>" height="150" width="325" /> 
+	            </div>
+			</div>
 
 		<?php endforeach ?>
 

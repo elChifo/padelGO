@@ -52,15 +52,15 @@
 				
 					Nivel:
 					<?php if ($categoria->nombreCategoria == 'Primera') : ?>
-						<font style="color:#0e2e55;"><b>1ª Categoría</b></font>
+						<font style="color:#1a33e5; font-size: 150%;"><b>1ª Categoría</b></font>
 					<?php elseif ($categoria->nombreCategoria == 'Segunda') : ?>	
-						<font style="color:#1d1d1d;"><b>2ª Categoría</b></font>
+						<font style="color:#1d1d1d; font-size: 150%;"><b>2ª Categoría</b></font>
 					<?php elseif ($categoria->nombreCategoria == 'Tercera') : ?>	
-						<font style="color:#631954;"><b>3ª Categoría</b></font>
+						<font style="color:#941694; font-size: 150%;"><b>3ª Categoría</b></font>
 					<?php elseif ($categoria->nombreCategoria == 'Cuarta') : ?>	
-						<font style="color:#472700;"><b>4ª Categoría</b></font>
+						<font style="color:#7e453c; font-size: 150%;"><b>4ª Categoría</b></font>
 					<?php else : ?>		
-						<font style="color:#1d3302;"><b>5ª Categoría</b></font>
+						<font style="color:#105f1a; font-size: 150%;"><b>5ª Categoría</b></font>
 					<?php endif ?>
 
     				<?php endif ?>	
