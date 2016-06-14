@@ -19,16 +19,6 @@ class LoginModel
             return false;
         }
 
-    // CODIGO PARA VALIDAR EL LOGIN DNI
-        /*
-        if(strlen($datos['dniTutor']) < 9) {
-            Session::add('feedback_negative', 'El DNI debe tener 8 digitos + 1 letra');
-        }
-        if(strlen($datos['clave']) < 4) {
-            Session::add('feedback_negative', 'La Contraseña debe tener 4 o más caracteres');
-        }
-        */
-
         if(Session::get('feedback_negative')) {
             return false;
         }

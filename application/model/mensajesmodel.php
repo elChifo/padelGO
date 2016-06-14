@@ -31,7 +31,7 @@ class MensajesModel
 
         $errores_validacion = false;
 
-        if(empty($mensaje)) {
+        if (!$mensaje) {
             Session::add('feedback_negative', "No se he recibido el Mensaje");
             $errores_validacion = true;
         }

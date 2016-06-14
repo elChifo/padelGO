@@ -17,7 +17,7 @@
 
 				<login style="font-size: 18px;">	
 					<a href="partidos/insertar" style="float:right;" class="colorPadelGO2">+ Crear un Nuevo Partido</a>
-				<login/>	
+				</login>	
 
 		<?php endif ?>
 
