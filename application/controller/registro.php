@@ -12,7 +12,8 @@ class Registro extends Controller
         if (!$_POST) {
 
             echo $this->view->render('registro/index', [ // Imprime la vista y añade datos
-                     'categorias' => $categorias]);
+                     'categorias' => $categorias
+            ]);
         } 
         else {
 
@@ -25,7 +26,7 @@ class Registro extends Controller
                 echo $this->view->render('registro/index', [ // Imprime la vista y añade datos
                          'registro'   => $registro,
                          'categorias' => $categorias
-                         ]);
+                ]);
             }
             else {
 
@@ -64,9 +65,9 @@ class Registro extends Controller
                     Session::add('feedback_negative', "El Registro no ha sido posible, Inténtelo de nuevo");
 
                     echo $this->view->render('registro/index', [ // Imprime la vista y añade datos
-                            'registro'      => $registro,
-                            'categorias' => $categorias
-                            ]);
+                         'registro'   => $registro,
+                         'categorias' => $categorias
+                ]);
                 }
             }            
         }

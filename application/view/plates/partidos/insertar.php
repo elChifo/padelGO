@@ -15,7 +15,7 @@
                 <h2>Datos del Partido</h2>
             </legend> 
         
-            <input type="hidden" name="idPartido" value="<?= $datos['idPartido'] ?>">
+            <input type="hidden" name="idPartido" value="<?= $partido['idPartido'] ?>">
 
             <div>
                 <label for="tipoPartido">Tipo de Partido</label>              
@@ -90,7 +90,7 @@
             <div>            
                 <label for="jugador1">Jugador 1</label>
                 <input type="text" name="jugador1" 
-                    value="<?= (isset($datos['jugador1'])) ? $datos['jugador1'] : "" ?>"
+                    value="<?= (isset($partido['jugador1'])) ? $partido['jugador1'] : "" ?>"
                     placeholder="Nombre Jugador" onblur="validacion2()" autofocus>
             </div>
     
@@ -99,7 +99,7 @@
             <div>
                 <label for="jugador2">Jugador 2</label>
                 <input type="text" name="jugador2" 
-                    value="<?= (isset($datos['jugador2'])) ? $datos['jugador2'] : "" ?>"
+                    value="<?= (isset($partido['jugador2'])) ? $partido['jugador2'] : "" ?>"
                     placeholder="Nombre Jugador" onblur="validacion2()" >
             </div>
 
@@ -108,7 +108,7 @@
             <div>
                 <label for="jugador3">Jugador 3</label>
                 <input type="text" name="jugador3" 
-                    value="<?= (isset($datos['jugador3'])) ? $datos['jugador3'] : "" ?>"
+                    value="<?= (isset($partido['jugador3'])) ? $partido['jugador3'] : "" ?>"
                     placeholder="Nombre Jugador" onblur="validacion2()" >
             </div>
 
@@ -117,7 +117,7 @@
             <div>
                 <label for="jugador4">Jugador 4</label>
                 <input type="text" name="jugador4" 
-                    value="<?= (isset($datos['jugador4'])) ? $datos['jugador4'] : "" ?>"
+                    value="<?= (isset($partido['jugador4'])) ? $partido['jugador4'] : "" ?>"
                     placeholder="Nombre Jugador" onblur="validacion2()" >
             </div>
 

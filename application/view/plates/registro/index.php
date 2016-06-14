@@ -15,13 +15,13 @@
              <tr><td>
             <div>
             <label for="nombre">Nombre </label>
-            <input type="text" name="nombre" autofocus placeholder="Introduzca su nombre" required="required" onblur="validacion2()">
+            <input type="text" name="nombre" autofocus placeholder="Introduzca su nombre" required="required" onblur="validacion2()" value="<?= (isset($registro['nombre'])) ? $registro['nombre'] : "" ?>">
             </div>
             <br />
             
             <div>
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" required="required" onblur="validacion2()" placeholder="Introduzca sus apellidos"> 
+            <input type="text" name="apellidos" required="required" onblur="validacion2()" placeholder="Introduzca sus apellidos" value="<?= (isset($registro['apellidos'])) ? $registro['apellidos'] : "" ?>"> 
             </div>
             <br />            
 
