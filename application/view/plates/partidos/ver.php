@@ -2,7 +2,7 @@
   <?php $idSession = Session::get('idUsuario'); ?> 
   <?php $usuarioPartido = Session::get('usuarioPartido'); ?>
 
-<div class="container">	
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">	
 
     <?php if(count($partidos) == 0): ?>
 
@@ -11,39 +11,27 @@
     <?php else: ?>
       
       	<h3 class="titulo-pagina">PARTIDOS
-
 		<?php foreach ($partidos as $partido) : ?>
 			
 			<?php if ($partido->idClub == $idClub): ?>
 
-				<?php foreach ($clubs as $club) : ?>
+					<?php foreach ($clubs as $club) : ?>
 					
 					<?php if($club->idClub == $partido->idClub): ?>
 						
-						&nbsp;&nbsp;&nbsp;"<?= $club->nombreClub; ?>"
-
-						<?php if (isset($idSession)) : ?>	
-
-				<login style="font-size: 18px;">	
-					<a href="partidos/insertar" style="float:right; margin-right: 5rem;" class="colorPadelGO2">+ Crear un Nuevo Partido</a>
-				</login>	
-
-			<?php endif ?>
-			</h3>
+						&nbsp;&nbsp;&nbsp;"<?= $club->nombreClub; ?>"</h3>
 
 						<span>Dirección del Club: <?= $club->direccionClub; ?> </span>
 										
-	    	<?php endif ?>	
+	    			<?php endif ?>	
 					
-			<?php endforeach ?>		
-			
-        	
+					<?php endforeach ?>
 				 <br><br>
 
-				<fieldset>
 				<div class="partido" style="width: 85%;">
 
-				<div class="idPartido">		 <br><br>			
+				<div class="idPartido">				
+				<h3>Partido Nº <?= $partido->idPartido; ?></h3>
 
 				<?php foreach ($categorias as $categoria) : ?>
 					
@@ -69,9 +57,8 @@
 				<table class="tablapartidos">
 
 				<tr><td>
-				<span></span>					
-						
-						<p>Tipo de Partido: <b><?= $partido->tipoPartido; ?></b></p>
+				<span></span>
+					<p>Tipo de Partido: <b><?= $partido->tipoPartido; ?></b></p>
 											
 						<p><img src="<?= URL; ?>img/fecha.png" alt="CLUBS" height="20" /> <b><?= $partido->fechaPartido; ?></b></p>
 						
@@ -95,8 +82,8 @@
 					</div>
 					</td></tr>
 					</table>
-							
-					<div class="cancha">
+
+					<div class="cancha" style="margin-left: 0;">
 					<?php if ($partido->idCategoria == '1') : ?>
 						<table class="pista1" height="300" width="600">
 					<?php elseif ($partido->idCategoria == '2') : ?>	
@@ -108,7 +95,6 @@
 					<?php else : ?>		
 						<table class="pista5" height="300" width="600">	
 					<?php endif ?>
-
 						<tr>
 							<?php if ($partido->tipoPartido == "Masculino") : ?>
 								<td><img class="hombreIzq" title="Plaza Masculina" src="<?= URL; ?>img/hombre1.png" height="75"></td>
@@ -293,13 +279,10 @@
 							<?php else : ?>	
 								<td><img class="hombreDer" title="Plaza Femenina" src="<?= URL; ?>img/mujer2.png" height="75"></td>
 							<?php endif ?>		
-						</tr>	
-								
-					</table>	
-					<br>			
+						</tr>					
+					</table>				
 				</div>
 			</div>
-			</fieldset>	
 				
 			<?php endif ?>
 		
