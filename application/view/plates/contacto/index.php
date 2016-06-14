@@ -1,10 +1,10 @@
 <?php $this->layout('layout') ?>
 
-<div class="container">
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">
     <?php $this->insert('partials/feedback') ?>
 
     <!-- El formulario se envía a una URL externa y muestra los datos que se reciben en el servidor.-->
-        <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="registro">
+        <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="registro" style="padding: 2%;background-color: #ececec;border-radius: 6px 6px 6px 6px;-moz-border-radius: 6px 6px 6px 6px;-webkit-border-radius: 6px 6px 6px 6px;">
             <fieldset>
             <legend>Ponte en contacto con nosotros</legend>
                  <table>
