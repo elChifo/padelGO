@@ -52,8 +52,7 @@ class Mercadillo extends Controller
                 } 
                 else {
 
-                    echo $this->view->render('mercadillo/vender', [ // Imprime la vista y añade datos   
-                            'errores' => array('Error al vender'),
+                    echo $this->view->render('mercadillo/vender', [ // Imprime la vista y añade datos 
                             'articulo' => $articulo
                     ]);
                 }

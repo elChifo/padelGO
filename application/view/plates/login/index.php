@@ -14,7 +14,7 @@
             
             <section>
                 <label>Email:</label>
-                <input type="email" name="email" required="required" onblur="validacion()" placeholder="Escribe tu email" autofocus>
+                <input type="email" name="email" required="required" onblur="validacion()" placeholder="Escribe tu email" autofocus value="<?= (isset($usuario['email'])) ? $usuario['email'] : "" ?>">
                 
                 <label>Password:</label>
                 <input type="password" name="clave" required="required" onblur="validacion()" placeholder="****">            

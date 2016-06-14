@@ -116,7 +116,6 @@ class Monitores extends Controller
                 else {
 
                     echo $this->view->render('monitores/agregar', [ // Imprime la vista y añade datos 
-                            'errores' => array('Error al Agregar'),
                             'monitor' => $monitor
                     ]);
                 }

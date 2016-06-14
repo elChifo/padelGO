@@ -2,6 +2,7 @@
   <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
+    <?php $this->insert('partials/feedback') ?>
 
 	<?php if(count($clubs) == 0): ?>
 

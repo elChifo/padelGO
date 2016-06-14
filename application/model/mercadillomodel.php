@@ -71,11 +71,12 @@ class MercadilloModel
             $params = array(
                 'idUsuario' => $_POST["idUsuario"],
                 'nombreArticulo' => $_POST["nombreArticulo"],
-                'descripcionArticulo' => $_POST["descripcionArticulo"]
+                'descripcionArticulo' => $_POST["descripcionArticulo"],                
+                'precio' => $_POST["precio"]
             );
 
-            $ssql = "INSERT INTO Mercadillo (idUsuario, nombreArticulo, descripcionArticulo)
-                     VALUES (:idUsuario, :nombreArticulo, :descripcionArticulo)";
+            $ssql = "INSERT INTO Mercadillo (idUsuario, nombreArticulo, descripcionArticulo, precio)
+                     VALUES (:idUsuario, :nombreArticulo, :descripcionArticulo, :precio)";
 
             $query = $conn->prepare($ssql);
             $query->execute($params);
@@ -111,11 +112,12 @@ class MercadilloModel
                 'idArticulo' => $_POST["idArticulo"],
                 'idUsuario' => $_POST["idUsuario"],
                 'nombreArticulo' => $_POST["nombreArticulo"],
-                'descripcionArticulo' => $_POST["descripcionArticulo"]
+                'descripcionArticulo' => $_POST["descripcionArticulo"],                
+                'precio' => $_POST["precio"]
             );
 
             $ssql = "UPDATE Mercadillo SET idArticulo = :idArticulo, idUsuario = :idUsuario, 
-                        nombreArticulo = :nombreArticulo, descripcionArticulo = :descripcionArticulo 
+                        nombreArticulo = :nombreArticulo, descripcionArticulo = :descripcionArticulo, precio = :precio 
                      WHERE idArticulo = :idArticulo";
 
             $query = $conn->prepare($ssql);

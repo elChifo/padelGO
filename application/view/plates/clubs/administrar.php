@@ -2,6 +2,7 @@
   <?php $idSession = Session::get('idUsuario'); ?>
 
 <div class="container">
+    <?php $this->insert('partials/feedback') ?>
     
     <h3 class="titulo-pagina">ADMINISTRACIÓN DE CLUBS &nbsp;&nbsp;&nbsp;  
 

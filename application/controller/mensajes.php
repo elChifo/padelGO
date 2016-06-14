@@ -86,7 +86,8 @@ class Mensajes extends Controller
 
                     echo $this->view->render('mensajes/enviar', [ // Imprime la vista y añade datos
                             'idSession' => $idSession,
-                            'usuarios' => $usuarios
+                            'usuarios' => $usuarios,
+                            'mensaje' => $mensaje
                     ]);
                 }
             }

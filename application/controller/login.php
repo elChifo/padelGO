@@ -51,7 +51,11 @@ class Login extends Controller
             }
             else {
 
-                echo $this->view->render('login/index'); // Imprime la vista 
+                $usuario = $_POST;
+
+                echo $this->view->render('login/index', [ // Imprime la vista y añade datos
+                            'usuario' => $usuario
+                ]);
             }
         }
     }

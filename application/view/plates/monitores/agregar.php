@@ -29,12 +29,12 @@
             <p> <br>
                 <label for="anuncio">Anuncio del Monitor</label>
                 <br>
-                <textarea name="anuncio" placeholder="Introduzca el Anuncio del Monitor"></textarea>
+                <textarea name="anuncio" placeholder="Introduzca el Anuncio del Monitor" value="<?= (isset($monitor['anuncio'])) ? $monitor['anuncio'] : "" ?>"></textarea>
             </p> 
 
             <p>
                 <label for="horarioClases">Horario de Clases</label>
-                <input type="text" name="horarioClases" placeholder="Introduzca el Horario de Clases">
+                <input type="text" name="horarioClases" placeholder="Introduzca el Horario de Clases" value="<?= (isset($monitor['horarioClases'])) ? $monitor['horarioClases'] : "" ?>">
             </p>  
             
             <p>

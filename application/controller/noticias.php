@@ -50,8 +50,7 @@ class Noticias extends Controller
                 } 
                 else {
 
-                    echo $this->view->render('noticias/crear', [ // Imprime la vista y añade datos
-                            'errores' => array('Error al insertar'),
+                    echo $this->view->render('noticias/crear', [ // Imprime la vista y añade datos 
                             'noticia' => $noticia
                     ]);
                 }

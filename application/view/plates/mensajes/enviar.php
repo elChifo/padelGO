@@ -15,7 +15,7 @@
 					<div>
 			            <label for="idReceptor">Mensaje para:</label>
 			            <select name="idReceptor">
-			                    <option value="0" disabled> Seleccione un Usuario </option> 
+			                    <option value="<?= (isset($mensaje['idReceptor'])) ? $mensaje['idReceptor'] : "" ?>" disabled> Seleccione un Usuario </option> 
 
 			                <?php foreach($usuarios as $usuario): ?>
 			                    
@@ -30,7 +30,7 @@
 					<label>
 						<br>
 						<textarea rows="4" cols="50" name="mensaje" 
-								placeholder="Escriba aqui su mensaje" onblur="validacion2()" required="required" autofocus></textarea>
+								placeholder="Escriba aqui su mensaje" onblur="validacion2()" required="required" autofocus><?= (isset($mensaje['mensaje'])) ? $mensaje['mensaje'] : "" ?></textarea>
 					</label>
 				</div>
 

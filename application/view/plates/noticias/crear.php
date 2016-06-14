@@ -16,8 +16,7 @@
            
             <p>
             <label for="titular">Titular</label>
-            <input type="text" name="titular"
-                    placeholder="Introduzca el Titular de la Noticia">
+            <input type="text" name="titular" value="<?= (isset($noticia['titular'])) ? $noticia['titular'] : "" ?>" placeholder="Introduzca el Titular de la Noticia">
             </p>          
            
             <br />
@@ -49,8 +48,7 @@
 
             <p>
             <label for="contenido">Contenido</label>
-            <textarea  name="contenido" 
-                    placeholder="Introduzca el Contenido de la Noticia" rows="5" cols="50"></textarea>
+            <textarea  name="contenido" value="<?= (isset($noticia['contenido'])) ? $noticia['contenido'] : "" ?>" placeholder="Introduzca el Contenido de la Noticia" rows="5" cols="50"></textarea>
             </p>
             <br />
             <p>

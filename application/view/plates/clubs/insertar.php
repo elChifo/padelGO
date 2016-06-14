@@ -16,21 +16,27 @@
                 <h2> Datos del Club </h2>
             </legend>       
 
-            <input type="hidden" name="idClub" value="<?= $idClub['idClub'] ?>">
+            <p>
+            <input type="hidden" name="idClub" 
+                    value="<?= (isset($club['idClub'])) ? $club['idClub'] : "" ?>">
+            </p>
 
             <p>
             <label for="nombreClub">Nombre del Club</label>
-            <input type="text" name="nombreClub">
+            <input type="text" name="nombreClub" 
+                    value="<?= (isset($club['nombreClub'])) ? $club['nombreClub'] : "" ?>">
             </p>
 
             <p>
             <label for="direccionClub">Dirección</label>
-            <input type="text" name="direccionClub">
+            <input type="text" name="direccionClub" 
+                    value="<?= (isset($club['direccionClub'])) ? $club['direccionClub'] : "" ?>">
             </p>
 
             <p>
             <label for="numPistas">Número de Pistas</label>
-            <input type="date" name="numPistas">
+            <input type="date" name="numPistas" 
+                    value="<?= (isset($club['numPistas'])) ? $club['numPistas'] : "" ?>">
             </p>
 
             <div class="subidaClub">

@@ -69,7 +69,8 @@ class Partidos extends Controller
 
                     echo $this->view->render('partidos/insertar', [ // Imprime la vista y añade datos
                         'categorias' => $categorias,
-                        'clubs' => $clubs
+                        'clubs' => $clubs,
+                        'partido' => $partido
                     ]); 
                 }            
             }
