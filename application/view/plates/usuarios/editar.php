@@ -1,17 +1,17 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
   
-<div class="container">
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">
     <?php $this->insert('partials/feedback') ?>
 
 <h2>EDITAR DATOS DE USUARIO</h2>
    
-    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data" class="registro">
         <fieldset> 
             <legend>
-                <h2> Datos del Usuario </h2> 
+                <h3> Datos del Usuario </h3> 
             </legend>
-            <table border="1" class="tablapartidos">
+            <table class="tablapartidos">
             <tr><td>
 
             <p>
@@ -54,7 +54,7 @@
             </script>
 
             <strong>Fecha de Nacimiento</strong> |  
-            <span style="border: solid 1px black; height: 2rem; margin-right: 1rem; padding: 0.5rem;"><?= $usuario->fechaNac ?>
+            <span style="height: 2rem; margin-right: 1rem; padding: 0.5rem;"><?= $usuario->fechaNac ?>
             </span>
 
             <input type="hidden" name="fechaNac" id="fecha" 
@@ -142,13 +142,13 @@
             </div>
             <br />
             <p>
-                <input type="submit" value="Enviar" class="btnform">
+                <input type="submit" value="Actualizar Datos" title="Actualizar Datos" class="btnform">
             </p> 
             </p>
             </td></tr>
             </table>       
         </fieldset>   
-    </form>
+    </form><br>
    
 </div>
 

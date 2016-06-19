@@ -1,13 +1,13 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
   
-<div class="container"> 
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;"> 
 	<?php $this->insert('partials/feedback') ?>   
 
-	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="cancelacion">
+	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="registro">
         <fieldset> 
             <legend>
-                <h2> Cancelación de la Cuenta de Usuario</h2> 
+                <h3> Cancelación de la Cuenta de Usuario</h3> 
             </legend>             
             	
            		<h4>Por favor, indique los motivos de la cancelación.</h4>
