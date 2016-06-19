@@ -1,13 +1,13 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
   
-<div class="container"> 
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;"> 
 	<?php $this->insert('partials/feedback') ?>   
 
-	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="calcelacion">
+	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="registro">
         <fieldset> 
             <legend>
-                <h2> Enviar Un Mensaje</h2> 
+                <h3> Enviar Un Mensaje</h3> 
             </legend>                         	
 
 				<div class="mensaje">
@@ -36,5 +36,5 @@
 
 				<input type="submit" value="Enviar" class="btnform">
         </fieldset>
-    </form>
+    </form><br>
 </div>
