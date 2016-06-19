@@ -1,13 +1,13 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
 
-<div class="container"> 
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;"> 
 <?php $this->insert('partials/feedback') ?>   
 
-	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="solicitud">
+	<form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="registro">
         <fieldset> 
             <legend>
-                <h2> Anunciarse como Monitor de Padel </h2> 
+                <h3> Anunciarse como Monitor de Padel </h3> 
             </legend>             
             	
            		<h5>Para ser Monitor de "PadelGO!" rellene este formulario, 
@@ -17,7 +17,7 @@
 				<div class="ofrecerMonitor">
 
 					<fieldset>
-					<table border="1" class="tablapartidos">
+					<table class="tablapartidos">
             		<tr><td>
 						<legend>
 							Datos para el Administrador
@@ -40,7 +40,7 @@
 					<br />
 
 					<fieldset>
-					<table border="1" class="tablapartidos">
+					<table class="tablapartidos">
             		<tr><td>
 						<legend>
 							Datos para el Anuncio
