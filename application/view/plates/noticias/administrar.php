@@ -1,47 +1,28 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
 
-<div class="container">
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">
 
     <h3 class="titulo-pagina">ADMINISTRACIÓN DE NOTICIAS &nbsp;&nbsp;&nbsp;
 
                 <login style="font-size: 18px;">    
-                    <a href="../noticias/crear">Registrar una Nueva Noticia</a>
+                    <a href="../noticias/crear" style="font-size: 18px; float:right;" class="colorPadelGO2">+ Registrar una Nueva Noticia</a>
                 <login/>    
     </h3>
     
 	<?php foreach($noticias as $noticia): ?>
+            <div class="divMercadillo" style="width: 30%;float:left;">
+                
+                    <b>TITULAR: </b><?= $noticia->titular; ?><br>
 
-       <fieldset>
-            <fieldset>
-             <table border="1" class="tablapartidos">
-                <tr><td>
-                <ul> 
-                <li> 
-                    <h3>TITULAR: </h3>                    
-                    <?= $noticia->titular; ?>                                                         
-                </li>
+                    <b>FECHA: </b><?= $noticia->fechaNoticia; ?><br><br>
 
-                <br>
-
-                <li> 
-                    <h3>FECHA: </h3>                    
-                    <?= $noticia->fechaNoticia; ?>                                                 
-                </li>
-                <br>
-
-                <li> 
-                    <h3>CONTENIDO: </h3>                    
-                    <?= $noticia->contenido; ?>                                                         
-                </li>
-                <br>
-           </ul>
+                    <b>CONTENIDO: </b><?= $noticia->contenido; ?><br><br> 
            
            <div class="imagenNoticia">
                 <img src="<?= URL; ?>img/noticias/noticia<?= $noticia->idNoticia; ?>.png" 
                 alt="noticia<?= $noticia->idNoticia; ?>" height="150" /> 
             </div>
-   	        <tr><td>
     			<p>
                     <h4>
     					<a href="../noticias/editar?idNoticia=<?= $noticia->idNoticia; ?>">
@@ -53,12 +34,9 @@
     			   		</a>
                     </h4>
 				</p>
-                </td></tr>
-    		  </td></tr> 
-              </table>    
-       </fieldset>
+            </div>        
     <?php endforeach ?>
-
-    <a href="../login/index"><h4>...Volver a Administración</h4></a>
+    <br>
+    <button onclick="window.location.href='../login'" class="btnbutton1" style="clear:both;float:left">&#8592; Volver a Administración</button>
     <a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>

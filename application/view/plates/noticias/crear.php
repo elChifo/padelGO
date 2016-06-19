@@ -1,17 +1,17 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
 
-<div class="container">
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">
     <?php $this->insert('partials/feedback') ?>
 
-<h2>CREACIÓN DE UNA NUEVA NOTICIA</h2>
+<h3>CREACIÓN DE UNA NUEVA NOTICIA</h3>
    
-    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data" class="registro">
         <fieldset> 
-        <table border="1" class="tablapartidos">
+        <table class="tablapartidos">
         <tr><td>
             <legend>
-                <h2> Datos de la Noticia </h2> 
+                <h4> Datos de la Noticia </h4> 
             </legend>
            
             <p>
@@ -60,12 +60,12 @@
             </div>
             <br />
             <p>
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Insertar Noticia">
             </p> 
             </p>
             </td></tr>
             </table>       
         </fieldset>   
-    </form>
+    </form><br>
 </div>
 
