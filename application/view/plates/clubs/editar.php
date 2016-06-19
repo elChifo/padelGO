@@ -38,9 +38,9 @@
                     value="<?= (isset($club->numPistas)) ? $club->numPistas : "" ?>">
             </p>
 
-            <div class="imagenClub">
+            <div>
                 <img src="<?= URL; ?>img/clubs/club<?= $club->idClub; ?>.png" 
-                alt="club<?= $club->idClub; ?>" height="150" /> 
+                alt="club<?= $club->idClub; ?>" widht="100"/> 
             </div>
 
             <div class="subidaClub">
