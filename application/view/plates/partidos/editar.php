@@ -1,18 +1,18 @@
 <?php $this->layout('layout') ?>
   <?php $idSession = Session::get('idUsuario'); ?>
 
-<div class="container">
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">
     <?php $this->insert('partials/feedback') ?>
    
-    <h2>EDITAR PARTIDO</h2> 
+    <h3>EDITAR PARTIDO</h3> 
 
-    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post">
+    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="registro">
 
         <fieldset>
-         <table border="1" class="tablapartidos">
+         <table class="tablapartidos">
             <tr><td>
             <legend>
-                <h2>Datos del Partido</h2>
+                <h4>Datos del Partido</h4>
             </legend> 
         
             <input type="hidden" name="idPartido" 
@@ -221,6 +221,6 @@
         </table>
         </fieldset> 
 
-    </form>
+    </form><br>
 <a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>

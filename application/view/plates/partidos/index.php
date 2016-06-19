@@ -320,6 +320,6 @@
 	 		
 	<?php endif ?>
 	<br>
-	<a href="#" onclick="window.print()" style="color:#000; text-decoration: none;font-size: 20px;"><img title="Imprimir Partidos" src="<?= URL; ?>img/imprimir.png" height="30"> Imprimir Partidos</a>
+	<a href="#" onclick="window.print()" title="Imprimir Partidos" style="color:#000; text-decoration: none;font-size: 20px;"><img title="Imprimir Partidos" src="<?= URL; ?>img/imprimir.png" height="30"> Imprimir Partidos</a>
 	<a href='#' onclick='subir();return false' title='Ir Arriba' class="flecha"><img src="<?= URL; ?>img/flecha.png"></a>
 </div>
