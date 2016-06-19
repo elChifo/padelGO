@@ -4,7 +4,7 @@
     <?php $this->insert('partials/feedback') ?>
 
     <!-- El formulario se envía a una URL externa y muestra los datos que se reciben en el servidor.-->
-        <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="registro" style="padding: 2%;background-color: #ececec;border-radius: 6px 6px 6px 6px;-moz-border-radius: 6px 6px 6px 6px;-webkit-border-radius: 6px 6px 6px 6px;">
+        <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" class="registro" style="padding: 2%;background-color: #ececec;border-radius: 6px 6px 6px 6px;-moz-border-radius: 6px 6px 6px 6px;-webkit-border-radius: 6px 6px 6px 6px;border: 2.5px solid #e6e6e6;">
             <fieldset>
             <legend>Ponte en contacto con nosotros</legend>
                  <table>
