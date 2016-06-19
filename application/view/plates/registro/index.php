@@ -1,17 +1,17 @@
 <?php $this->layout('layout') ?>
 
-<div class="container">
+<div class="container" style="margin-left: -30px;padding-left: 3%; padding-right: 3%;">
     <?php $this->insert('partials/feedback') ?>
 
 <h2 style="margin-left: 20rem;">INSCRIPCIÓN DE USUARIOS</h2>
    
-    <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data">
+    <form  action="<?= $_SERVER['REQUEST_URI'] ?>" method="post" enctype="multipart/form-data" class="registro">
         <fieldset> 
             <legend>
-                <h2> Datos del Usuario </h2> 
+                <h3> Datos del Usuario </h3> 
             </legend>  
 
-            <table border="1" class="tablapartidos">
+            <table class="tablapartidos">
              <tr><td>
             <div>
             <label for="nombre">Nombre </label>
