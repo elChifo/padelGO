@@ -24,25 +24,25 @@
 					<label>
 						<input type="checkbox" name="dificultad" 
 							value="Diseño Pobre o Dificultad de Uso de la Aplicación.">
-							Diseño Pobre o Dificultad de Uso de la Aplicación.
+							Diseño pobre o dificultad de uso de la aplicación.
 					</label>
 					<br><br>
 					<label>
 						<input type="checkbox" name="malaImpresion" 
 							value="Registro Complejo o Primera Impresión Negativa.">
-							Registro Complejo o Primera Impresión Negativa.
+							Registro complejo o primera impresión negativa.
 					</label>
 					<br><br>
 					<label>
 						<input type="checkbox" name="desuso" 
 							value="No se Usa la Aplicación o No se Practica Padel.">
-							No se Usa la Aplicación o No se Practica Padel.
+							No se usa la aplicación o no se practica padel.
 					</label>
 					<br><br>
 					<label>
 						<br>
 						<textarea rows="4" cols="50" name="otrosmotivos" 
-								placeholder="Indique Otros Motivos..."></textarea>
+								placeholder="Indique otros motivos..."></textarea>
 					</label>
 				</div>
 

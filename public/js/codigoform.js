@@ -37,7 +37,7 @@ if(coment.value==""){
   coment.style.background='#bbeffa';
 }
 
-function validarcheck() {
+function validarcheck() { //comprueba que la política ha sido marcada y todos los campos son correctos
     var x = document.getElementById("check").required;
     document.getElementById("demo").innerHTML = x;
 }
@@ -65,7 +65,7 @@ function contar(){
 //El método addEventListener () concede un controlador de eventos para el elemento especificado.
 window.addEventListener("load", iniciar, false);
 
-
+//validaciones para el resto de formularios de todo el menú
 function validacion2(){
   if(nombre.value==""){
   nombre1.setCustomValidity('Inserte un nombre');  

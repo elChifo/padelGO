@@ -13,7 +13,7 @@ $(document).ready(function() {
 			
 		});
 	});
-	//funcion al cerrar la ventana emergente
+	//funcion al cerrar la ventana emergente.
 	$('.close').click(function() {
 		/*El método removeClass () elimina uno o más nombres de las clases de los elementos seleccionados.*/
 		$('.overlay-container').fadeOut().end().find('.ventana').removeClass('ventana-visible');
